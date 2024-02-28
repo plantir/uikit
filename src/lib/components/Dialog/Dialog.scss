@@ -1,0 +1,14 @@
+@import '../../scss/var.scss';
+:root:has(:is(.#{$prefix}dialog[open])) {
+	overflow: hidden;
+}
+.#{$prefix}dialog {
+	@apply daisy-modal;
+
+	&-box {
+		@apply daisy-modal-box;
+	}
+	&-backdrop {
+		@apply daisy-modal-backdrop cursor-pointer backdrop-blur-sm;
+	}
+}

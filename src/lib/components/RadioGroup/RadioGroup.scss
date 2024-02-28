@@ -1,0 +1,10 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}radio-group {
+	&-inline {
+		@apply flex gap-x-2;
+	}
+	&-column {
+		@apply flex flex-col gap-y-2;
+	}
+}

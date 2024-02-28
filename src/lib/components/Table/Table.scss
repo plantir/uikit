@@ -1,0 +1,27 @@
+@import '../../scss/var.scss';
+.#{$prefix}table {
+	@apply daisy-table;
+
+	&-zebra {
+		@apply daisy-table-zebra;
+	}
+	&-pin-head {
+		thead {
+			tr {
+				position: sticky;
+				top: 0;
+				z-index: 1;
+				--tw-bg-opacity: 1;
+				background-color: var(--fallback-b1, oklch(var(--b1) / var(--tw-bg-opacity)));
+			}
+		}
+	}
+	&-hover {
+		tbody {
+			tr:hover {
+				--tw-bg-opacity: 1;
+				background-color: var(--fallback-b2, oklch(var(--b2) / var(--tw-bg-opacity)));
+			}
+		}
+	}
+}

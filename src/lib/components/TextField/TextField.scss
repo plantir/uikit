@@ -1,0 +1,47 @@
+@import '../../scss/var.scss';
+.#{$prefix}text-field-wrapper {
+	@apply inline-flex flex-col  gap-y-1;
+}
+.#{$prefix}text-field {
+	@apply daisy-input;
+
+	&-bordered {
+		@apply daisy-input-bordered;
+	}
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-input-xs;
+	}
+	&-sm {
+		@apply daisy-input-sm;
+	}
+	&-md {
+		@apply daisy-input-md;
+	}
+	&-lg {
+		@apply daisy-input-lg;
+	}
+	&-primary {
+		@apply daisy-input-primary;
+	}
+	&-secondary {
+		@apply daisy-input-secondary;
+	}
+	&-accent {
+		@apply daisy-input-accent;
+	}
+	&-success {
+		@apply daisy-input-success;
+	}
+	&-info {
+		@apply daisy-input-info;
+	}
+	&-error {
+		@apply daisy-input-error;
+	}
+	&-warning {
+		@apply daisy-input-warning;
+	}
+}

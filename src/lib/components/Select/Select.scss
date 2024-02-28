@@ -1,0 +1,44 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}select {
+	@apply daisy-select;
+	&-bordered {
+		@apply daisy-select-bordered;
+	}
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-select-xs;
+	}
+	&-sm {
+		@apply daisy-select-sm;
+	}
+	&-md {
+		@apply daisy-select-md;
+	}
+	&-lg {
+		@apply daisy-select-lg;
+	}
+	&-primary {
+		@apply daisy-select-primary;
+	}
+	&-secondary {
+		@apply daisy-select-secondary;
+	}
+	&-accent {
+		@apply daisy-select-accent;
+	}
+	&-success {
+		@apply daisy-select-success;
+	}
+	&-info {
+		@apply daisy-select-info;
+	}
+	&-error {
+		@apply daisy-select-error;
+	}
+	&-warning {
+		@apply daisy-select-warning;
+	}
+}

@@ -1,0 +1,44 @@
+@import '../../scss/var.scss';
+.#{$prefix}radio-wrapper {
+	@apply inline-flex items-center gap-x-1;
+}
+.#{$prefix}radio {
+	@apply daisy-radio;
+
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-radio-xs;
+	}
+	&-sm {
+		@apply daisy-radio-sm;
+	}
+	&-md {
+		@apply daisy-radio-md;
+	}
+	&-lg {
+		@apply daisy-radio-lg;
+	}
+	&-primary {
+		@apply daisy-radio-primary;
+	}
+	&-secondary {
+		@apply daisy-radio-secondary;
+	}
+	&-accent {
+		@apply daisy-radio-accent;
+	}
+	&-success {
+		@apply daisy-radio-success;
+	}
+	&-info {
+		@apply daisy-radio-info;
+	}
+	&-error {
+		@apply daisy-radio-error;
+	}
+	&-warning {
+		@apply daisy-radio-warning;
+	}
+}

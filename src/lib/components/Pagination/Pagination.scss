@@ -1,0 +1,53 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}loading {
+	@apply daisy-loading daisy-loading-spinner;
+	&-xs {
+		@apply daisy-loading-xs;
+	}
+	&-sm {
+		@apply daisy-loading-sm;
+	}
+	&-md {
+		@apply daisy-loading-md;
+	}
+	&-lg {
+		@apply daisy-loading-lg;
+	}
+	&-bars {
+		@apply daisy-loading-bars;
+	}
+	&-spinner {
+		@apply daisy-loading-spinner;
+	}
+	&-dots {
+		@apply daisy-loading-dots;
+	}
+	&-ring {
+		@apply daisy-loading-ring;
+	}
+	&-ball {
+		@apply daisy-loading-ball;
+	}
+	&-primary {
+		@apply text-primary;
+	}
+	&-error {
+		@apply text-error;
+	}
+	&-secondary {
+		@apply text-secondary;
+	}
+	&-accent {
+		@apply text-accent;
+	}
+	&-success {
+		@apply text-success;
+	}
+	&-warning {
+		@apply text-warning;
+	}
+	&-info {
+		@apply text-info;
+	}
+}

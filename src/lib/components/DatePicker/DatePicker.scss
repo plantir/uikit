@@ -1,0 +1,9 @@
+@import '../../scss/var.scss';
+.#{$prefix}date-picker-wrapper {
+	@apply inline-flex flex-col items-start gap-y-1;
+}
+.#{$prefix}date-picker {
+	&-input {
+		@apply daisy-input daisy-input-bordered;
+	}
+}

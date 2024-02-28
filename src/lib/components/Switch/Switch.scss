@@ -1,0 +1,44 @@
+@import '../../scss/var.scss';
+.#{$prefix}switch-wrapper {
+	@apply inline-flex items-center gap-x-1;
+}
+.#{$prefix}switch {
+	@apply daisy-toggle;
+
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-toggle-xs;
+	}
+	&-sm {
+		@apply daisy-toggle-sm;
+	}
+	&-md {
+		@apply daisy-toggle-md;
+	}
+	&-lg {
+		@apply daisy-toggle-lg;
+	}
+	&-primary {
+		@apply daisy-toggle-primary;
+	}
+	&-secondary {
+		@apply daisy-toggle-secondary;
+	}
+	&-accent {
+		@apply daisy-toggle-accent;
+	}
+	&-success {
+		@apply daisy-toggle-success;
+	}
+	&-info {
+		@apply daisy-toggle-info;
+	}
+	&-error {
+		@apply daisy-toggle-error;
+	}
+	&-warning {
+		@apply daisy-toggle-warning;
+	}
+}

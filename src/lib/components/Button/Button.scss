@@ -1,0 +1,65 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}button {
+	@apply daisy-btn;
+	&-block {
+		@apply daisy-btn-block;
+	}
+	&-wide {
+		@apply daisy-btn-wide;
+	}
+	&-active {
+		@apply daisy-btn-active;
+	}
+	&-outline {
+		@apply daisy-btn-outline;
+	}
+	&-glass {
+		@apply daisy-glass;
+	}
+	&-link {
+		@apply daisy-btn-link;
+	}
+	&-ghost {
+		@apply daisy-btn-ghost;
+	}
+	&-square {
+		@apply daisy-btn-square;
+	}
+	&-circle {
+		@apply daisy-btn-circle;
+	}
+	&-xs {
+		@apply daisy-btn-xs;
+	}
+	&-sm {
+		@apply daisy-btn-sm;
+	}
+	&-md {
+		@apply daisy-btn-md;
+	}
+	&-lg {
+		@apply daisy-btn-lg;
+	}
+	&-primary {
+		@apply daisy-btn-primary;
+	}
+	&-secondary {
+		@apply daisy-btn-secondary;
+	}
+	&-accent {
+		@apply daisy-btn-accent;
+	}
+	&-success {
+		@apply daisy-btn-success;
+	}
+	&-info {
+		@apply daisy-btn-info;
+	}
+	&-error {
+		@apply daisy-btn-error;
+	}
+	&-warning {
+		@apply daisy-btn-warning;
+	}
+}
