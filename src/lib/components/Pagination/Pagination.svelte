@@ -35,11 +35,11 @@
 			<Button
 				{size}
 				{color}
-				on:click={(e) => changePage(i + 1)}
+				on:click={(e) => changePage(+i + 1)}
 				active={page == i + 1}
 				class="daisy-join-item "
 			>
-				{i + 1}
+				{+i + 1}
 			</Button>
 		{/each}
 	{:else}
@@ -69,7 +69,7 @@
 				{color}
 				on:click={(e) => changePage(+page + 1)}
 				class="daisy-join-item"
-				active={page == page + 1}
+				active={page == +page + 1}
 			>
 				{+page + 1}
 			</Button>

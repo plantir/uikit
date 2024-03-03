@@ -40,7 +40,7 @@
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
 </script>
 
-<select bind:value class={elClass}>
+<select bind:value class={elClass} on:change>
 	<option disabled selected value="">{label}</option>
 	{#each convertedItems as { value, title }}
 		<option {value}>{title}</option>

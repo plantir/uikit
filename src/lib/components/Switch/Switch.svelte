@@ -29,7 +29,7 @@
 </script>
 
 <label class={wrapperClass}>
-	<input type="checkbox" {disabled} {value} class={elClass} />
+	<input type="checkbox" {disabled} {value} class={elClass} bind:checked={value}  on:change />
 	<slot name="label">
 		{label}
 	</slot>

@@ -6,11 +6,12 @@
 </script>
 
 <script lang="ts">
-	import { setContext } from 'svelte';
+	import { setContext ,createEventDispatcher} from 'svelte';
 	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
 	let componentName = 'radio-group';
 	type $$Props = RadioGroup;
+	let dispatch = createEventDispatcher();
 	export let value: any = undefined;
 	export let inline: boolean = false;
 	export let column: boolean = false;
@@ -20,6 +21,12 @@
 	};
 	let selected = ctx.selected;
 	setContext<RadioCtxType>('ctx', ctx);
+		selected.subscribe((val)=>{
+    if(val && val != value){
+        value = val
+        dispatch('change',value)
+    }
+})
 	function onValueChange() {
 		selected.set(value);
 	}

@@ -14,7 +14,6 @@
 	export let label: string | undefined = undefined;
 	export let placeholder: string | undefined = undefined;
 	export let value: string = '';
-	export let type: HTMLInputTypeAttribute = 'text';
 	export let inputmode: TextFieldInputMode = 'text';
 	export let disabled: boolean = false;
 	export let bordered: boolean = true;
@@ -44,5 +43,5 @@
 	<slot name="label">
 		{label}
 	</slot>
-	<input {inputmode} {disabled} bind:value {placeholder} class={elClass} />
+	<input {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
 </label>
