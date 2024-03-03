@@ -127,4 +127,50 @@
 	&-ghost {
 		@apply daisy-badge-ghost;
 	}
+	&-dismissable {
+		@apply relative pe-6;
+		[aria-label='close'] {
+			@apply absolute right-1 px-0 no-underline w-4 h-4;
+		}
+		&.#{$prefix}badge-primary {
+			[aria-label='close'] {
+				@apply text-primary-content;
+			}
+		}
+		&.#{$prefix}badge-secondary {
+			[aria-label='close'] {
+				@apply text-secondary-content;
+			}
+		}
+		&.#{$prefix}badge-success {
+			[aria-label='close'] {
+				@apply text-success-content;
+			}
+		}
+		&.#{$prefix}badge-error {
+			[aria-label='close'] {
+				@apply text-error-content;
+			}
+		}
+		&.#{$prefix}badge-warning {
+			[aria-label='close'] {
+				@apply text-warning-content;
+			}
+		}
+		&.#{$prefix}badge-info {
+			[aria-label='close'] {
+				@apply text-info-content;
+			}
+		}
+		&.#{$prefix}badge-accent {
+			[aria-label='close'] {
+				@apply text-accent-content;
+			}
+		}
+		&.#{$prefix}badge-natural {
+			[aria-label='close'] {
+				@apply text-base-content;
+			}
+		}
+	}
 }

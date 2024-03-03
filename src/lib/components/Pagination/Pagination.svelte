@@ -1,5 +1,5 @@
 <script lang="ts">
-	import El from '../../utils/El.svelte';
+	import El from '$lib/utils/El.svelte';
 	import Button from '../Button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import type { Pagination, PaginationColor, PaginationSize } from './Pagination.type.js';

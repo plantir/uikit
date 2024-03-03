@@ -6,8 +6,8 @@
 </script>
 
 <script lang="ts">
-	import { setContext ,createEventDispatcher} from 'svelte';
-	import { ClassMerge } from '../../utils/ClassMerge.js';
+	import { setContext, createEventDispatcher } from 'svelte';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
 	let componentName = 'radio-group';
 	type $$Props = RadioGroup;
@@ -21,12 +21,12 @@
 	};
 	let selected = ctx.selected;
 	setContext<RadioCtxType>('ctx', ctx);
-		selected.subscribe((val)=>{
-    if(val && val != value){
-        value = val
-        dispatch('change',value)
-    }
-})
+	selected.subscribe((val) => {
+		if (val && val != value) {
+			value = val;
+			dispatch('change', value);
+		}
+	});
 	function onValueChange() {
 		selected.set(value);
 	}

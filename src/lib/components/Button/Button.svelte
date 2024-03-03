@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Loading from '../Loading/Loading.svelte';
-	import El from '../../utils/El.svelte';
+	import El from '$lib/utils/El.svelte';
 	import type {
 		Button,
 		ButtonColor,
@@ -47,13 +47,13 @@
 		natural: color == 'natural'
 	};
 </script>
+
 <El tag={href ? 'a' : 'button'} {componentName} {componentClass} {...$$restProps} on:click>
 	{#if loading}
 		<slot name="loader">
-			<Loading size="xs"/>
+			<Loading size="xs" />
 		</slot>
 	{:else}
 		<slot />
 	{/if}
 </El>
-

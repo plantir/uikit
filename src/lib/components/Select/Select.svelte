@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Select, SelectColor, SelectSize } from './Select.type.ts';
 	import './Select.scss';
-	import { ClassMerge } from '../../utils/ClassMerge.js';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Select;
 	let componentName = 'select';
 	export let label: string | undefined = undefined;

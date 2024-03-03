@@ -9,21 +9,6 @@
 		@apply daisy-btn-wide;
 	}
 
-	&-xs {
-		@apply daisy-btn-xs;
-	}
-	&-sm {
-		@apply daisy-btn-sm;
-	}
-	&-md {
-		@apply daisy-btn-md;
-	}
-	&-lg {
-		@apply daisy-btn-lg;
-	}
-	&-primary {
-		@apply daisy-btn-primary;
-	}
 	&-secondary {
 		@apply daisy-btn-secondary;
 	}
@@ -127,5 +112,20 @@
 	}
 	&-circle {
 		@apply daisy-btn-circle;
+	}
+	&-xs {
+		@apply daisy-btn-xs;
+	}
+	&-sm {
+		@apply daisy-btn-sm;
+	}
+	&-md {
+		@apply daisy-btn-md;
+	}
+	&-lg {
+		@apply daisy-btn-lg;
+	}
+	&-primary {
+		@apply daisy-btn-primary;
 	}
 }

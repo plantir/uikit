@@ -6,7 +6,7 @@
 		TextFieldSize
 	} from './TextField.type.js';
 	import './TextField.scss';
-	import { ClassMerge } from '../../utils/ClassMerge.js';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { HTMLInputTypeAttribute } from 'svelte/elements';
 	type $$Props = TextField;
 	let componentName = 'text-field';

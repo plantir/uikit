@@ -4,7 +4,7 @@
 	import type { DatePicker, DatePickerColor, DatePickerSize } from './DatePicker.js';
 	import './DatePicker.scss';
 	import 'flatpickr/dist/flatpickr.css';
-	import { ClassMerge } from '../../utils/ClassMerge.js';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = DatePicker;
 	let componentName = 'date-picker';
 	const hooks = new Set([
@@ -20,8 +20,6 @@
 
 	let ready = false;
 
-
-	
 	export { fp as flatpickr };
 	$: if (fp && ready) {
 		if (!areValuesEqual(value, getModeValue(fp, fp.selectedDates))) {
@@ -131,10 +129,12 @@
 		return false;
 	}
 
-
-	$: inputClass = ClassMerge({ name: `${componentName}-input`, componentClass:{bordered:true} });
+	$: inputClass = ClassMerge({
+		name: `${componentName}-input`,
+		componentClass: { bordered: true }
+	});
 </script>
 
 <slot>
-	<input class="{inputClass}" placeholder="Select Date" bind:this={input} {...$$restProps} />
+	<input class={inputClass} placeholder="Select Date" bind:this={input} {...$$restProps} />
 </slot>

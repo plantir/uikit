@@ -1,4 +1,4 @@
-import type { Base, GlobalColor, GlobalSize } from '../../utils/El.types.js';
+import type { Base, GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
 
 export type BadgeSize = GlobalSize;
 export type BadgeColor = 'natural' | GlobalColor;
@@ -15,4 +15,5 @@ export interface Badge extends Base {
 	block?: boolean;
 	variant?: BadgeVariant;
 	shape?: BadgeShape;
+	dismissable?: boolean;
 }

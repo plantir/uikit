@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Switch, SwitchColor, SwitchSize } from './Switch.type.js';
 	import './Switch.scss';
-	import { ClassMerge } from '../../utils/ClassMerge.js';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Switch;
 	let componentName = 'switch';
 	export let label: string | undefined = undefined;
@@ -29,7 +29,7 @@
 </script>
 
 <label class={wrapperClass}>
-	<input type="checkbox" {disabled} {value} class={elClass} bind:checked={value}  on:change />
+	<input type="checkbox" {disabled} {value} class={elClass} bind:checked={value} on:change />
 	<slot name="label">
 		{label}
 	</slot>

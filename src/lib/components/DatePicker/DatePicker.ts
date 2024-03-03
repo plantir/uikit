@@ -1,4 +1,4 @@
-import type { Base, GlobalColor, GlobalSize } from '../../utils/El.types.js';
+import type { Base, GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
 
 export type DatePickerSize = GlobalSize;
 export type DatePickerColor = 'natural' | GlobalColor;
