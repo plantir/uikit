@@ -1,3 +1,5 @@
+import Avatar from './components/Avatar/Avatar.svelte';
+import AvatarGroup from './components/AvatarGroup/AvatarGroup.svelte';
 import Badge from './components/Badge/Badge.svelte';
 import Button from './components/Button/Button.svelte';
 import DatePicker from './components/DatePicker/DatePicker.svelte';
@@ -11,6 +13,8 @@ import Switch from './components/Switch/Switch.svelte';
 import Table from './components/Table/Table.svelte';
 import TextField from './components/TextField/TextField.svelte';
 export {
+	Avatar,
+	AvatarGroup,
 	Badge,
 	Button,
 	DatePicker,

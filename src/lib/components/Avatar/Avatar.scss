@@ -1,0 +1,103 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}avatar {
+	@apply relative inline-flex;
+	@each $sizeName, $sizeValue in ('xs': '8', 'sm': '12', 'md': '16', 'lg': '24') {
+		&-#{$sizeName} {
+			& > div {
+				@apply w-#{$sizeValue};
+			}
+		}
+	}
+	&-rounded {
+		& > div {
+			@apply rounded;
+		}
+	}
+	&-circle {
+		& > div {
+			@apply rounded-full;
+		}
+	}
+
+	@each $mask
+		in (
+			'squircle',
+			'decagon',
+			'diamond',
+			'heart',
+			'hexagon',
+			'hexagon-2',
+			'circle',
+			'parallelogram',
+			'parallelogram-2',
+			'parallelogram-3',
+			'parallelogram-4',
+			'pentagon',
+			'square',
+			'star',
+			'star-2',
+			'triangle',
+			'triangle-2',
+			'triangle-3',
+			'triangle-4'
+		)
+	{
+		&-mask-#{$mask} {
+			& > div {
+				@apply daisy-mask daisy-mask-#{$mask};
+			}
+		}
+	}
+	&-ring {
+		& > div {
+			@apply ring ring-offset-base-100 ring-offset-2;
+		}
+		@each $color in $stateColors {
+			&.#{$prefix}avatar-#{$color} {
+				& > div {
+					@apply ring-#{$color};
+				}
+			}
+		}
+	}
+
+	& > div {
+		@apply block aspect-square overflow-hidden bg-base-300;
+	}
+	img {
+		@apply h-full w-full object-cover;
+	}
+	&-text {
+		& > div {
+			@apply flex justify-center items-center;
+		}
+		@each $color in $stateColors {
+			&.#{$prefix}avatar-#{$color} {
+				& > div {
+					@apply bg-#{$color} text-#{$color}-content;
+				}
+			}
+		}
+	}
+	&-online {
+		&:before {
+			content: '';
+			@apply bg-success outline-base-100 absolute z-10 block rounded-full outline outline-2;
+			width: 15%;
+			height: 15%;
+			top: 7%;
+			right: 7%;
+		}
+	}
+	&-offline {
+		&:before {
+			content: '';
+			@apply bg-base-300 outline-base-100 absolute z-10 block rounded-full outline outline-2;
+			width: 15%;
+			height: 15%;
+			top: 7%;
+			right: 7%;
+		}
+	}
+}

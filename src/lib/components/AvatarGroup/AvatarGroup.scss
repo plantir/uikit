@@ -1,0 +1,8 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}avatar-group {
+	@apply flex overflow-hidden -space-x-6;
+	:where(.#{$prefix}avatar) {
+		@apply border-base-100 overflow-hidden rounded-full border-4;
+	}
+}
