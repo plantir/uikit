@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Loading from '../Loading/Loading.svelte';
-	import El from '@plantir/uikit/utils/El.svelte';
+	import El from '../../utils/El.svelte';
 	import type {
 		Button,
 		ButtonColor,
@@ -8,6 +8,7 @@
 		ButtonSize,
 		ButtonVariant
 	} from './Button.type.ts';
+	import './Button.scss';
 	type $$Props = Button;
 	let componentName = 'button';
 	export let disabled: boolean = false;
@@ -46,26 +47,13 @@
 		natural: color == 'natural'
 	};
 </script>
-
-<!-- <svelte:element
-	this={href ? 'a' : 'button'}
-	role="button"
-	on:click
-	{href}
-	class={frameClass}
-	tabindex={disabled ? -1 : 0}
->
-</svelte:element> -->
 <El tag={href ? 'a' : 'button'} {componentName} {componentClass} {...$$restProps} on:click>
 	{#if loading}
 		<slot name="loader">
-			<Loading class="loading-xs" />
+			<Loading size="xs"/>
 		</slot>
 	{:else}
 		<slot />
 	{/if}
 </El>
 
-<style lang="scss" global>
-	@import './Button.scss';
-</style>

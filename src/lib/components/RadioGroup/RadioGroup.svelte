@@ -7,7 +7,7 @@
 
 <script lang="ts">
 	import { setContext ,createEventDispatcher} from 'svelte';
-	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
+	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
 	let componentName = 'radio-group';
 	type $$Props = RadioGroup;

@@ -8,27 +8,7 @@
 	&-wide {
 		@apply daisy-btn-wide;
 	}
-	&-active {
-		@apply daisy-btn-active;
-	}
-	&-outline {
-		@apply daisy-btn-outline;
-	}
-	&-glass {
-		@apply daisy-glass;
-	}
-	&-link {
-		@apply daisy-btn-link;
-	}
-	&-ghost {
-		@apply daisy-btn-ghost;
-	}
-	&-square {
-		@apply daisy-btn-square;
-	}
-	&-circle {
-		@apply daisy-btn-circle;
-	}
+
 	&-xs {
 		@apply daisy-btn-xs;
 	}
@@ -61,5 +41,91 @@
 	}
 	&-warning {
 		@apply daisy-btn-warning;
+	}
+	&-active {
+		@apply daisy-btn-active;
+	}
+	&-outline {
+		@apply daisy-btn-outline;
+
+		&.#{$prefix}button-primary {
+			@apply text-primary;
+			&:hover {
+				@apply text-primary-content;
+				background-color: color-mix(in oklab, var(--fallback-p, oklch(var(--p) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-p, oklch(var(--p) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-secondary {
+			@apply text-secondary;
+			&:hover {
+				@apply text-secondary-content;
+				background-color: color-mix(in oklab, var(--fallback-s, oklch(var(--s) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-s, oklch(var(--s) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-success {
+			@apply text-success;
+			&:hover {
+				@apply text-success-content;
+				background-color: color-mix(in oklab, var(--fallback-su, oklch(var(--su) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-su, oklch(var(--su) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-error {
+			@apply text-error;
+			&:hover {
+				@apply text-error-content;
+				background-color: color-mix(in oklab, var(--fallback-er, oklch(var(--er) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-er, oklch(var(--er) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-warning {
+			@apply text-warning;
+			&:hover {
+				@apply text-warning-content;
+				background-color: color-mix(in oklab, var(--fallback-wa, oklch(var(--wa) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-wa, oklch(var(--wa) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-info {
+			@apply text-info;
+			&:hover {
+				@apply text-info-content;
+				background-color: color-mix(in oklab, var(--fallback-in, oklch(var(--in) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-in, oklch(var(--in) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-accent {
+			@apply text-accent;
+			&:hover {
+				@apply text-accent-content;
+				background-color: color-mix(in oklab, var(--fallback-a, oklch(var(--a) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-a, oklch(var(--a) / 1)) 90%, black);
+			}
+		}
+		&.#{$prefix}button-natural {
+			@apply text-base-content;
+			&:hover {
+				@apply text-base-100;
+				background-color: color-mix(in oklab, var(--fallback-bc, oklch(var(--bc) / 1)) 90%, black);
+				border-color: color-mix(in oklab, var(--fallback-bc, oklch(var(--bc) / 1)) 90%, black);
+			}
+		}
+	}
+	&-glass {
+		@apply daisy-glass;
+	}
+	&-link {
+		@apply daisy-btn-link;
+	}
+	&-ghost {
+		@apply daisy-btn-ghost;
+	}
+	&-square {
+		@apply daisy-btn-square;
+	}
+	&-circle {
+		@apply daisy-btn-circle;
 	}
 }

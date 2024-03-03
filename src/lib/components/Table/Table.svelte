@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './Table.scss';
 	import type { Table, TableColor, TableSize } from './Table.type.js';
-	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
+	import { ClassMerge } from '../../utils/ClassMerge.js';
 	type $$Props = Table;
 	let componentName = 'table';
 	export let label: string | undefined = undefined;

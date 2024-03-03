@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext, onMount } from 'svelte';
 	import type { Radio, RadioColor, RadioSize } from './Radio.type.js';
-	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
+	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import type { RadioCtxType } from '../RadioGroup/RadioGroup.svelte';
 	import { writable } from 'svelte/store';
 	type $$Props = Radio;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Dialog } from './Dialog.type.js';
 	import './Dialog.scss';
-	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
+	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import Button from '../Button/Button.svelte';
 	type $$Props = Dialog;
 	let componentName = 'dialog';

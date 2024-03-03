@@ -1,0 +1,130 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}badge {
+	@apply daisy-badge;
+
+	&-xs {
+		@apply daisy-badge-xs;
+	}
+	&-sm {
+		@apply daisy-badge-sm;
+	}
+	&-md {
+		@apply daisy-badge-md;
+	}
+	&-lg {
+		@apply daisy-badge-lg;
+	}
+	&-primary {
+		@apply daisy-badge-primary;
+	}
+	&-secondary {
+		@apply daisy-badge-secondary;
+	}
+	&-accent {
+		@apply daisy-badge-accent;
+	}
+	&-success {
+		@apply daisy-badge-success;
+	}
+	&-info {
+		@apply daisy-badge-info;
+	}
+	&-error {
+		@apply daisy-badge-error;
+	}
+	&-warning {
+		@apply daisy-badge-warning;
+	}
+	&-outline {
+		@apply daisy-badge-outline;
+		&.#{$prefix}badge-primary {
+			@apply text-primary;
+		}
+		&.#{$prefix}badge-secondary {
+			@apply text-secondary;
+		}
+		&.#{$prefix}badge-success {
+			@apply text-success;
+		}
+		&.#{$prefix}badge-error {
+			@apply text-error;
+		}
+		&.#{$prefix}badge-warning {
+			@apply text-warning;
+		}
+		&.#{$prefix}badge-info {
+			@apply text-info;
+		}
+		&.#{$prefix}badge-accent {
+			@apply text-accent;
+		}
+		&.#{$prefix}badge-natural {
+			@apply text-base-content;
+		}
+	}
+	&-glass {
+		@apply daisy-glass;
+	}
+	&-dot {
+		&::before {
+			@apply w-2 h-2 rounded-full  me-1;
+			content: '';
+		}
+		&.#{$prefix}badge-primary {
+			@apply text-primary;
+			&::before {
+				@apply bg-primary;
+			}
+		}
+		&.#{$prefix}badge-secondary {
+			@apply text-secondary;
+			&::before {
+				@apply bg-secondary;
+			}
+		}
+		&.#{$prefix}badge-success {
+			@apply text-success;
+			&::before {
+				@apply bg-success;
+			}
+		}
+		&.#{$prefix}badge-error {
+			@apply text-error;
+			&::before {
+				@apply bg-error;
+			}
+		}
+		&.#{$prefix}badge-warning {
+			@apply text-warning;
+			&::before {
+				@apply bg-warning;
+			}
+		}
+		&.#{$prefix}badge-info {
+			@apply text-info;
+			&::before {
+				@apply bg-info;
+			}
+		}
+		&.#{$prefix}badge-accent {
+			@apply text-accent;
+			&::before {
+				@apply bg-accent;
+			}
+		}
+		&.#{$prefix}badge-natural {
+			@apply text-base-content;
+			&::before {
+				@apply bg-base-content;
+			}
+		}
+		border-color: transparent;
+		--tw-border-opacity: 0.5;
+		background-color: transparent;
+		color: currentColor;
+	}
+	&-ghost {
+		@apply daisy-badge-ghost;
+	}
+}

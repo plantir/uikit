@@ -1,3 +1,4 @@
+import Badge from './components/Badge/Badge.svelte';
 import Button from './components/Button/Button.svelte';
 import DatePicker from './components/DatePicker/DatePicker.svelte';
 import Dialog from './components/Dialog/Dialog.svelte';
@@ -10,6 +11,7 @@ import Switch from './components/Switch/Switch.svelte';
 import Table from './components/Table/Table.svelte';
 import TextField from './components/TextField/TextField.svelte';
 export {
+	Badge,
 	Button,
 	DatePicker,
 	Dialog,

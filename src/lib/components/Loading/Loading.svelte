@@ -1,5 +1,5 @@
 <script lang="ts">
-	import El from '@plantir/uikit/utils/El.svelte';
+	import El from '../../utils/El.svelte';
 	import type { Loading, LoadingColor, LoadingSize, LoadingType } from './Loading.types.js';
 	type $$Props = Loading;
 	let componentName = 'loading';

@@ -1,4 +1,4 @@
-import type { Base, GlobalColor, GlobalSize } from '@plantir/uikit/utils/El.types.js';
+import type { Base, GlobalColor, GlobalSize } from '../../utils/El.types.js';
 import type { HTMLInputTypeAttribute } from 'svelte/elements';
 
 export type TextFieldSize = GlobalSize;

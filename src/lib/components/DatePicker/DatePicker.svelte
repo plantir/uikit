@@ -4,7 +4,7 @@
 	import type { DatePicker, DatePickerColor, DatePickerSize } from './DatePicker.js';
 	import './DatePicker.scss';
 	import 'flatpickr/dist/flatpickr.css';
-	import { ClassMerge } from '@plantir/uikit/utils/ClassMerge.js';
+	import { ClassMerge } from '../../utils/ClassMerge.js';
 	type $$Props = DatePicker;
 	let componentName = 'date-picker';
 	const hooks = new Set([

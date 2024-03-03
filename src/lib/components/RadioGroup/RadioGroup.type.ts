@@ -1,4 +1,4 @@
-import type { Base } from '@plantir/uikit/utils/El.types.js';
+import type { Base } from '../../utils/El.types.js';
 
 export interface RadioGroup extends Base {
 	value?: any;
