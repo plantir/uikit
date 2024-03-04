@@ -1,0 +1,44 @@
+@import '../../scss/var.scss';
+.#{$prefix}checkbox-wrapper {
+	@apply inline-flex items-center gap-x-1 cursor-pointer;
+}
+.#{$prefix}checkbox {
+	@apply daisy-checkbox;
+
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-checkbox-xs;
+	}
+	&-sm {
+		@apply daisy-checkbox-sm;
+	}
+	&-md {
+		@apply daisy-checkbox-md;
+	}
+	&-lg {
+		@apply daisy-checkbox-lg;
+	}
+	&-primary {
+		@apply daisy-checkbox-primary;
+	}
+	&-secondary {
+		@apply daisy-checkbox-secondary;
+	}
+	&-accent {
+		@apply daisy-checkbox-accent;
+	}
+	&-success {
+		@apply daisy-checkbox-success;
+	}
+	&-info {
+		@apply daisy-checkbox-info;
+	}
+	&-error {
+		@apply daisy-checkbox-error;
+	}
+	&-warning {
+		@apply daisy-checkbox-warning;
+	}
+}

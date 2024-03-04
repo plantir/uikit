@@ -1,6 +1,6 @@
 @import '../../scss/var.scss';
 .#{$prefix}switch-wrapper {
-	@apply inline-flex items-center gap-x-1;
+	@apply inline-flex items-center gap-x-1 cursor-pointer;
 }
 .#{$prefix}switch {
 	@apply daisy-toggle;

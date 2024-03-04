@@ -2,6 +2,7 @@ import Avatar from './components/Avatar/Avatar.svelte';
 import AvatarGroup from './components/AvatarGroup/AvatarGroup.svelte';
 import Badge from './components/Badge/Badge.svelte';
 import Button from './components/Button/Button.svelte';
+import Checkbox from './components/Checkbox/Checkbox.svelte';
 import DatePicker from './components/DatePicker/DatePicker.svelte';
 import Dialog from './components/Dialog/Dialog.svelte';
 import Loading from './components/Loading/Loading.svelte';
@@ -17,6 +18,7 @@ export {
 	AvatarGroup,
 	Badge,
 	Button,
+	Checkbox,
 	DatePicker,
 	Dialog,
 	Loading,
