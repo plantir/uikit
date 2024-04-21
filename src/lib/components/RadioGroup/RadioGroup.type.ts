@@ -4,4 +4,5 @@ export interface RadioGroup extends Base {
 	value?: any;
 	inline?: boolean;
 	column?: boolean;
+	join?: boolean;
 }

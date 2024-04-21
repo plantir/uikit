@@ -36,10 +36,4 @@
 		<Radio button label="md" value="md" />
 		<Radio button label="lg" value="lg" />
 	</RadioGroup>
-
-	<div class="daisy-join">
-		<input class="daisy-join-item daisy-btn" type="radio" name="options" aria-label="Radio 1" />
-		<input class="daisy-join-item daisy-btn" type="radio" name="options" aria-label="Radio 2" />
-		<input class="daisy-join-item daisy-btn" type="radio" name="options" aria-label="Radio 3" />
-	</div>
 </div>
