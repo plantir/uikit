@@ -1,12 +1,6 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
-	import type {
-		TabCtxType,
-		TabItem,
-		TabItemColor,
-		TabItemSize,
-		TabItemVariant
-	} from './TabItem.type.js';
+	import type { TabCtxType, TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
 	import './TabItem.scss';
 	import { getContext } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -15,8 +9,8 @@
 	let componentName = 'tab-item';
 	export let size: TabItemSize = undefined;
 	export let color: TabItemColor = undefined;
-	export let value: string;
-	export let title: string;
+	export let value: string | undefined = undefined;
+	export let title: string | undefined = undefined;
 	const ctx = getContext<TabCtxType>('ctx') ?? {};
 
 	const selected = ctx.selected ?? writable<HTMLElement>();

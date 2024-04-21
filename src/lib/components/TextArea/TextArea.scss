@@ -1,0 +1,47 @@
+@import '../../scss/var.scss';
+.#{$prefix}textarea-wrapper {
+	@apply inline-flex flex-col  gap-y-1;
+}
+.#{$prefix}textarea {
+	@apply daisy-textarea;
+
+	&-bordered {
+		@apply daisy-textarea-bordered;
+	}
+	&-disabled {
+		@apply daisy-disabled;
+	}
+	&-xs {
+		@apply daisy-textarea-xs;
+	}
+	&-sm {
+		@apply daisy-textarea-sm;
+	}
+	&-md {
+		@apply daisy-textarea-md;
+	}
+	&-lg {
+		@apply daisy-textarea-lg;
+	}
+	&-primary {
+		@apply daisy-textarea-primary;
+	}
+	&-secondary {
+		@apply daisy-textarea-secondary;
+	}
+	&-accent {
+		@apply daisy-textarea-accent;
+	}
+	&-success {
+		@apply daisy-textarea-success;
+	}
+	&-info {
+		@apply daisy-textarea-info;
+	}
+	&-error {
+		@apply daisy-textarea-error;
+	}
+	&-warning {
+		@apply daisy-textarea-warning;
+	}
+}
