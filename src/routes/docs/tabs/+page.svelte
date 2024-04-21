@@ -21,15 +21,25 @@
 		<TabItem title="Tab 2" value="2"><div class="p-10">Tab 2</div></TabItem>
 		<TabItem title="Tab 3" value="3"><div class="p-10">Tab 3</div></TabItem>
 	</Tabs>
+	<Tabs class="mt-10" bind:selected variant="lift" size="xs">
+		<TabItem title="Tab 1 (xs)" value="1"><div class="p-10">Tab 1 (xs)</div></TabItem>
+		<TabItem title="Tab 2 (xs)" value="2"><div class="p-10">Tab 2 (xs)</div></TabItem>
+		<TabItem title="Tab 3 (xs)" value="3"><div class="p-10">Tab 3 (xs)</div></TabItem>
+	</Tabs>
+	<Tabs class="mt-10" bind:selected variant="lift" size="sm">
+		<TabItem title="Tab 1 (sm)" value="1"><div class="p-10">Tab 1 (sm)</div></TabItem>
+		<TabItem title="Tab 2 (sm)" value="2"><div class="p-10">Tab 2 (sm)</div></TabItem>
+		<TabItem title="Tab 3 (sm)" value="3"><div class="p-10">Tab 3 (sm)</div></TabItem>
+	</Tabs>
+	<Tabs class="mt-10" bind:selected variant="lift" size="md">
+		<TabItem title="Tab 1 (md)" value="1"><div class="p-10">Tab 1 (md)</div></TabItem>
+		<TabItem title="Tab 2 (md)" value="2"><div class="p-10">Tab 2 (md)</div></TabItem>
+		<TabItem title="Tab 3 (md)" value="3"><div class="p-10">Tab 3 (md)</div></TabItem>
+	</Tabs>
 
-	<div role="tablist" class="mt-10 daisy-tabs daisy-tabs-boxed">
-		<input type="radio" name="my_tabs_1" role="tab" class="daisy-tab" aria-label="Tab 1" />
-		<div role="tabpanel" class="daisy-tab-content p-10">Tab content 1</div>
-
-		<input type="radio" name="my_tabs_1" role="tab" class="daisy-tab" aria-label="Tab 2" checked />
-		<div role="tabpanel" class="daisy-tab-content p-10">Tab content 2</div>
-
-		<input type="radio" name="my_tabs_1" role="tab" class="daisy-tab" aria-label="Tab 3" />
-		<div role="tabpanel" class="daisy-tab-content p-10">Tab content 3</div>
-	</div>
+	<Tabs class="mt-10" bind:selected variant="lift" size="lg">
+		<TabItem title="Tab 1 (lg)" value="1"><div class="p-10">Tab 1 (lg)</div></TabItem>
+		<TabItem title="Tab 2 (lg)" value="2"><div class="p-10">Tab 2 (lg)</div></TabItem>
+		<TabItem title="Tab 3 (lg)" value="3"><div class="p-10">Tab 3 (lg)</div></TabItem>
+	</Tabs>
 </div>
