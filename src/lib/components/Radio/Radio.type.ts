@@ -5,4 +5,9 @@ export type RadioColor = 'natural' | GlobalColor;
 export interface Radio extends Base {
 	size?: RadioSize;
 	color?: RadioColor;
+	label?: string | undefined;
+	value?: string;
+	name?: string;
+	disabled?: boolean;
+	button?: boolean;
 }

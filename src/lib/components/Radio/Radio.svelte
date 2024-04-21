@@ -11,6 +11,7 @@
 	export let disabled: boolean = false;
 	export let size: RadioSize = undefined;
 	export let color: RadioColor = undefined;
+	export let button: boolean = false;
 
 	const ctx = getContext<RadioCtxType>('ctx') ?? {};
 	const selected = ctx.selected ?? writable();
@@ -31,14 +32,17 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		natural: color == 'natural',
+		button,
+		join: ctx.join
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 </script>
 
-<label class={wrapperClass}>
+{#if button}
 	<input
+		aria-label={label}
 		type="radio"
 		checked={$selected == value}
 		{disabled}
@@ -46,10 +50,21 @@
 		class={elClass}
 		on:change={onChange}
 	/>
-	<slot name="label">
-		{label}
-	</slot>
-</label>
+{:else}
+	<label class={wrapperClass}>
+		<input
+			type="radio"
+			checked={$selected == value}
+			{disabled}
+			{value}
+			class={elClass}
+			on:change={onChange}
+		/>
+		<slot name="label">
+			{label}
+		</slot>
+	</label>
+{/if}
 
 <style lang="scss" global>
 	@import './Radio.scss';

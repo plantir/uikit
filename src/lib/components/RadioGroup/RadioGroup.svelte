@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
 	import { writable, type Writable } from 'svelte/store';
 	export interface RadioCtxType {
+		join: boolean;
 		selected: Writable<string | number>;
 	}
 </script>
@@ -15,8 +16,10 @@
 	export let value: any = undefined;
 	export let inline: boolean = false;
 	export let column: boolean = false;
+	export let join: boolean = false;
 	if (!inline && !column) inline = true;
 	const ctx: RadioCtxType = {
+		join,
 		selected: writable()
 	};
 	let selected = ctx.selected;
@@ -34,6 +37,7 @@
 	$: elClass = ClassMerge({
 		name: componentName,
 		componentClass: {
+			join,
 			inline,
 			column
 		},

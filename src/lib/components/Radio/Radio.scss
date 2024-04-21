@@ -3,8 +3,13 @@
 	@apply inline-flex items-center gap-x-1;
 }
 .#{$prefix}radio {
-	@apply daisy-radio;
-
+	/* @apply daisy-radio; */
+	&-button {
+		@apply daisy-btn;
+	}
+	&-join {
+		@apply daisy-join-item;
+	}
 	&-disabled {
 		@apply daisy-disabled;
 	}

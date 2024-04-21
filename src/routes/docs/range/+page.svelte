@@ -18,3 +18,9 @@
 		</div>
 	</Range>
 </div>
+
+<div class="daisy-join">
+	<input class="daisy-join-item daisy-btn" type="checkbox" name="options" aria-label="Radio 1" />
+	<input class="daisy-join-item daisy-btn" type="checkbox" name="options" aria-label="Radio 2" />
+	<input class="daisy-join-item daisy-btn" type="checkbox" name="options" aria-label="Radio 3" />
+</div>
