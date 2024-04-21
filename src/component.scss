@@ -1,0 +1,18 @@
+
+.component-wrapper{
+    h1{
+        @apply text-3xl font-semibold my-5;
+    }
+    h2{
+        @apply text-3xl font-semibold my-5;
+    }
+    p{
+        @apply my-2 leading-8 text-gray-600;
+        .badge{
+            @apply text-red-600;
+        }
+    }
+    .line{
+        @apply border-b my-4;
+    }
+}

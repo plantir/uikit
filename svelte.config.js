@@ -1,7 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex } from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js';
 import preprocess from 'svelte-preprocess';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,9 +8,11 @@ const config = {
 	extensions: ['.svelte'],
 	// preprocess: vitePreprocess(),
 	preprocess: [
-		// mdsvex(mdsvexConfig),
+		vitePreprocess(),
 		preprocess({
-			postcss: true
+			scss: {
+				prependData: `@import './src/component.scss';`
+			}
 		})
 	],
 	vitePlugin: {
