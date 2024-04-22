@@ -1,12 +1,19 @@
 import type { Base, GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
 
-export type StapSize = GlobalSize;
-export type StapColor = 'natural' | GlobalColor;
-export type StapVariant = 'border' | 'lift' | 'box' | undefined;
-export interface Stap extends Base {
-	size?: StapSize;
-	color?: StapColor;
+export type StepSize = GlobalSize;
+export type StepColor = 'natural' | GlobalColor;
+export type StepVariant = 'border' | 'lift' | 'box' | undefined;
+export interface StepItem {
+	title: string;
+	value: string;
+}
+export interface Step extends Base {
+	size?: StepSize;
+	color?: StepColor;
 	active?: boolean;
-	variant?: StapVariant;
+	variant?: StepVariant;
 	selected?: undefined | string;
+	vertical?: boolean;
+	horizontal?: boolean;
+	items?: string[] | StepItem[];
 }

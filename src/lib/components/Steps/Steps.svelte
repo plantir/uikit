@@ -1,27 +1,27 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
-	import type { Step, StepColor, StepSize, StepVariant } from './Step.type.js';
+	import type { Step, StepColor, StepSize, StepVariant, StepItem } from './Steps.type.js';
 	import './Steps.scss';
-	import { setContext } from 'svelte';
-	import { writable } from 'svelte/store';
 	type $$Props = Step;
 	let componentName = 'steps';
 	export let size: StepSize = undefined;
 	export let variant: StepVariant = 'border';
 	export let vertical: boolean = false;
-	export let horizental: boolean = true;
+	export let horizontal: boolean = !vertical && true;
 	export let color: StepColor = undefined;
 	export let selected: string | undefined = undefined;
-	const ctx = {
-		selected: writable<string>(selected)
+	export let items: any[] = [];
+	const onclick = (item: StepItem) => {
+		selected = item.value;
 	};
-	setContext('ctx', ctx);
-	ctx.selected.subscribe((val) => {
-		selected = val;
-	});
+	const isActive = (item: StepItem) => {
+		let index = stepItems.findIndex((step) => step.value == item.value);
+		let selected_index = stepItems.findIndex((step) => step.value == selected);
+		return selected_index >= index;
+	};
 	$: componentClass = {
 		vertical,
-		horizental,
+		horizontal,
 		bordered: variant == 'border',
 		boxed: variant == 'box',
 		lifted: variant == 'lift',
@@ -38,8 +38,20 @@
 		warning: color == 'warning',
 		natural: color == 'natural'
 	};
+	$: stepItems = items.map((item) => {
+		return {
+			title: item.title || item,
+			value: item.value || item
+		};
+	});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps} on:click>
-	<slot />
+<El {componentClass} {componentName} {...$$restProps}>
+	{#each stepItems as item, _}
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<li on:click={() => onclick(item)} class="ui-step" class:active={isActive(item)}>
+			{item.title}
+		</li>
+	{/each}
 </El>

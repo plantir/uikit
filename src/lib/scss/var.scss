@@ -1,4 +1,14 @@
 $prefix: 'ui-' !default;
 
 $stateColors: ('primary', 'secondary', 'accent', 'success', 'info', 'error', 'warning');
+
+$rootColors: (
+	'primary': 'p',
+	'secondary': 's',
+	'accent': 'a',
+	'success': 'su',
+	'info': 'in',
+	'error': 'er',
+	'warning': 'wa'
+);
 // @import './daisyui.placeholder';

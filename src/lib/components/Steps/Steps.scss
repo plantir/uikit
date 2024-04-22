@@ -1,75 +1,9 @@
 @import '../../scss/var.scss';
 
-/* .#{$prefix}steps {
-	@apply daisy-steps;
-
-	&-vertical {
-		@apply daisy-steps-vertical;
-
-		.#{$prefix}step-item {
-			gap: 0.5rem;
-			grid-template-columns: 40px 1fr;
-			grid-template-rows: auto;
-			justify-items: start;
-			min-height: 4rem;
-		}
-	}
-	&-horizantal {
-		@apply daisy-steps-horizontal;
-		.#{$prefix}step-item {
-			grid-template-columns: auto;
-			grid-template-rows: 40px 1fr;
-			min-width: 4rem;
-			&:after,
-			&:before {
-				grid-column-start: 1;
-				grid-row-start: 1;
-				--tw-bg-opacity: 1;
-				background-color: var(--fallback-b3, oklch(var(--b3) / var(--tw-bg-opacity)));
-				--tw-text-opacity: 1;
-			}
-			&:before {
-				height: 0.5rem;
-				width: 100%;
-				--tw-translate-x: 0px;
-				--tw-translate-y: 0px;
-				content: '';
-				margin-inline-start: -100%;
-				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
-					skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
-					scaleY(var(--tw-scale-y));
-			}
-		}
-	}
-
-	.#{$prefix}step-item {
-		&:after {
-			border-radius: 9999px;
-			color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
-			content: counter(step);
-			counter-increment: step;
-			display: grid;
-			height: 2rem;
-			place-items: center;
-			place-self: center;
-			position: relative;
-			width: 2rem;
-			z-index: 1;
-		}
-	}
-} */
-/* 
 .#{$prefix}steps {
-	display: inline-grid;
-	grid-auto-flow: column;
-	overflow: hidden;
-	overflow-x: auto;
-	counter-reset: step;
-	grid-auto-columns: 1fr;
-	[data-content].#{$prefix}step-item:after {
-		content: attr(data-content);
-	}
-	.#{$prefix}step-item {
+	@apply daisy-steps;
+	.#{$prefix}step {
+		@apply daisy-step cursor-pointer;
 		display: grid;
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		grid-template-columns: auto;
@@ -77,26 +11,22 @@
 		grid-template-rows: 40px 1fr;
 		place-items: center;
 		text-align: center;
-		min-width: 4rem;
-
-		&:first-child:before {
-			content: none;
-		}
+		min-width: 4rem /* 64px */;
 		&:before {
 			top: 0px;
 			grid-column-start: 1;
 			grid-row-start: 1;
-			height: 0.5rem;
+			height: 0.5rem /* 8px */;
 			width: 100%;
 			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
 				skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
 				scaleY(var(--tw-scale-y));
 			--tw-bg-opacity: 1;
-			background-color: hsl(var(--b3) / var(--tw-bg-opacity));
+			background-color: var(--fallback-b3, oklch(var(--b3) / var(--tw-bg-opacity)));
 			--tw-text-opacity: 1;
-			color: hsl(var(--bc) / var(--tw-text-opacity));
+			color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
 			content: '';
-			margin-left: -100%;
+			margin-inline-start: -100%;
 		}
 		&:after {
 			content: counter(step);
@@ -106,15 +36,100 @@
 			grid-column-start: 1;
 			grid-row-start: 1;
 			display: grid;
-			height: 2rem;
-			width: 2rem;
+			height: 2rem /* 32px */;
+			width: 2rem /* 32px */;
 			place-items: center;
 			place-self: center;
 			border-radius: 9999px;
 			--tw-bg-opacity: 1;
-			background-color: hsl(var(--b3) / var(--tw-bg-opacity));
+			background-color: var(--fallback-b3, oklch(var(--b3) / var(--tw-bg-opacity)));
 			--tw-text-opacity: 1;
-			color: hsl(var(--bc) / var(--tw-text-opacity));
+			color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
+		}
+		&:first-child:before {
+			content: none;
+		}
+		&[data-content]:after {
+			content: attr(data-content);
+		}
+		&.active {
+			@apply daisy-step-primary;
 		}
 	}
-} */
+	&-vertical {
+		@apply daisy-steps-vertical;
+
+		.#{$prefix}step {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-rows: repeat(1, minmax(0, 1fr));
+			gap: 0.5rem /* 8px */;
+			grid-template-columns: 40px 1fr;
+			grid-template-rows: auto;
+			min-height: 4rem /* 64px */;
+			justify-items: start;
+			&:before {
+				height: 100%;
+				width: 0.5rem /* 8px */;
+				--tw-translate-x: -50%;
+				--tw-translate-y: -50%;
+				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+					skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+					scaleY(var(--tw-scale-y));
+				margin-inline-start: 50%;
+			}
+		}
+	}
+	&-horizantal {
+		@apply daisy-steps-horizontal;
+		.#{$prefix}step-item {
+			display: grid;
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			grid-template-rows: repeat(2, minmax(0, 1fr));
+			place-items: center;
+			text-align: center;
+			grid-template-rows: 40px 1fr;
+			grid-template-columns: auto;
+			min-width: 4rem /* 64px */;
+			&:before {
+				height: 0.5rem /* 8px */;
+				width: 100%;
+				--tw-translate-x: 0px;
+				--tw-translate-y: 0px;
+				transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+					skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+					scaleY(var(--tw-scale-y));
+				content: '';
+				margin-inline-start: -100%;
+			}
+		}
+	}
+
+	@each $key, $val in $rootColors {
+		&-#{$key} {
+			.#{$prefix}step.active {
+				&:before,
+				&:after {
+					--tw-bg-opacity: 1;
+					background-color: var(--fallback-#{$val}, oklch(var(--#{$val}) / var(--tw-bg-opacity)));
+					--tw-text-opacity: 1;
+					color: var(--fallback-#{$val}c, oklch(var(--#{$val}c) / var(--tw-text-opacity)));
+				}
+				&:before,
+				&:after {
+					--tw-bg-opacity: 1;
+					background-color: var(--fallback-#{$val}, oklch(var(--#{$val}) / var(--tw-bg-opacity)));
+					--tw-text-opacity: 1;
+					color: var(--fallback-#{$val}c, oklch(var(--#{$val}c) / var(--tw-text-opacity)));
+				}
+				&:before,
+				&:after {
+					--tw-bg-opacity: 1;
+					background-color: var(--fallback-#{$val}, oklch(var(--#{$val}) / var(--tw-bg-opacity)));
+					--tw-text-opacity: 1;
+					color: var(--fallback-#{$val}c, oklch(var(--#{$val}c) / var(--tw-text-opacity)));
+				}
+			}
+		}
+	}
+}
