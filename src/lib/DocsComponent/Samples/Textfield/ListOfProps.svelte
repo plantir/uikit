@@ -1,5 +1,6 @@
 <script>
-	import PropTable from '../../ComponentCode/PropTable.svelte';
+	import PropTable from '$lib/DocsComponent/ComponentCode/PropTable.svelte';
+
 	let items = [
 		{
 			name: 'color',

@@ -13,6 +13,10 @@
 			value: 'component/textfield'
 		},
 		{
+			title: 'Textarea',
+			value: 'component/textarea'
+		},
+		{
 			title: 'Dialog',
 			value: 'component/dialog'
 		}

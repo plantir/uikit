@@ -1,6 +1,5 @@
 <script>
 	import PropTable from "$lib/DocsComponent/ComponentCode/PropTable.svelte";
-
 	let items = [
 		{
 			name: 'color',
@@ -8,13 +7,13 @@
 			default: 'undefined'
 		},
 		{
-			name: 'shape',
-			type: `'circle' | 'square'`,
+			name: 'placeholder',
+			type: `string`,
 			default: 'undefined'
 		},
 		{
-			name: 'variant',
-			type: `'ghost' | 'link' | 'outline' | 'glass'`,
+			name: 'inputmode',
+			type: `'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'`,
 			default: 'undefined'
 		},
 		{
@@ -23,27 +22,17 @@
 			default: 'md'
 		},
 		{
-			name: 'block',
-			type: `boolean`,
-			default: 'false'
+			name: 'value',
+			type: `string`,
+			default: 'undefined'
 		},
 		{
-			name: 'active',
+			name: 'bordered',
 			type: `boolean`,
-			default: 'false'
+			default: 'true'
 		},
 		{
-			name: 'wide',
-			type: `boolean`,
-			default: 'false'
-		},
-		{
-			name: 'loading',
-			type: `boolean`,
-			default: 'false'
-		},
-		{
-			name: 'href',
+			name: 'label',
 			type: `string`,
 			default: 'undefined'
 		},
