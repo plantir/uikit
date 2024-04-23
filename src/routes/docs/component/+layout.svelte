@@ -2,11 +2,15 @@
 	import type { accordionItem } from '../../../type/index.js';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import Accordion from '$lib/components/Components/Accordion.svelte';
+	import Accordion from '$lib/DocsComponent/Accordion.svelte';
 	let componentItems: accordionItem[] = [
 		{
 			title: 'Button',
 			value: 'component/button'
+		},
+		{
+			title: 'Text field',
+			value: 'component/textfield'
 		},
 		{
 			title: 'Dialog',

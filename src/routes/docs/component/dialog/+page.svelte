@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Title from "$lib/components/Components/Doc/Title.svelte";
-	import ButtonSimpleExample from "$lib/components/Components/Samples/Button/SimpleExample.svelte";
+	import Title from "$lib/DocsComponent/Doc/Title.svelte";
+	import ButtonSimpleExample from "$lib/DocsComponent/Samples/Button/SimpleExample.svelte";
 
 
 </script>

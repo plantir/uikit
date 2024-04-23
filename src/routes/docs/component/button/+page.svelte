@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Title from '$lib/components/Components/Doc/Title.svelte';
-	import DefaultButtonExample from '$lib/components/Components/Samples/Button/DefaultButtonExample.svelte';
-	import ButtonSimpleExample from '$lib/components/Components/Samples/Button/SimpleExample.svelte';
-	import SizeButtonExample from '$lib/components/Components/Samples/Button/SizeButtonExample.svelte';
-	import VariantButtonExample from '$lib/components/Components/Samples/Button/VariantButtonExample.svelte';
-	import ShapeButtonExample from '$lib/components/Components/Samples/Button/ShapeButtonExample.svelte';
-	import LinkButtonExample from '$lib/components/Components/Samples/Button/LinkButtonExample.svelte';
-	import DisabledButtonExample from '$lib/components/Components/Samples/Button/DisabledButtonExample.svelte';
-	import LoadingButtonExample from '$lib/components/Components/Samples/Button/LoadingButtonExample.svelte';
-	import WideButtonExample from '$lib/components/Components/Samples/Button/WideButtonExample.svelte';
-	import ActiveButtonExample from '$lib/components/Components/Samples/Button/ActiveButtonExample.svelte';
-	import BlockButtonExample from '$lib/components/Components/Samples/Button/BlockButtonExample.svelte';
-	import ListOfProps from '$lib/components/Components/Samples/Button/ListOfProps.svelte';
+	import Title from '$lib/DocsComponent/Doc/Title.svelte';
+	import DefaultButtonExample from '$lib/DocsComponent/Samples/Button/DefaultButtonExample.svelte';
+	import ButtonSimpleExample from '$lib/DocsComponent/Samples/Button/SimpleExample.svelte';
+	import SizeButtonExample from '$lib/DocsComponent/Samples/Button/SizeButtonExample.svelte';
+	import VariantButtonExample from '$lib/DocsComponent/Samples/Button/VariantButtonExample.svelte';
+	import ShapeButtonExample from '$lib/DocsComponent/Samples/Button/ShapeButtonExample.svelte';
+	import LinkButtonExample from '$lib/DocsComponent/Samples/Button/LinkButtonExample.svelte';
+	import DisabledButtonExample from '$lib/DocsComponent/Samples/Button/DisabledButtonExample.svelte';
+	import LoadingButtonExample from '$lib/DocsComponent/Samples/Button/LoadingButtonExample.svelte';
+	import WideButtonExample from '$lib/DocsComponent/Samples/Button/WideButtonExample.svelte';
+	import ActiveButtonExample from '$lib/DocsComponent/Samples/Button/ActiveButtonExample.svelte';
+	import BlockButtonExample from '$lib/DocsComponent/Samples/Button/BlockButtonExample.svelte';
+	import ListOfProps from '$lib/DocsComponent/Samples/Button/ListOfProps.svelte';
 </script>
 
 <div class="component-wrapper">
