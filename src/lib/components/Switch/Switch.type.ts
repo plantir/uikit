@@ -4,7 +4,7 @@ export type SwitchSize = GlobalSize;
 export type SwitchColor = 'natural' | GlobalColor;
 export interface Switch extends Base {
 	label?: string | undefined;
-	value?: string;
+	value?: boolean;
 	name?: string;
 	size?: SwitchSize;
 	color?: SwitchColor;
