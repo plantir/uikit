@@ -9,12 +9,20 @@
 			value: 'component/button'
 		},
 		{
-			title: 'Text field',
-			value: 'component/textfield'
+			title: 'Tabs',
+			value: 'component/tabs'
+		},
+		{
+			title: 'Tab Item',
+			value: 'component/tab-item'
 		},
 		{
 			title: 'Textarea',
 			value: 'component/textarea'
+		},
+		{
+			title: 'Text field',
+			value: 'component/textfield'
 		},
 		{
 			title: 'Dialog',
