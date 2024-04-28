@@ -27,13 +27,13 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextArea" props={['inputmode="none"', 'label="none"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="tel"', 'label="tel"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="url"', 'label="url"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="email"', 'label="email"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="numeric"', 'label="numeric"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="decimal"', 'label="decimal"']}></TagCode><br />
-		<TagCode name="TextArea" props={['inputmode="search"', 'label="search"']}></TagCode><br />
+		<TagCode name="TextArea" props={['inputmode="none"', 'label="none"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="tel"', 'label="tel"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="url"', 'label="url"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="email"', 'label="email"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="numeric"', 'label="numeric"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="decimal"', 'label="decimal"']}></TagCode>
+		<TagCode name="TextArea" props={['inputmode="search"', 'label="search"']}></TagCode>
 		<TagCode name="TextArea" props={['inputmode="text"', 'label="default-text"']}></TagCode>
 	</ShowCode>
 {:else}

@@ -26,9 +26,9 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="Button" props={['size="lg"']}>lg</TagCode><br />
-		<TagCode name="Button" props={['size="md"']}>md</TagCode><br />
-		<TagCode name="Button" props={['size="sm"']}>sm</TagCode><br />
+		<TagCode name="Button" props={['size="lg"']}>lg</TagCode>
+		<TagCode name="Button" props={['size="md"']}>md</TagCode>
+		<TagCode name="Button" props={['size="sm"']}>sm</TagCode>
 		<TagCode name="Button" props={['size="xs"']}>xs</TagCode>
 	</ShowCode>
 {:else}

@@ -25,7 +25,7 @@
 		</ShowCode>
 	{:else if activeTab == 'html'}
 		<ShowCode language="svelte">
-			<TagCode name="Button" props={['active']}>active</TagCode><br />
+			<TagCode name="Button" props={['active']}>active</TagCode>
 		</ShowCode>
 	{:else}
 		<SimpleCode>

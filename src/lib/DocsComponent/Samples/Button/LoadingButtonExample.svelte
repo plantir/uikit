@@ -41,7 +41,7 @@
 	<ShowCode language="svelte">
 		<TagCode name="Button" props={['loading={loading_button}', 'on:click={click}']}
 			>click me</TagCode
-		><br />
+		>
 	</ShowCode>
 {:else}
 	<SimpleCode>

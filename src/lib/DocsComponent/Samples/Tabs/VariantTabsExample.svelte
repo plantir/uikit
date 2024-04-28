@@ -25,44 +25,25 @@
 	</TabItem>
 	<TabItem title="Html" value="html">
 		<ShowCode language="svelte">
-			<TagCode name="Tabs" props={['selected="part1"', 'variant="box"']}
-				><br />
-				<TagCode name="TabItem" props={['value="part1"', 'title="box"']}>
-					<br />
-					content in part 1
-					<br />
-				</TagCode><br />
-				<TagCode name="TabItem" props={['value="part2"', 'title="box"']}>
-					<br />
-					content in part 2
-					<br />
-				</TagCode><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'variant="box"']}>
+				<TagCode name="TabItem" props={['value="part1"', 'title="box"']}>content in part 1</TagCode>
+				<TagCode name="TabItem" props={['value="part2"', 'title="box"']}>content in part 2</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"', 'variant="lift"']}
-				><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'variant="lift"']}>
 				<TagCode name="TabItem" props={['value="part1"', 'title="lift"']}>
-					<br />
 					content in part 1
-					<br />
-				</TagCode><br />
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part2"', 'title="lift"']}>
-					<br />
 					content in part 2
-					<br />
-				</TagCode><br />
+				</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"', 'variant="border"']}
-				><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'variant="border"']}>
 				<TagCode name="TabItem" props={['value="part1"', 'title="border"']}>
-					<br />
 					content in part 1
-					<br />
-				</TagCode><br />
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part2"', 'title="border"']}>
-					<br />
 					content in part 2
-					<br />
-				</TagCode><br />
+				</TagCode>
 			</TagCode>
 		</ShowCode>
 	</TabItem>

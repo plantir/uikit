@@ -27,9 +27,9 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="Button" props={['variant="glass"']}>glass</TagCode><br />
-		<TagCode name="Button" props={['variant="ghost"']}>ghost</TagCode><br />
-		<TagCode name="Button" props={['variant="link"']}>link</TagCode><br />
+		<TagCode name="Button" props={['variant="glass"']}>glass</TagCode>
+		<TagCode name="Button" props={['variant="ghost"']}>ghost</TagCode>
+		<TagCode name="Button" props={['variant="link"']}>link</TagCode>
 		<TagCode name="Button" props={['variant="outline"']}>outline</TagCode>
 	</ShowCode>
 {:else}

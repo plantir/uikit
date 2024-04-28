@@ -29,108 +29,108 @@
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="primary']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="primary"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="primary"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="secondary']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="secondary"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="secondary"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="accent']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="accent"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="accent"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="error']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="error"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="error"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="info']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="info"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="info"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="natural']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="natural"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="natural"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="success']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="success"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="success"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"', 'color="warning']}
-			><br />
+			>
 			<TagCode name="TabItem" props={['value="part1"', 'title="warning"']}>
-				<br />
+				
 				content in part 1
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="warning"']}>
-				<br />
+				
 				content in part 2
-				<br />
-			</TagCode><br />
+				
+			</TagCode>
 		</TagCode>
 	</ShowCode>
 {:else}

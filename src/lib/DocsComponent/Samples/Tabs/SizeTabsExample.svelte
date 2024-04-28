@@ -25,70 +25,29 @@
 	</TabItem>
 	<TabItem title="Html" value="html">
 		<ShowCode language="svelte">
-			<TagCode name="Tabs" props={['selected="part1"', 'size="xs"']}
-				><br />
-				<TagCode name="TabItem" props={['value="part1"', 'title="xs"']}>
-					<br />
-					content in part 1
-					<br />
-				</TagCode><br />
-				<TagCode name="TabItem" props={['value="part2"', 'title="xs"']}>
-					<br />
-					content in part 2
-					<br />
-				</TagCode><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'size="xs"']}>
+				<TagCode name="TabItem" props={['value="part1"', 'title="xs"']}>content in part 1</TagCode>
+				<TagCode name="TabItem" props={['value="part2"', 'title="xs"']}>content in part 2</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"', 'size="sm"']}
-				><br />
-				<TagCode name="TabItem" props={['value="part1"', 'title="sm"']}>
-					<br />
-					content in part 1
-					<br />
-				</TagCode><br />
-				<TagCode name="TabItem" props={['value="part2"', 'title="sm"']}>
-					<br />
-					content in part 2
-					<br />
-				</TagCode><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'size="sm"']}>
+				<TagCode name="TabItem" props={['value="part1"', 'title="sm"']}>content in part 1</TagCode>
+				<TagCode name="TabItem" props={['value="part2"', 'title="sm"']}>content in part 2</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"', 'size="md"']}
-				><br />
-				<TagCode name="TabItem" props={['value="part1"', 'title="md"']}>
-					<br />
-					content in part 1
-					<br />
-				</TagCode><br />
-				<TagCode name="TabItem" props={['value="part2"', 'title="md"']}>
-					<br />
-					content in part 2
-					<br />
-				</TagCode><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'size="md"']}>
+				<TagCode name="TabItem" props={['value="part1"', 'title="md"']}>content in part 1</TagCode>
+				<TagCode name="TabItem" props={['value="part2"', 'title="md"']}>content in part 2</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"', 'size="lg"']}
-				><br />
-				<TagCode name="TabItem" props={['value="part1"', 'title="lg"']}>
-					<br />
-					content in part 1
-					<br />
-				</TagCode><br />
-				<TagCode name="TabItem" props={['value="part2"', 'title="lg"']}>
-					<br />
-					content in part 2
-					<br />
-				</TagCode><br />
+			<TagCode name="Tabs" props={['selected="part1"', 'size="lg"']}>
+				<TagCode name="TabItem" props={['value="part1"', 'title="lg"']}>content in part 1</TagCode>
+				<TagCode name="TabItem" props={['value="part2"', 'title="lg"']}>content in part 2</TagCode>
 			</TagCode>
-			<TagCode name="Tabs" props={['selected="part1"']}
-				><br />
+			<TagCode name="Tabs" props={['selected="part1"']}>
 				<TagCode name="TabItem" props={['value="part1"', 'title="default"']}>
-					<br />
 					content in part 1
-					<br />
-				</TagCode><br />
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part2"', 'title="default"']}>
-					<br />
 					content in part 2
-					<br />
-				</TagCode><br />
+				</TagCode>
 			</TagCode>
 		</ShowCode>
 	</TabItem>

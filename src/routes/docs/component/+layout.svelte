@@ -9,12 +9,12 @@
 			value: 'component/button'
 		},
 		{
-			title: 'Tabs',
-			value: 'component/tabs'
+			title: 'Table',
+			value: 'component/table'
 		},
 		{
-			title: 'Tab Item',
-			value: 'component/tab-item'
+			title: 'Tabs',
+			value: 'component/tabs'
 		},
 		{
 			title: 'Textarea',

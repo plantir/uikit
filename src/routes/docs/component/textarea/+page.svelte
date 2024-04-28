@@ -82,7 +82,7 @@
 	</p>
 	<SizeTextareaExample />
 	<Title id="textarea-props" title="Props" />
-	<p>this is the list of the props that button can have.</p>
+	<p>this is the list of the props that textarea can have.</p>
 	<ListOfProps />
 	<div class="py-10"></div>
 </div>

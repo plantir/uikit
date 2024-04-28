@@ -33,7 +33,7 @@
 		<TagCode
 			name="TextField"
 			props={['{value}', 'label="Name"', 'placeholder="please fill this input"']}
-		></TagCode><br />
+		></TagCode>
 		<TagCode
 			name="TextField"
 			props={['value={parentName}', 'label="Parent Name"', 'placeholder="please fill this input"']}

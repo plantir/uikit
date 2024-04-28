@@ -26,7 +26,7 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextField" props={['disabled', 'label="Disabled"']}></TagCode><br />
+		<TagCode name="TextField" props={['disabled', 'label="Disabled"']}></TagCode>
 		<TagCode name="TextField" props={['label="Not Disabled"']}></TagCode>
 	</ShowCode>
 {:else}

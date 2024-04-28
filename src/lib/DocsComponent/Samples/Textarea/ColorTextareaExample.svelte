@@ -27,13 +27,13 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextArea" props={['color="primary"', 'label="primary"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="secondary"', 'label="secondary"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="accent"', 'label="accent"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="error"', 'label="error"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="info"', 'label="info"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="success"', 'label="success"']}></TagCode><br />
-		<TagCode name="TextArea" props={['color="warning"', 'label="warning"']}></TagCode><br />
+		<TagCode name="TextArea" props={['color="primary"', 'label="primary"']}></TagCode>
+		<TagCode name="TextArea" props={['color="secondary"', 'label="secondary"']}></TagCode>
+		<TagCode name="TextArea" props={['color="accent"', 'label="accent"']}></TagCode>
+		<TagCode name="TextArea" props={['color="error"', 'label="error"']}></TagCode>
+		<TagCode name="TextArea" props={['color="info"', 'label="info"']}></TagCode>
+		<TagCode name="TextArea" props={['color="success"', 'label="success"']}></TagCode>
+		<TagCode name="TextArea" props={['color="warning"', 'label="warning"']}></TagCode>
 		<TagCode name="TextArea" props={['label="default"']}></TagCode>
 	</ShowCode>
 {:else}

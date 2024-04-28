@@ -27,13 +27,13 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextField" props={['color="primary"', 'label="primary"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="secondary"', 'label="secondary"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="accent"', 'label="accent"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="error"', 'label="error"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="info"', 'label="info"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="success"', 'label="success"']}></TagCode><br />
-		<TagCode name="TextField" props={['color="warning"', 'label="warning"']}></TagCode><br />
+		<TagCode name="TextField" props={['color="primary"', 'label="primary"']}></TagCode>
+		<TagCode name="TextField" props={['color="secondary"', 'label="secondary"']}></TagCode>
+		<TagCode name="TextField" props={['color="accent"', 'label="accent"']}></TagCode>
+		<TagCode name="TextField" props={['color="error"', 'label="error"']}></TagCode>
+		<TagCode name="TextField" props={['color="info"', 'label="info"']}></TagCode>
+		<TagCode name="TextField" props={['color="success"', 'label="success"']}></TagCode>
+		<TagCode name="TextField" props={['color="warning"', 'label="warning"']}></TagCode>
 		<TagCode name="TextField" props={['label="default"']}></TagCode>
 	</ShowCode>
 {:else}

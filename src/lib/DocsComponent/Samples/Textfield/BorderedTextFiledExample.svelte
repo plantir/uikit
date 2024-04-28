@@ -26,7 +26,7 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextField" props={['bordered', 'label="Bordered"']}></TagCode><br />
+		<TagCode name="TextField" props={['bordered', 'label="Bordered"']}></TagCode>
 		<TagCode name="TextField" props={['bordered={false}', 'label="Not Bordered"']}></TagCode>
 	</ShowCode>
 {:else}

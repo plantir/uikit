@@ -30,7 +30,7 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextField" props={['{value}', 'label="Name"']}></TagCode><br />
+		<TagCode name="TextField" props={['{value}', 'label="Name"']}></TagCode>
 		<TagCode name="TextField" props={['value={parentName}', 'label="Parent Name"']}></TagCode>
 	</ShowCode>
 {:else}

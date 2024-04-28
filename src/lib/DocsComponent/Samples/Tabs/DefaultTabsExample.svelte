@@ -24,29 +24,29 @@
 	<TabItem title="Html" value="html">
 		<ShowCode language="svelte">
 			<TagCode name="Tabs" props={['selected="part1"']}
-				><br />
+				>
 				<TagCode name="TabItem" props={['value="part1"', 'title="Part1"']}>
-					<br />
+					
 					content in part 1
-					<br />
-				</TagCode><br />
+					
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part2"', 'title="Part2"']}>
-					<br />
+					
 					content in part 2
-					<br />
-				</TagCode><br />
+					
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part3"', 'title="Part3"']}>
-					<br />
+					
 					content in part 3
-					<br />
-				</TagCode><br />
+					
+				</TagCode>
 				<TagCode name="TabItem" props={['value="part4"']}>
-					<br />
+					
 					<TagCode name="span" props={['slot="title']}>Part4</TagCode>
-					<br />
+					
 					content in part 4
-					<br />
-				</TagCode><br />
+					
+				</TagCode>
 			</TagCode>
 		</ShowCode>
 	</TabItem>

@@ -27,10 +27,10 @@
 	</ShowCode>
 {:else if activeTab == 'html'}
 	<ShowCode language="svelte">
-		<TagCode name="TextField" props={['size="lg"', 'label="lg"']}></TagCode><br />
-		<TagCode name="TextField" props={['size="md"', 'label="md"']}></TagCode><br />
-		<TagCode name="TextField" props={['size="sm"', 'label="sm"']}></TagCode><br />
-		<TagCode name="TextField" props={['size="xs"', 'label="xs"']}></TagCode><br />
+		<TagCode name="TextField" props={['size="lg"', 'label="lg"']}></TagCode>
+		<TagCode name="TextField" props={['size="md"', 'label="md"']}></TagCode>
+		<TagCode name="TextField" props={['size="sm"', 'label="sm"']}></TagCode>
+		<TagCode name="TextField" props={['size="xs"', 'label="xs"']}></TagCode>
 	</ShowCode>
 {:else}
 	<SimpleCode>
