@@ -10,6 +10,7 @@ export { default as Loading } from './components/Loading/Loading.svelte';
 export { default as Pagination } from './components/Pagination/Pagination.svelte';
 export { default as Radio } from './components/Radio/Radio.svelte';
 export { default as RadioGroup } from './components/RadioGroup/RadioGroup.svelte';
+export { default as Range } from './components/Range/Range.svelte';
 export { default as Select } from './components/Select/Select.svelte';
 export { default as Switch } from './components/Switch/Switch.svelte';
 export { default as Swiper } from './components/Swiper/Swiper.svelte';
