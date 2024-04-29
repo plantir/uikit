@@ -1,7 +1,7 @@
 @import '../../scss/var.scss';
 
 .#{$prefix}drawer {
-	@apply fixed;
+	@apply fixed z-50;
 	&-left {
 		.#{$prefix}drawer-content {
 			@apply inset-y-0 start-0;

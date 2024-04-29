@@ -13,7 +13,7 @@
 	let value = '';
 	let open = false;
 	function openDrawer() {
-		open = true;
+		open = !open;
 	}
 </script>
 
@@ -22,24 +22,31 @@
 		<ShowCode language="javascript">
 			<pre>
 			<ScriptCode>
-				import Range from '{$importDocumentSrc}/Range.svelte';
-				let value = '';
+				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
+				let open = false;
+				function openDrawer() {'{'}
+					open = !open;
+				{'}'};
 			</ScriptCode>
 			</pre>
 		</ShowCode>
 	</TabItem>
 	<TabItem title="Html" value="html">
 		<ShowCode language="svelte">
-			<TagCode name="Range" close_self props={['label="Default Range"', 'bind:value']}></TagCode>
-			<TagCode name="div">
-				number is : {'{'}value{'}'}
+			<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
+			<TagCode name="Drawer" props={['bind:open']}>
+				<TagCode name="div">content of inside Drawer</TagCode>
+				<TagCode one_line name="Button" props={['on:click={openDrawer}']}>Close</TagCode>
 			</TagCode>
 		</ShowCode>
 	</TabItem>
 	<TabItem title="Simple" value="simple">
 		<SimpleCode>
 			<Button on:click={openDrawer}>Open Drawer</Button>
-			<Drawer bind:open />
+			<Drawer bind:open clickOutside={false}>
+				<div>content of inside Drawer</div>
+				<Button on:click={openDrawer}>Close</Button>
+			</Drawer>
 		</SimpleCode>
 	</TabItem>
 </Tabs>
