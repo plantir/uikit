@@ -51,7 +51,7 @@
 	</p>
 	<DisableExample />
 	<Title id="tabs-props" title="Props" />
-	<p>this is the list of the props that Table can have.</p>
+	<p>this is the list of the props that Switch can have.</p>
 	<ListOfProps />
 	<div class="py-10"></div>
 </div>

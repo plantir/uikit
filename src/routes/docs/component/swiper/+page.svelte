@@ -108,7 +108,7 @@
 	<p><span class="badge">You must add css to your custom element to show perfectly</span></p>
 	<PaginationExample />
 	<Title id="tabs-props" title="Props" />
-	<p>this is the list of the props that Table can have.</p>
+	<p>this is the list of the props that Swiper can have.</p>
 	<ListOfProps />
 	<div class="py-10"></div>
 </div>

@@ -47,7 +47,7 @@
 			<Button {size} {color} on:click={(e) => changePage(1)} class="daisy-join-item ">1</Button>
 		{/if}
 		{#if page > 3}
-			<Button {size} {color}>...</Button>
+			<Button {size} {color} class="daisy-join-item ">...</Button>
 		{/if}
 		{#if page > 1}
 			<Button
