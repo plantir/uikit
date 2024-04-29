@@ -10,6 +10,11 @@
 	}
 	&-disabled {
 		@apply daisy-btn-disabled;
+		--tw-border-opacity: 0;
+		background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
+		--tw-bg-opacity: 0.2;
+		color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
+		--tw-text-opacity: 0.2;
 	}
 	&-primary {
 		@apply daisy-btn-primary;

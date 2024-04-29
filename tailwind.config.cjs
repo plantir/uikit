@@ -4,7 +4,17 @@ module.exports = {
 	safelist: [],
 	plugins: [require('daisyui')],
 	daisyui: {
-		themes: ['light', 'luxury', 'aqua', 'synthwave'],
+		themes: [
+			'light',
+			'luxury',
+			'aqua',
+			'synthwave',
+			{
+				polaris: {
+					'base-200': '#fff'
+				}
+			}
+		],
 		prefix: 'daisy-'
 	}
 };

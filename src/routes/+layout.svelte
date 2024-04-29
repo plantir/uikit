@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import '../lib/scss/themes/polaris.scss';
 </script>
 
 <svelte:head>
