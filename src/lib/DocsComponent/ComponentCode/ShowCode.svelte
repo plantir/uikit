@@ -21,11 +21,13 @@
 </script>
 
 {#if loading}
-	<div class="w-full h-[200px] bg-gray-200  rounded-xl rounded-tl-none"></div>
+	<div class="w-full h-[200px] bg-gray-200 rounded-xl rounded-tl-none"></div>
 {/if}
-<div class:hidden={loading}>
-	<div class="bg-gray-200 p-4 rounded-xl relative rounded-tl-none min-h-[200px]">
-		<Button on:click={copyCode} class="absolute top-4 right-4">copy</Button>
+<div class:hidden={loading} class="relative">
+	<Button on:click={copyCode} class="absolute top-4 right-6 z-10">copy</Button>
+	<div
+		class="bg-gray-200 p-4 rounded-xl relative rounded-tl-none min-h-[200px] max-h-[350px] overflow-y-auto"
+	>
 		<code bind:this={code} class="language-{language}">
 			<slot />
 		</code>

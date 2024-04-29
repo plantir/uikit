@@ -2,6 +2,7 @@
 	export let name = '';
 	export let props: any = [];
 	export let one_line = false;
+	export let close_self = false;
 
 	function propAttr(prop: any) {
 		const string = prop.split('=');
@@ -22,14 +23,17 @@
 			<span></span>
 		{/if}
 	{/each}
-	<span>&gt;</span>
-	{#if one_line}
-		<slot />
-	{:else}
-		<br />
-		<div class="pl-4">
+	<span>{close_self ? '/' : ''}&gt;</span>
+	{#if !close_self}
+		{#if one_line}
 			<slot />
-		</div>
+		{:else}
+			<br />
+			<div class="pl-4">
+				<slot />
+			</div>
+		{/if}
+		&lt;/<span class="text-green-600">{name}</span>&gt;
 	{/if}
-	&lt;/<span class="text-green-600">{name}</span>&gt;
-</span><br />
+</span>
+<br />
