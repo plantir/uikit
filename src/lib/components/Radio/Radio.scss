@@ -3,9 +3,12 @@
 	@apply inline-flex items-center gap-x-1;
 }
 .#{$prefix}radio {
-	/* @apply daisy-radio; */
+	@apply daisy-radio;
+
 	&-button {
 		@apply daisy-btn;
+		width: inherit !important;
+		box-shadow: none !important;
 	}
 	&-join {
 		@apply daisy-join-item;

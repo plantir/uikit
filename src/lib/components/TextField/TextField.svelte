@@ -35,11 +35,14 @@
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });
+	$: labelClass = ClassMerge({ name: `${componentName}-label` });
 </script>
 
 <label class={wrapperClass}>
 	<slot name="label">
-		{label}
+		<span class={labelClass}>
+			{label}
+		</span>
 	</slot>
 	<input {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
 </label>

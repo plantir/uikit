@@ -8,20 +8,24 @@
 <Radio label="Apply to all" />
 
 <div>
-	<Radio color="primary" label="primary" />
-	<Radio color="secondary" label="secondary" />
-	<Radio color="accent" label="accent" />
-	<Radio color="success" label="success" />
-	<Radio color="warning" label="warning" />
-	<Radio color="info" label="info" />
-	<Radio color="error" label="error" />
-	<Radio disabled color="error" label="disabled" />
+	<RadioGroup bind:value>
+		<Radio color="primary" label="primary" value="primary" />
+		<Radio color="secondary" label="secondary" value="secondary" />
+		<Radio color="accent" label="accent" value="accent" />
+		<Radio color="success" label="success" value="success" />
+		<Radio color="warning" label="warning" value="warning" />
+		<Radio color="info" label="info" value="info" />
+		<Radio color="error" label="error" value="error" />
+		<Radio disabled color="error" label="disabled" value="disabled" />
+	</RadioGroup>
 </div>
 <div>
-	<Radio size="xs" label="xs" />
-	<Radio size="sm" label="sm" />
-	<Radio size="md" label="md" />
-	<Radio size="lg" label="lg" />
+	<RadioGroup bind:value>
+		<Radio size="xs" label="xs" value="xs" />
+		<Radio size="sm" label="sm" value="sm" />
+		<Radio size="md" label="md" value="md" />
+		<Radio size="lg" label="lg" value="lg" />
+	</RadioGroup>
 </div>
 <div>
 	<RadioGroup bind:value>
