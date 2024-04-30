@@ -14,9 +14,9 @@
 		<tbody>
 			{#each items as item}
 				<tr>
-					<td>{item.name}</td>
-					<td>{item.type}</td>
-					<td>{item.default}</td>
+					<td class="w-1/5">{item.name}</td>
+					<td class="w-3/5">{item.type}</td>
+					<td class="w-1/5">{item.default}</td>
 				</tr>
 			{/each}
 		</tbody>
