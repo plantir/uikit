@@ -169,16 +169,16 @@
 </div>
 <div>
 	<AvatarGroup>
-		<Avatar size="sm" shape="circle" color="primary">
+		<Avatar shape="circle" color="primary">
 			<img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
 		</Avatar>
-		<Avatar size="sm" shape="circle" color="secondary">
+		<Avatar shape="circle" color="secondary">
 			<img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
 		</Avatar>
-		<Avatar size="sm" shape="circle" color="accent">
+		<Avatar shape="circle" color="accent">
 			<img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
 		</Avatar>
-		<Avatar size="sm" text shape="circle" color="natural">
+		<Avatar text shape="circle" color="natural">
 			<div class="text-xl font-medium">+9</div>
 		</Avatar>
 	</AvatarGroup>

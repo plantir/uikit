@@ -4,8 +4,11 @@
 }
 .#{$prefix}radio {
 	@apply daisy-radio;
+
 	&-button {
-		@apply daisy-btn w-auto;
+		@apply daisy-btn;
+		width: inherit !important;
+		box-shadow: none !important;
 	}
 	&-join {
 		@apply daisy-join-item;

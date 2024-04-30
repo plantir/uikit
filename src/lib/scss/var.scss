@@ -12,3 +12,10 @@ $rootColors: (
 	'warning': 'wa'
 );
 // @import './daisyui.placeholder';
+
+@use 'sass:selector';
+@mixin unify-parent($input1, $input2) {
+	@at-root #{selector.unify(&+$input1, &+$input2)} {
+		@content;
+	}
+}
