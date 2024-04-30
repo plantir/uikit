@@ -1,6 +1,6 @@
 {
 	"name": "plantir-uikit",
-	"version": "0.0.12",
+	"version": "0.0.13",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -71,9 +71,8 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"date-picker-svelte": "^2.10.1",
 		"daisyui": "^4.7.2",
-		"tailwindcss": "^3.4.1",
+		"date-picker-svelte": "^2.10.1",
 		"highlight.js": "^11.9.0",
 		"lodash": "^4.17.21",
 		"lodash-es": "^4.17.21",
@@ -82,7 +81,8 @@
 		"svelte-flatpickr": "^3.3.4",
 		"svelte-markdown": "^0.4.1",
 		"swiper": "^11.1.1",
-		"tailwind-merge": "^2.2.1"
+		"tailwind-merge": "^2.2.1",
+		"tailwindcss": "^3.4.1"
 	},
 	"description": "Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).",
 	"main": "dist/index.js",
