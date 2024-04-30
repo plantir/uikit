@@ -26,7 +26,7 @@
 	<SetupExample />
 	<Title id="default" title="Default" />
 	<p>
-		Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
+		Use this default example of a checkbox element in a checked, unchecked and indeterminate state.
 	</p>
 	<DefaultExample />
 	<Title id="colors" title="Colors" />
@@ -52,7 +52,7 @@
 	<DisableExample />
 	<Title id="Indeterminate" title="Indeterminate" />
 	<p>
-		Use this Indeterminate example of a checbkox element.
+		Use this Indeterminate example of a checkbox element.
 	</p>
 	<IndeterminateExample />
 	<Title id="Checkbox-props" title="Props" />

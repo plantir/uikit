@@ -3,6 +3,7 @@
 	export let props: any = [];
 	export let one_line = false;
 	export let close_self = false;
+	export let dont_break = false;
 
 	function propAttr(prop: any) {
 		const string = prop.split('=');
@@ -36,4 +37,6 @@
 		&lt;/<span class="text-green-600">{name}</span>&gt;
 	{/if}
 </span>
-<br />
+{#if !dont_break}
+	<br />
+{/if}
