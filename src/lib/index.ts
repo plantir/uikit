@@ -3,6 +3,7 @@ export { default as AvatarGroup } from './components/AvatarGroup/AvatarGroup.sve
 export { default as Badge } from './components/Badge/Badge.svelte';
 export { default as Button } from './components/Button/Button.svelte';
 export { default as Checkbox } from './components/Checkbox/Checkbox.svelte';
+export { default as Collapse } from './components/Collapse/Collapse.svelte';
 export { default as DatePicker } from './components/DatePicker/DatePicker.svelte';
 export { default as Dialog } from './components/Dialog/Dialog.svelte';
 export { default as Divider } from './components/Divider/Divider.svelte';

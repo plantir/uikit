@@ -6,6 +6,7 @@ export type CollapseVariant = 'ghost' | 'link' | 'outline' | 'glass' | 'dot' | u
 export type CollapseShape = 'circle' | 'square' | undefined;
 export interface Collapse extends Base {
 	color?: CollapseColor;
+	size?: CollapseSize;
 	disabled?: boolean;
 	open?: boolean;
 	arrow?: boolean;
