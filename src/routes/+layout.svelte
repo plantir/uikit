@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/Layout/Header.svelte';
 	import '../app.css';
-	import '../lib/scss/themes/polaris.scss';
+	import '$lib/scss/Themes/polaris.scss';
 </script>
 
 <svelte:head>
