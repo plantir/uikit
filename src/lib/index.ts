@@ -18,8 +18,6 @@ export { default as Select } from './components/Select/Select.svelte';
 export { default as Steps } from './components/Steps/Steps.svelte';
 export { default as Swiper } from './components/Swiper/Swiper.svelte';
 export { default as Switch } from './components/Switch/Switch.svelte';
-export { default as Swiper } from './components/Swiper/Swiper.svelte';
-export { default as Steps } from './components/Steps/Steps.svelte';
 export { default as Table } from './components/Table/Table.svelte';
 export { default as Tabs } from './components/Tabs/Tabs.svelte';
 export { default as TextArea } from './components/TextArea/TextArea.svelte';
