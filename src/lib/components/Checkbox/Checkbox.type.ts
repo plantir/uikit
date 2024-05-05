@@ -4,7 +4,7 @@ export type CheckboxSize = GlobalSize;
 export type CheckboxColor = 'natural' | GlobalColor;
 export interface Checkbox extends Base {
 	label?: string | undefined;
-	value?: string;
+	value?: string | boolean;
 	name?: string;
 	size?: CheckboxSize;
 	color?: CheckboxColor;

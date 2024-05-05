@@ -21,7 +21,17 @@
 				{title}
 			</span>
 		</slot>
-		<div class="transition" class:rotate-180={open}>SVG</div>
+		<div class="transition relative">
+			<svg
+				width="12px"
+				height="12px"
+				class="hidden h-2 w-2 fill-current opacity-60 sm:inline-block absolute top-1/2 -translate-y-1/2 right-0 transition"
+				class:rotate-180={open}
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 2048 2048"
+				><path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path></svg
+			>
+		</div>
 	</button>
 	{#if open}
 		<div class="flex flex-col gap-2" transition:slide>

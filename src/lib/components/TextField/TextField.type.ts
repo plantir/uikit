@@ -24,4 +24,5 @@ export interface TextField extends Base {
 	color?: TextFieldColor;
 	disabled?: boolean;
 	bordered?: boolean;
+	inputClass?:string;
 }

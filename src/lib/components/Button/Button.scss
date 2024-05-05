@@ -16,6 +16,9 @@
 		color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
 		--tw-text-opacity: 0.2;
 	}
+	&-natural {
+		@apply daisy-btn-neutral;
+	}
 	&-primary {
 		@apply daisy-btn-primary;
 	}

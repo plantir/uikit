@@ -6,7 +6,7 @@
 	type $$Props = Checkbox;
 	let componentName = 'checkbox';
 	export let label: string | undefined = undefined;
-	export let value: string = '';
+	export let value: string | boolean = '';
 	export let disabled: boolean = false;
 	export let indeterminate: boolean = false;
 	export let size: CheckboxSize = undefined;
