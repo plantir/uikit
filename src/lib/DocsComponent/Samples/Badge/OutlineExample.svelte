@@ -8,52 +8,45 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Badge from '{$importDocumentSrc}/Badge.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Badge from '{$importDocumentSrc}/Badge.svelte';
+		</ScriptCode>
+		</pre>
+	<div slot="html">
+		<TagCode name="p">
+			this is a <TagCode name="Badge" one_line dont_break props={['variant="outline"']}
+				>default</TagCode
+			> inside of a paragraph
+		</TagCode>
+		{#each colors as color}
 			<TagCode name="p">
-				this is a <TagCode name="Badge" one_line dont_break props={['variant="outline"']}
-					>default</TagCode
+				this is a <TagCode
+					name="Badge"
+					one_line
+					dont_break
+					props={[`color="${color}"`, 'variant="outline"']}>{color}</TagCode
 				> inside of a paragraph
 			</TagCode>
-			{#each colors as color}
-				<TagCode name="p">
-					this is a <TagCode
-						name="Badge"
-						one_line
-						dont_break
-						props={[`color="${color}"`, 'variant="outline"']}>{color}</TagCode
-					> inside of a paragraph
-				</TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		<p>
+			this is a <Badge variant="outline">default</Badge> inside of a paragraph
+		</p>
+		{#each colors as color}
 			<p>
-				this is a <Badge variant="outline">default</Badge> inside of a paragraph
+				this is a <Badge variant="outline" {color}>{color}</Badge> inside of a paragraph
 			</p>
-			{#each colors as color}
-				<p>
-					this is a <Badge variant="outline" {color}>{color}</Badge> inside of a paragraph
-				</p>
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+		{/each}
+	</div>
+</SampleWrapper>

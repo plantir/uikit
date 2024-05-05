@@ -8,32 +8,27 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Steps, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let items = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
 	let selected = 'step-1';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Steps from '{$importDocumentSrc}/Steps.svelte';
 				let items = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
 				let selected = 'step-1';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Steps" close_self props={['{items}', 'bind:selected', 'color="primary"']} />
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Steps {items} bind:selected color="primary" />
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Steps" close_self props={['{items}', 'bind:selected', 'color="primary"']} />
+	</div>
+	<div slot="preview">
+		<Steps {items} bind:selected color="primary" />
+	</div>
+</SampleWrapper>

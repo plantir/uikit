@@ -8,44 +8,39 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Select, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let items = ['item-1', 'item-2', 'item-3'];
 	let value = '';
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Select from '{$importDocumentSrc}/Select.svelte';
 				let items = ['item-1', 'item-2', 'item-3'];
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="div" props={['class="flex flex-wrap gap-4"']}>
-				{#each colors as color}
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="flex flex-wrap gap-4"']}>
+			{#each colors as color}
 				<TagCode
-				close_self
-				name="Select"
-				props={['label="Default Select"', '{items}', `color="${color}"`]}
+					close_self
+					name="Select"
+					props={['label="Default Select"', '{items}', `color="${color}"`]}
 				/>
-				{/each}
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="flex flex-wrap gap-4">
-				{#each colors as color}
-					<Select label="Default Select" {items} {color} />
-				{/each}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+			{/each}
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="flex flex-wrap gap-4">
+			{#each colors as color}
+				<Select label="Default Select" {items} {color} />
+			{/each}
+		</div>
+	</div>
+</SampleWrapper>

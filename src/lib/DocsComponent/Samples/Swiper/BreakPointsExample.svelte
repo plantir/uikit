@@ -8,7 +8,7 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Swiper, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let breakpoints = {
 		320: {
 			slidesPerView: 1
@@ -23,56 +23,51 @@
 			slidesPerView: 4
 		}
 	};
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-				let breakpoints = {'{'}
-					320:{'{'}
-						slidesPerView: 1
-					{'}'},
-					640:{'{'}
-						slidesPerView: 2
-					{'}'},
-					768:{'{'}
-						slidesPerView: 3
-					{'}'},
-					1024:{'{'}
-						slidesPerView: 4
-					{'}'},
-				{'}'}
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="div" props={['class="w-460px mx-auto"']}>
-				<TagCode name="Swiper" props={['{breakpoints}']}>
-					{#each { length: 12 } as item, i}
-						<TagCode name="swiper-slide">
-							<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
-						</TagCode>
-					{/each}
-				</TagCode>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
+		<ScriptCode>
+			import Swiper from '{$importDocumentSrc}/Swiper.svelte';
+			let breakpoints = {'{'}
+				320:{'{'}
+					slidesPerView: 1
+				{'}'},
+				640:{'{'}
+					slidesPerView: 2
+				{'}'},
+				768:{'{'}
+					slidesPerView: 3
+				{'}'},
+				1024:{'{'}
+					slidesPerView: 4
+				{'}'},
+			{'}'}
+		</ScriptCode>
+		</pre>
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="w-460px mx-auto"']}>
+			<TagCode name="Swiper" props={['{breakpoints}']}>
+				{#each { length: 12 } as item, i}
+					<TagCode name="swiper-slide">
+						<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
+					</TagCode>
+				{/each}
 			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="w-[460px] mx-auto">
-				<Swiper {breakpoints}>
-					{#each { length: 12 } as index, i}
-						<swiper-slide>
-							<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
-						</swiper-slide>
-					{/each}
-				</Swiper>
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="w-[460px] mx-auto">
+			<Swiper {breakpoints}>
+				{#each { length: 12 } as index, i}
+					<swiper-slide>
+						<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
+					</swiper-slide>
+				{/each}
+			</Swiper>
+		</div>
+	</div>
+</SampleWrapper>

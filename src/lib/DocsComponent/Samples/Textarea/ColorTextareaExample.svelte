@@ -9,24 +9,18 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextArea from '$lib/components/TextArea/TextArea.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
+<SampleWrapper>
+	<div slot="javascript">
 		<pre>
             <ScriptCode>
                 import TextArea from '{$importDocumentSrc}/TextArea.svelte';
             </ScriptCode>
         </pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+	</div>
+	<div slot="html">
 		<TagCode name="TextArea" props={['color="primary"', 'label="primary"']}></TagCode>
 		<TagCode name="TextArea" props={['color="secondary"', 'label="secondary"']}></TagCode>
 		<TagCode name="TextArea" props={['color="accent"', 'label="accent"']}></TagCode>
@@ -35,9 +29,8 @@
 		<TagCode name="TextArea" props={['color="success"', 'label="success"']}></TagCode>
 		<TagCode name="TextArea" props={['color="warning"', 'label="warning"']}></TagCode>
 		<TagCode name="TextArea" props={['label="default"']}></TagCode>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<div class="flex flex-wrap gap-4">
 			<TextArea color="primary" label="primary"></TextArea>
 			<TextArea color="secondary" label="secondary"></TextArea>
@@ -48,5 +41,5 @@
 			<TextArea color="warning" label="warning"></TextArea>
 			<TextArea label="default"></TextArea>
 		</div>
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>

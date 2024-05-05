@@ -8,30 +8,25 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Divider, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Divider from '{$importDocumentSrc}/Divider.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Divider" one_line props={['class="my-4"', 'start']}>Divider start</TagCode>
-			<TagCode name="Divider" one_line props={['class="my-4"', 'end']}>Divider end</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Divider class="my-4" start>Divider start</Divider>
-			<Divider class="my-4" end>Divider end</Divider>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Divider" one_line props={['class="my-4"', 'start']}>Divider start</TagCode>
+		<TagCode name="Divider" one_line props={['class="my-4"', 'end']}>Divider end</TagCode>
+	</div>
+	<div slot="preview">
+		<Divider class="my-4" start>Divider start</Divider>
+		<Divider class="my-4" end>Divider end</Divider>
+	</div>
+</SampleWrapper>

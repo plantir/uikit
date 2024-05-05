@@ -7,7 +7,8 @@
 	import { importDocumentSrc } from '$lib/store/index.js';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let loading_button = false;
 	function click() {
 		loading_button = true;
@@ -17,34 +18,25 @@
 	}
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
-		<pre>
-            <ScriptCode>
-                import Button from '{$importDocumentSrc}/Button.svelte';
-				let loading_button = false;
-				function click(){'{'}
-				loading_button = true;
-				setTimeout(() => {'{'}
-					loading_button = false;
-				{'}'}, 2000);
-				{'}'}
-            </ScriptCode>
-        </pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Button from '{$importDocumentSrc}/Button.svelte';
+			let loading_button = false;
+			function click(){'{'}
+			loading_button = true;
+			setTimeout(() => {'{'}
+				loading_button = false;
+			{'}'}, 2000);
+			{'}'}
+		</ScriptCode>
+	</pre>
+	<div slot="html">
 		<TagCode name="Button" props={['loading={loading_button}', 'on:click={click}']}
 			>click me</TagCode
 		>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<Button loading={loading_button} on:click={click}>click me</Button>
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>

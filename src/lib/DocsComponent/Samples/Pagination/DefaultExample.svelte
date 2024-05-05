@@ -8,29 +8,24 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Pagination, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let page: any = 5;
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Pagination from '{$importDocumentSrc}/Pagination.svelte';
 				let page = 5;
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Pagination" props={['bind:page', 'lastPage={10}']} close_self />
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Pagination bind:page lastPage={10} />
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Pagination" props={['bind:page', 'lastPage={10}']} close_self />
+	</div>
+	<div slot="preview">
+		<Pagination bind:page lastPage={10} />
+	</div>
+</SampleWrapper>

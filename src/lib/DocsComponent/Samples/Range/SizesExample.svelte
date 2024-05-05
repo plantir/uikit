@@ -8,33 +8,28 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Range from '{$importDocumentSrc}/Range.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			{#each sizes as size}
-				<TagCode name="Range" close_self props={[`label="${size}"`, `size="${size}"`]}></TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			{#each sizes as size}
-				<Range label={size} min="0" {size} />
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		{#each sizes as size}
+			<TagCode name="Range" close_self props={[`label="${size}"`, `size="${size}"`]}></TagCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		{#each sizes as size}
+			<Range label={size} min="0" {size} />
+		{/each}
+	</div>
+</SampleWrapper>

@@ -8,33 +8,28 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Divider, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let sizes: any = ['lg', 'md', 'sm', 'xs'];
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Divider from '{$importDocumentSrc}/Divider.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			{#each sizes as size}
-				<TagCode name="Divider" props={[`size="${size}"`]} one_line>{size}</TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			{#each sizes as size}
-				<Divider {size}>{size}</Divider>
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		{#each sizes as size}
+			<TagCode name="Divider" props={[`size="${size}"`]} one_line>{size}</TagCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		{#each sizes as size}
+			<Divider {size}>{size}</Divider>
+		{/each}
+	</div>
+</SampleWrapper>

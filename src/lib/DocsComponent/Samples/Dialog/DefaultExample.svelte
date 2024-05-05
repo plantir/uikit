@@ -8,7 +8,8 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Dialog, Drawer, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
 	let open = false;
@@ -17,36 +18,28 @@
 	}
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Dialog from '{$importDocumentSrc}/Dialog.svelte';
-				let open = false;
-				function openDialog() {'{'}
-					open = true;
-				{'}'};
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Button" one_line props={['on:click={openDialog}']}>Open Dialog</TagCode>
-			<TagCode name="Dialog" props={['bind:open']}>
-				<TagCode name="div">content of inside Dialog</TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Button on:click={openDialog}>Open Dialog</Button>
-			<Dialog bind:open>
-				<div>
-					<div>content of inside Dialog</div>
-				</div>
-			</Dialog>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Dialog from '{$importDocumentSrc}/Dialog.svelte';
+			let open = false;
+			function openDialog() {'{'}
+				open = true;
+			{'}'};
+		</ScriptCode>
+		</pre>
+	<div slot="html">
+		<TagCode name="Button" one_line props={['on:click={openDialog}']}>Open Dialog</TagCode>
+		<TagCode name="Dialog" props={['bind:open']}>
+			<TagCode name="div">content of inside Dialog</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Button on:click={openDialog}>Open Dialog</Button>
+		<Dialog bind:open>
+			<div>
+				<div>content of inside Dialog</div>
+			</div>
+		</Dialog>
+	</div>
+</SampleWrapper>

@@ -8,35 +8,26 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Badge from '{$importDocumentSrc}/Badge.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="p">
-				this is a <TagCode name="Badge" one_line dont_break>badge</TagCode> inside of a paragraph
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<p>
-				this is a <Badge>badge</Badge> inside of a paragraph
-			</p>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Badge from '{$importDocumentSrc}/Badge.svelte';
+		</ScriptCode>
+	</pre>
+	<div slot="html">
+		<TagCode name="p">
+			this is a <TagCode name="Badge" one_line dont_break>badge</TagCode> inside of a paragraph
+		</TagCode>
+	</div>
+	<p slot="preview">
+		this is a <Badge>badge</Badge> inside of a paragraph
+	</p>
+</SampleWrapper>

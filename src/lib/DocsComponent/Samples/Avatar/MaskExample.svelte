@@ -8,7 +8,8 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let masks: any = [
 		'squircle',
@@ -35,42 +36,43 @@
 	let checked = true;
 </script>
 
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
+		</ScriptCode>
+	</pre>
+	<div slot="html">
+		<TagCode name="div" props={['class="flex gap-4 flex-wrap"']}>
+			{#each masks as mask}
+				<TagCode name="div">
+					<TagCode name="div" one_line>{mask}</TagCode>
+					<TagCode name="Avatar" props={[`mask="${mask}"`]}>
+						<TagCode name="img" props={['src="your image source"']} close_self></TagCode>
+					</TagCode>
+				</TagCode>
+			{/each}
+		</TagCode>
+	</div>
+	<div class="flex gap-4 flex-wrap" slot="preview">
+		{#each masks as mask}
+			<div>
+				<div>{mask}</div>
+				<Avatar {mask}>
+					<img src="/swiper-example-01.jpg" alt="" />
+				</Avatar>
+			</div>
+		{/each}
+	</div>
+</SampleWrapper>
 <Tabs bind:selected={activeTab}>
 	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
+		<ShowCode language="javascript"></ShowCode>
 	</TabItem>
 	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="div" props={['class="flex gap-4 flex-wrap"']}>
-				{#each masks as mask}
-					<TagCode name="div">
-						<TagCode name="div" one_line>{mask}</TagCode>
-						<TagCode name="Avatar" props={[`mask="${mask}"`]}>
-							<TagCode name="img" props={['src="your image source"']} close_self></TagCode>
-						</TagCode>
-					</TagCode>
-				{/each}
-			</TagCode>
-		</ShowCode>
+		<ShowCode language="svelte"></ShowCode>
 	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="flex gap-4 flex-wrap">
-				{#each masks as mask}
-					<div>
-						<div>{mask}</div>
-						<Avatar {mask}>
-							<img src="/swiper-example-01.jpg" alt="" />
-						</Avatar>
-					</div>
-				{/each}
-			</div>
-		</SimpleCode>
+	<TabItem title="Preview" value="Preview">
+		<SimpleCode></SimpleCode>
 	</TabItem>
 </Tabs>

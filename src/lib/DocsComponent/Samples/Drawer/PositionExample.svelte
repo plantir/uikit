@@ -8,7 +8,7 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Drawer, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
 	let leftDrawer = false;
@@ -27,12 +27,12 @@
 	function openBottom() {
 		bottomDrawer = true;
 	}
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
 				let leftDrawer = false;
@@ -53,34 +53,42 @@
 				{'}'};
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
-			<TagCode name="Drawer" props={['bind:open']}>
-				<TagCode name="div">content of inside Drawer</TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Button on:click={openLeft}>Open left Drawer</Button>
-			<Button on:click={openRightt}>Open right Drawer</Button>
-			<Button on:click={openTop}>Open top Drawer</Button>
-			<Button on:click={openBottom}>Open bottom Drawer</Button>
-			<Drawer bind:open={leftDrawer}>
-				<div>content of left Drawer</div>
-			</Drawer>
-			<Drawer bind:open={rightDrawer} right>
-				<div>content of right Drawer</div>
-			</Drawer>
-			<Drawer bind:open={topDrawer} top>
-				<div>content of top Drawer</div>
-			</Drawer>
-			<Drawer bind:open={bottomDrawer} bottom>
-				<div>content of bottom Drawer</div>
-			</Drawer>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Button" one_line props={['on:click={openLeft}']}>Open left Drawer</TagCode>
+		<TagCode name="Button" one_line props={['on:click={openRightt}']}>Open right Drawer</TagCode>
+		<TagCode name="Button" one_line props={['on:click={openTop}']}>Open top Drawer</TagCode>
+		<TagCode name="Button" one_line props={['on:click={openBottom}']}>Open bottom Drawer</TagCode>
+		<TagCode name="Drawer" props={['bind:open={leftDrawer}']}>
+			<TagCode name="div">content of inside Drawer</TagCode>
+		</TagCode>
+		<TagCode name="Drawer" props={['bind:open={rightDrawer}','right']}>
+			<TagCode name="div">content of inside Drawer</TagCode>
+		</TagCode>
+		<TagCode name="Drawer" props={['bind:open={topDrawer}','top']}>
+			<TagCode name="div">content of inside Drawer</TagCode>
+		</TagCode>
+		<TagCode name="Drawer" props={['bind:open={bottomDrawer}','bottom']}>
+			<TagCode name="div">content of inside Drawer</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Button on:click={openLeft}>Open left Drawer</Button>
+		<Button on:click={openRightt}>Open right Drawer</Button>
+		<Button on:click={openTop}>Open top Drawer</Button>
+		<Button on:click={openBottom}>Open bottom Drawer</Button>
+		<Drawer bind:open={leftDrawer}>
+			<div>content of left Drawer</div>
+		</Drawer>
+		<Drawer bind:open={rightDrawer} right>
+			<div>content of right Drawer</div>
+		</Drawer>
+		<Drawer bind:open={topDrawer} top>
+			<div>content of top Drawer</div>
+		</Drawer>
+		<Drawer bind:open={bottomDrawer} bottom>
+			<div>content of bottom Drawer</div>
+		</Drawer>
+	</div>
+</SampleWrapper>
+

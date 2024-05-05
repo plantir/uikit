@@ -8,40 +8,35 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Range from '{$importDocumentSrc}/Range.svelte';
 				let value = '';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode
-				name="Range"
-				close_self
-				props={['label="Min And Max Range"', 'bind:value', 'min="20"', 'max="50"']}
-			></TagCode>
-			<TagCode name="div">
-				number is : {'{'}value{'}'}
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Range label="Min And Max Range" min="20" max="50" bind:value />
-			<div>
-				number is : {value}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode
+			name="Range"
+			close_self
+			props={['label="Min And Max Range"', 'bind:value', 'min="20"', 'max="50"']}
+		></TagCode>
+		<TagCode name="div">
+			number is : {'{'}value{'}'}
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Range label="Min And Max Range" min="20" max="50" bind:value />
+		<div>
+			number is : {value}
+		</div>
+	</div>
+</SampleWrapper>

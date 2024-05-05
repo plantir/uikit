@@ -8,29 +8,22 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let value: any;
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Checkbox" close_self props={['disabled', 'label="disabled"']}></TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Checkbox label="disabled" disabled></Checkbox>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
+		</ScriptCode>
+		</pre>
+	<div slot="html">
+		<TagCode name="Checkbox" close_self props={['disabled', 'label="disabled"']}></TagCode>
+	</div>
+	<div slot="preview">
+		<Checkbox label="disabled" disabled></Checkbox>
+	</div>
+</SampleWrapper>

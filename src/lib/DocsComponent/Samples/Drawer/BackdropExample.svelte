@@ -8,17 +8,17 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Drawer, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let open = false;
 	function openDrawer() {
 		open = true;
 	}
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
 				let open = false;
@@ -27,22 +27,17 @@
 				{'}'};
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
-			<TagCode name="Drawer" props={['bind:open', 'backdrop={false}']}>
-				<TagCode name="div">content of inside Drawer with no backdrop</TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Button on:click={openDrawer}>Open Drawer</Button>
-			<Drawer bind:open backdrop={false}>
-				<div>content of inside Drawer with no backdrop</div>
-			</Drawer>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
+		<TagCode name="Drawer" props={['bind:open', 'backdrop={false}']}>
+			<TagCode name="div">content of inside Drawer with no backdrop</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Button on:click={openDrawer}>Open Drawer</Button>
+		<Drawer bind:open backdrop={false}>
+			<div>content of inside Drawer with no backdrop</div>
+		</Drawer>
+	</div>
+</SampleWrapper>

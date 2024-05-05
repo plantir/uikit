@@ -9,24 +9,18 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
+<SampleWrapper>
+	<div slot="javascript">
 		<pre>
             <ScriptCode>
                 import TextField from '{$importDocumentSrc}/TextField.svelte';
             </ScriptCode>
         </pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+	</div>
+	<div slot="html">
 		<TagCode name="TextField" props={['inputmode="none"', 'label="none"']}></TagCode>
 		<TagCode name="TextField" props={['inputmode="tel"', 'label="tel"']}></TagCode>
 		<TagCode name="TextField" props={['inputmode="url"', 'label="url"']}></TagCode>
@@ -35,9 +29,8 @@
 		<TagCode name="TextField" props={['inputmode="decimal"', 'label="decimal"']}></TagCode>
 		<TagCode name="TextField" props={['inputmode="search"', 'label="search"']}></TagCode>
 		<TagCode name="TextField" props={['inputmode="text"', 'label="default-text"']}></TagCode>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<div class="flex flex-wrap gap-4">
 			<TextField inputmode="none" label="none"></TextField>
 			<TextField inputmode="tel" label="tel"></TextField>
@@ -48,5 +41,6 @@
 			<TextField inputmode="search" label="search"></TextField>
 			<TextField inputmode="text" label="text"></TextField>
 		</div>
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>
+
