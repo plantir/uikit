@@ -12,7 +12,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 		  'uikit': path.resolve(process.cwd(), './src/lib/index.ts'),
-		  'store': path.resolve(process.cwd(), './src/store/index.ts')
 		}
 	  }
 });

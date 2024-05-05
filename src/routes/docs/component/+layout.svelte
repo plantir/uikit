@@ -2,15 +2,91 @@
 	import type { accordionItem } from '../../../type/index.js';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import Accordion from '$lib/components/Components/Accordion.svelte';
+	import Accordion from '$lib/DocsComponent/Accordion.svelte';
 	let componentItems: accordionItem[] = [
+		{
+			title: 'Avatar',
+			value: 'component/avatar'
+		},
+		{
+			title: 'Badge',
+			value: 'component/badge'
+		},
 		{
 			title: 'Button',
 			value: 'component/button'
 		},
 		{
+			title: 'Checkbox',
+			value: 'component/checkbox'
+		},
+		{
+			title: 'Collapse',
+			value: 'component/collapse'
+		},
+		// {
+		// 	title: 'datepicker',
+		// 	value: 'component/datepicker'
+		// },
+		{
 			title: 'Dialog',
 			value: 'component/dialog'
+		},
+		{
+			title: 'Divider',
+			value: 'component/divider'
+		},
+		{
+			title: 'Drawer',
+			value: 'component/drawer'
+		},
+		{
+			title: 'Loading',
+			value: 'component/loading'
+		},
+		{
+			title: 'Pagination',
+			value: 'component/pagination'
+		},
+		{
+			title: 'Radio',
+			value: 'component/radio'
+		},
+		{
+			title: 'Range',
+			value: 'component/range'
+		},
+		{
+			title: 'Select',
+			value: 'component/select'
+		},
+		{
+			title: 'Steps',
+			value: 'component/steps'
+		},
+		{
+			title: 'Swiper',
+			value: 'component/swiper'
+		},
+		{
+			title: 'Switch',
+			value: 'component/switch'
+		},
+		{
+			title: 'Table',
+			value: 'component/table'
+		},
+		{
+			title: 'Tabs',
+			value: 'component/tabs'
+		},
+		{
+			title: 'Textarea',
+			value: 'component/textarea'
+		},
+		{
+			title: 'Text field',
+			value: 'component/textfield'
 		}
 	];
 	function gotoLink(event: any) {
@@ -19,19 +95,15 @@
 	let headers: any = [];
 	onMount(() => {
 		let tags: any = document.getElementsByClassName('title-document');
-		console.log(tags, ' inm tags');
-
 		let array = [];
 		for (let index = 0; index < tags.length; index++) {
 			const element = tags[index];
-			console.log(element, 'inm element');
 			array.push({
 				id: element.id,
 				text: element.innerHTML
 			});
 		}
 		headers = array;
-		console.log(headers, 'inm tags');
 	});
 </script>
 

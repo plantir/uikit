@@ -17,6 +17,7 @@
 	export let bordered: boolean = true;
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;
+	export let inputClass: string = '';
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
@@ -34,15 +35,24 @@
 		natural: color == 'natural'
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
-	$: elClass = ClassMerge({ name: componentName, componentClass });
+	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: inputClass });
 	$: labelClass = ClassMerge({ name: `${componentName}-label` });
 </script>
 
 <label class={wrapperClass}>
 	<slot name="label">
-		<span class={labelClass}>
-			{label}
-		</span>
+		{#if label}
+			<span class={labelClass}>
+				{label}
+			</span>
+		{/if}
 	</slot>
-	<input {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
+	<input
+		{...$$restProps}
+		{inputmode}
+		{disabled}
+		bind:value
+		{placeholder}
+		class={elClass}
+	/>
 </label>

@@ -9,9 +9,9 @@
 	export let size: TabSize = undefined;
 	export let variant: TabVariant = 'border';
 	export let color: TabColor = undefined;
-	export let selected: string | undefined = undefined;
+	export let selected: string | number | undefined = undefined;
 	const ctx = {
-		selected: writable<string>(selected)
+		selected: writable<string | number>(selected)
 	};
 	setContext('ctx', ctx);
 	ctx.selected.subscribe((val) => {

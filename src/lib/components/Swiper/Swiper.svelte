@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import { register } from 'swiper/element/bundle';
 	// register Swiper custom elements
 	register();
-	export let slidesPerView = '6';
+	export let slidesPerView: string | number = '6';
 	export let spaceBetween = '10';
 	export let centered = false;
 	export let breakpoints = {
@@ -16,11 +16,12 @@
 			slidesPerView: Math.round(+slidesPerView / 2)
 		},
 		1024: {
-			slidesPerView: slidesPerView
+			slidesPerView: +slidesPerView
 		}
 	};
-	export let navigation = false;
-	export let pagination = false;
+	export let navigation: boolean | any = false;
+	export let pagination: boolean | any = false;
+	export let loop = false;
 	export let lazy = false;
 	const onProgress = (e) => {
 		const [swiper, progress] = e.detail;
@@ -43,6 +44,7 @@
 	{pagination}
 	{navigation}
 	{lazy}
+	{loop}
 	{breakpoints}
 	on:swiperprogress
 	on:swiperslidechange

@@ -5,7 +5,7 @@
 	type $$Props = Switch;
 	let componentName = 'switch';
 	export let label: string | undefined = undefined;
-	export let value: string = '';
+	export let value: boolean = false;
 	export let disabled: boolean = false;
 	export let size: SwitchSize = undefined;
 	export let color: SwitchColor = undefined;

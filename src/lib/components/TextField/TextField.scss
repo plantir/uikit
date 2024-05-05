@@ -1,6 +1,9 @@
 @import '../../scss/var.scss';
 .#{$prefix}text-field-wrapper {
-	@apply inline-flex flex-col  gap-y-1;
+	@apply inline-flex flex-col;
+	&-label {
+		@apply mb-1;
+	}
 }
 .#{$prefix}text-field {
 	@apply daisy-input;

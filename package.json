@@ -82,6 +82,7 @@
 		"svelte-markdown": "^0.4.1",
 		"swiper": "^11.1.1",
 		"tailwind-merge": "^2.2.1",
+		"theme-change": "^2.5.0",
 		"tailwindcss": "^3.4.1"
 	},
 	"description": "Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).",
