@@ -71,6 +71,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^5.0.1",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"daisyui": "^4.7.2",
 		"date-picker-svelte": "^2.10.1",
