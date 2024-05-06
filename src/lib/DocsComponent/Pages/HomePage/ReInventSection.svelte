@@ -275,29 +275,30 @@
 											<div class="bg-base-100 rounded-b-box h-60 shrink-0 rounded-se-box w-64">
 												<div class="flex flex-col items-stretch p-6 gap-2">
 													<div class="form-control">
-														<Switch color="primary" size="sm">
+														<Switch value={true} color="primary" size="sm">
 															<span slot="label" class="label-text text-xs">Faster development</span
 															>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="secondary" size="sm">
+														<Switch value={true} color="secondary" size="sm">
 															<span slot="label" class="label-text text-xs">Cleaner HTML</span>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="accent" size="sm">
+														<Switch value={true} color="accent" size="sm">
 															<span slot="label" class="label-text text-xs">Customizable</span>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="success" size="sm">
+														<Switch value={true} color="success" size="sm">
 															<span slot="label" class="label-text text-xs">Themeable</span>
 														</Switch>
 													</div>
+
 													<div class="form-control">
-														<Switch value={true} size="sm">
-															<span slot="label" class="label-text text-xs">Pure CSS</span>
+														<Switch color="error" value={false} size="sm">
+															<span slot="label" class="label-text text-xs">More Code</span>
 														</Switch>
 													</div>
 												</div>
@@ -537,43 +538,43 @@
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="xs"></Checkbox>
+												<Checkbox color="primary" size="xs"></Checkbox>
 												checkbox-xs
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="sm"></Checkbox>
+												<Checkbox color="primary" size="sm"></Checkbox>
 												checkbox-sm
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="md"></Checkbox>
+												<Checkbox color="primary" size="md"></Checkbox>
 												checkbox-md
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="lg"></Checkbox>
+												<Checkbox color="primary" size="lg"></Checkbox>
 												checkbox-lg
 											</div>
 										</div>
 										<RadioGroup class="!grid grid-cols-4 items-end gap-4 w-full">
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="xs"></Radio>
+												<Radio color="secondary" value="xs" size="xs"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-xs</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="sm"></Radio>
+												<Radio color="secondary" value="sm" size="sm"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-sm</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="md"></Radio>
+												<Radio color="secondary" value="md" size="md"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-md</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="lg"></Radio>
+												<Radio color="secondary" value="lg" size="lg"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-lg</span>
 											</div>
 										</RadioGroup>
