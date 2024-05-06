@@ -94,6 +94,7 @@
 	function gotoLink(event: any) {
 		goto(`/docs/${event.detail}`);
 	}
+	// $: scrollY = scrollY;
 	let headers: any = [];
 	onMount(() => {
 		let tags: any = document.getElementsByClassName('title-document');
@@ -127,14 +128,13 @@
 		let array: any = [...headers];
 		array.forEach((header: any) => {
 			const element: any = document.getElementById(header.id);
-			const rect = element.getBoundingClientRect();
-			if (header.id == 'setup') {
-				console.log(rect.top);
-			}
-			if (rect.top > -20 && rect.top < 250) {
-				header.active = true;
-			} else {
-				header.active = false;
+			if (element) {
+				const rect = element.getBoundingClientRect();
+				if (rect.top > -20 && rect.top < 250) {
+					header.active = true;
+				} else {
+					header.active = false;
+				}
 			}
 		});
 		headers = array;

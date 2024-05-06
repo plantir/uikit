@@ -14,9 +14,16 @@
 			loading = false;
 		}, 100);
 	});
+	let copy = false;
 	async function copyCode() {
 		let text = code.innerText;
-		await navigator.clipboard.writeText(text);
+		try {
+			await navigator.clipboard.writeText(text);
+			copy = true;
+			setTimeout(() => {
+				copy = false;
+			}, 3000);
+		} catch (error) {}
 	}
 </script>
 
@@ -24,7 +31,7 @@
 	<div class="w-full h-[200px] bg-base-200 rounded-xl rounded-tl-none"></div>
 {/if}
 <div class:hidden={loading} class="relative">
-	<Button on:click={copyCode} class="absolute top-4 right-6 z-10">copy</Button>
+	<Button on:click={copyCode} class="absolute top-4 right-6 z-10">{copy ? 'copied' : 'copy'}</Button>
 	<div
 		class="bg-base-200 p-4 rounded-xl relative rounded-tl-none min-h-[200px] max-h-[350px] overflow-y-auto"
 	>
@@ -32,6 +39,11 @@
 			<slot />
 		</code>
 	</div>
+	<!-- {#if copy}
+		<div class="absolute -top-10 bg-primary/5 p-2 rounded-xl right-2 text-sm">
+			Copied
+		</div>
+	{/if} -->
 </div>
 
 <style global lang="scss">

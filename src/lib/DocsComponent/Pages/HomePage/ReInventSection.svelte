@@ -561,19 +561,19 @@
 										</div>
 										<RadioGroup class="!grid grid-cols-4 items-end gap-4 w-full">
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="xs"></Radio>
+												<Radio size="xs" value="xs"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-xs</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="sm"></Radio>
+												<Radio size="sm" value="sm"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-sm</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="md"></Radio>
+												<Radio size="md" value="md"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-md</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="lg"></Radio>
+												<Radio size="lg" value="lg"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-lg</span>
 											</div>
 										</RadioGroup>
