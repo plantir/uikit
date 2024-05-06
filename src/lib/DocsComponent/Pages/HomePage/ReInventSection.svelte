@@ -679,7 +679,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="w-full px-2 py-40 lg:px-10" bind:this={section['nextlevel']}>
+	<div class="w-full px-2 py-10 md:py-20 lg:py-40 lg:px-10" bind:this={section['nextlevel']}>
 		<div class="text-center">
 			<h2
 				class="font-title relative z-[2] mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none will-change-auto [transform:translate3d(0,0,0)] motion-reduce:!tracking-normal max-[1279px]:!tracking-normal"
@@ -716,7 +716,7 @@
 	<div bind:this={section['uglyhtml']}>
 		<div>
 			<div class="relative overflow-hidden">
-				<div class="w-full px-2 py-40 lg:px-10">
+				<div class="w-full px-2 py-10 md:py-20 lg:py-40 lg:px-10">
 					<div class="text-center">
 						<h2
 							class="font-title relative z-[2] mx-auto text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-none"

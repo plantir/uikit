@@ -7,14 +7,14 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	$: activeTab = $$slots.preview ? 'Preview' : 'Svelte';
+	let activeTab = $$slots.preview ? 'Preview' : 'Svelte';
 </script>
 
 <Tabs bind:selected={activeTab} variant="lift">
 	{#if $$slots.preview}
 		<TabItem title="Preview" value="Preview">
 			<SimpleCode>
-				<slot name="preview" />
+			<slot name="preview" />
 			</SimpleCode>
 		</TabItem>
 	{/if}

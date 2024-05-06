@@ -11,6 +11,7 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 </script>
+
 <SampleWrapper>
 	<pre slot="javascript">
 		<ScriptCode>
@@ -28,13 +29,15 @@
 		<TagCode name="Button">default</TagCode>
 	</div>
 	<div slot="preview">
-		<Button color="primary">primary</Button>
-		<Button color="secondary">secondary</Button>
-		<Button color="accent">accent</Button>
-		<Button color="error">error</Button>
-		<Button color="info">info</Button>
-		<Button color="success">success</Button>
-		<Button color="warning">warning</Button>
-		<Button>default</Button>
+		<div class="flex flex-wrap gap-2">
+			<Button color="primary">primary</Button>
+			<Button color="secondary">secondary</Button>
+			<Button color="accent">accent</Button>
+			<Button color="error">error</Button>
+			<Button color="info">info</Button>
+			<Button color="success">success</Button>
+			<Button color="warning">warning</Button>
+			<Button>default</Button>
+		</div>
 	</div>
 </SampleWrapper>

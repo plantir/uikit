@@ -72,15 +72,3 @@
 		</div>
 	</div>
 </SampleWrapper>
-
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript"></ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte"></ShowCode>
-	</TabItem>
-	<TabItem title="Preview" value="Preview">
-		<SimpleCode></SimpleCode>
-	</TabItem>
-</Tabs>

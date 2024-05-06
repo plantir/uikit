@@ -46,7 +46,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 			<RadioGroup value="male">
 				<Radio value="male" label="male"></Radio>
 				<Radio value="female" label="female"></Radio>
