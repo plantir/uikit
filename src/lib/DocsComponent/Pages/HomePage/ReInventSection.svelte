@@ -143,7 +143,7 @@
 						<div
 							class="inline-flex w-full flex-col items-stretch justify-center gap-2 px-4 md:flex-row xl:justify-start xl:px-0"
 						>
-							<Button href="/docs/components/button" size="lg" class="rounded-full flex-1"
+							<Button href="/docs/component/button" size="lg" class="rounded-full flex-1"
 								>See Components</Button
 							>
 							<Button size="lg" class="group rounded-full flex-1" color="natural">
