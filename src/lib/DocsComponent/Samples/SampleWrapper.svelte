@@ -10,7 +10,7 @@
 	let activeTab = $$slots.preview ? 'Preview' : 'Svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
+<Tabs bind:selected={activeTab} variant="lift">
 	{#if $$slots.preview}
 		<TabItem title="Preview" value="Preview">
 			<SimpleCode>

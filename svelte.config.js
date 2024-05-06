@@ -23,9 +23,6 @@ const config = {
 
 	kit: {
 		adapter: adapterNode()
-		// adapter: adapter({
-		//     fallback: '/index.html'
-		// })
 	}
 };
 

@@ -143,7 +143,7 @@
 						<div
 							class="inline-flex w-full flex-col items-stretch justify-center gap-2 px-4 md:flex-row xl:justify-start xl:px-0"
 						>
-							<Button href="/docs/components/button" size="lg" class="rounded-full flex-1"
+							<Button href="/docs/component/button" size="lg" class="rounded-full flex-1"
 								>See Components</Button
 							>
 							<Button size="lg" class="group rounded-full flex-1" color="natural">
@@ -179,7 +179,7 @@
 								height="72"
 								alt="yawing face emoji"
 								src="/yawning-face@80.webp"
-								srcset={`/yawning-face.webp 2x`}
+								srcset={`/yawning-face@80.webp`}
 								class="pointer-events-none inline-block h-[1em] w-[1em] align-bottom"
 							/>
 						</h2>
@@ -203,14 +203,14 @@
 						<div class="relative h-screen">
 							<div class="sticky top-[16vh] xl:top-[30vh]">
 								<h2 class="text-[clamp(2.5rem,6vw,4.5rem)] font-light leading-none">
-									{@html "use <span class='text-success'><span class='font-black'>semantic</span> <br />class names</span>"}
+									{@html "use <span class='text-success'><span class='font-black'>semantic</span> <br />Components</span>"}
 									<img
 										loading="lazy"
 										width="72"
 										height="72"
 										alt="sunglasses emoji"
 										src="/smiling-face-with-sunglasses@80.webp"
-										srcset={`/smiling-face-with-sunglasses.webp 2x`}
+										srcset={`/smiling-face-with-sunglasses@80.webp`}
 										class="pointer-events-none inline-block h-[1em] w-[1em] align-bottom"
 									/>
 								</h2>
@@ -275,29 +275,30 @@
 											<div class="bg-base-100 rounded-b-box h-60 shrink-0 rounded-se-box w-64">
 												<div class="flex flex-col items-stretch p-6 gap-2">
 													<div class="form-control">
-														<Switch color="primary" size="sm">
+														<Switch value={true} color="primary" size="sm">
 															<span slot="label" class="label-text text-xs">Faster development</span
 															>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="secondary" size="sm">
+														<Switch value={true} color="secondary" size="sm">
 															<span slot="label" class="label-text text-xs">Cleaner HTML</span>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="accent" size="sm">
+														<Switch value={true} color="accent" size="sm">
 															<span slot="label" class="label-text text-xs">Customizable</span>
 														</Switch>
 													</div>
 													<div class="form-control">
-														<Switch color="success" size="sm">
+														<Switch value={true} color="success" size="sm">
 															<span slot="label" class="label-text text-xs">Themeable</span>
 														</Switch>
 													</div>
+
 													<div class="form-control">
-														<Switch value={true} size="sm">
-															<span slot="label" class="label-text text-xs">Pure CSS</span>
+														<Switch color="error" value={false} size="sm">
+															<span slot="label" class="label-text text-xs">More Code</span>
 														</Switch>
 													</div>
 												</div>
@@ -537,43 +538,43 @@
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="xs"></Checkbox>
+												<Checkbox color="primary" size="xs"></Checkbox>
 												checkbox-xs
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="sm"></Checkbox>
+												<Checkbox color="primary" size="sm"></Checkbox>
 												checkbox-sm
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="md"></Checkbox>
+												<Checkbox color="primary" size="md"></Checkbox>
 												checkbox-md
 											</div>
 											<div
 												class="flex flex-col items-center text-[.6rem] text-base-content/70 gap-1"
 											>
-												<Checkbox size="lg"></Checkbox>
+												<Checkbox color="primary" size="lg"></Checkbox>
 												checkbox-lg
 											</div>
 										</div>
 										<RadioGroup class="!grid grid-cols-4 items-end gap-4 w-full">
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="xs" value="xs"></Radio>
+												<Radio color="secondary" value="xs" size="xs"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-xs</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="sm" value="sm"></Radio>
+												<Radio color="secondary" value="sm" size="sm"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-sm</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="md" value="md"></Radio>
+												<Radio color="secondary" value="md" size="md"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-md</span>
 											</div>
 											<div class="flex flex-col items-center gap-1">
-												<Radio size="lg" value="lg"></Radio>
+												<Radio color="secondary" value="lg" size="lg"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-lg</span>
 											</div>
 										</RadioGroup>
@@ -694,12 +695,12 @@
 				</span>
 			</h2>
 			<p class="text-base-content/70 font-title py-4 font-light md:text-2xl">
-				{@html 'Uikit adds class names to Tailwind CSS<br />for all common UI components.<br />Class names like'}
-				<a target="_blank" href="/docs/component/button/" class="text-primary">btn</a>
+				{@html 'Uikit adds components to Tailwind CSS<br />for Svelete library.<br />components  like'}
+				<a target="_blank" href="/docs/component/button/" class="text-primary">Button</a>
 				,
-				<a target="_blank" href="/docs/component/tabs/" class="text-primary">tabs</a>
+				<a target="_blank" href="/docs/component/tabs/" class="text-primary">Tabs</a>
 				,
-				<a target="_blank" href="/docs/component/switch/" class="text-primary">switch</a>
+				<a target="_blank" href="/docs/component/switch/" class="text-primary">Switch</a>
 				and many more.
 			</p>
 			<div class="h-6" />
