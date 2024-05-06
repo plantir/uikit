@@ -8,49 +8,42 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Checkbox, Collapse, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Collapse from '{$importDocumentSrc}/Collapse.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			{#each { length: 3 } as i}
-				<TagCode name="Collapse">
-					<TagCode name="div" props={['slot="title"']} one_line>Title of collapse</TagCode>
-					<TagCode name="div">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, harum. Maiores aliquid
-						accusamus reprehenderit ipsam illo error deleniti ut quibusdam quia perspiciatis
-						officiis dolores harum consequatur, sequi voluptas incidunt eius?
-					</TagCode>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Collapse from '{$importDocumentSrc}/Collapse.svelte';
+		</ScriptCode>
+		</pre>
+	<div slot="html">
+		{#each { length: 3 } as i}
+			<TagCode name="Collapse">
+				<TagCode name="div" props={['slot="title"']} one_line>Title of collapse</TagCode>
+				<TagCode name="div">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, harum. Maiores aliquid
+					accusamus reprehenderit ipsam illo error deleniti ut quibusdam quia perspiciatis officiis
+					dolores harum consequatur, sequi voluptas incidunt eius?
 				</TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			{#each { length: 3 } as i}
-				<Collapse>
-					<div slot="title">Title of collapse</div>
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, harum. Maiores aliquid
-						accusamus reprehenderit ipsam illo error deleniti ut quibusdam quia perspiciatis
-						officiis dolores harum consequatur, sequi voluptas incidunt eius?
-					</div>
-				</Collapse>
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+			</TagCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		{#each { length: 3 } as i}
+			<Collapse>
+				<div slot="title">Title of collapse</div>
+				<div>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, harum. Maiores aliquid
+					accusamus reprehenderit ipsam illo error deleniti ut quibusdam quia perspiciatis officiis
+					dolores harum consequatur, sequi voluptas incidunt eius?
+				</div>
+			</Collapse>
+		{/each}
+	</div>
+</SampleWrapper>

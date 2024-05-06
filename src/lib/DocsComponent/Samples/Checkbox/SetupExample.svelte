@@ -8,18 +8,13 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 </script>
-
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
-		<pre>
+<SampleWrapper>
+	<pre slot="javascript">
 		<ScriptCode>
 			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
 		</ScriptCode>
 		</pre>
-	</ShowCode>
-{/if}
+</SampleWrapper>

@@ -8,17 +8,17 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Swiper, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let pagination = {
 		type: 'progressbar'
 	};
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
 				let pagination = {'{'}
@@ -26,64 +26,60 @@
 				{'}'};
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="div" props={['class="grid grid-cols-2 gap-10"']}>
-				<TagCode name="div">
-					<TagCode name="div" one_line>Custom</TagCode>
-					<TagCode name="Swiper" props={['{pagination}']}>
-						{#each { length: 12 } as item, i}
-							<TagCode name="swiper-slide">
-								<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
-							</TagCode>
-						{/each}
-					</TagCode>
-				</TagCode>
-				<TagCode name="div">
-					<TagCode name="div" one_line>Default</TagCode>
-					<TagCode name="Swiper" props={['pagination={true}']}>
-						{#each { length: 12 } as item, i}
-							<TagCode name="swiper-slide">
-								<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
-							</TagCode>
-						{/each}
-					</TagCode>
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="grid grid-cols-2 gap-10"']}>
+			<TagCode name="div">
+				<TagCode name="div" one_line>Custom</TagCode>
+				<TagCode name="Swiper" props={['{pagination}']}>
+					{#each { length: 12 } as item, i}
+						<TagCode name="swiper-slide">
+							<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
+						</TagCode>
+					{/each}
 				</TagCode>
 			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="grid grid-cols-2 gap-10">
-				<div>
-					<div class="text-center">Custom</div>
-					<div class="relative">
-						<Swiper {pagination}>
-							{#each { length: 12 } as index, i}
-								<swiper-slide>
-									<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
-								</swiper-slide>
-							{/each}
-						</Swiper>
-						<div class="swiper-pagination-custom"></div>
-					</div>
-				</div>
-				<div>
-					<div class="text-center">Default</div>
-					<Swiper pagination={true}>
+			<TagCode name="div">
+				<TagCode name="div" one_line>Default</TagCode>
+				<TagCode name="Swiper" props={['pagination={true}']}>
+					{#each { length: 12 } as item, i}
+						<TagCode name="swiper-slide">
+							<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
+						</TagCode>
+					{/each}
+				</TagCode>
+			</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="grid grid-cols-2 gap-10">
+			<div>
+				<div class="text-center">Custom</div>
+				<div class="relative">
+					<Swiper {pagination}>
 						{#each { length: 12 } as index, i}
 							<swiper-slide>
 								<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
 							</swiper-slide>
 						{/each}
 					</Swiper>
+					<div class="swiper-pagination-custom"></div>
 				</div>
 			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+			<div>
+				<div class="text-center">Default</div>
+				<Swiper pagination={true}>
+					{#each { length: 12 } as index, i}
+						<swiper-slide>
+							<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
+						</swiper-slide>
+					{/each}
+				</Swiper>
+			</div>
+		</div>
+	</div>
+</SampleWrapper>
+
 
 <style lang="scss" global>
 	.swiper-navigation-to-right {

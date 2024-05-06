@@ -8,23 +8,22 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Pagination, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Pagination from '{$importDocumentSrc}/Pagination.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="grid grid-cols-3 gap-4"']}>
 			<TagCode name="Pagination" props={['bind:page', 'lastPage={10}']} close_self />
 			{#each colors as color}
 				<TagCode
@@ -33,16 +32,14 @@
 					close_self
 				/>
 			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="grid grid-cols-3 gap-4">
-				<Pagination bind:page={pages[0]} lastPage={10} />
-				{#each colors as color, index}
-					<Pagination bind:page={pages[index + 1]} lastPage={10} {color} />
-				{/each}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="grid grid-cols-3 gap-4">
+			<Pagination bind:page={pages[0]} lastPage={10} />
+			{#each colors as color, index}
+				<Pagination bind:page={pages[index + 1]} lastPage={10} {color} />
+			{/each}
+		</div>
+	</div>
+</SampleWrapper>

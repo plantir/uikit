@@ -8,36 +8,31 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Loading, Pagination, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Loading from '{$importDocumentSrc}/Loading.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Loading" close_self />
-			{#each colors as color}
-				<TagCode name="Loading" props={[`color="${color}"`]} close_self />
+	</div>
+	<div slot="html">
+		<TagCode name="Loading" close_self />
+		{#each colors as color}
+			<TagCode name="Loading" props={[`color="${color}"`]} close_self />
+		{/each}
+	</div>
+	<div slot="preview">
+		<div class="grid grid-cols-3 gap-4">
+			<Loading />
+			{#each colors as color, index}
+				<Loading {color} />
 			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="grid grid-cols-3 gap-4">
-				<Loading />
-				{#each colors as color, index}
-					<Loading {color} />
-				{/each}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+		</div>
+	</div>
+</SampleWrapper>

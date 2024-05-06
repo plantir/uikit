@@ -8,49 +8,42 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Avatar" props={['offline']} close_self />
-			<TagCode name="Avatar" props={['offline']}>
-				<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
-			</TagCode>
-			<TagCode name="Avatar" props={['shape="circle"', 'offline']}>
-				<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
-			</TagCode>
-			<TagCode name="Avatar" props={['shape="rounded"', 'offline']}>
-				<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Avatar offline />
-			<Avatar offline>
-				<img src="/swiper-example-01.jpg" alt="" />
-			</Avatar>
-			<Avatar offline shape="circle">
-				<img src="/swiper-example-01.jpg" alt="" />
-			</Avatar>
-			<Avatar offline shape="rounded">
-				<img src="/swiper-example-01.jpg" alt="" />
-			</Avatar>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
+		</ScriptCode>
+	</pre>
+	<div slot="html">
+		<TagCode name="Avatar" props={['offline']} close_self />
+		<TagCode name="Avatar" props={['offline']}>
+			<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
+		</TagCode>
+		<TagCode name="Avatar" props={['shape="circle"', 'offline']}>
+			<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
+		</TagCode>
+		<TagCode name="Avatar" props={['shape="rounded"', 'offline']}>
+			<TagCode name="img" props={['src="your image url"']} close_self></TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Avatar offline />
+		<Avatar offline>
+			<img src="/swiper-example-01.jpg" alt="" />
+		</Avatar>
+		<Avatar offline shape="circle">
+			<img src="/swiper-example-01.jpg" alt="" />
+		</Avatar>
+		<Avatar offline shape="rounded">
+			<img src="/swiper-example-01.jpg" alt="" />
+		</Avatar>
+	</div>
+</SampleWrapper>

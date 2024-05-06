@@ -9,39 +9,32 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
 	import Badge from '$lib/components/Badge/Badge.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let sizes: any = ['lg', 'md', 'sm', 'xs'];
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			{#each sizes as size}
-				<TagCode name="p">
-					this is a <TagCode name="Badge" one_line dont_break props={[`size="${size}"`]}
-						>{size}</TagCode
-					> inside of a paragraph
-				</TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			{#each sizes as size}
-				<p>
-					this is a <Badge {size}>{size}</Badge> inside of a paragraph
-				</p>
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
+		</ScriptCode>
+		</pre>
+	<div slot="html">
+		{#each sizes as size}
+			<TagCode name="p">
+				this is a <TagCode name="Badge" one_line dont_break props={[`size="${size}"`]}
+					>{size}</TagCode
+				> inside of a paragraph
+			</TagCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		{#each sizes as size}
+			<p>
+				this is a <Badge {size}>{size}</Badge> inside of a paragraph
+			</p>
+		{/each}
+	</div>
+</SampleWrapper>

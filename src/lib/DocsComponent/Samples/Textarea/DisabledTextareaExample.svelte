@@ -8,30 +8,23 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextArea from '$lib/components/TextArea/TextArea.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
+<SampleWrapper>
+	<div slot="javascript">
 		<pre>
-		<ScriptCode>
-			import TextArea from '{$importDocumentSrc}/TextArea.svelte';
-		</ScriptCode>
-		</pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+			<ScriptCode>
+				import TextArea from '{$importDocumentSrc}/TextArea.svelte';
+			</ScriptCode>
+			</pre>
+	</div>
+	<div slot="html">
 		<TagCode name="TextArea" props={['disabled', 'label="Disabled"']}></TagCode>
 		<TagCode name="TextArea" props={['label="Not Disabled"']}></TagCode>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<TextArea label="Name" disabled />
 		<TextArea label="Parent Name" />
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>

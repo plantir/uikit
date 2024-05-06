@@ -2,9 +2,14 @@
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
 	import { themes } from '$lib/store/index.js';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
 	onMount(() => {
 		themeChange(false);
 	});
+	function changeTheme() {
+		dispatch('change');
+	}
 </script>
 
 <div class="p-4">
@@ -15,6 +20,7 @@
 				class="outline-base-content text-start outline-offset-4"
 				data-set-theme={theme}
 				data-act-class="[&_svg]:visible"
+				on:click={changeTheme}
 			>
 				<span
 					data-theme={theme}

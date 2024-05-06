@@ -8,35 +8,32 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Loading, Pagination, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
 	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Loading from '{$importDocumentSrc}/Loading.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>
 			{#each sizes as size}
 				<TagCode name="Loading" props={[`size="${size}"`]} close_self />
 			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="grid grid-cols-1 gap-4">
-				{#each sizes as size, index}
-					<Loading {size} />
-				{/each}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="grid grid-cols-1 gap-4">
+			{#each sizes as size, index}
+				<Loading {size} />
+			{/each}
+		</div>
+	</div>
+</SampleWrapper>

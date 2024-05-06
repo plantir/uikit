@@ -8,34 +8,28 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let value = 'John Snow';
 	let parentName = 'Stark?!';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
+<SampleWrapper>
+	<div slot="javascript">
 		<pre>
-		<ScriptCode>
-			import Textfield from '{$importDocumentSrc}/TextField.svelte';
-            let value = 'John Snow';
-            let parentName = 'Stark?!'
-		</ScriptCode>
-		</pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+			<ScriptCode>
+				import Textfield from '{$importDocumentSrc}/TextField.svelte';
+				let value = 'John Snow';
+				let parentName = 'Stark?!'
+			</ScriptCode>
+			</pre>
+	</div>
+	<div slot="html">
 		<TagCode name="TextField" props={['{value}', 'label="Name"']}></TagCode>
 		<TagCode name="TextField" props={['value={parentName}', 'label="Parent Name"']}></TagCode>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<TextField {value} label="Name" />
 		<TextField value={parentName} label="Parent Name" />
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>

@@ -8,40 +8,31 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Select, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let items = ['item-1', 'item-2', 'item-3'];
 	let value = '';
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Select from '{$importDocumentSrc}/Select.svelte';
 				let items = ['item-1', 'item-2', 'item-3'];
 				let value = '';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode
-				close_self
-				name="Select"
-				props={['label="Default Select"', '{items}', 'bind:value']}
-			/>
-			<TagCode one_line name="span" props={['class="pl-4"']}>value : {'{'}value{'}'}</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Select bind:value label="Default Select" {items} />
-			<span class="pl-4">
-				value : {value}
-			</span>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode close_self name="Select" props={['label="Default Select"', '{items}', 'bind:value']} />
+		<TagCode one_line name="span" props={['class="pl-4"']}>value : {'{'}value{'}'}</TagCode>
+	</div>
+	<div slot="preview">
+		<Select bind:value label="Default Select" {items} />
+		<span class="pl-4">
+			value : {value}
+		</span>
+	</div>
+</SampleWrapper>

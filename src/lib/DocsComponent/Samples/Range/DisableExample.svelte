@@ -8,39 +8,31 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Range from '{$importDocumentSrc}/Range.svelte';
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Range" close_self props={['label="default"', 'disabled']}></TagCode>
-			{#each colors as color}
-				<TagCode
-					name="Range"
-					close_self
-					props={[`label="${color}"`, `color="${color}"`, 'disabled']}
-				></TagCode>
-			{/each}
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Range label="default" min="0" disabled />
-			{#each colors as color}
-				<Range label={color} min="0" {color} disabled />
-			{/each}
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Range" close_self props={['label="default"', 'disabled']}></TagCode>
+		{#each colors as color}
+			<TagCode name="Range" close_self props={[`label="${color}"`, `color="${color}"`, 'disabled']}
+			></TagCode>
+		{/each}
+	</div>
+	<div slot="preview">
+		<Range label="default" min="0" disabled />
+		{#each colors as color}
+			<Range label={color} min="0" {color} disabled />
+		{/each}
+	</div>
+</SampleWrapper>

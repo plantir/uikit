@@ -10,47 +10,38 @@
 	import { Avatar, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
 	import Badge from '$lib/components/Badge/Badge.svelte';
 	import AvatarGroup from '$lib/components/AvatarGroup/AvatarGroup.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let sizes: any = ['lg', 'md', 'sm', 'xs'];
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
-			<ScriptCode>
-				import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-			</ScriptCode>
-			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>
-				<TagCode name="AvatarGroup">
-					{#each sizes as size}
-						<TagCode name="Avatar" props={[`size="${size}"`]}>
-							<TagCode name="img" props={['src="your image source"']} close_self />
-						</TagCode>
-					{/each}
-				</TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<div class="grid grid-cols-1 gap-4">
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
+		</ScriptCode>
+	</pre>
+	<div slot="html">
+		<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>
+			<TagCode name="AvatarGroup">
 				{#each sizes as size}
-					<AvatarGroup>
-						{#each { length: 4 } as i}
-							<Avatar {size}>
-								<img src="/swiper-example-01.jpg" alt="" />
-							</Avatar>
-						{/each}
-					</AvatarGroup>
+					<TagCode name="Avatar" props={[`size="${size}"`]}>
+						<TagCode name="img" props={['src="your image source"']} close_self />
+					</TagCode>
 				{/each}
-			</div>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+			</TagCode>
+		</TagCode>
+	</div>
+	<div class="grid grid-cols-1 gap-4" slot="preview">
+		{#each sizes as size}
+			<AvatarGroup>
+				{#each { length: 4 } as i}
+					<Avatar {size}>
+						<img src="/swiper-example-01.jpg" alt="" />
+					</Avatar>
+				{/each}
+			</AvatarGroup>
+		{/each}
+	</div>
+</SampleWrapper>

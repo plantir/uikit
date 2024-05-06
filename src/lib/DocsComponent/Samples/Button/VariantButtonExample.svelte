@@ -8,35 +8,26 @@
 	import { onMount } from 'svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript">
-		<pre>
+<SampleWrapper>
+	<pre slot="javascript">
 		<ScriptCode>
 			import Button from '{$importDocumentSrc}/Button.svelte';
 		</ScriptCode>
 	</pre>
-	</ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte">
+	<div slot="html">
 		<TagCode name="Button" props={['variant="glass"']}>glass</TagCode>
 		<TagCode name="Button" props={['variant="ghost"']}>ghost</TagCode>
 		<TagCode name="Button" props={['variant="link"']}>link</TagCode>
 		<TagCode name="Button" props={['variant="outline"']}>outline</TagCode>
-	</ShowCode>
-{:else}
-	<SimpleCode>
+	</div>
+	<div slot="preview">
 		<Button variant="glass">glass</Button>
 		<Button variant="ghost">ghost</Button>
 		<Button variant="link">link</Button>
 		<Button variant="outline">outline</Button>
-	</SimpleCode>
-{/if}
+	</div>
+</SampleWrapper>

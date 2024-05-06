@@ -7,28 +7,20 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import { importDocumentSrc } from '$lib/store/index.js';
-	let activeTab = 'javascript';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	let activeTab = 'Preview';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Simple" value="simple"></TabItem>
-</Tabs>
-	{#if activeTab == 'javascript'}
-		<ShowCode language="javascript">
-			<pre>
-            <ScriptCode>
-                import Button from '{$importDocumentSrc}/Button.svelte';
-            </ScriptCode>
-        </pre>
-		</ShowCode>
-	{:else if activeTab == 'html'}
-		<ShowCode language="svelte">
-			<TagCode name="Button" props={['active']}>active</TagCode>
-		</ShowCode>
-	{:else}
-		<SimpleCode>
-			<Button active>active</Button>
-		</SimpleCode>
-	{/if}
+<SampleWrapper>
+	<pre slot="javascript">
+		<ScriptCode>
+			import Button from '{$importDocumentSrc}/Button.svelte';
+		</ScriptCode>
+	</pre>
+	<div slot="html">
+		<TagCode name="Button" props={['active']}>active</TagCode>
+	</div>
+	<div slot="preview">
+		<Button active>active</Button>
+	</div>
+</SampleWrapper>

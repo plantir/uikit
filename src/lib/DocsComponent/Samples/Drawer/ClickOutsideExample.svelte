@@ -8,19 +8,19 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Drawer, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'javascript';
+	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
 	let open = false;
 	function openDrawer() {
 		open = !open;
 	}
+	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript">
-			<pre>
+<SampleWrapper>
+	<div slot="javascript">
+		<pre>
 			<ScriptCode>
 				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
 				let open = false;
@@ -29,24 +29,19 @@
 				{'}'};
 			</ScriptCode>
 			</pre>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte">
-			<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
-			<TagCode name="Drawer" props={['bind:open']}>
-				<TagCode name="div">content of inside Drawer</TagCode>
-				<TagCode one_line name="Button" props={['on:click={openDrawer}']}>Close</TagCode>
-			</TagCode>
-		</ShowCode>
-	</TabItem>
-	<TabItem title="Simple" value="simple">
-		<SimpleCode>
-			<Button on:click={openDrawer}>Open Drawer</Button>
-			<Drawer bind:open clickOutside={false}>
-				<div>content of inside Drawer</div>
-				<Button on:click={openDrawer}>Close</Button>
-			</Drawer>
-		</SimpleCode>
-	</TabItem>
-</Tabs>
+	</div>
+	<div slot="html">
+		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
+		<TagCode name="Drawer" props={['bind:open']}>
+			<TagCode name="div">content of inside Drawer</TagCode>
+			<TagCode one_line name="Button" props={['on:click={openDrawer}']}>Close</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<Button on:click={openDrawer}>Open Drawer</Button>
+		<Drawer bind:open clickOutside={false}>
+			<div>content of inside Drawer</div>
+			<Button on:click={openDrawer}>Close</Button>
+		</Drawer>
+	</div>
+</SampleWrapper>
