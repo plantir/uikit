@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
+import adapterNode from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import preprocess from 'svelte-preprocess';
 /** @type {import('@sveltejs/kit').Config} */
@@ -22,7 +23,10 @@ const config = {
 	},
 
 	kit: {
-		adapter: adapter()
+		adapter: adapterNode()
+		// adapter: adapter({
+		//     fallback: '/index.html'
+		// })
 	}
 };
 
