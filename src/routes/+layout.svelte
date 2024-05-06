@@ -15,6 +15,6 @@
 
 <style lang="scss">
 	.main {
-		@apply h-screen;
+		@apply min-h-screen pt-16;
 	}
 </style>

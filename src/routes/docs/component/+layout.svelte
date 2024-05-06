@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import Accordion from '$lib/DocsComponent/Accordion.svelte';
+	import { page } from '$app/stores';
 	let componentItems: accordionItem[] = [
 		{
 			title: 'Avatar',
@@ -89,6 +90,7 @@
 			value: 'component/textfield'
 		}
 	];
+	let scrollY: any;
 	function gotoLink(event: any) {
 		goto(`/docs/${event.detail}`);
 	}
@@ -100,20 +102,61 @@
 			const element = tags[index];
 			array.push({
 				id: element.id,
-				text: element.innerHTML
+				text: element.innerHTML,
+				active: false
 			});
 		}
 		headers = array;
 	});
+	function handleLink(e: any) {
+		const link = e.currentTarget;
+		const anchorId = new URL(link.href).hash.replace('#', '');
+		console.log(anchorId);
+
+		const anchor: any = document.getElementById(anchorId);
+		console.log(anchor.getBoundingClientRect().y);
+		window.scrollTo({
+			top: anchor.getBoundingClientRect().y,
+			behavior: 'smooth'
+		});
+	}
+	$: if (scrollY) {
+		checkActiveHeader();
+	}
+	function checkActiveHeader() {
+		let array: any = [...headers];
+		array.forEach((header: any) => {
+			const element: any = document.getElementById(header.id);
+			const rect = element.getBoundingClientRect();
+			if (header.id == 'setup') {
+				console.log(rect.top);
+			}
+			if (rect.top > -20 && rect.top < 250) {
+				header.active = true;
+			} else {
+				header.active = false;
+			}
+		});
+		headers = array;
+	}
+	function changePosition(header: any) {
+		const object = { ...header };
+		object.active = true;
+		header = object;
+	}
 </script>
 
+<svelte:window bind:scrollY />
 <div class="flex">
 	<div
-		class="basis-72 component-menu-height px-8 overflow-y-auto border-r border-gray-600 sticky top-0"
+		class="basis-72 component-menu-height px-8 overflow-y-auto border-r border-base-200 sticky top-16"
 	>
 		<Accordion on:clickItem={gotoLink} open={true} items={componentItems} title="Components">
 			<div slot="item" let:item>
-				<a href="/docs/{item.value}">
+				<a
+					href="/docs/{item.value}"
+					class={$page.url.pathname.includes(item.value) ? 'text-error' : ''}
+				>
 					{item.title}
 				</a>
 			</div>
@@ -122,11 +165,17 @@
 	<div class="relative px-[120px] flex-1">
 		<slot />
 	</div>
-	<div class="basis-72 h-max overflow-y-auto sticky top-4 pt-4">
+	<div class="basis-72 h-max overflow-y-auto sticky top-16 pt-4">
 		<div class="text-xl font-semibold mb-4">On this page</div>
 		<div class="flex flex-col gap-2">
 			{#each headers as header}
-				<a href="#{header.id}" class="block hover:text-red-600">{header.text}</a>
+				<a
+					href="#{header.id}"
+					on:click={() => changePosition(header)}
+					class="block hover:text-error"
+					class:text-error={header.active}
+					>{header.text}
+				</a>
 			{/each}
 		</div>
 	</div>

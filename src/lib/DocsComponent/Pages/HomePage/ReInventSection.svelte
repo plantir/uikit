@@ -136,7 +136,7 @@
 					</h1>
 					<div class="h-4" />
 					<p class="text-base-content/70 font-title py-4 font-light md:text-lg xl:text-2xl">
-						{@html "daisyUI adds component class names to Tailwind&nbsp;CSS<br /> so you can make beautiful websites <span class='border-base-content/20 border-b-2'>faster than ever.</span>"}
+						{@html "Uikit adds component class names to Tailwind&nbsp;CSS<br /> so you can make beautiful websites <span class='border-base-content/20 border-b-2'>faster than ever.</span>"}
 					</p>
 					<div class="h-10" />
 					<div>
@@ -694,7 +694,7 @@
 				</span>
 			</h2>
 			<p class="text-base-content/70 font-title py-4 font-light md:text-2xl">
-				{@html 'daisyUI adds class names to Tailwind CSS<br />for all common UI components.<br />Class names like'}
+				{@html 'Uikit adds class names to Tailwind CSS<br />for all common UI components.<br />Class names like'}
 				<a target="_blank" href="/docs/component/button/" class="text-primary">btn</a>
 				,
 				<a target="_blank" href="/docs/component/tabs/" class="text-primary">tabs</a>
@@ -809,7 +809,7 @@
 							<div class="flex items-center gap-3">
 								Tailwind only
 								<Switch bind:value={toggleValueForCodeCompare} size="lg" color="primary" />
-								Tailwind + daisyUI
+								Tailwind + Uikit
 							</div>
 						</div>
 					</div>

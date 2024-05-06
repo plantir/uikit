@@ -7,7 +7,7 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
-	let activeTab = 'Preview';
+	$: activeTab = $$slots.preview ? 'Preview' : 'Svelte';
 </script>
 
 <Tabs bind:selected={activeTab}>
@@ -19,17 +19,19 @@
 		</TabItem>
 	{/if}
 	{#if $$slots.javascript}
-		<TabItem title="Javascript" value="javascript">
-			<ShowCode language="javascript">
-				<slot name="javascript" />
-			</ShowCode>
-		</TabItem>
-	{/if}
-	{#if $$slots.html}
-		<TabItem title="Html" value="html">
+		<TabItem title="Svelte" value="Svelte">
 			<ShowCode language="svelte">
+				<slot name="javascript" />
 				<slot name="html" />
 			</ShowCode>
 		</TabItem>
 	{/if}
 </Tabs>
+
+<style lang="scss" global>
+	code {
+		pre {
+			white-space: pre-line;
+		}
+	}
+</style>

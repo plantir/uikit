@@ -15,7 +15,7 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="html">
+	<pre slot="javascript">
 		<ScriptCode>
 			import Collapse from '{$importDocumentSrc}/Collapse.svelte';
 		</ScriptCode>

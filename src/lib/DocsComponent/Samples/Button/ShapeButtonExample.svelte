@@ -26,15 +26,3 @@
 		<Button shape="square">square</Button>
 	</div>
 </SampleWrapper>
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Preview" value="Preview"></TabItem>
-</Tabs>
-{#if activeTab == 'javascript'}
-	<ShowCode language="javascript"></ShowCode>
-{:else if activeTab == 'html'}
-	<ShowCode language="svelte"></ShowCode>
-{:else}
-	<SimpleCode></SimpleCode>
-{/if}
