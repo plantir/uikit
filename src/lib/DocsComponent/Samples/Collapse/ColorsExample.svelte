@@ -49,7 +49,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 			<div>
 				<Collapse>
 					<div slot="title">default collapse</div>

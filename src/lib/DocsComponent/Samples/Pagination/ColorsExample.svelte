@@ -35,7 +35,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-3 gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			<Pagination bind:page={pages[0]} lastPage={10} />
 			{#each colors as color, index}
 				<Pagination bind:page={pages[index + 1]} lastPage={10} {color} />

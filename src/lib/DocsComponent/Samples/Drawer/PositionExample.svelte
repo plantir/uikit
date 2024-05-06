@@ -62,21 +62,23 @@
 		<TagCode name="Drawer" props={['bind:open={leftDrawer}']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 		</TagCode>
-		<TagCode name="Drawer" props={['bind:open={rightDrawer}','right']}>
+		<TagCode name="Drawer" props={['bind:open={rightDrawer}', 'right']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 		</TagCode>
-		<TagCode name="Drawer" props={['bind:open={topDrawer}','top']}>
+		<TagCode name="Drawer" props={['bind:open={topDrawer}', 'top']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 		</TagCode>
-		<TagCode name="Drawer" props={['bind:open={bottomDrawer}','bottom']}>
+		<TagCode name="Drawer" props={['bind:open={bottomDrawer}', 'bottom']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<Button on:click={openLeft}>Open left Drawer</Button>
-		<Button on:click={openRightt}>Open right Drawer</Button>
-		<Button on:click={openTop}>Open top Drawer</Button>
-		<Button on:click={openBottom}>Open bottom Drawer</Button>
+		<div class="flex flex-wrap gap-2">
+			<Button on:click={openLeft}>Open left Drawer</Button>
+			<Button on:click={openRightt}>Open right Drawer</Button>
+			<Button on:click={openTop}>Open top Drawer</Button>
+			<Button on:click={openBottom}>Open bottom Drawer</Button>
+		</div>
 		<Drawer bind:open={leftDrawer}>
 			<div>content of left Drawer</div>
 		</Drawer>
@@ -91,4 +93,3 @@
 		</Drawer>
 	</div>
 </SampleWrapper>
-

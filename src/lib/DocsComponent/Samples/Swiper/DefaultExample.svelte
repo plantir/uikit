@@ -22,7 +22,7 @@
 			</pre>
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="w-460px mx-auto"']}>
+		<TagCode name="div" props={['class="w-[290px] md:w-[460px] mx-auto"']}>
 			<TagCode name="Swiper">
 				{#each { length: 12 } as item, i}
 					<TagCode name="swiper-slide">
@@ -33,7 +33,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="w-[460px] mx-auto">
+		<div class="w-[290px] md:w-[460px] mx-auto">
 			<Swiper>
 				{#each { length: 12 } as index, i}
 					<swiper-slide>

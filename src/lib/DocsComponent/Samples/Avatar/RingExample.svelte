@@ -28,7 +28,7 @@
 			<TagCode name="Avatar" props={['ring', `color="${color}"`]} one_line>{color[0]}</TagCode>
 		{/each}
 	</div>
-	<div class="flex gap-4" slot="preview">
+	<div class="flex flex-wrap gap-4" slot="preview">
 		<Avatar ring>default</Avatar>
 		{#each colors as color}
 			<Avatar {color} ring>{color[0]}</Avatar>

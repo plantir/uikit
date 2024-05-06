@@ -32,7 +32,7 @@
 			{/each}
 		</TagCode>
 	</div>
-	<div class="grid grid-cols-4" slot="preview">
+	<div class="flex flex-wrap gap-4" slot="preview">
 		{#each sizes as size}
 			<div>
 				<Avatar {size}>

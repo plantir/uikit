@@ -27,7 +27,7 @@
 			</pre>
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="grid grid-cols-4 gap-4"']}>
+		<TagCode name="div" props={['class="grid grid-cols-1 md:grid-cols-4 gap-4"']}>
 			{#each sizes as size}
 				<TagCode
 					close_self
@@ -38,7 +38,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 			{#each sizes as size}
 				<Select bind:value label="Default Select" {items} {size} />
 			{/each}

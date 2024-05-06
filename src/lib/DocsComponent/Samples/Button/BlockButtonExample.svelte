@@ -24,8 +24,3 @@
 		<Button block>block</Button>
 	</div>
 </SampleWrapper>
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript"></TabItem>
-	<TabItem title="Html" value="html"></TabItem>
-	<TabItem title="Preview" value="Preview"></TabItem>
-</Tabs>

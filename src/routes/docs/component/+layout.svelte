@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import Accordion from '$lib/DocsComponent/Accordion.svelte';
 	import { page } from '$app/stores';
+	import { components } from '$lib/store/index.js';
 	let componentItems: accordionItem[] = [
 		{
 			title: 'Avatar',
@@ -149,9 +150,9 @@
 <svelte:window bind:scrollY />
 <div class="flex">
 	<div
-		class="basis-72 component-menu-height px-8 overflow-y-auto border-r border-base-200 sticky top-16"
+		class="hidden md:block basis-72 component-menu-height px-8 overflow-y-auto border-r border-base-200 sticky top-16"
 	>
-		<Accordion on:clickItem={gotoLink} open={true} items={componentItems} title="Components">
+		<Accordion on:clickItem={gotoLink} open={true} items={$components} title="Components">
 			<div slot="item" let:item>
 				<a
 					href="/docs/{item.value}"
@@ -162,10 +163,10 @@
 			</div>
 		</Accordion>
 	</div>
-	<div class="relative px-[120px] flex-1">
+	<div class="relative px-5 md:px-[60px] lg:px-[120px] flex-1">
 		<slot />
 	</div>
-	<div class="basis-72 h-max overflow-y-auto sticky top-16 pt-4">
+	<div class="hidden md:block basis-72 h-max overflow-y-auto sticky top-16 pt-4">
 		<div class="text-xl font-semibold mb-4">On this page</div>
 		<div class="flex flex-col gap-2">
 			{#each headers as header}

@@ -41,13 +41,13 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="flex gap-4">
+		<div class="flex gap-4 flex-wrap">
 			<Avatar text>default</Avatar>
 			{#each colors as color}
 				<Avatar text {color}>{color[0]}</Avatar>
 			{/each}
 		</div>
-		<div class="flex gap-4 mt-4">
+		<div class="flex gap-4 flex-wrap mt-4">
 			<Avatar ring>
 				<img src="/swiper-example-01.jpg" alt="" />
 			</Avatar>

@@ -52,7 +52,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-2 gap-10">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 			<div>
 				<div class="text-center">Custom</div>
 				<div class="relative">
@@ -79,7 +79,6 @@
 		</div>
 	</div>
 </SampleWrapper>
-
 
 <style lang="scss" global>
 	.swiper-navigation-to-right {

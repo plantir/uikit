@@ -33,7 +33,7 @@
 <div class:hidden={loading} class="relative">
 	<Button on:click={copyCode} class="absolute top-4 right-6 z-10">{copy ? 'copied' : 'copy'}</Button>
 	<div
-		class="bg-base-200 p-4 rounded-xl relative rounded-tl-none min-h-[200px] max-h-[350px] overflow-y-auto"
+		class="bg-base-200 p-4 rounded-xl relative rounded-tl-none min-h-[200px] max-h-[350px] overflow-y-auto max-w-full overflow-x-auto"
 	>
 		<code bind:this={code} class="language-{language}">
 			<slot />
