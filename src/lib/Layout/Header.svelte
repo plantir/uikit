@@ -47,7 +47,7 @@ bg-base-100 text-base-content fixed top-0 z-30 flex h-16 w-full justify-center b
 			</div>
 		</div>
 		<div class="flex gap-1 lg:gap-2">
-			<Button href="/docs/component/button" class="hidden md:block">Components</Button>
+			<Button href="/docs/component/button" class="hidden md:flex">Components</Button>
 			<Button
 				on:click={() => {
 					themedialog = true;
