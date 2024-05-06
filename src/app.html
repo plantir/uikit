@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="luxury">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -8,10 +8,13 @@
 	</head>
 	<script>
 		try {
-		  document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"))
+			document.documentElement.setAttribute(
+				'data-theme',
+				localStorage.getItem('theme') || 'luxury'
+			);
 		} catch (e) {}
-	  </script>
-  
+	</script>
+
 	<body data-sveltekit-preload-data="hover">
 		<div>%sveltekit.body%</div>
 	</body>

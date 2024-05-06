@@ -179,7 +179,7 @@
 								height="72"
 								alt="yawing face emoji"
 								src="/yawning-face@80.webp"
-								srcset={`/yawning-face.webp 2x`}
+								srcset={`/yawning-face@80.webp`}
 								class="pointer-events-none inline-block h-[1em] w-[1em] align-bottom"
 							/>
 						</h2>
@@ -203,14 +203,14 @@
 						<div class="relative h-screen">
 							<div class="sticky top-[16vh] xl:top-[30vh]">
 								<h2 class="text-[clamp(2.5rem,6vw,4.5rem)] font-light leading-none">
-									{@html "use <span class='text-success'><span class='font-black'>semantic</span> <br />class names</span>"}
+									{@html "use <span class='text-success'><span class='font-black'>semantic</span> <br />Components</span>"}
 									<img
 										loading="lazy"
 										width="72"
 										height="72"
 										alt="sunglasses emoji"
 										src="/smiling-face-with-sunglasses@80.webp"
-										srcset={`/smiling-face-with-sunglasses.webp 2x`}
+										srcset={`/smiling-face-with-sunglasses@80.webp`}
 										class="pointer-events-none inline-block h-[1em] w-[1em] align-bottom"
 									/>
 								</h2>
@@ -694,12 +694,12 @@
 				</span>
 			</h2>
 			<p class="text-base-content/70 font-title py-4 font-light md:text-2xl">
-				{@html 'Uikit adds class names to Tailwind CSS<br />for all common UI components.<br />Class names like'}
-				<a target="_blank" href="/docs/component/button/" class="text-primary">btn</a>
+				{@html 'Uikit adds components to Tailwind CSS<br />for Svelete library.<br />components  like'}
+				<a target="_blank" href="/docs/component/button/" class="text-primary">Button</a>
 				,
-				<a target="_blank" href="/docs/component/tabs/" class="text-primary">tabs</a>
+				<a target="_blank" href="/docs/component/tabs/" class="text-primary">Tabs</a>
 				,
-				<a target="_blank" href="/docs/component/switch/" class="text-primary">switch</a>
+				<a target="_blank" href="/docs/component/switch/" class="text-primary">Switch</a>
 				and many more.
 			</p>
 			<div class="h-6" />
