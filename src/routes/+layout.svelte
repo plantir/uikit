@@ -5,8 +5,11 @@
 </script>
 
 <svelte:head>
-	<title>Hello Library</title>
-	<meta name="description" content="plantir uikit for svlete" />
+	<title>Svelte Uikit</title>
+	<meta
+		name="description"
+		content="svelte open source library. sveltejs + tailwindcss + daisyui "
+	/>
 </svelte:head>
 <Header></Header>
 <div class="main">

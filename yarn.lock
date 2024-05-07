@@ -653,11 +653,6 @@
     "@rollup/plugin-node-resolve" "^15.2.3"
     rollup "^4.9.5"
 
-"@sveltejs/adapter-static@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/@sveltejs/adapter-static/-/adapter-static-3.0.1.tgz"
-  integrity sha512-6lMvf7xYEJ+oGeR5L8DFJJrowkefTK6ZgA4JiMqoClMkKq0s6yvsd3FZfCFvX1fQ0tpCD7fkuRVHsnUVgsHyNg==
-
 "@sveltejs/kit@^2.0.0":
   version "2.5.0"
   resolved "https://registry.npmjs.org/@sveltejs/kit/-/kit-2.5.0.tgz"
@@ -4969,6 +4964,7 @@ stop-iteration-iterator@^1.0.0:
     internal-slot "^1.0.4"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -5021,6 +5017,7 @@ string_decoder@^1.1.1:
     safe-buffer "~5.2.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
