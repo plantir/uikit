@@ -1,0 +1,7 @@
+@import '../../scss/var.scss';
+.#{$prefix}color-picker-wrapper {
+	@apply inline-flex flex-col;
+	&-label {
+		@apply mb-1;
+	}
+}
