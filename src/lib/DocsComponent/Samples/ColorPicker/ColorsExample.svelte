@@ -13,6 +13,7 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import ColorPicker from '$lib/components/ColorPicker/ColorPicker.svelte';
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let value = '';
 </script>
 
 <SampleWrapper>
@@ -20,23 +21,38 @@
 		<pre>
 			<ScriptCode>
 				import ColorPicker from '{$importDocumentSrc}/ColorPicker.svelte';
+				let value = '';
 			</ScriptCode>
 			</pre>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex flex-wrap gap-2 md:gap-4"']}>
-			<TagCode name="ColorPicker" close_self />
-			{#each colors as color}
-				<TagCode name="ColorPicker" close_self props={[`color="${color}"`]} />
-			{/each}
+			<TagCode name="ColorPicker" props={['bind:value']}>
+				<TagCode
+					name="div"
+					props={['class="w-12 h-12 rounded-xl cursor-pointer custom-gradient"']}
+					close_self
+				/>
+			</TagCode>
+			<TagCode name="div">
+value is : {'{'}value{'}'}
+			</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div class="flex flex-wrap gap-2 md:gap-4">
-			<ColorPicker />
-			{#each colors as color}
-				<ColorPicker {color} />
-			{/each}
+			<ColorPicker bind:value>
+				<div class="w-12 h-12 rounded-xl cursor-pointer custom-gradient"></div>
+			</ColorPicker>
+			<div>
+				value is : {value}
+			</div>
 		</div>
 	</div>
 </SampleWrapper>
+
+<style lang="scss">
+	.custom-gradient {
+		background: conic-gradient(from 180deg, red, orange, #ff0, green, blue);
+	}
+</style>
