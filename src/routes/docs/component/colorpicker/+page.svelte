@@ -28,47 +28,11 @@
 		color from the user.
 	</p>
 	<DefaultExample />
-	<Title id="ColorPicker-colors" title="Colors" />
+	<Title id="slots" title="Slots" />
 	<p>
-		Use these default ColorPicker styles with multiple colors to your website. there is no default
-		color . You can change it by using the
-		<span class="badge"> color </span> prop.
+		you can create custom colorPicker with slots
 	</p>
-	<p><span class="badge">your color only apply when colorpicker does not have a value</span></p>
 	<ColorsExample />
-	<Title id="ColorPicker-size" title="Sizes" />
-	<p>
-		Use <span class="badge">size</span> prop to change size of a
-		<span class="badge">ColorPicker</span> button. default size option for size is
-		<span class="badge">md</span>.
-	</p>
-	<SizesExample />
-	<Title id="ColorPicker-disable" title="Disabled" />
-	<p>
-		Use <span class="badge">disabled</span> prop to change ColorPicker to a disable
-		<span class="badge">ColorPicker</span> button.
-	</p>
-	<DisableExample />
-	<Title id="variant" title="Variant" />
-	<p>
-		Use these <span class="badge">variant</span> prop to change type of a colorpicker
-		<span class="badge">button</span>. there is no default option for variant, but you can pass
-		these values to the <span class="badge">variant</span> prop.
-	</p>
-	<VariantExample />
-	<Title id="shape" title="Shape" />
-	<p>
-		Use <span class="badge">shape</span> prop to change shape of a colorpicker
-		<span class="badge">button</span>. there is no default option for shape, but you can pass these
-		values to the <span class="badge">shape</span> prop.
-	</p>
-	<ShapeExample />
-	<Title id="wide" title=" Wide" />
-	<p>
-		Use <span class="badge">wide</span> prop to change colorpicker button to a wide
-		<span class="badge">button</span>.
-	</p>
-	<WideExample />
 	<Title id="tabs-props" title="Props" />
 	<p>this is the list of the props that ColorPicker can have.</p>
 	<ListOfProps />
