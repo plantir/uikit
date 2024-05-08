@@ -23,3 +23,4 @@ export { default as Table } from './components/Table/Table.svelte';
 export { default as Tabs } from './components/Tabs/Tabs.svelte';
 export { default as TextArea } from './components/TextArea/TextArea.svelte';
 export { default as TextField } from './components/TextField/TextField.svelte';
+export { default as Popup } from './components/Popup/Popup.svelte';
