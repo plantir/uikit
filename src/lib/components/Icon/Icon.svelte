@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Icon, IconSize } from './Icon.type.js';
+    import type { Icon } from './Icon.type.js';
     import './Icon.scss';
 	
     import polaris from './libraries/polaris.json'
@@ -11,14 +11,13 @@
     let componentName = 'icon';
 	
     export let name: keyof typeof polaris;
-    export let size: GlobalSize;
+    export let size: GlobalSize = undefined;
 
 	$: componentClass = {
         xs: size == 'xs',
 		sm: size == 'sm',
 		md: size == 'md',
-		lg: size == 'lg',
-		xl: size == 'xl',
+		lg: size == 'lg'
 	};
 
 </script>
