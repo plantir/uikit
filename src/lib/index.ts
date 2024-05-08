@@ -10,6 +10,7 @@ export { default as DatePicker } from './components/DatePicker/DatePicker.svelte
 export { default as Dialog } from './components/Dialog/Dialog.svelte';
 export { default as Divider } from './components/Divider/Divider.svelte';
 export { default as Drawer } from './components/Drawer/Drawer.svelte';
+export { default as Icon } from './components/Icon/Icon.svelte';
 export { default as Loading } from './components/Loading/Loading.svelte';
 export { default as Pagination } from './components/Pagination/Pagination.svelte';
 export { default as Radio } from './components/Radio/Radio.svelte';
