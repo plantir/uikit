@@ -43,6 +43,10 @@
 			value: 'component/drawer'
 		},
 		{
+			title: 'Icon',
+			value: 'component/icon'
+		},
+		{
 			title: 'Loading',
 			value: 'component/loading'
 		},

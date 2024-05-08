@@ -1,0 +1,26 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}icon {
+    @apply contents;
+
+    svg {
+        @apply inline-flex h-[1em] w-[1em] fill-current;
+    }
+
+    &-xs svg {
+        @apply w-3 h-3;
+    }
+    &-sm svg {
+        @apply w-4 h-4;
+    }
+    &-md svg {
+        @apply w-5 h-5;
+    }
+    &-lg svg {
+        @apply w-6 h-6;
+    }
+    &-xl svg {
+        @apply w-8 h-8;
+    }
+
+}
