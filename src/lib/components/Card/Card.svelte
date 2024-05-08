@@ -3,6 +3,7 @@
 	import El from '$lib/utils/El.svelte';
 	import type { Card } from './Card.type.ts';
 	import './Card.scss';
+	export let node: HTMLElement | undefined = undefined
 	type $$Props = Card;
 	let componentName = 'card';
     
@@ -12,6 +13,7 @@
 </script>
 
 <El
+	bind:node
 	{componentName}
 	{componentClass}
 	{...$$restProps}>
