@@ -3,15 +3,23 @@
 [data-theme='polaris'] {
 	background-color: #f1f1f1;
 	&:root {
+		--bc: 0.278078 0.029596 256.847952;
 		--rounded-btn: 0.5rem;
 		--rounded-checkbox: 0.25rem;
 		--rounded-badge: 0.5rem;
+		--tab-border: 0;
+        --tab-radius: 0.5rem;
 	}
 
 	.#{$prefix}button {
 		font-size: 0.8125rem;
 		line-height: 1.25rem;
 
+		&-square, 
+		&-circle {
+			height: 1.75rem;
+			width: 1.75rem;
+		}
 		@include unify-parent('-circle', '-xs') {
 			height: 1.75rem;
 			width: 1.75rem;
@@ -91,6 +99,10 @@
 		}
 	}
 
+	.#{$prefix}card {
+		@apply daisy-card-bordered border-gray-200;
+	}
+
 	.#{$prefix}checkbox {
 		border-radius: var(--rounded-checkbox, 0.25rem);
 		height: 1rem;
@@ -124,13 +136,36 @@
 			@apply outline-1;
 		}
 	}
+
+	.#{$prefix}tabs {
+		
+		.#{$prefix}tab-item {
+			font-size: 0.8125rem;
+			line-height: 1.25rem;
+			height: 1.75rem;
+		}
+
+		&-boxed {
+			@apply p-0;
+			.#{$prefix}tab-item-active {
+				@apply bg-gray-200 text-black;
+			}
+		}
+	}
+
+	.#{$prefix}table {
+		thead th {
+			@apply bg-gray-50 border-y text-black;
+		}
+	}
+
 	.#{$prefix}text-field {
 		&-label {
 			font-size: 0.8125rem;
 			font-weight: 500;
 		}
-		height: 2rem;
-		min-height: 2rem;
+		height: 1.75rem;
+		min-height: 1.75rem;
 		font-size: 0.8125rem;
 		&-xs {
 			min-height: 1.5rem;
