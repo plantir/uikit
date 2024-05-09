@@ -5,9 +5,8 @@
 
 <div class="p-6 gap-y-4 flex flex-col justify-center">
 	<div class="flex items-center gap-x-1">
-		<Popup size="xs">
+		<Popup >
 			<Button slot="toggler">open popup</Button>
-
 			Add product
 		</Popup>
 	</div>
