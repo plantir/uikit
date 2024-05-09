@@ -9,16 +9,19 @@
 <script lang="ts">
 	import './CheckboxGroup.scss';
 	import { setContext, createEventDispatcher } from 'svelte';
-	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { CheckboxGroup } from './CheboxGroup.type.js';
-	let componentName = 'checkbox-group';
+	import El from '$lib/utils/El.svelte';
 	type $$Props = CheckboxGroup;
 	let dispatch = createEventDispatcher();
+	let componentName = 'checkbox-group';
+
 	export let value: any[] = undefined;
 	export let inline: boolean = false;
 	export let column: boolean = false;
 	export let join: boolean = false;
+	
 	if (!inline && !column) inline = true;
+	
 	const ctx: CheckboxCtxType = {
 		join,
 		selected: writable(value)
@@ -28,23 +31,21 @@
 
 	selected.subscribe((val) => {
 		value = val;
+		dispatch('change', value)
 	});
 
 	function onValueChange() {
 		selected.set(value);
 	}
 	$: value, onValueChange();
-	$: elClass = ClassMerge({
-		name: componentName,
-		componentClass: {
-			join,
-			inline,
-			column
-		},
-		staticClassess: $$props.class
-	});
+
+	$: componentClass = {
+		join,
+		inline,
+		column
+	}
 </script>
 
-<div class={elClass}>
+<El {componentName} {componentClass} {...$$restProps}>
 	<slot />
-</div>
+</El>
