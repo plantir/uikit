@@ -1,0 +1,5 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}card-actions {
+	@apply daisy-card-actions justify-end;
+}
