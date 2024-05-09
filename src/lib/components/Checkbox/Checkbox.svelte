@@ -2,7 +2,9 @@
 	import type { Checkbox, CheckboxColor, CheckboxSize } from './Checkbox.type.js';
 	import './Checkbox.scss';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import { onMount } from 'svelte';
+	import { getContext, onMount } from 'svelte';
+	import type { CheckboxCtxType } from '../CheckboxGroup/CheckboxGroup.svelte';
+	import { writable } from 'svelte/store';
 	type $$Props = Checkbox;
 	let componentName = 'checkbox';
 	export let label: string | undefined = undefined;
@@ -11,12 +13,26 @@
 	export let indeterminate: boolean = false;
 	export let size: CheckboxSize = undefined;
 	export let color: CheckboxColor = undefined;
+	
 	let elm;
 	function makeIndeterminate() {
 		if (elm && indeterminate) {
 			elm.indeterminate = true;
 		}
 	}
+
+	const ctx = getContext<CheckboxCtxType>('ctx') ?? {};
+	const selected = ctx.selected ?? writable();
+	function onChange(e: any) {
+		if(!ctx)return;
+		console.log(e.target)
+		if (e.target.checked) {
+			$selected = [...$selected, e.currentTarget.value];
+		} else {
+			$selected = $selected.filter((value) => value !== e.currentTarget.value);
+		}
+	}
+
 	onMount(() => {
 		indeterminate && makeIndeterminate();
 	});
@@ -35,6 +51,7 @@
 		warning: color == 'warning',
 		natural: color == 'natural'
 	};
+
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 	$: indeterminate, makeIndeterminate();
@@ -42,12 +59,14 @@
 
 <label class={wrapperClass}>
 	<input
+	
 		bind:this={elm}
 		type="checkbox"
 		{disabled}
 		{value}
 		class={elClass}
 		bind:checked={value}
+		on:change = {onChange}
 		on:change
 	/>
 	<slot name="label">
