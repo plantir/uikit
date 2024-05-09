@@ -151,5 +151,9 @@ export const components = writable([
     {
         title: 'Text field',
         value: 'component/textfield'
+    },
+    {
+        title: 'Popup',
+        value: 'component/popup'
     }
 ])
