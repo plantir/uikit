@@ -51,9 +51,9 @@
 		@apply relative
 	}
 	&-before-wrapper {
-		@apply absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] ;
+		@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] ;
 	}
 	&-after-wrapper {
-		@apply absolute flex pe-1 top-[50%] right-0 translate-y-[-50%] ; 
+		@apply opacity-80 absolute flex pe-1 top-[50%] right-0 translate-y-[-50%] ; 
 	}
 }
