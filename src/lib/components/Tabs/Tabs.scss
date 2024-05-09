@@ -5,7 +5,7 @@
 
 	&-bordered {
 		@apply daisy-tabs-bordered;
-		.#{$prefix}tab-item {
+		& > .#{$prefix}tab-item {
 			border-color: var(--fallback-bc, oklch(var(--bc) / var(--tw-border-opacity)));
 			--tw-border-opacity: 0.2;
 			border-bottom-width: calc(var(--tab-border, 1px) + 1px);
@@ -19,7 +19,7 @@
 	}
 	&-lifted {
 		@apply daisy-tabs-lifted;
-		.#{$prefix}tab-item {
+		& > .#{$prefix}tab-item {
 			border: var(--tab-border, 1px) solid transparent;
 			border-bottom-color: var(--tab-border-color);
 			border-start-end-radius: var(--tab-radius, 0.5rem);
@@ -43,7 +43,7 @@
 	}
 	&-boxed {
 		@apply daisy-tabs-boxed;
-		.#{$prefix}tab-item {
+		& > .#{$prefix}tab-item {
 			border-radius: var(--rounded-btn, 0.5rem);
 			&-active {
 				--tw-bg-opacity: 1;
