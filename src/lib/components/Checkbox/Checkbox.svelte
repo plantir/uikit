@@ -27,7 +27,6 @@
 	const selected = ctx.selected ?? writable();
 	function onChange(e: any) {
 		if(!ctx)return;
-		console.log(e.target)
 		if (e.target.checked) {
 			$selected = [...$selected, e.currentTarget.value];
 		} else {
@@ -37,7 +36,12 @@
 
 	onMount(() => {
 		indeterminate && makeIndeterminate();
+		
+		if(ctx){//initialize from checkboxgroup
+			checked = $selected.includes(value)
+		}
 	});
+
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
@@ -61,7 +65,6 @@
 
 <label class={wrapperClass}>
 	<input
-	
 		bind:this={elm}
 		type="checkbox"
 		{disabled}

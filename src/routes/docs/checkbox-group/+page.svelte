@@ -7,8 +7,8 @@
 
 <div>{value}</div>
 
-<CheckboxGroup bind:value>
-	<Checkbox value="a" label="apple" />
+<CheckboxGroup inline = {false} bind:value >
+	<Checkbox size='sm' value="a" label="apple" />
 	<Checkbox value="o" label="orange" />
 	<Checkbox value="b" label="banana" />
 </CheckboxGroup>

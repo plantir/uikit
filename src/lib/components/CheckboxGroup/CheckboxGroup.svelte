@@ -7,11 +7,11 @@
 </script>
 
 <script lang="ts">
-    import './CheckboxGroup.scss'
+	import './CheckboxGroup.scss';
 	import { setContext, createEventDispatcher } from 'svelte';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { CheckboxGroup } from './CheboxGroup.type.js';
-	let componentName = 'radio-group';
+	let componentName = 'checkbox-group';
 	type $$Props = CheckboxGroup;
 	let dispatch = createEventDispatcher();
 	export let value: any[] = undefined;
@@ -21,16 +21,13 @@
 	if (!inline && !column) inline = true;
 	const ctx: CheckboxCtxType = {
 		join,
-		selected: writable()
+		selected: writable(value)
 	};
 	let selected = ctx.selected;
 	setContext<CheckboxCtxType>('ctx', ctx);
-	
-    selected.subscribe((val) => {
-		// if (val && val != value) {
-			value = val;
-			// dispatch('change', value);
-		// }
+
+	selected.subscribe((val) => {
+		value = val;
 	});
 
 	function onValueChange() {
