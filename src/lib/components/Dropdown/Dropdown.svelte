@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import {
 		computePosition,
 		shift,
@@ -7,19 +8,18 @@
 		autoUpdate,
 		arrow
 	} from '@floating-ui/dom';
-	import { onMount } from 'svelte';
-	import './Pupup.scss';
 	import El from '$lib/utils/El.svelte';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import type { Popup, PopupPlacement } from './Popup.type.js';
+	import type { Dropdown, DropdownPlacement } from './Dropdown.type.js';
+	import './Dropdown.scss';
 
-	type $$Props = Popup;
+	type $$Props = Dropdown;
 
-	export let placement: PopupPlacement = 'bottom';
+	export let placement: DropdownPlacement = 'bottom';
 	export let open: boolean = false;
-	export let offset: number = 4;
+	export let offset: number = 8;
 
-	let componentName = 'popup';
+	let componentName = 'dropdown';
 
 	let top = '';
 	let left = '';
@@ -38,47 +38,47 @@
 					shift({ padding: offset }),
 					arrow({ element: arrowEl })
 				]
-			}).then(({ x, y, placement, middlewareData }) => {
+			}).then(({ x, y }) => {
 				(left = `${x}px`), (top = `${y}px`);
 			});
 		}
 	}
 	
-	function showPopup() {
-		floating?.focus();
+	function show() {
 		open = true;
+		floating?.focus();
 	}
 
-	function hideTooltip() {
+	function hide() {
 		open = false;
 		floating?.blur();
 	}
 
-	function togglePopup(event: any) {
+	function toggle(event: any) {
 		event.stopPropagation();
-		open ? hideTooltip() : showPopup();
+		open ? hide() : show();
 	}
 
 	function onClickOutside(event: any) {
 		if (!floating?.contains(event.target)) {
-			hideTooltip();
+			hide();
 		}
 	}
 	onMount(() => {
 		if (!toggler || !floating) return;
 
-		toggler.addEventListener('click', togglePopup);
+		toggler.addEventListener('click', toggle);
 		document.addEventListener('click', onClickOutside);
 
 		const cleanup = autoUpdate(toggler, floating, updatePosition);
 
 		if(open) {
-			showPopup()
+			show()
 		}
 
 		return () => {
 			cleanup();
-			toggler!.removeEventListener('click', togglePopup);
+			toggler!.removeEventListener('click', toggle);
 			document.removeEventListener('click', onClickOutside);
 		};
 	});
