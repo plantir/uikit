@@ -7,6 +7,8 @@
 	import { writable } from 'svelte/store';
 	type $$Props = Checkbox;
 	let componentName = 'checkbox';
+
+	export let checked: boolean = false;
 	export let label: string | undefined = undefined;
 	export let value: string | boolean = '';
 	export let disabled: boolean = false;
@@ -65,7 +67,7 @@
 		{disabled}
 		{value}
 		class={elClass}
-		bind:checked={value}
+		bind:checked={checked}
 		on:change = {onChange}
 		on:change
 	/>

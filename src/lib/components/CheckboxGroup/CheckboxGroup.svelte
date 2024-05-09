@@ -26,12 +26,12 @@
 	let selected = ctx.selected;
 	setContext<CheckboxCtxType>('ctx', ctx);
 	
-    // selected.subscribe((val) => {
-	// 	if (val && val != value) {
-	// 		value = val;
-	// 		dispatch('change', value);
-	// 	}
-	// });
+    selected.subscribe((val) => {
+		// if (val && val != value) {
+			value = val;
+			// dispatch('change', value);
+		// }
+	});
 
 	function onValueChange() {
 		selected.set(value);
