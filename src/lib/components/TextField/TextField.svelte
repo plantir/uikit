@@ -7,6 +7,7 @@
 	} from './TextField.type.js';
 	import './TextField.scss';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import El from '$lib/utils/El.svelte';
 	type $$Props = TextField;
 	let componentName = 'text-field';
 	export let label: string | undefined = undefined;
@@ -34,6 +35,10 @@
 		warning: color == 'warning',
 		natural: color == 'natural'
 	};
+
+	$: beforeWrapper = ClassMerge({ name: `${componentName}-before-wrapper` });
+	$: afterWrapper = ClassMerge({ name: `${componentName}-after-wrapper` });
+	$: inputWrapper = ClassMerge({ name: `${componentName}-input-wrapper` });
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: inputClass });
 	$: labelClass = ClassMerge({ name: `${componentName}-label` });
@@ -47,12 +52,20 @@
 			</span>
 		{/if}
 	</slot>
-	<input
+	<El class={inputWrapper} >
+		<El class={beforeWrapper}>
+			<slot name = 'before' />
+		</El>
+		<input
 		{...$$restProps}
 		{inputmode}
 		{disabled}
 		bind:value
 		{placeholder}
 		class={elClass}
-	/>
+		/>
+		<El class={afterWrapper}>
+			<slot name = 'after' />
+		</El>
+	</El>
 </label>

@@ -47,4 +47,13 @@
 	&-warning {
 		@apply daisy-input-warning;
 	}
+	&-input-wrapper {
+		@apply relative
+	}
+	&-before-wrapper {
+		@apply absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] ;
+	}
+	&-after-wrapper {
+		@apply absolute flex pe-1 top-[50%] right-0 translate-y-[-50%] ; 
+	}
 }
