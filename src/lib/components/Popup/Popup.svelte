@@ -1,6 +1,4 @@
 <script lang="ts">
-	export let activator = '';
-	export let placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 	import {
 		computePosition,
 		shift,
@@ -12,19 +10,23 @@
 	import { onMount } from 'svelte';
 	import './Pupup.scss';
 	import El from '$lib/utils/El.svelte';
-	import Card from '../Card/Card.svelte';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import type { Popup, PopupPlacement } from './Popup.type.js';
 
-	export let active = false;
-	export let offset = 8;
+	type $$Props = Popup;
+
+	export let placement: PopupPlacement = 'bottom';
+	export let open: boolean = false;
+	export let offset: number = 4;
 
 	let componentName = 'popup';
-	$: componentClass = {};
 
 	let top = '';
 	let left = '';
-	let arrowEl: Element;
-	let floating: Element | undefined = undefined;
-	let toggler: Element | undefined | null = undefined;
+
+	let arrowEl: HTMLElement;
+	let floating: HTMLElement | undefined = undefined;
+	let toggler: HTMLElement | undefined | null = undefined;
 
 	function updatePosition() {
 		if (floating && toggler) {
@@ -41,52 +43,71 @@
 			});
 		}
 	}
-	function showTooltip() {
+	
+	function showPopup() {
 		floating?.focus();
-		active = true;
-	}
-	function hideTooltip() {
-		active = false;
-		floating?.blur();
-	}
-	function toggleTooltip(event: MouseEvent) {
-		event.stopPropagation();
-		active ? hideTooltip() : showTooltip();
+		open = true;
 	}
 
-	function onClickOutside(event: MouseEvent) {
+	function hideTooltip() {
+		open = false;
+		floating?.blur();
+	}
+
+	function togglePopup(event: any) {
+		event.stopPropagation();
+		open ? hideTooltip() : showPopup();
+	}
+
+	function onClickOutside(event: any) {
 		if (!floating?.contains(event.target)) {
 			hideTooltip();
 		}
 	}
 	onMount(() => {
-		toggler = floating?.previousElementSibling;
+		if (!toggler || !floating) return;
 
-		if (!toggler || !floating) return; //if one of these do not exist then we can do nothing
+		toggler.addEventListener('click', togglePopup);
+		document.addEventListener('click', onClickOutside);
 
-		toggler.addEventListener('click', toggleTooltip);
-		document?.addEventListener('click', onClickOutside);
+		const cleanup = autoUpdate(toggler, floating, updatePosition);
 
-		const cleanup = autoUpdate(toggler, floating as HTMLElement, updatePosition);
+		if(open) {
+			showPopup()
+		}
 
 		return () => {
 			cleanup();
-			toggler?.removeEventListener('click', toggleTooltip);
-			document?.removeEventListener('click', onClickOutside);
+			toggler!.removeEventListener('click', togglePopup);
+			document.removeEventListener('click', onClickOutside);
 		};
+	});
+
+	$: componentClass = {};
+	
+	$: togglerClass = ClassMerge({ 
+		name: `${componentName}-toggler` 
+	});
+	
+	$: contentClass = ClassMerge({
+		name: `${componentName}-content`,
+		componentClass: {
+			hidden: !open
+		}
 	});
 </script>
 
-<El {componentClass} {componentName}>
-	<slot name="toggler" />
-	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-	<Card
-		bind:node={floating}
-		class="popup-bubble {$$props.class}  {!active && 'hidden'}"
-		style="top: {top}; left: {left};  {$$props.style}"
+<El {componentClass} {componentName} {...$$restProps}>
+	<div bind:this={toggler} class={togglerClass}>
+		<slot name="toggler" />
+	</div>
+	<!-- svelte-ignore a11y-no-noninteropen-tabindex -->
+	<div
+		bind:this={floating}
+		class={contentClass}
+		style="top: {top}; left: {left}; {$$props.style}"
 		tabindex="0"
-		{...$$restProps}
 	>
 		<slot />
-	</Card>
+	</div>
 </El>

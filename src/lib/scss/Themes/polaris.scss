@@ -6,9 +6,11 @@
 		--rounded-btn: 0.5rem;
 		--rounded-checkbox: 0.25rem;
 		--rounded-badge: 0.5rem;
+		--bc: 0.278078 0.029596 256.847952;
 	}
 
 	.#{$prefix}button {
+		@apply no-animation;
 		font-size: 0.8125rem;
 		line-height: 1.25rem;
 
