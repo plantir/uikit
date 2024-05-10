@@ -1,0 +1,5 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}card-title {
+	@apply daisy-card-title;
+}

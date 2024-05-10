@@ -9,9 +9,11 @@
 		--rounded-badge: 0.5rem;
 		--tab-border: 0;
         --tab-radius: 0.5rem;
+		--bc: 0.278078 0.029596 256.847952;
 	}
 
 	.#{$prefix}button {
+		@apply no-animation;
 		font-size: 0.8125rem;
 		line-height: 1.25rem;
 
@@ -108,6 +110,13 @@
 		height: 1rem;
 		width: 1rem;
 	}
+
+	.#{$prefix}page-header {
+		&-title-wrapper {
+			@apply text-xl gap-2;
+		}
+	}
+	
 	.#{$prefix}radio {
 		height: 1rem;
 		width: 1rem;
