@@ -1,0 +1,5 @@
+@import '../../scss/var.scss';
+
+.#{$prefix}card {
+	@apply daisy-card daisy-card-bordered bg-base-100 shadow-xl rounded-lg;
+}
