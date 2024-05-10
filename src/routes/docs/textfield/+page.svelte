@@ -14,18 +14,17 @@
 	</div>
 
 	<div>
-		<TextField inputClass='px-6' label="label" placeholder="placeholder" bind:value>
-			<Icon slot='before' name ="SearchMinor" size='md' />
-			<Icon slot='after' name ="CancelSmallMinor" size='md' />
+		<TextField  label="label" placeholder="placeholder" bind:value>
+			<Icon slot='start' name ="SearchMinor" size='md' />
+			<Icon slot='end' name ="CancelSmallMinor" size='md' />
 		</TextField>
-		<TextField inputClass='px-6' size='sm' label="label" placeholder="placeholder" bind:value>
-			<Icon slot='before' name ="ActivitiesMajor" size='md' />
-			<Icon slot='after' name ="ActivitiesMajor" size='sm' />
+		<TextField size='sm' label="label" placeholder="placeholder" bind:value>
+			<Icon slot='start' name ="ActivitiesMajor" size='md' />
+			<Icon slot='end' name ="ActivitiesMajor" size='sm' />
 		</TextField>
-		<TextField inputClass='px-8' label="label" size='lg' placeholder="placeholder" bind:value>
-
-			<Icon slot='before' name ="ActivitiesMajor" size='lg' />
-			<Icon slot='after' name ="ActivitiesMajor" size='lg' />
+		<TextField  label="label" size='lg' placeholder="placeholder" bind:value>
+			<Icon slot='start' name ="ActivitiesMajor" size='lg' />
+			<Icon slot='end' name ="ActivitiesMajor" size='lg' />
 		</TextField>
 	</div>
 	<TextArea

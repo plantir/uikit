@@ -33,11 +33,14 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		natural: color == 'natural',
+		"has-start": !!$$slots.start,
+		"has-end": !!$$slots.end,
+
 	};
 
-	$: beforeWrapper = ClassMerge({ name: `${componentName}-before-wrapper` });
-	$: afterWrapper = ClassMerge({ name: `${componentName}-after-wrapper` });
+	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
+	$: endWrapper = ClassMerge({ name: `${componentName}-end-wrapper` });
 	$: inputWrapper = ClassMerge({ name: `${componentName}-input-wrapper` });
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: inputClass });
@@ -53,8 +56,8 @@
 		{/if}
 	</slot>
 	<El class={inputWrapper} >
-		<El class={beforeWrapper}>
-			<slot name = 'before' />
+		<El class={startWrapper}>
+			<slot name = 'start' />
 		</El>
 		<input
 		{...$$restProps}
@@ -64,8 +67,8 @@
 		{placeholder}
 		class={elClass}
 		/>
-		<El class={afterWrapper}>
-			<slot name = 'after' />
+		<El class={endWrapper}>
+			<slot name = 'end' />
 		</El>
 	</El>
 </label>

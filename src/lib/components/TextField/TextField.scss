@@ -50,10 +50,22 @@
 	&-input-wrapper {
 		@apply relative
 	}
-	&-before-wrapper {
+	&-start-wrapper {
 		@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] ;
 	}
-	&-after-wrapper {
+	&-end-wrapper {
 		@apply opacity-80 absolute flex pe-1 top-[50%] right-0 translate-y-[-50%] ; 
+	}
+	&-has-start {
+		@apply ps-6
+	}
+	&-has-end {
+		@apply pe-6
+	}
+	&-has-start.#{$prefix}text-field-lg {
+		@apply ps-8
+	}
+	&-has-end.#{$prefix}text-field-lg {
+		@apply pe-8
 	}
 }
