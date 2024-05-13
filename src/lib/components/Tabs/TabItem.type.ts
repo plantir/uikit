@@ -9,7 +9,3 @@ export interface TabItem extends Base {
 	value: string | undefined;
 	title?: string | undefined;
 }
-
-export interface TabCtxType {
-	selected: Writable<string>;
-}
