@@ -33,8 +33,8 @@
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} on:click={() => (open = !open)}>
-	<div class={titleClass}>
+<El {componentName} {componentClass} {...$$restProps}>
+	<div class={titleClass} on:click={() => (open = !open)}>
 		<slot name="title" />
 	</div>
 
