@@ -8,5 +8,5 @@ export interface Tab extends Base {
 	color?: TabColor;
 	active?: boolean;
 	variant?: TabVariant;
-	selected?: undefined | string;
+	selected?: undefined | string | number;
 }

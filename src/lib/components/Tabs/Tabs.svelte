@@ -1,22 +1,42 @@
+<script lang="ts" context="module">
+	import { setContext, getContext } from 'svelte';
+
+	interface TabCtxType {
+		selected: Writable<string | number>;
+	}
+
+	let ctx = {};
+
+	export function setTabsContext(value: TabCtxType) {
+		return setContext(ctx, value);
+	}
+	export function getTabsContext(): TabCtxType {
+		return getContext(ctx);
+	}
+</script>
+
 <script lang="ts">
+	import { writable, type Writable } from 'svelte/store';
 	import El from '$lib/utils/El.svelte';
-	import type { Tab, TabColor, TabSize, TabVariant } from './Tabs.type.js';
+	import type { Tab } from './Tabs.type.js';
 	import './Tabs.scss';
-	import { setContext } from 'svelte';
-	import { writable } from 'svelte/store';
+
 	type $$Props = Tab;
 	let componentName = 'tabs';
-	export let size: TabSize = undefined;
-	export let variant: TabVariant = 'border';
-	export let color: TabColor = undefined;
-	export let selected: string | number | undefined = undefined;
-	const ctx = {
-		selected: writable<string | number>(selected)
-	};
-	setContext('ctx', ctx);
+
+	export let size: $$Props['size'] = undefined;
+	export let variant: $$Props['variant'] = 'border';
+	export let color: $$Props['color'] = undefined;
+	export let selected: $$Props['selected'] = undefined;
+
+	const ctx = setTabsContext({
+		selected: writable(selected)
+	});
+	
 	ctx.selected.subscribe((val) => {
 		selected = val;
 	});
+	
 	$: componentClass = {
 		bordered: variant == 'border',
 		boxed: variant == 'box',

@@ -1,32 +1,34 @@
 <script lang="ts">
-	import type { Checkbox, CheckboxColor, CheckboxSize } from './Checkbox.type.js';
-	import './Checkbox.scss';
-	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import { getContext, onMount } from 'svelte';
-	import type { CheckboxCtxType } from '../CheckboxGroup/CheckboxGroup.svelte';
+	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import { getCheckboxGroupContext } from '../CheckboxGroup/CheckboxGroup.svelte';
+	import type { Checkbox } from './Checkbox.type.js';
+	import './Checkbox.scss';
+
 	type $$Props = Checkbox;
 	let componentName = 'checkbox';
 
-	export let checked: boolean = false;
-	export let label: string | undefined = undefined;
-	export let value: string | boolean = '';
-	export let disabled: boolean = false;
-	export let indeterminate: boolean = false;
-	export let size: CheckboxSize = undefined;
-	export let color: CheckboxColor = undefined;
-	
-	let elm;
+	export let checked: $$Props['checked'] = false;
+	export let label: $$Props['label'] = undefined;
+	export let value: $$Props['value'] = '';
+	export let disabled: $$Props['disabled'] = false;
+	export let indeterminate: $$Props['indeterminate'] = false;
+	export let size: $$Props['size'] = undefined;
+	export let color: $$Props['color'] = undefined;
+
+	let node: HTMLInputElement;
 	function makeIndeterminate() {
-		if (elm && indeterminate) {
-			elm.indeterminate = true;
+		if (node && indeterminate) {
+			node.indeterminate = true;
 		}
 	}
 
-	const ctx = getContext<CheckboxCtxType>('ctx') ?? {};
-	const selected = ctx.selected ?? writable();
+	const ctx = getCheckboxGroupContext();
+	const selected = ctx?.selected ?? writable();
+
 	function onChange(e: any) {
-		if(!ctx)return;
+		if (!ctx) return;
 		if (e.target.checked) {
 			$selected = [...$selected, e.currentTarget.value];
 		} else {
@@ -36,9 +38,9 @@
 
 	onMount(() => {
 		indeterminate && makeIndeterminate();
-		
-		if(ctx){//initialize from checkboxgroup
-			checked = $selected.includes(value)
+
+		if (ctx && value) {
+			checked = $selected.includes(value);
 		}
 	});
 
@@ -55,7 +57,8 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		natural: color == 'natural',
+		join: ctx?.join
 	};
 
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
@@ -65,13 +68,13 @@
 
 <label class={wrapperClass}>
 	<input
-		bind:this={elm}
+		bind:this={node}
 		type="checkbox"
 		{disabled}
 		{value}
 		class={elClass}
-		bind:checked={checked}
-		on:change = {onChange}
+		bind:checked
+		on:change={onChange}
 		on:change
 	/>
 	<slot name="label">

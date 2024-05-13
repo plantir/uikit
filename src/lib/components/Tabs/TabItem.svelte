@@ -1,19 +1,22 @@
 <script lang="ts">
-	import El from '$lib/utils/El.svelte';
-	import type { TabCtxType, TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
-	import './TabItem.scss';
-	import { getContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import El from '$lib/utils/El.svelte';
+	import { getTabsContext } from './Tabs.svelte';
+	
+	import type { TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
+	import './TabItem.scss';
+
 	type $$Props = TabItem;
 	let componentName = 'tab-item';
+
 	export let size: TabItemSize = undefined;
 	export let color: TabItemColor = undefined;
 	export let value: string | undefined = undefined;
 	export let title: string | undefined = undefined;
-	const ctx = getContext<TabCtxType>('ctx') ?? {};
+	const ctx = getTabsContext();
 
-	const selected = ctx.selected ?? writable<HTMLElement>();
+	const selected = ctx?.selected ?? writable<HTMLElement>();
 
 	$: componentClass = {
 		active,
@@ -42,7 +45,6 @@
 	{componentName}
 	{componentClass}
 	{...$$restProps}
-	on:click
 	on:blur
 	on:click
 	on:contextmenu
