@@ -71,6 +71,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@floating-ui/dom": "^1.6.5",
 		"@sveltejs/adapter-node": "^5.0.1",
 		"daisyui": "^4.7.2",
 		"date-picker-svelte": "^2.10.1",
