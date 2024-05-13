@@ -1,33 +1,45 @@
 <script context="module" lang="ts">
+	import {setContext, getContext} from 'svelte'
 	import { writable, type Writable } from 'svelte/store';
-	export interface CheckboxCtxType {
-		join: boolean;
+
+	interface CheckboxCtxType {
+		join?: boolean;
 		selected: Writable<(string | number)[]>;
+	}
+
+	const ctx = {}
+	export function getCheckboxGroupContext(): CheckboxCtxType | undefined {
+		return getContext(ctx)
+	}
+
+	export function setCheckboxGroupContext(value: CheckboxCtxType) {
+		return setContext(ctx, value)
 	}
 </script>
 
 <script lang="ts">
 	import './CheckboxGroup.scss';
-	import { setContext, createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	import type { CheckboxGroup } from './CheboxGroup.type.js';
 	import El from '$lib/utils/El.svelte';
 	type $$Props = CheckboxGroup;
 	let dispatch = createEventDispatcher();
 	let componentName = 'checkbox-group';
 
-	export let value: any[] = undefined;
-	export let inline: boolean = false;
-	export let column: boolean = false;
-	export let join: boolean = false;
+	export let value: $$Props['value'] = undefined;
+	export let inline: $$Props['inline'] = false;
+	export let column: $$Props['column'] = false;
+	export let join: $$Props['join'] = false;
 	
 	if (!inline && !column) inline = true;
 	
-	const ctx: CheckboxCtxType = {
+	let selected = writable(value);
+
+	setCheckboxGroupContext({
 		join,
-		selected: writable(value)
-	};
-	let selected = ctx.selected;
-	setContext<CheckboxCtxType>('ctx', ctx);
+		selected
+	});
+
 
 	selected.subscribe((val) => {
 		value = val;
@@ -35,7 +47,7 @@
 	});
 
 	function onValueChange() {
-		selected.set(value);
+		selected.set(value ?? []);
 	}
 	$: value, onValueChange();
 
