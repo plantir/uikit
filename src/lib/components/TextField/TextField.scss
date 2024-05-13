@@ -48,7 +48,7 @@
 		@apply daisy-input-warning;
 	}
 	&-input-wrapper {
-		@apply relative
+		@apply relative inline-flex flex-col
 	}
 	&-start-wrapper {
 		@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] ;
