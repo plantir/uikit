@@ -28,5 +28,6 @@ export { default as Swiper } from './components/Swiper/Swiper.svelte';
 export { default as Switch } from './components/Switch/Switch.svelte';
 export { default as Table } from './components/Table/Table.svelte';
 export { default as Tabs } from './components/Tabs/Tabs.svelte';
+export { default as TabItem } from './components/Tabs/TabItem.svelte';
 export { default as TextArea } from './components/TextArea/TextArea.svelte';
 export { default as TextField } from './components/TextField/TextField.svelte';
