@@ -19,6 +19,7 @@ export { default as Loading } from './components/Loading/Loading.svelte';
 export { default as Page } from './components/Page/Page.svelte';
 export { default as PageHeader } from './components/Page/PageHeader.svelte';
 export { default as Pagination } from './components/Pagination/Pagination.svelte';
+export { default as Dropdown } from './components/Dropdown/Dropdown.svelte';
 export { default as Radio } from './components/Radio/Radio.svelte';
 export { default as RadioGroup } from './components/RadioGroup/RadioGroup.svelte';
 export { default as Range } from './components/Range/Range.svelte';

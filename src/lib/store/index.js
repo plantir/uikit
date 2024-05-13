@@ -105,6 +105,10 @@ export const components = writable([
         value: 'component/drawer'
     },
     {
+        title: 'Dropdown',
+        value: 'component/dropdown'
+    },
+    {
         title: 'Loading',
         value: 'component/loading'
     },
