@@ -1,29 +1,49 @@
 <script context="module" lang="ts">
+	import { setContext, getContext } from 'svelte';
 	import { writable, type Writable } from 'svelte/store';
 	export interface RadioCtxType {
 		join: boolean;
-		selected: Writable<string | number>;
+		selected: Writable<string | number | null>;
+	}
+
+	const ctx = {};
+
+	export function getRadioGroupContext(): RadioCtxType {
+		return getContext(ctx);
+	}
+
+	export function setRadioGroupContext(value: RadioCtxType) {
+		return setContext(ctx, value);
 	}
 </script>
 
 <script lang="ts">
-	import { setContext, createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
-	let componentName = 'radio-group';
+	import './RadioGroup.scss';
+
 	type $$Props = RadioGroup;
+
+	let componentName = 'radio-group';
 	let dispatch = createEventDispatcher();
+
 	export let value: any = undefined;
 	export let inline: boolean = false;
 	export let column: boolean = false;
 	export let join: boolean = false;
 	if (!inline && !column) inline = true;
+
+	const selected = writable(null);
+
 	const ctx: RadioCtxType = {
 		join,
-		selected: writable()
+		selected
 	};
-	let selected = ctx.selected;
-	setContext<RadioCtxType>('ctx', ctx);
+	setRadioGroupContext({
+		join,
+		selected
+	});
 	selected.subscribe((val) => {
 		if (val && val != value) {
 			value = val;
@@ -48,7 +68,3 @@
 <div class={elClass}>
 	<slot />
 </div>
-
-<style lang="scss" global>
-	@import './RadioGroup.scss';
-</style>
