@@ -1,9 +1,9 @@
 @import '../../scss/var.scss';
 
 .#{$prefix}collapse {
-	@apply daisy-collapse cursor-pointer;
+	@apply daisy-collapse;
 	&-title {
-		@apply daisy-collapse-title;
+		@apply daisy-collapse-title cursor-pointer;
 	}
 	&-content {
 		@apply daisy-collapse-content;
