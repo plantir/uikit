@@ -27,18 +27,28 @@
 	</div>
 	<div slot="html">
 		<TagCode name="RadioGroup" props={['bind:value', 'join']}>
-			<TagCode close_self name="Radio" props={['value="male"', 'label="male"', 'button']}></TagCode>
-			<TagCode close_self name="Radio" props={['value="female"', 'label="female"', 'button']}
+			<TagCode
+				close_self
+				name="Radio"
+				props={['value="male"', ' size="lg"', 'label="male"', 'button']}
 			></TagCode>
-			<TagCode close_self name="Radio" props={['value="other"', 'label="other"', 'button']}
+			<TagCode
+				close_self
+				name="Radio"
+				props={['value="female"', ' size="lg"', 'label="female"', 'button']}
+			></TagCode>
+			<TagCode
+				close_self
+				name="Radio"
+				props={['value="other"', ' size="lg"', 'label="other"', 'button']}
 			></TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<RadioGroup bind:value join>
-			<Radio button value="male" label="male"></Radio>
-			<Radio button value="female" label="female"></Radio>
-			<Radio button value="other" label="other"></Radio>
+			<Radio button size="lg" value="male" label="male"></Radio>
+			<Radio button size="lg" value="female" label="female"></Radio>
+			<Radio button size="lg" value="other" label="other"></Radio>
 		</RadioGroup>
 	</div>
 </SampleWrapper>
