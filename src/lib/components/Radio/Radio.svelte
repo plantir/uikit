@@ -1,20 +1,24 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
-	import type { Radio, RadioColor, RadioSize } from './Radio.type.js';
-	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import type { RadioCtxType } from '../RadioGroup/RadioGroup.svelte';
 	import { writable } from 'svelte/store';
-	type $$Props = Radio;
-	let componentName = 'radio';
-	export let label: string | undefined = undefined;
-	export let value: string = '';
-	export let disabled: boolean = false;
-	export let size: RadioSize = undefined;
-	export let color: RadioColor = undefined;
-	export let button: boolean = false;
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import { getRadioGroupContext } from '../RadioGroup/RadioGroup.svelte';	
+	import type { Radio, RadioColor, RadioSize } from './Radio.type.js';
+	import './Radio.scss';
 
-	const ctx = getContext<RadioCtxType>('ctx') ?? {};
-	const selected = ctx.selected ?? writable();
+	type $$Props = Radio;
+
+	let componentName = 'radio';
+
+	export let label: $$Props["label"] = undefined;
+	export let value: $$Props["value"] = '';
+	export let disabled: $$Props["disabled"] = false;
+	export let size: $$Props["size"] = undefined;
+	export let color: $$Props["color"] = undefined;
+	export let button: $$Props["button"] = false;
+
+	const ctx = getRadioGroupContext();
+	const selected = ctx?.selected ?? writable();
+	
 	function onChange(e: any) {
 		selected.set(e.currentTarget.value);
 	}
@@ -34,7 +38,7 @@
 		warning: color == 'warning',
 		natural: color == 'natural',
 		button,
-		join: ctx.join
+		join: ctx?.join
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });
@@ -65,7 +69,3 @@
 		</slot>
 	</label>
 {/if}
-
-<style lang="scss" global>
-	@import './Radio.scss';
-</style>
