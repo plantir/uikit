@@ -9,6 +9,18 @@
 		@apply daisy-btn;
 		width: inherit !important;
 		box-shadow: none !important;
+		&.#{$prefix}radio-xs {
+			@apply daisy-btn-xs;
+		}
+		&.#{$prefix}radio-sm {
+			@apply daisy-btn-sm;
+		}
+		&.#{$prefix}radio-md {
+			@apply daisy-btn-md;
+		}
+		&.#{$prefix}radio-lg {
+			@apply daisy-btn-lg;
+		}
 	}
 	&-join {
 		@apply daisy-join-item;
