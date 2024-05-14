@@ -51,10 +51,13 @@
 		{step}
 	/>
 	{#if step}
-		<div class="w-full flex justify-between text-xs px-2">
-			{#each { length: Math.ceil((+max - +min) / +step) + 1 } as i, _}
-				<span>|</span>
-			{/each}
-		</div>
+		<slot name="steps">
+			<div class="w-full flex justify-between text-xs px-2">
+				{#each { length: Math.ceil((+max - +min) / +step) + 1 } as i, _}
+					<span>|</span>
+				{/each}
+			</div>
+		</slot>
 	{/if}
+	<slot />
 </label>
