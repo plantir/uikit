@@ -8,7 +8,7 @@
 	}
 
 	&-content {
-		@apply daisy-dropdown-content p-2 shadow daisy-menu z-[1] bg-base-100 rounded-box w-52;
+		@apply daisy-dropdown-content absolute p-2 shadow daisy-menu z-[1] bg-base-100 rounded-box w-52;
 		&-hidden {
 			display: none;
 		}
