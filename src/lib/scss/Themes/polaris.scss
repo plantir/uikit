@@ -147,6 +147,12 @@
 		}
 	}
 
+	.#{$prefix}table {
+		th {
+			@apply bg-[#f7f7f7] border-b;
+		}
+	}
+
 	.#{$prefix}text-field {
 		&-label {
 			font-size: 0.8125rem;
