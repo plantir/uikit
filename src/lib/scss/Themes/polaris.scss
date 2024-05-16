@@ -133,6 +133,20 @@
 			@apply outline-1;
 		}
 	}
+
+	.#{$prefix}tabs-boxed {
+		@apply p-0;
+	}
+
+	.#{$prefix}tabs-boxed {
+
+		.#{$prefix}tab-item {
+			&-active {
+				@apply bg-gray-200;
+			}
+		}
+	}
+
 	.#{$prefix}text-field {
 		&-label {
 			font-size: 0.8125rem;
