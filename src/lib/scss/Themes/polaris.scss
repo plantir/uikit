@@ -14,38 +14,6 @@
 		font-size: 0.8125rem;
 		line-height: 1.25rem;
 
-		@include unify-parent('-circle', '-xs') {
-			height: 1.75rem;
-			width: 1.75rem;
-		}
-		@include unify-parent('-circle', '-sm') {
-			height: 2rem;
-			width: 2rem;
-		}
-		@include unify-parent('-circle', '-md') {
-			height: 3rem;
-			width: 3rem;
-		}
-		@include unify-parent('-circle', '-lg') {
-			height: 4rem;
-			width: 4rem;
-		}
-		@include unify-parent('-square', '-xs') {
-			height: 1.75rem;
-			width: 1.75rem;
-		}
-		@include unify-parent('-square', '-sm') {
-			height: 2rem;
-			width: 2rem;
-		}
-		@include unify-parent('-square', '-md') {
-			height: 3rem;
-			width: 3rem;
-		}
-		@include unify-parent('-square', '-lg') {
-			height: 4rem;
-			width: 4rem;
-		}
 		&-xs,
 		& {
 			min-height: 1.75rem;
