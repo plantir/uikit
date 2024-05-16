@@ -3,6 +3,7 @@
 	import ListOfProps from '$lib/DocsComponent/Samples/Dialog/ListOfProps.svelte';
 	import SetupExample from '$lib/DocsComponent/Samples/Dialog/SetupExample.svelte';
 	import DefaultExample from '$lib/DocsComponent/Samples/Dialog/DefaultExample.svelte';
+	import ConfirmExample from '$lib/DocsComponent/Samples/Dialog/ConfirmExample.svelte';
 </script>
 
 <div class="component-wrapper">
@@ -24,6 +25,8 @@
 	<SetupExample />
 	<Title id="default-Dialog" title="Default" />
 	<DefaultExample />
+	<Title id="confirm-Dialog" title="Confirm Example" />
+	<ConfirmExample />
 	<Title id="props" title="Props" />
 	<p>this is the list of the props that Dialog can have.</p>
 	<ListOfProps />

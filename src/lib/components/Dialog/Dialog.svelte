@@ -10,6 +10,8 @@
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 	$: boxClass = ClassMerge({ name: `${componentName}-box` });
 	$: backdropClass = ClassMerge({ name: `${componentName}-backdrop` });
+	$: closeIconClass = ClassMerge({ name: `${componentName}-close-icon`})
+	$: closeButtonClass = ClassMerge({ name: `${componentName}-close-button`})
 
 	function close() {
 		open = false;
@@ -27,9 +29,11 @@
 			shape="circle"
 			size="sm"
 			variant="ghost"
-			class="absolute right-2 top-2"
+			class="{closeButtonClass}"
 		>
-			<slot name="close">✕</slot>
+			<span class={closeIconClass}>
+				<slot name="close">✕</slot>
+			</span>
 		</Button>
 	</div>
 	<div role="button" tabindex="0" on:keypress={close} on:click={close} class={backdropClass}></div>
