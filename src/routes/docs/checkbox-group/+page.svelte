@@ -17,11 +17,11 @@
 		<Checkbox value="b" label="banana" />
 	</CheckboxGroup>
 </div>
-
 <br />
+
 <div>
-	inline true
-	<CheckboxGroup inline={true} bind:value >
+	column true
+	<CheckboxGroup  column bind:value >
 		<Checkbox size='sm' value="a" label="apple" />
 		<Checkbox value="o" label="orange" />
 		<Checkbox value="b" label="banana" />
@@ -30,8 +30,57 @@
 <br />
 
 <div>
-colum true
-	<CheckboxGroup inline={false} bind:value >
+	join
+	<CheckboxGroup  join bind:value >
+		<Checkbox size='sm' value="a" label="apple" />
+		<Checkbox value="o" label="orange" />
+		<Checkbox value="b" label="banana" />
+	</CheckboxGroup>
+</div>
+<br />
+
+
+<div>
+	<span>
+		inline row
+	</span>
+	<CheckboxGroup inline  bind:value >
+		<Checkbox size='sm' value="a" label="apple" />
+		<Checkbox value="o" label="orange" />
+		<Checkbox value="b" label="banana" />
+	</CheckboxGroup>
+</div>
+
+<br />
+<div>
+	<span>
+		inline row join
+	</span>
+	<CheckboxGroup inline  join bind:value >
+		<Checkbox size='sm' value="a" label="apple" />
+		<Checkbox value="o" label="orange" />
+		<Checkbox value="b" label="banana" />
+	</CheckboxGroup>
+</div>
+
+<br />
+
+<div>
+	<span> 
+		inline column
+	</span>
+	<CheckboxGroup inline column  bind:value >
+		<Checkbox size='sm' value="a" label="apple" />
+		<Checkbox value="o" label="orange" />
+		<Checkbox value="b" label="banana" />
+	</CheckboxGroup>
+</div>
+
+<br />
+
+<div>
+inline true
+	<CheckboxGroup inline bind:value >
 		<Checkbox size='sm' value="a" label="apple" />
 		<Checkbox value="o" label="orange" />
 		<Checkbox value="b" label="banana" />

@@ -28,6 +28,8 @@
 
 	export let value: $$Props['value'] = undefined;
 	export let inline: $$Props['inline'] = false;
+	export let join: $$Props['inline'] = false;
+	export let column: $$Props['column'] = false;
 	
 	
 	let selected = writable(value);
@@ -49,6 +51,8 @@
 
 	$: componentClass = {
 		inline,
+		join,
+		column
 	}
 </script>
 
