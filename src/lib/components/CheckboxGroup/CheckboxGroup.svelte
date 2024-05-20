@@ -28,15 +28,11 @@
 
 	export let value: $$Props['value'] = undefined;
 	export let inline: $$Props['inline'] = false;
-	export let column: $$Props['column'] = false;
-	export let join: $$Props['join'] = false;
 	
-	if (!inline && !column) inline = true;
 	
 	let selected = writable(value);
 
 	setCheckboxGroupContext({
-		join,
 		selected
 	});
 
@@ -52,9 +48,7 @@
 	$: value, onValueChange();
 
 	$: componentClass = {
-		join,
 		inline,
-		column
 	}
 </script>
 

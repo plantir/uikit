@@ -1,6 +1,6 @@
 @import '../../scss/var.scss';
 .#{$prefix}checkbox-wrapper {
-	@apply inline-flex items-center gap-x-1 cursor-pointer;
+	@apply inline-flex items-center gap-x-2 cursor-pointer;
 }
 .#{$prefix}checkbox {
 	@apply daisy-checkbox;

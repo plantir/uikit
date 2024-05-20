@@ -58,7 +58,6 @@
 		error: color == 'error',
 		warning: color == 'warning',
 		natural: color == 'natural',
-		join: ctx?.join
 	};
 
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
