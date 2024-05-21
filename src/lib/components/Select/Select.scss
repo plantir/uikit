@@ -1,7 +1,11 @@
 @import '../../scss/var.scss';
 
 .#{$prefix}select {
-	@apply daisy-select;
+	@apply daisy-select w-full;
+
+	&-multiple {
+		height: unset;
+	}
 	&-bordered {
 		@apply daisy-select-bordered;
 	}

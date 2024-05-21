@@ -4,13 +4,16 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Select;
 	let componentName = 'select';
+
 	export let label: string | undefined = undefined;
-	export let value: string = '';
 	export let items: any[] = [];
 	export let disabled: boolean = false;
 	export let bordered: boolean = true;
+	export let multiple: boolean = false;
 	export let size: SelectSize = undefined;
 	export let color: SelectColor = undefined;
+	export let value: string | string[] = multiple ? [] : '';
+
 	$: convertedItems = items.map((item) => {
 		if (typeof item == 'string') {
 			return {
@@ -35,14 +38,24 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		natural: color == 'natural',
+		multiple
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
 </script>
 
-<select bind:value class={elClass} on:change>
-	<option disabled selected value="">{label}</option>
-	{#each convertedItems as { value, title }}
-		<option {value}>{title}</option>
-	{/each}
-</select>
+{#if multiple}
+	<select {...$$restProps} {disabled} multiple bind:value class={elClass} on:change>
+		<option disabled selected value="">{label}</option>
+		{#each convertedItems as { value: key, title }}
+			<option value={key} selected={value.includes(key)}>{title}</option>
+		{/each}
+	</select>
+{:else}
+	<select {...$$restProps} {disabled} bind:value class={elClass} on:change>
+		<option disabled selected value="">{label}</option>
+		{#each convertedItems as { value: key, title }}
+			<option value={key} selected={value === key}>{title}</option>
+		{/each}
+	</select>
+{/if}
