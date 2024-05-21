@@ -23,5 +23,6 @@ export interface TextArea extends Base {
 	size?: TextAreaSize;
 	color?: TextAreaColor;
 	disabled?: boolean;
+	readonly?: boolean;
 	bordered?: boolean;
 }
