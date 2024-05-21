@@ -1,14 +1,23 @@
 <script>
-	import Button from '$lib/components/Button/Button.svelte';
 	import Radio from '$lib/components/Radio/Radio.svelte';
 	import RadioGroup from '$lib/components/RadioGroup/RadioGroup.svelte';
 	let value = 'xs';
+
+	let disabled = "false";
+
+	$: disabledBool = disabled === 'true'
 </script>
 
 <Radio label="Apply to all" />
 
+<RadioGroup bind:value={disabled}>
+	<Radio label="true" value="true"/>
+	<Radio label="false" value="false"/>
+</RadioGroup>
+Disabled: {disabledBool}
+
 <div>
-	<RadioGroup bind:value>
+	<RadioGroup disabled={disabledBool} bind:value>
 		<Radio color="primary" label="primary" value="primary" />
 		<Radio color="secondary" label="secondary" value="secondary" />
 		<Radio color="accent" label="accent" value="accent" />
