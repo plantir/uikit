@@ -15,10 +15,12 @@
 	export let value: string = '';
 	export let inputmode: TextFieldInputMode = 'text';
 	export let disabled: boolean = false;
+	export let readonly: boolean = false;
 	export let bordered: boolean = true;
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;
 	export let inputClass: string = '';
+
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
@@ -36,7 +38,6 @@
 		natural: color == 'natural',
 		"has-start": !!$$slots.start,
 		"has-end": !!$$slots.end,
-
 	};
 
 	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
@@ -61,6 +62,7 @@
 		</El>
 		<input
 		{...$$restProps}
+		{readonly}
 		{inputmode}
 		{disabled}
 		bind:value

@@ -28,6 +28,11 @@
 			default: 'false'
 		},
 		{
+			name: 'readonly',
+			type: `boolean`,
+			default: 'false'
+		},
+		{
 			name: 'bordered',
 			type: `boolean`,
 			default: 'true'
