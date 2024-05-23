@@ -8,6 +8,7 @@
 	import SizesExample from '$lib/DocsComponent/Samples/Checkbox/SizesExample.svelte';
 	import ListOfPropsGroup from '$lib/DocsComponent/Samples/Checkbox/ListOfPropsGroup.svelte';
 	import IndeterminateExample from '$lib/DocsComponent/Samples/Checkbox/IndeterminateExample.svelte';
+	import ListOfGroupProps from '$lib/DocsComponent/Samples/Checkbox/ListOfGroupProps.svelte';
 </script>
 
 <div class="component-wrapper">
@@ -58,5 +59,9 @@
 	<Title id="Checkbox-props" title="Props" />
 	<p>this is the list of the props that Checkbox can have.</p>
 	<ListOfProps />
+	<div class="py-10"></div>
+	<Title id="Checkbox-Group props" title="Checkbox-Group Props" />
+	<p>this is the list of the props that Checkbox can have.</p>
+	<ListOfGroupProps />
 	<div class="py-10"></div>
 </div>
