@@ -14,6 +14,7 @@
 	export let value: string = '';
 	export let inputmode: TextAreaInputMode = 'text';
 	export let disabled: boolean = false;
+	export let readonly: boolean = false;
 	export let bordered: boolean = true;
 	export let size: TextAreaSize = undefined;
 	export let color: TextAreaColor = undefined;
@@ -41,5 +42,5 @@
 	<slot name="label">
 		{label}
 	</slot>
-	<textarea {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
+	<textarea {...$$restProps} {inputmode} {readonly} {disabled} bind:value {placeholder} class={elClass} />
 </label>

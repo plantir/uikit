@@ -2,6 +2,10 @@
 
 .#{$prefix}select {
 	@apply daisy-select;
+
+	&-multiple {
+		height: unset;
+	}
 	&-bordered {
 		@apply daisy-select-bordered;
 	}

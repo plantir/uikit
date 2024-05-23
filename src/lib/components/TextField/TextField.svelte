@@ -15,12 +15,14 @@
 	export let value: string = '';
 	export let inputmode: TextFieldInputMode = 'text';
 	export let disabled: boolean = false;
+	export let readonly: boolean = false;
 	export let bordered: boolean = true;
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;
 	export let hint: string | undefined = undefined;
 	export let state: 'invalid' | 'valid' | undefined = undefined;
 	export let inputClass: string = '';
+
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
@@ -40,6 +42,8 @@
 		'has-end': !!$$slots.end,
 		'state-valid': state == 'valid',
 		'state-invalid': state == 'invalid'
+		"has-start": !!$$slots.start,
+		"has-end": !!$$slots.end,
 	};
 
 	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
@@ -66,7 +70,15 @@
 		<El class={startWrapper}>
 			<slot name="start" />
 		</El>
-		<input {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
+		<input
+		{...$$restProps}
+		{readonly}
+		{inputmode}
+		{disabled}
+		bind:value
+		{placeholder}
+		class={elClass}
+		/>
 		<El class={endWrapper}>
 			<slot name="end" />
 		</El>
