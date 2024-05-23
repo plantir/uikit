@@ -26,7 +26,8 @@
 
 	const ctx = getCheckboxGroupContext();
 	const selected = ctx?.selected ?? writable();
-
+	const disabledStore = ctx?.disabled;
+	$: disabledCombined = disabledStore ? disabled || $disabledStore : disabled;
 	function onChange(e: any) {
 		if (!ctx) return;
 		if (e.target.checked) {
@@ -58,6 +59,7 @@
 		error: color == 'error',
 		warning: color == 'warning',
 		natural: color == 'natural',
+		diabled: disabledCombined
 	};
 
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
@@ -69,7 +71,7 @@
 	<input
 		bind:this={node}
 		type="checkbox"
-		{disabled}
+		disabled={disabledCombined}
 		{value}
 		class={elClass}
 		bind:checked

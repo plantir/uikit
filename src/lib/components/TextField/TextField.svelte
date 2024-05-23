@@ -15,6 +15,7 @@
 	export let value: string = '';
 	export let inputmode: TextFieldInputMode = 'text';
 	export let disabled: boolean = false;
+	export let readonly: boolean = false;
 	export let bordered: boolean = true;
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;

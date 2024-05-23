@@ -4,6 +4,7 @@
 
 	interface CheckboxCtxType {
 		join?: boolean;
+		disabled?:Writable<boolean>;
 		selected: Writable<(string | number)[]>;
 	}
 
@@ -30,12 +31,15 @@
 	export let inline: $$Props['inline'] = false;
 	export let join: $$Props['inline'] = false;
 	export let column: $$Props['column'] = false;
+	export let disabled: $$Props['disabled'] = false;
 	
 	
 	let selected = writable(value);
 
+	const disabledStore = writable(disabled);
 	setCheckboxGroupContext({
-		selected
+		selected,
+		disabled: disabledStore
 	});
 
 
@@ -43,6 +47,8 @@
 		value = val;
 		dispatch('change', value)
 	});
+
+	$:disabled, disabledStore.set(disabled!)
 
 	function onValueChange() {
 		selected.set(value ?? []);
@@ -52,7 +58,8 @@
 	$: componentClass = {
 		inline,
 		join,
-		column
+		column,
+		disabled
 	}
 </script>
 

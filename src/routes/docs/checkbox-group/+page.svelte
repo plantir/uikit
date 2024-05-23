@@ -11,7 +11,7 @@
 
 <div>
 	defalut
-	<CheckboxGroup  bind:value >
+	<CheckboxGroup disabled  bind:value >
 		<Checkbox size='sm' value="a" label="apple" />
 		<Checkbox value="o" label="orange" />
 		<Checkbox value="b" label="banana" />
