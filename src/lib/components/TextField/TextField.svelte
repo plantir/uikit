@@ -19,6 +19,7 @@
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;
 	export let inputClass: string = '';
+	export let node: TextField["node"]
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
@@ -59,14 +60,7 @@
 		<El class={startWrapper}>
 			<slot name = 'start' />
 		</El>
-		<input
-		{...$$restProps}
-		{inputmode}
-		{disabled}
-		bind:value
-		{placeholder}
-		class={elClass}
-		/>
+		<input bind:this= {node} {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
 		<El class={endWrapper}>
 			<slot name = 'end' />
 		</El>
