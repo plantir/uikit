@@ -11,4 +11,8 @@
 	&-backdrop {
 		@apply daisy-modal-backdrop cursor-pointer backdrop-blur-sm;
 	}
+
+	&-close-button {
+		@apply absolute right-4 top-4;
+	}
 }

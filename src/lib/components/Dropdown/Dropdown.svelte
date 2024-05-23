@@ -46,27 +46,24 @@
 	
 	function show() {
 		open = true;
-		floating?.focus();
 	}
 
 	function hide() {
 		open = false;
-		floating?.blur();
 	}
 
 	function toggle(event: any) {
-		event.stopPropagation();
 		open ? hide() : show();
 	}
 
 	function onClickOutside(event: any) {
-		if (!floating?.contains(event.target)) {
+		if (floating && !floating.contains(event.target) && !toggler.contains(event.target)) {
 			hide();
 		}
 	}
 	onMount(() => {
 		if (!toggler || !floating) return;
-
+		
 		toggler.addEventListener('click', toggle);
 		document.addEventListener('click', onClickOutside);
 
