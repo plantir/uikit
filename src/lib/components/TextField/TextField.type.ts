@@ -26,4 +26,6 @@ export interface TextField extends Base {
 	readonly?: boolean;
 	bordered?: boolean;
 	inputClass?:string;
+	hint?: string;
+	state?: 'invalid' | 'valid'
 }

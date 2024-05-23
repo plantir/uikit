@@ -19,6 +19,8 @@
 	export let bordered: boolean = true;
 	export let size: TextFieldSize = undefined;
 	export let color: TextFieldColor = undefined;
+	export let hint: string | undefined = undefined;
+	export let state: 'invalid' | 'valid' | undefined = undefined;
 	export let inputClass: string = '';
 
 	$: componentClass = {
@@ -36,8 +38,10 @@
 		error: color == 'error',
 		warning: color == 'warning',
 		natural: color == 'natural',
-		"has-start": !!$$slots.start,
-		"has-end": !!$$slots.end,
+		'has-start': !!$$slots.start,
+		'has-end': !!$$slots.end,
+		'state-valid': state == 'valid',
+		'state-invalid': state == 'invalid'
 	};
 
 	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
@@ -46,6 +50,10 @@
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: inputClass });
 	$: labelClass = ClassMerge({ name: `${componentName}-label` });
+	$: hintClass = ClassMerge({
+		name: `${componentName}-hint`,
+		componentClass: { 'state-valid': state == 'valid', 'state-invalid': state == 'invalid' }
+	});
 </script>
 
 <label class={wrapperClass}>
@@ -56,9 +64,9 @@
 			</span>
 		{/if}
 	</slot>
-	<El class={inputWrapper} >
+	<El class={inputWrapper}>
 		<El class={startWrapper}>
-			<slot name = 'start' />
+			<slot name="start" />
 		</El>
 		<input
 		{...$$restProps}
@@ -70,7 +78,8 @@
 		class={elClass}
 		/>
 		<El class={endWrapper}>
-			<slot name = 'end' />
+			<slot name="end" />
 		</El>
 	</El>
+	<span class={hintClass}>{hint}</span>
 </label>

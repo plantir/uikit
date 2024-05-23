@@ -160,6 +160,9 @@
 			font-size: 0.8125rem;
 			font-weight: 500;
 		}
+		&-hint {
+			@apply pt-1;
+		}
 		height: 2rem;
 		min-height: 2rem;
 		font-size: 0.8125rem;
@@ -187,4 +190,5 @@
 	.#{$prefix}tooltip {
 		@apply border border-base-300 py-2 px-3 rounded-lg bg-white text-gray-700;
 	}
+	
 }
