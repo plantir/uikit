@@ -3,15 +3,16 @@
 	import Checkbox from '$lib/components/Checkbox/Checkbox.svelte';
 
 	let value = ['o'];
+	let disabled = false
 </script>
 
 <div>{value}</div>
 
-
+<button class="daisy-btn daisy-btn-primary" on:click={()=>disabled = !disabled}>toggle disabled</button>
 
 <div>
 	defalut
-	<CheckboxGroup disabled  bind:value >
+	<CheckboxGroup bind:disabled  bind:value >
 		<Checkbox size='sm' value="a" label="apple" />
 		<Checkbox value="o" label="orange" />
 		<Checkbox value="b" label="banana" />
