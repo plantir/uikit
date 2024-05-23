@@ -5,6 +5,7 @@
 	import DefaultExample from '$lib/DocsComponent/Samples/Radio/DefaultExample.svelte';
 	import ColorsExample from '$lib/DocsComponent/Samples/Radio/ColorsExample.svelte';
 	import DisableExample from '$lib/DocsComponent/Samples/Radio/DisableExample.svelte';
+	import DisableGroupExample from '$lib/DocsComponent/Samples/Radio/DisableGroupExample.svelte';
 	import SizesExample from '$lib/DocsComponent/Samples/Radio/SizesExample.svelte';
 	import MinMaxExample from '$lib/DocsComponent/Samples/Radio/MinMaxExample.svelte';
 	import StepExample from '$lib/DocsComponent/Samples/Radio/StepExample.svelte';
@@ -61,6 +62,13 @@
 		<span class="badge">radio</span>. you can disabled one item or all item.
 	</p>
 	<DisableExample />
+	
+	<Title id="radio-group-disable" title="Disabled Group" />
+	<p>
+		Use <span class="badge">disabled</span> prop to Make <span class="badge">RadioGroup</span> disable.
+	</p>
+	<DisableGroupExample />
+	
 	<Title id="radio-props" title="Radio Props" />
 	<p>this is the list of the props that radio can have.</p>
 	<ListOfProps />

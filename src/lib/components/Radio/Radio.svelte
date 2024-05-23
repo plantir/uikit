@@ -17,18 +17,20 @@
 	export let button: $$Props["button"] = false;
 
 	const ctx = getRadioGroupContext();
+	const disabledStore = ctx?.disabled;
 	const selected = ctx?.selected ?? writable();
 	
 	function onChange(e: any) {
 		selected.set(e.currentTarget.value);
 	}
 
+	$: disabledCombined = disabledStore ? (disabled || $disabledStore) : disabled 
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
-		disabled: disabled,
+		disabled: disabledCombined,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
 		accent: color == 'accent',
@@ -49,7 +51,7 @@
 		aria-label={label}
 		type="radio"
 		checked={$selected == value}
-		{disabled}
+		disabled={disabledCombined}
 		{value}
 		class={elClass}
 		on:change={onChange}
@@ -59,7 +61,7 @@
 		<input
 			type="radio"
 			checked={$selected == value}
-			{disabled}
+			disabled={disabledCombined}
 			{value}
 			class={elClass}
 			on:change={onChange}
