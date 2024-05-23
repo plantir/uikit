@@ -42,8 +42,6 @@
 		'has-end': !!$$slots.end,
 		'state-valid': state == 'valid',
 		'state-invalid': state == 'invalid'
-		"has-start": !!$$slots.start,
-		"has-end": !!$$slots.end,
 	};
 
 	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
