@@ -88,10 +88,10 @@ export const components = writable([
         title: 'ColorPicker',
         value: 'component/colorpicker'
     },
-    // {
-    // 	title: 'datepicker',
-    // 	value: 'component/datepicker'
-    // },
+    {
+    	title: 'datepicker',
+    	value: 'component/datepicker'
+    },
     {
         title: 'Dialog',
         value: 'component/dialog'
