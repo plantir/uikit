@@ -89,7 +89,7 @@ export const components = writable([
         value: 'component/colorpicker'
     },
     {
-    	title: 'datepicker',
+    	title: 'Datepicker',
     	value: 'component/datepicker'
     },
     {
