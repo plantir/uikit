@@ -1,11 +1,15 @@
 <script>
 	import PropTable from '$lib/DocsComponent/ComponentCode/PropTable.svelte';
-
 	let items = [
 		{
 			name: 'value',
 			type: `string`,
-			default: '""'
+			default: '[]'
+		},
+		{
+			name: 'inline',
+			type: `boolean`,
+			default: 'false'
 		},
 		{
 			name: 'column',

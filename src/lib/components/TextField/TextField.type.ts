@@ -23,6 +23,9 @@ export interface TextField extends Base {
 	size?: TextFieldSize;
 	color?: TextFieldColor;
 	disabled?: boolean;
+	readonly?: boolean;
 	bordered?: boolean;
 	inputClass?:string;
+	hint?: string;
+	state?: 'invalid' | 'valid'
 }
