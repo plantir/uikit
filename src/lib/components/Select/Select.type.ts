@@ -12,4 +12,7 @@ export interface Select extends Base {
 	disabled?: boolean;
 	readonly?: boolean;
 	bordered?: boolean;
+	placeholder?: string;
+	hint?: string;
+    state?: 'valid' | 'invalid'
 }

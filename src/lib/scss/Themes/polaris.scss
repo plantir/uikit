@@ -112,7 +112,18 @@
 		width: 1rem;
 	}
 	.#{$prefix}select {
+		&-label {
+			font-size: 0.8125rem;
+			font-weight: 500;
+		}
+		&-hint {
+			@apply pt-1;
+		}
 		height: 2rem;
+
+        &-multiple {
+            height: unset;
+        }
 		min-height: 2rem;
 
 		&-xs {
