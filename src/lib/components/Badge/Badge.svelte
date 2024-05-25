@@ -37,7 +37,11 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		natural: color == 'natural',
+		"success-light": color == 'success-light',
+		"info-light": color == 'info-light',
+		"error-light": color == 'error-light',
+		"warning-light": color == 'warning-light',
 	};
 </script>
 

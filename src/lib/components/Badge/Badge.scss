@@ -36,6 +36,18 @@
 	&-warning {
 		@apply daisy-badge-warning;
 	}
+	&-info-light {
+		@apply  bg-[#CDFEE1]  border-[#CDFEE1] text-[#0C5132];;
+	}
+	&-success-light {
+		@apply  bg-[#E0F0FF]  border-[#E0F0FF] text-[#00527C];;
+	}
+	&-error-light {
+		@apply bg-[#FEDAD9] border-[#FEDAD9] text-[#8E1F0B];
+	}
+	&-warning-light {
+		@apply bg-[#FFEF9D] border-[#FFEF9D] text-[#4F4700];
+	}
 	&-outline {
 		@apply daisy-badge-outline;
 		&.#{$prefix}badge-primary {
