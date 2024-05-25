@@ -22,7 +22,7 @@
 	export let hint: string | undefined = undefined;
 	export let state: 'invalid' | 'valid' | undefined = undefined;
 	export let inputClass: string = '';
-	export let node: TextField["node"]
+	export let node: TextField['node'];
 
 	$: componentClass = {
 		xs: size == 'xs',
@@ -69,15 +69,15 @@
 		<El class={startWrapper}>
 			<slot name="start" />
 		</El>
-		<input bind:this= {node} {...$$restProps} {inputmode} {disabled} bind:value {placeholder} class={elClass} />
 		<input
-		{...$$restProps}
-		{readonly}
-		{inputmode}
-		{disabled}
-		bind:value
-		{placeholder}
-		class={elClass}
+			{...$$restProps}
+			bind:this={node}
+			{readonly}
+			{inputmode}
+			{disabled}
+			bind:value
+			{placeholder}
+			class={elClass}
 		/>
 		<El class={endWrapper}>
 			<slot name="end" />
