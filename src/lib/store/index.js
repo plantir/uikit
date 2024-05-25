@@ -117,6 +117,10 @@ export const components = writable([
         value: 'component/pagination'
     },
     {
+        title: 'Progress',
+        value: 'component/progress'
+    },
+    {
         title: 'Radio',
         value: 'component/radio'
     },
