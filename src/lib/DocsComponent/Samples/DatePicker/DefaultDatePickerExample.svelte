@@ -12,7 +12,7 @@
 			<ScriptCode>
 				import DatePicker from '{$importDocumentSrc}/DatePicker.svelte';
 			</ScriptCode>
-			</pre>
+		</pre>
 	</div>
 	<div slot="html">
 		<TagCode name="DatePicker"></TagCode>

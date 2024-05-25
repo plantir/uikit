@@ -16,7 +16,7 @@
 				let value = '2024-5-15';
 				let value = '2024/5/15';
 			</ScriptCode>
-			</pre>
+		</pre>
 	</div>
 	<div slot="html">
 		<TagCode name="DatePicker" props={['{value}', 'label="Date"']}></TagCode>

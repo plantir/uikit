@@ -56,13 +56,13 @@
 		{
 			name: 'color',
 			type: ` 'primary'
-	| 'secondary'
-	| 'accent'
-	| 'success'
-	| 'warning'
-	| 'info'
-	| 'error' 
-	| 'undefined'`,
+					| 'secondary'
+					| 'accent'
+					| 'success'
+					| 'warning'
+					| 'info'
+					| 'error' 
+					| 'undefined'`,
 			default: 'undefined'
 		}
 	];
