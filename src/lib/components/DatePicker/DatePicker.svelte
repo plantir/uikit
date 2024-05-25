@@ -38,9 +38,9 @@
 	export let range: boolean | undefined = false;
 	export let label: string | undefined = undefined;
 	export let placeholder: string | undefined = 'Select Date';
-	// export let disabled: boolean = false;
+	export let disabled: boolean = false;
 	// export let bordered: boolean = true;
-	// export let size: DatePickerSize = undefined;
+	export let size: DatePickerSize = undefined;
 	// export let color: DatePickerColor = undefined;
 	onMount(() => {
 		const elem = element ?? input;
