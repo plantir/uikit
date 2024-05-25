@@ -25,7 +25,7 @@
 		{
 			name: 'formattedValue',
 			type: `'string' | 'string[]'`,
-			default: 'string'
+			default: '""'
 		},
 		{
 			name: 'size',
