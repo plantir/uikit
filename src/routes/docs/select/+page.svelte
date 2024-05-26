@@ -23,10 +23,16 @@
 		<Select bind:value color="error" items={options} label="Choose" />
 	</div>
 	<div>
-		<Select size="xs" bind:value items={options} label="Choose" />
-		<Select size="sm" bind:value items={options} label="Choose" />
-		<Select size="md" bind:value items={options} label="Choose" />
-		<Select size="lg" bind:value items={options} label="Choose" />
+		<Select size="xs" hint="this is select hint" bind:value items={options} label="Choose" />
+		<Select size="sm" state="invalid" bind:value items={options} label="Choose" />
+		<Select size="md" placeholder="test-placeholder" readonly state="valid" bind:value items={options} label="Choose test" />
+		<Select size="lg" hint="this is error" state="invalid" bind:value items={options} placeholder="Choose" />
+		<Select size="lg" hint="this is success" state="valid" bind:value items={options} placeholder="Choose" />
+		<Select size="lg" label="this is label" bind:value items={options} placeholder="Choose" />
+		<Select size="lg" bind:value items={options} label="Choose" >
+            <div slot="label">Label Slot</div>
+
+        </Select>
 	</div>
 
 	<div>

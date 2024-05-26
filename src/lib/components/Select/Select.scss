@@ -1,5 +1,12 @@
 @import '../../scss/var.scss';
 
+.#{$prefix}select-wrapper {
+	@apply inline-flex flex-col;
+	&-label {
+		@apply mb-1;
+	}
+}
+
 .#{$prefix}select {
 	@apply daisy-select;
 
@@ -45,4 +52,20 @@
 	&-warning {
 		@apply daisy-select-warning;
 	}
+	&-state-valid {
+		@apply daisy-select-success;
+	}
+	&-state-invalid {
+		@apply daisy-select-error;
+	}
+
+    &-hint {
+		@apply daisy-label daisy-label-text-alt;
+        &-state-valid {
+            @apply text-green-500;
+        }
+        &-state-invalid {
+            @apply text-red-500;
+        }
+    }
 }
