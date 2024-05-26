@@ -5,6 +5,7 @@
 	import './DatePicker.scss';
 	import 'flatpickr/dist/flatpickr.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import TextField from '../TextField/TextField.svelte';
 	type $$Props = DatePicker;
 	let componentName = 'date-picker';
 	const hooks = new Set([
@@ -28,21 +29,27 @@
 	}
 	export let input: any = undefined;
 	export let fp: any = undefined;
-	export let value: string | undefined = undefined;
+	export let value: string | string[] | undefined = undefined;
 	export let formattedValue: string = '';
 	export let element: any = undefined;
 	export let dateFormat: string | undefined = undefined;
 	export let options = {};
-	// export let label: string | undefined = undefined;
+
+	export let range: boolean | undefined = false;
+	export let label: string | undefined = undefined;
 	export let placeholder: string | undefined = 'Select Date';
-	// export let disabled: boolean = false;
+	export let disabled: boolean = false;
 	// export let bordered: boolean = true;
-	// export let size: DatePickerSize = undefined;
+	export let size: DatePickerSize = undefined;
 	// export let color: DatePickerColor = undefined;
 	onMount(() => {
 		const elem = element ?? input;
 
 		const opts = addHooks(options);
+		if (range) {
+			opts.showMonths = 2;
+			opts.mode = 'range';
+		}
 		opts.onReady.push((selectedDates, dateStr, instance) => {
 			if (value === undefined) {
 				updateValue(selectedDates, dateStr, instance);
@@ -93,12 +100,15 @@
 
 	function updateValue(newValue, dateStr, fp) {
 		const newModeValue = getModeValue(fp, newValue);
-		// If both are already falsey, don't perform prop update
-		if (!areValuesEqual(value, newModeValue) && (value || newModeValue)) {
+		if (range) {
 			value = newModeValue;
+			formattedValue = dateStr.split(' to ');
+		} else {
+			if (!areValuesEqual(value, newModeValue) && (value || newModeValue)) {
+				value = newModeValue;
+			}
+			formattedValue = dateStr;
 		}
-
-		formattedValue = dateStr;
 	}
 
 	function stripOn(hook) {
@@ -121,7 +131,7 @@
 			Array.isArray(v1) &&
 			Array.isArray(v2) &&
 			v1.length === v2.length &&
-			v1.every((val, i) => val === v2[i])
+			v1.every((val, i) => areValuesEqual(val, v2[i]))
 		) {
 			return true;
 		}
@@ -135,6 +145,11 @@
 	});
 </script>
 
-<slot>
+<TextField   {...$$restProps} {label} bind:node = {input} {placeholder} >
+	<slot name="label"  slot="label" />
+	<slot name="start"  slot="start" />
+	<slot name="end"  slot="end" />
+</TextField>
+<!-- <slot>
 	<input class={inputClass} {placeholder} bind:this={input} {...$$restProps} />
-</slot>
+</slot> -->

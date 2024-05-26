@@ -22,6 +22,7 @@
 	export let hint: string | undefined = undefined;
 	export let state: 'invalid' | 'valid' | undefined = undefined;
 	export let inputClass: string = '';
+	export let node: TextField['node'];
 
 	$: componentClass = {
 		xs: size == 'xs',
@@ -69,13 +70,14 @@
 			<slot name="start" />
 		</El>
 		<input
-		{...$$restProps}
-		{readonly}
-		{inputmode}
-		{disabled}
-		bind:value
-		{placeholder}
-		class={elClass}
+			{...$$restProps}
+			bind:this={node}
+			{readonly}
+			{inputmode}
+			{disabled}
+			bind:value
+			{placeholder}
+			class={elClass}
 		/>
 		<El class={endWrapper}>
 			<slot name="end" />
