@@ -19,10 +19,6 @@
 		'warning',
 		'info',
 		'error',
-		'warning-light',
-		'error-light',
-		'info-light',
-		'success-light'
 	];
 	let value: any;
 	let checked = true;
@@ -45,6 +41,13 @@
 				> inside of a paragraph
 			</TagCode>
 		{/each}
+		{#each colors as color}
+			<TagCode name="p">
+				this is a <TagCode name="Badge" one_line dont_break props={[`color="${color}"`, "soft"]}
+					>{color}</TagCode
+				> inside of a paragraph
+			</TagCode>
+		{/each}
 	</div>
 	<div slot="preview">
 		<p>
@@ -52,7 +55,12 @@
 		</p>
 		{#each colors as color}
 			<p>
-				this is a <Badge {color}>{color}</Badge> inside of a paragraph
+				this is a <Badge  {color}>{color}</Badge> inside of a paragraph
+			</p>
+		{/each}
+		{#each colors as color}
+			<p>
+				this is a <Badge soft  {color}>{color}</Badge> inside of a paragraph
 			</p>
 		{/each}
 	</div>

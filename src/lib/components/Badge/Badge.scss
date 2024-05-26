@@ -36,17 +36,36 @@
 	&-warning {
 		@apply daisy-badge-warning;
 	}
-	&-info-light {
-		@apply  bg-[#CDFEE1]  border-[#CDFEE1] text-[#0C5132];;
+	&-primary-soft {
+		@apply daisy-badge-primary text-primary;
+		border-color: transparent;
+		background-color: oklch(var(--p) / 0.28);
 	}
-	&-success-light {
-		@apply  bg-[#E0F0FF]  border-[#E0F0FF] text-[#00527C];;
+	&-secondary-soft {
+		@apply daisy-badge-secondary text-secondary;
+		border-color: transparent;
+		background-color: oklch(var(--s)/ 0.28);
 	}
-	&-error-light {
-		@apply bg-[#FEDAD9] border-[#FEDAD9] text-[#8E1F0B];
+	&-accent-soft {
+		@apply daisy-badge-accent;
+		border-color: transparent;
+		background-color: oklch(var(--a)/ 0.28);
 	}
-	&-warning-light {
-		@apply bg-[#FFEF9D] border-[#FFEF9D] text-[#4F4700];
+	&-success-soft {
+		@apply  daisy-badge-success;
+		background-color: oklch(var(--su)/ 0.28);
+	}
+	&-info-soft {
+		@apply daisy-badge-info;
+		background-color: oklch(var(--in)/ 0.28);
+	}
+	&-error-soft {
+		@apply daisy-badge-error;
+		background-color: oklch(var(--er)/ 0.28);
+	}
+	&-warning-soft {
+		@apply daisy-badge-warning;
+		background-color: oklch(var(--wa)/ 0.28);
 	}
 	&-outline {
 		@apply daisy-badge-outline;

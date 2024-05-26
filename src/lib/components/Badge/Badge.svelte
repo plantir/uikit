@@ -12,6 +12,7 @@
 	export let color: BadgeColor = undefined;
 	export let variant: BadgeVariant = undefined;
 	export let dismissable = false;
+	export let soft = false;
 	let dispatch = createEventDispatcher();
 	let show = true;
 	function close() {
@@ -29,20 +30,32 @@
 		glass: variant == 'glass',
 		link: variant == 'link',
 		ghost: variant == 'ghost',
-		dot: variant == 'dot',
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural',
-		"success-light": color == 'success-light',
-		"info-light": color == 'info-light',
-		"error-light": color == 'error-light',
-		"warning-light": color == 'warning-light',
+		dot: variant == 'dot'
 	};
+
+	$: Object.assign(
+		componentClass,
+		soft
+			? {
+					'primary-soft': color == 'primary',
+					'secondary-soft': color == 'secondary',
+					'accent-soft': color == 'accent',
+					'success-soft': color == 'success',
+					'info-soft': color == 'info',
+					'error-soft': color == 'error',
+					'warning-soft': color == 'warning'
+				}
+			: {
+					primary: color == 'primary',
+					secondary: color == 'secondary',
+					accent: color == 'accent',
+					success: color == 'success',
+					info: color == 'info',
+					error: color == 'error',
+					warning: color == 'warning',
+					natural: color == 'natural'
+				}
+	);
 </script>
 
 {#if show}
