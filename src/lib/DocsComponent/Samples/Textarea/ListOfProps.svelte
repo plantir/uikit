@@ -40,6 +40,11 @@
 			name: 'disabled',
 			type: `boolean`,
 			default: 'false'
+		},
+		{
+			name: 'readonly',
+			type: `boolean`,
+			default: 'false'
 		}
 	];
 </script>

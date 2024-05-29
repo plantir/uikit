@@ -4,6 +4,7 @@
 	export interface RadioCtxType {
 		join: boolean;
 		selected: Writable<string | number | null>;
+		disabled: Writable<boolean>;
 	}
 
 	const ctx = {};
@@ -31,18 +32,17 @@
 	export let value: any = undefined;
 	export let inline: boolean = false;
 	export let column: boolean = false;
+	export let disabled: boolean = false;
 	export let join: boolean = false;
 	if (!inline && !column) inline = true;
 
 	const selected = writable(null);
 
-	const ctx: RadioCtxType = {
-		join,
-		selected
-	};
+	const disabledStore = writable(disabled)
 	setRadioGroupContext({
 		join,
-		selected
+		selected,
+		disabled: disabledStore
 	});
 	selected.subscribe((val) => {
 		if (val && val != value) {
@@ -54,12 +54,15 @@
 		selected.set(value);
 	}
 	$: value, onValueChange();
+	$: disabled, disabledStore.set(disabled);
+
 	$: elClass = ClassMerge({
 		name: componentName,
 		componentClass: {
 			join,
 			inline,
-			column
+			column,
+			disabled
 		},
 		staticClassess: $$props.class
 	});

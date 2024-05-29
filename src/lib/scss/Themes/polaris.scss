@@ -14,38 +14,6 @@
 		font-size: 0.8125rem;
 		line-height: 1.25rem;
 
-		@include unify-parent('-circle', '-xs') {
-			height: 1.75rem;
-			width: 1.75rem;
-		}
-		@include unify-parent('-circle', '-sm') {
-			height: 2rem;
-			width: 2rem;
-		}
-		@include unify-parent('-circle', '-md') {
-			height: 3rem;
-			width: 3rem;
-		}
-		@include unify-parent('-circle', '-lg') {
-			height: 4rem;
-			width: 4rem;
-		}
-		@include unify-parent('-square', '-xs') {
-			height: 1.75rem;
-			width: 1.75rem;
-		}
-		@include unify-parent('-square', '-sm') {
-			height: 2rem;
-			width: 2rem;
-		}
-		@include unify-parent('-square', '-md') {
-			height: 3rem;
-			width: 3rem;
-		}
-		@include unify-parent('-square', '-lg') {
-			height: 4rem;
-			width: 4rem;
-		}
 		&-xs,
 		& {
 			min-height: 1.75rem;
@@ -99,6 +67,40 @@
 		width: 1rem;
 	}
 
+	.#{$prefix}dialog {
+		&-box {
+			@apply p-0;
+		}
+
+		&-backdrop {
+			@apply backdrop-blur-none bg-black/50;
+		}
+		&-header {
+			@apply bg-[#f3f3f3] border-b p-4;
+
+			&-title {
+				@apply text-sm;
+			}
+		}
+
+		&-close-button {
+			@apply top-3;
+		}
+		
+		&-close-icon {
+			@apply font-normal text-xl text-gray-500;
+		}
+
+		&-footer {
+			@apply p-4 border-t;
+		}
+
+		&-body {
+			@apply p-4;
+		}
+
+	}
+
 	.#{$prefix}page-header {
 		&-title-wrapper {
 			@apply text-xl gap-2;
@@ -110,7 +112,18 @@
 		width: 1rem;
 	}
 	.#{$prefix}select {
+		&-label {
+			font-size: 0.8125rem;
+			font-weight: 500;
+		}
+		&-hint {
+			@apply pt-1;
+		}
 		height: 2rem;
+
+        &-multiple {
+            height: unset;
+        }
 		min-height: 2rem;
 
 		&-xs {
@@ -133,10 +146,33 @@
 			@apply outline-1;
 		}
 	}
+
+	.#{$prefix}tabs-boxed {
+		@apply p-0;
+	}
+
+	.#{$prefix}tabs-boxed {
+
+		.#{$prefix}tab-item {
+			&-active {
+				@apply bg-gray-200;
+			}
+		}
+	}
+
+	.#{$prefix}table {
+		th {
+			@apply bg-[#f7f7f7] border-b;
+		}
+	}
+
 	.#{$prefix}text-field {
 		&-label {
 			font-size: 0.8125rem;
 			font-weight: 500;
+		}
+		&-hint {
+			@apply pt-1;
 		}
 		height: 2rem;
 		min-height: 2rem;
@@ -165,4 +201,5 @@
 	.#{$prefix}tooltip {
 		@apply border border-base-300 py-2 px-3 rounded-lg bg-white text-gray-700;
 	}
+	
 }

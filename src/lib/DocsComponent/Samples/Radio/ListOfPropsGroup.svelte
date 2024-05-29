@@ -16,6 +16,11 @@
 			name: 'join',
 			type: `boolean`,
 			default: 'false'
+		},
+		{
+			name: 'disabled',
+			type: `boolean`,
+			default: 'false'
 		}
 	];
 </script>

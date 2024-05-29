@@ -9,6 +9,7 @@ export interface Range extends Base {
 	size?: RangeSize;
 	color?: RangeColor;
 	disabled?: boolean;
+	readonly?: boolean;
 	min?: string | number;
 	max?: string | number;
 	step?: string | number;

@@ -7,6 +7,7 @@
 	export let label: string | undefined = undefined;
 	export let value: string = '';
 	export let disabled: boolean = false;
+	export let readonly: boolean = false;
 	export let size: RangeSize = undefined;
 	export let color: RangeColor = undefined;
 	export let min: string | number = 0;
@@ -41,6 +42,8 @@
 	</slot>
 	<input
 		type="range"
+		{...$$restProps}
+		{readonly}
 		{disabled}
 		{value}
 		class={elClass}

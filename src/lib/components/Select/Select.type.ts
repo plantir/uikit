@@ -10,5 +10,9 @@ export interface Select extends Base {
 	size?: SelectSize;
 	color?: SelectColor;
 	disabled?: boolean;
+	readonly?: boolean;
 	bordered?: boolean;
+	placeholder?: string;
+	hint?: string;
+    state?: 'valid' | 'invalid'
 }
