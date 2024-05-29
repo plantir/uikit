@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {createEventDispatcher} from 'svelte'
 	import type { Dialog } from './Dialog.type.js';
 	import './Dialog.scss';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
@@ -6,6 +7,9 @@
 	type $$Props = Dialog;
 	let componentName = 'dialog';
 	export let open: boolean = false;
+
+	const dispatch = createEventDispatcher();
+
 	$: componentClass = {};
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 	$: boxClass = ClassMerge({ name: `${componentName}-box` });
@@ -15,6 +19,7 @@
 
 	function close() {
 		open = false;
+		dispatch('close');
 	}
 </script>
 
