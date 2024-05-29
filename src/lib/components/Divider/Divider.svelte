@@ -1,4 +1,4 @@
-a<script lang="ts">
+<script lang="ts">
 	import type { Divider, DividerColor, DividerSize } from './Divider.type.js';
 	import './Divider.scss';
 	import El from '$lib/utils/El.svelte';
