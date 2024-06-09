@@ -4,7 +4,7 @@ export type RangeSize = GlobalSize;
 export type RangeColor = 'natural' | GlobalColor;
 export interface Range extends Base {
 	label?: string | undefined;
-	value?: string;
+	value?: string | number;
 	name?: string;
 	size?: RangeSize;
 	color?: RangeColor;

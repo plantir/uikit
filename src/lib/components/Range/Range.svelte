@@ -5,7 +5,7 @@
 	type $$Props = Range;
 	let componentName = 'range';
 	export let label: string | undefined = undefined;
-	export let value: string = '';
+	export let value: string | number | undefined = undefined;
 	export let disabled: boolean = false;
 	export let readonly: boolean = false;
 	export let size: RangeSize = undefined;
