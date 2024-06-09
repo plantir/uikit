@@ -77,6 +77,7 @@
 		bind:checked
 		on:change={onChange}
 		on:change
+		on:click
 	/>
 	<slot name="label">
 		{label}

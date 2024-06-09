@@ -8,6 +8,7 @@ export { default as CardBody } from './components/Card/CardBody.svelte';
 export { default as CardTitle } from './components/Card/CardTitle.svelte';
 export { default as Chat } from './components/Chat/Chat.svelte';
 export { default as Checkbox } from './components/Checkbox/Checkbox.svelte';
+export { default as CheckboxGroup } from './components/CheckboxGroup/CheckboxGroup.svelte';
 export { default as Collapse } from './components/Collapse/Collapse.svelte';
 export { default as ColorPicker } from './components/ColorPicker/ColorPicker.svelte';
 export { default as DatePicker } from './components/DatePicker/DatePicker.svelte';
