@@ -3,6 +3,9 @@
 	import Button from '../Button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import type { Pagination, PaginationColor, PaginationSize } from './Pagination.type.js';
+	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import './Pagination.scss';
+
 	type $$Props = Pagination;
 	let componentName = 'pagination';
 	let dispatch = createEventDispatcher();
@@ -27,6 +30,10 @@
 		info: color == 'info',
 		error: color == 'error'
 	};
+
+	// TODO: should remove staticClasses when daisyui bug resolved and daisy-join class below
+	// https://github.com/saadeghi/daisyui/issues/3084
+	$: paginationItemClass = ClassMerge({ name: componentName + '-item', staticClassess: 'daisy-join-item' }); 
 </script>
 
 <El class="daisy-join" {componentName} {componentClass} {...$$restProps}>
@@ -37,17 +44,17 @@
 				{color}
 				on:click={(e) => changePage(+i + 1)}
 				active={page == i + 1}
-				class="daisy-join-item "
+				class={paginationItemClass}
 			>
 				{+i + 1}
 			</Button>
 		{/each}
 	{:else}
 		{#if page > 2}
-			<Button {size} {color} on:click={(e) => changePage(1)} class="daisy-join-item ">1</Button>
+			<Button {size} {color} on:click={(e) => changePage(1)} class={paginationItemClass}>1</Button>
 		{/if}
 		{#if page > 3}
-			<Button {size} {color} class="daisy-join-item ">...</Button>
+			<Button {size} {color} class={paginationItemClass}>...</Button>
 		{/if}
 		{#if page > 1}
 			<Button
@@ -55,12 +62,12 @@
 				{color}
 				on:click={(e) => changePage(+page - 1)}
 				active={page == page - 1}
-				class="daisy-join-item "
+				class={paginationItemClass}
 			>
 				{+page - 1}
 			</Button>
 		{/if}
-		<Button {size} {color} class="daisy-join-item" active={page == page}>
+		<Button {size} {color} class={paginationItemClass} active={page == page}>
 			{page}
 		</Button>
 		{#if page < lastPage}
@@ -68,14 +75,14 @@
 				{size}
 				{color}
 				on:click={(e) => changePage(+page + 1)}
-				class="daisy-join-item"
+				class={paginationItemClass}
 				active={page == +page + 1}
 			>
 				{+page + 1}
 			</Button>
 		{/if}
 		{#if page < lastPage - 2}
-			<Button {size} {color} class="daisy-join-item  btn-disabled">...</Button>
+			<Button {size} {color} class="{paginationItemClass} btn-disabled">...</Button>
 		{/if}
 
 		{#if page < lastPage - 1}
@@ -83,7 +90,7 @@
 				{size}
 				{color}
 				on:click={(e) => changePage(lastPage)}
-				class="daisy-join-item"
+				class={paginationItemClass}
 				active={page == lastPage}
 			>
 				{lastPage}
@@ -91,7 +98,3 @@
 		{/if}
 	{/if}
 </El>
-
-<style lang="scss" global>
-	@import './Pagination.scss';
-</style>
