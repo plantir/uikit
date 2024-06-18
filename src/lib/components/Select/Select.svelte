@@ -45,20 +45,20 @@
 		warning: color == 'warning',
 		natural: color == 'natural',
 		multiple,
-        'state-valid': state === 'valid',
-        'state-invalid': state === 'invalid',
+		'state-valid': state === 'valid',
+		'state-invalid': state === 'invalid'
 	};
-	$: elClass = ClassMerge({ 
-        name: componentName, 
-        componentClass, 
-        staticClassess: $$props.class 
-    });
+	$: elClass = ClassMerge({
+		name: componentName,
+		componentClass,
+		staticClassess: $$props.class
+	});
 	$: hintClass = ClassMerge({
 		name: `${componentName}-hint`,
-		componentClass: { 
-            'state-valid': state == 'valid', 
-            'state-invalid': state == 'invalid' 
-        }
+		componentClass: {
+			'state-valid': state == 'valid',
+			'state-invalid': state == 'invalid'
+		}
 	});
 </script>
 
@@ -70,24 +70,26 @@
 			</span>
 		{/if}
 	</slot>
-    {#if multiple}
-        <select {...$$restProps} {disabled} multiple bind:value class={elClass} on:change>
-            {#if placeholder}
-                <option disabled selected value="">{placeholder}</option>
-            {/if}
-            {#each convertedItems as { value: key, title }}
-                <option value={key} selected={value.includes(key)}>{title}</option>
-            {/each}
-        </select>
-    {:else}
-        <select {...$$restProps} {disabled} bind:value class={elClass} on:change>
-            {#if placeholder}
-                <option disabled selected value="">{placeholder}</option>
-            {/if}
-            {#each convertedItems as { value: key, title }}
-                <option value={key} selected={value === key}>{title}</option>
-            {/each}
-        </select>
-    {/if}
-	<span class={hintClass}>{hint}</span>
+	{#if multiple}
+		<select {...$$restProps} {disabled} multiple bind:value class={elClass} on:change>
+			{#if placeholder}
+				<option disabled selected value="">{placeholder}</option>
+			{/if}
+			{#each convertedItems as { value: key, title }}
+				<option value={key} selected={value.includes(key)}>{title}</option>
+			{/each}
+		</select>
+	{:else}
+		<select {...$$restProps} {disabled} bind:value class={elClass} on:change>
+			{#if placeholder}
+				<option disabled selected value="">{placeholder}</option>
+			{/if}
+			{#each convertedItems as { value: key, title }}
+				<option value={key} selected={value === key}>{title}</option>
+			{/each}
+		</select>
+	{/if}
+	{#if hint}
+		<span class={hintClass}>{hint}</span>
+	{/if}
 </label>
