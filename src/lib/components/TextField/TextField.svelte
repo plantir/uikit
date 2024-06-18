@@ -83,5 +83,7 @@
 			<slot name="end" />
 		</El>
 	</El>
-	<span class={hintClass}>{hint}</span>
+	{#if hint}
+		<span class={hintClass}>{hint}</span>
+	{/if}
 </label>
