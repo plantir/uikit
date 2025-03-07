@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { CardActions } from './CardActions.type.ts';
-	import './CardActions.scss';
+	import './CardActions.css';
 	type $$Props = CardActions;
 
 	let componentName = 'card-actions';

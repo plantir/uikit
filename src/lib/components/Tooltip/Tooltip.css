@@ -1,0 +1,18 @@
+@reference "$lib/css/app.css";
+
+.ui-tooltip {
+	@apply absolute daisy-tooltip;
+	max-width: 20rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    background-color: var(--tooltip-color);
+    color: var(--tooltip-text-color);
+    width: max-content;
+
+}
+
+.ui-tooltip-hidden {
+    @apply hidden;
+}

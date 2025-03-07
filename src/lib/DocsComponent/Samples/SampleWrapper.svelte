@@ -29,6 +29,8 @@
 </Tabs>
 
 <style lang="scss" global>
+	@reference "tailwindcss";
+
 	code {
 		pre {
 			white-space: pre-line;

@@ -1,0 +1,9 @@
+@reference "$lib/css/app.css";
+
+.ui-page {
+    @apply px-4;
+
+    .ui-page-container {
+        @apply container mx-auto;
+    }
+}

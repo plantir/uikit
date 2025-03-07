@@ -24,6 +24,7 @@
 </div>
 
 <style lang="scss">
+	@reference "tailwindcss";
 	table {
         @apply w-full;
 		thead {

@@ -88,6 +88,8 @@
 </SampleWrapper>
 
 <style lang="scss" global>
+	@reference "tailwindcss";
+
 	.swiper-navigation-to-right {
 		@apply absolute top-1/2 -translate-y-1/2 z-10 right-4 bg-white w-5 h-5 select-none rounded-full flex items-center justify-center;
 		&.swiper-button-disabled {

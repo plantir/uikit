@@ -1,0 +1,115 @@
+@reference "$lib/css/app.css";
+
+.ui-text-field-wrapper {
+	@apply inline-flex flex-col;
+}
+
+.ui-text-field-wrapper-label {
+	@apply mb-1;
+}
+
+.ui-text-field {
+	@apply daisy-input;
+}
+
+.ui-text-field-bordered {
+	/* DAISYTODO: @apply daisy-input-bordered; */
+}
+
+.ui-text-field-disabled {
+	/* DAISYTODO: @apply daisy-disabled; */
+}
+
+.ui-text-field-xs {
+	@apply daisy-input-xs;
+}
+
+.ui-text-field-sm {
+	@apply daisy-input-sm;
+}
+
+.ui-text-field-md {
+	@apply daisy-input-md;
+}
+
+.ui-text-field-lg {
+	@apply daisy-input-lg;
+}
+
+.ui-text-field-primary {
+	@apply daisy-input-primary;
+}
+
+.ui-text-field-secondary {
+	@apply daisy-input-secondary;
+}
+
+.ui-text-field-accent {
+	@apply daisy-input-accent;
+}
+
+.ui-text-field-success {
+	@apply daisy-input-success;
+}
+
+.ui-text-field-info {
+	@apply daisy-input-info;
+}
+
+.ui-text-field-error {
+	@apply daisy-input-error;
+}
+
+.ui-text-field-warning {
+	@apply daisy-input-warning;
+}
+
+.ui-text-field-input-wrapper {
+	@apply relative inline-flex flex-col;
+}
+
+.ui-text-field-start-wrapper {
+	@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%];
+}
+
+.ui-text-field-end-wrapper {
+	@apply opacity-80 absolute flex pe-1 top-[50%] right-0 translate-y-[-50%];
+}
+
+.ui-text-field-has-start {
+	@apply ps-6;
+}
+
+.ui-text-field-has-end {
+	@apply pe-6;
+}
+
+.ui-text-field-has-start.ui-text-field-lg {
+	@apply ps-8;
+}
+
+.ui-text-field-has-end.ui-text-field-lg {
+	@apply pe-8;
+}
+
+.ui-text-field-hint {
+	@apply daisy-label;
+	/* DAISYTODO: daisy-label-text-alt; */
+
+}
+
+.ui-text-field-hint-state-invalid {
+	@apply text-error;
+}
+
+.ui-text-field-hint-state-valid {
+	@apply text-success;
+}
+
+.ui-text-field-state-invalid {
+	@apply daisy-input-error;
+}
+
+.ui-text-field-state-valid {
+	@apply daisy-input-success;
+}

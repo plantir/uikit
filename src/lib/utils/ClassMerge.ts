@@ -17,7 +17,13 @@ export const ClassMerge = ({
 	result.push(pre);
 	componentClass &&
 		Object.entries(componentClass).map(([key, value]) => {
-			value && key != '' && result.push(`${pre}-${key}`);
+			if (value == true) {
+				// ui-avatar-ring
+				result.push(`${pre}-${key}`)
+			} else if (value && key != '') {
+				// ui-avatar-mask-circle
+				result.push(`${pre}-${key}-${value}`);
+			}
 		});
 	// componentClass &&
 	// 	componentClass.map((className) => {

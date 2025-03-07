@@ -1,0 +1,81 @@
+@reference "$lib/css/app.css";
+
+.ui-divider {
+	@apply daisy-divider;
+}
+
+.ui-divider-start {
+	@apply daisy-divider-start;
+}
+
+.ui-divider-end {
+	@apply daisy-divider-end;
+}
+
+.ui-divider-horizontal {
+	@apply daisy-divider-horizontal;
+}
+
+.ui-divider-vertical {
+	@apply daisy-divider-vertical;
+}
+
+.ui-divider-xs {
+
+	&:before,
+	&:after {
+		height: 1px;
+	}
+}
+
+.ui-divider-sm {
+
+	&:before,
+	&:after {
+		height: 2px;
+	}
+}
+
+.ui-divider-md {
+
+	&:before,
+	&:after {
+		height: 4px;
+	}
+}
+
+.ui-divider-lg {
+
+	&:before,
+	&:after {
+		height: 16px;
+	}
+}
+
+.ui-divider-primary {
+	@apply daisy-divider-primary;
+}
+
+.ui-divider-secondary {
+	@apply daisy-divider-secondary;
+}
+
+.ui-divider-accent {
+	@apply daisy-divider-accent;
+}
+
+.ui-divider-success {
+	@apply daisy-divider-success;
+}
+
+.ui-divider-warning {
+	@apply daisy-divider-warning;
+}
+
+.ui-divider-info {
+	@apply daisy-divider-info;
+}
+
+.ui-divider-error {
+	@apply daisy-divider-error;
+}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Divider, DividerColor, DividerSize } from './Divider.type.js';
-	import './Divider.scss';
+	import './Divider.css';
 	import El from '$lib/utils/El.svelte';
 	type $$Props = Divider;
 	let componentName = 'divider';

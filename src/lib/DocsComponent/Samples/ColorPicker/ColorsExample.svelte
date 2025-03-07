@@ -52,6 +52,8 @@ value is : {'{'}value{'}'}
 </SampleWrapper>
 
 <style lang="scss">
+	@reference "tailwindcss";
+
 	.custom-gradient {
 		background: conic-gradient(from 180deg, red, orange, #ff0, green, blue);
 	}

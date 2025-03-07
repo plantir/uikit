@@ -1,0 +1,64 @@
+@reference "$lib/css/app.css";
+.ui-radio-wrapper {
+	@apply inline-flex items-center gap-x-1;
+}
+.ui-radio {
+	@apply daisy-radio;
+
+	.ui-radio-button {
+		@apply daisy-btn;
+		width: inherit !important;
+		box-shadow: none !important;
+		&.ui-radio-xs {
+			@apply daisy-btn-xs;
+		}
+		&.ui-radio-sm {
+			@apply daisy-btn-sm;
+		}
+		&.ui-radio-md {
+			@apply daisy-btn-md;
+		}
+		&.ui-radio-lg {
+			@apply daisy-btn-lg;
+		}
+	}
+	.ui-radio-join {
+		@apply daisy-join-item;
+	}
+	.ui-radio-disabled {
+		/* DAISYTODO: @apply daisy-disabled; */
+	}
+	.ui-radio-xs {
+		@apply daisy-radio-xs;
+	}
+	.ui-radio-sm {
+		@apply daisy-radio-sm;
+	}
+	.ui-radio-md {
+		@apply daisy-radio-md;
+	}
+	.ui-radio-lg {
+		@apply daisy-radio-lg;
+	}
+	.ui-radio-primary {
+		@apply daisy-radio-primary;
+	}
+	.ui-radio-secondary {
+		@apply daisy-radio-secondary;
+	}
+	.ui-radio-accent {
+		@apply daisy-radio-accent;
+	}
+	.ui-radio-success {
+		@apply daisy-radio-success;
+	}
+	.ui-radio-info {
+		@apply daisy-radio-info;
+	}
+	.ui-radio-error {
+		@apply daisy-radio-error;
+	}
+	.ui-radio-warning {
+		@apply daisy-radio-warning;
+	}
+}

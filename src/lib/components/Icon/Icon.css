@@ -1,0 +1,22 @@
+@reference "$lib/css/app.css";
+
+.ui-icon {
+    @apply contents;
+
+    svg {
+        @apply inline-flex h-[1em] w-[1em] fill-current;
+    }
+
+    .ui-icon-xs svg {
+        @apply w-3 h-3;
+    }
+    .ui-icon-sm svg {
+        @apply w-4 h-4;
+    }
+    .ui-icon-md svg {
+        @apply w-5 h-5;
+    }
+    .ui-icon-lg svg {
+        @apply w-6 h-6;
+    }
+}

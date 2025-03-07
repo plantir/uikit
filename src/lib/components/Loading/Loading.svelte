@@ -1,6 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { Loading, LoadingColor, LoadingSize, LoadingType } from './Loading.types.js';
+	import './Loading.css';
 	type $$Props = Loading;
 	let componentName = 'loading';
 	export let type: LoadingType = undefined;
@@ -28,7 +29,3 @@
 </script>
 
 <El {componentClass} {componentName} {...$$restProps}></El>
-
-<style lang="scss" global>
-	@import './Loading.scss';
-</style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './Table.scss';
+	import './Table.css';
 	import type { Table, TableColor, TableSize } from './Table.type.js';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Table;

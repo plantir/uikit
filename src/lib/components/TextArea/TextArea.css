@@ -1,0 +1,47 @@
+@reference "$lib/css/app.css";
+.ui-textarea-wrapper {
+	@apply inline-flex flex-col  gap-y-1;
+}
+.ui-textarea {
+	@apply daisy-textarea;
+
+	.ui-textarea-bordered {
+		/* DAISYTODO: @apply daisy-textarea-bordered; */
+	}
+	.ui-textarea-disabled {
+		/* DAISYTODO: @apply daisy-disabled; */
+	}
+	.ui-textarea-xs {
+		@apply daisy-textarea-xs;
+	}
+	.ui-textarea-sm {
+		@apply daisy-textarea-sm;
+	}
+	.ui-textarea-md {
+		@apply daisy-textarea-md;
+	}
+	.ui-textarea-lg {
+		@apply daisy-textarea-lg;
+	}
+	.ui-textarea-primary {
+		@apply daisy-textarea-primary;
+	}
+	.ui-textarea-secondary {
+		@apply daisy-textarea-secondary;
+	}
+	.ui-textarea-accent {
+		@apply daisy-textarea-accent;
+	}
+	.ui-textarea-success {
+		@apply daisy-textarea-success;
+	}
+	.ui-textarea-info {
+		@apply daisy-textarea-info;
+	}
+	.ui-textarea-error {
+		@apply daisy-textarea-error;
+	}
+	.ui-textarea-warning {
+		@apply daisy-textarea-warning;
+	}
+}

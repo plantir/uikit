@@ -1,0 +1,5 @@
+@reference "$lib/css/app.css";
+
+.ui-dialog-footer {
+    @apply flex gap-2 justify-end;
+}

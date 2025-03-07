@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Range, RangeColor, RangeSize } from './Range.type.js';
-	import './Range.scss';
+	import './Range.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Range;
 	let componentName = 'range';

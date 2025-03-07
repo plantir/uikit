@@ -1,0 +1,5 @@
+@reference "$lib/css/app.css";
+
+.ui-card-body {
+	@apply daisy-card-body;
+}

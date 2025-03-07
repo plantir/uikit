@@ -1,7 +1,8 @@
 <script>
 	import Header from '$lib/Layout/Header.svelte';
-	import '../app.css';
-	import '$lib/scss/Themes/polaris.scss';
+	import '$lib/css/app.css';
+	import '$lib/css/component.css';
+	import '$lib/css/Themes/polaris.css';
 </script>
 
 <svelte:head>
@@ -17,6 +18,8 @@
 </div>
 
 <style lang="scss">
+	@reference "$lib/css/app.css";
+
 	.main {
 		@apply min-h-screen pt-16;
 	}

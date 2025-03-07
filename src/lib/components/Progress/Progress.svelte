@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './Progress.scss';
+	import './Progress.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { Progress, ProgressColor, ProgressSize } from './Progress.type.js';
 	type $$Props = Progress;

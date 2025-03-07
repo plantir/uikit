@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Drawer } from './Drawer.type.js';
-	import './Drawer.scss';
+	import './Drawer.css';
 	import El from '$lib/utils/El.svelte';
 	import { fly, slide, blur, fade } from 'svelte/transition';
 	import { sineIn } from 'svelte/easing';

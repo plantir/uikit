@@ -1,0 +1,5 @@
+@reference "$lib/css/app.css";
+
+.ui-card-actions {
+	@apply daisy-card-actions justify-end;
+}

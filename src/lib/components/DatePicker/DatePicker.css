@@ -1,0 +1,7 @@
+@reference "$lib/css/app.css";
+.ui-date-picker-wrapper {
+	@apply inline-flex flex-col items-start gap-y-1;
+}
+.ui-date-picker {
+	@apply daisy-input ;
+}

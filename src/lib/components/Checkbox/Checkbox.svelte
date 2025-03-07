@@ -4,7 +4,7 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import { getCheckboxGroupContext } from '../CheckboxGroup/CheckboxGroup.svelte';
 	import type { Checkbox } from './Checkbox.type.js';
-	import './Checkbox.scss';
+	import './Checkbox.css';
 
 	type $$Props = Checkbox;
 	let componentName = 'checkbox';
