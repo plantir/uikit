@@ -1,4 +1,4 @@
-@reference "$lib/css/app.css";
+@reference "../../css/app.css";
 .ui-color-picker-wrapper {
 	@apply inline-flex flex-col;
 }

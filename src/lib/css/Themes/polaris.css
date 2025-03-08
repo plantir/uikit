@@ -1,4 +1,4 @@
-@reference '$lib/css/app.css';
+@reference '../app.css';
 
 [data-theme='polaris'] {
 	background-color: #f1f1f1;

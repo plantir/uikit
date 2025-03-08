@@ -1,4 +1,4 @@
-@reference "$lib/css/app.css";
+@reference "../../css/app.css";
 
 .ui-radio-group {
 	.ui-radio-group-inline {

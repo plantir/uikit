@@ -1,4 +1,4 @@
-@reference "$lib/css/app.css";
+@reference "../../css/app.css";
 
 .ui-text-field-wrapper {
 	@apply inline-flex flex-col;

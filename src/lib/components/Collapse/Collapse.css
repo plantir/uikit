@@ -1,4 +1,4 @@
-@reference "$lib/css/app.css";
+@reference "../../css/app.css";
 
 .ui-collapse {
 	@apply daisy-collapse;
