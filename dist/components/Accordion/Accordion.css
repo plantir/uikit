@@ -1,0 +1,176 @@
+@import '../../css/app.css';
+
+@theme {
+	--ui-accordion-size-xs: 8;
+	--ui-accordion-size-sm: 12;
+	--ui-accordion-size-md: 16;
+	--ui-accordion-size-lg: 24;
+
+	--ui-accordion-color-primary: primary;
+	--ui-accordion-color-secondary: secondary;
+	--ui-accordion-color-accent: accent;
+	--ui-accordion-color-success: success;
+	--ui-accordion-color-info: info;
+	--ui-accordion-color-error: error;
+	--ui-accordion-color-warning: warning;
+}
+
+@utility ui-accordion-mask--squircle {
+	&>div {
+		@apply daisy-mask daisy-mask-squircle
+	}
+}
+
+@utility ui-accordion-mask--heart {
+	&>div {
+		@apply daisy-mask daisy-mask-heart
+	}
+}
+
+@utility ui-accordion-mask--hexagon {
+	&>div {
+		@apply daisy-mask daisy-mask-hexagon
+	}
+}
+
+@utility ui-accordion-mask--hexagon-2 {
+	&>div {
+		@apply daisy-mask daisy-mask-hexagon-2
+	}
+}
+
+@utility ui-accordion-mask--decagon {
+	&>div {
+		@apply daisy-mask daisy-mask-decagon
+	}
+}
+
+@utility ui-accordion-mask--pentagon {
+	&>div {
+		@apply daisy-mask daisy-mask-pentagon
+	}
+}
+
+@utility ui-accordion-mask--diamond {
+	&>div {
+		@apply daisy-mask daisy-mask-diamond
+	}
+}
+
+@utility ui-accordion-mask--square {
+	&>div {
+		@apply daisy-mask daisy-mask-square
+	}
+}
+
+@utility ui-accordion-mask--circle {
+	&>div {
+		@apply daisy-mask daisy-mask-circle
+	}
+}
+
+@utility ui-accordion-mask--star {
+	&>div {
+		@apply daisy-mask daisy-mask-star
+	}
+}
+
+@utility ui-accordion-mask--star-2 {
+	&>div {
+		@apply daisy-mask daisy-mask-star-2
+	}
+}
+
+@utility ui-accordion-mask--triangle {
+	&>div {
+		@apply daisy-mask daisy-mask-triangle
+	}
+}
+
+@utility ui-accordion-mask--triangle-2 {
+	&>div {
+		@apply daisy-mask daisy-mask-triangle-2
+	}
+}
+
+@utility ui-accordion-mask--triangle-3 {
+	&>div {
+		@apply daisy-mask daisy-mask-triangle-3
+	}
+}
+
+@utility ui-accordion-mask--triangle-4 {
+	&>div {
+		@apply daisy-mask daisy-mask-triangle-4
+	}
+}
+
+@utility ui-accordion-size-* {
+	>div {
+		@apply w-[calc(--value(--ui-accordion-size-*)_*_4px)];
+	}
+}
+
+@utility ui-accordion-rounded {
+	&>div {
+		@apply rounded;
+	}
+}
+
+@utility ui-accordion-circle {
+	&>div {
+		@apply rounded-full;
+	}
+}
+
+@utility ui-accordion-ring {
+	&>div {
+		@apply ring-3 ring-blue-500 ring-offset-base-100 ring-offset-2;
+	}
+}
+@utility ui-accordion-color-* {
+
+	.ui-accordion-text > div {
+		@apply bg-[--value(--ui-accordion-color-*)] text-[--value(--ui-accordion-color-*)]-content;
+	}
+	&.ui-accordion-ring > div {
+		@apply ring-[--value(--ui-accordion-color-*)];
+	}
+}
+
+
+@layer components {
+	.ui-accordion {
+		@apply relative inline-flex;
+
+		&>div {
+			@apply block aspect-square overflow-hidden bg-base-300;
+		}
+
+		img {
+			@apply h-full w-full object-cover;
+		}
+
+		.ui-accordion-text > div {
+			@apply flex justify-center items-center;
+		}
+
+		.ui-accordion-online::before {
+			content: '';
+			@apply bg-success outline-base-100 absolute z-10 block rounded-full outline outline-2;
+			width: 15%;
+			height: 15%;
+			top: 7%;
+			right: 7%;
+		}
+
+		.ui-accordion-offline::before {
+			content: '';
+			@apply bg-base-300 outline-base-100 absolute z-10 block rounded-full outline outline-2;
+			width: 15%;
+			height: 15%;
+			top: 7%;
+			right: 7%;
+		}
+	}
+}

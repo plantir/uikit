@@ -1,0 +1,27 @@
+@reference "../../css/app.css";
+
+.ui-progress {
+	@apply daisy-progress;
+	
+	.ui-progress-primary {
+		@apply daisy-progress-primary;
+	}
+	.ui-progress-secondary {
+		@apply daisy-progress-secondary;
+	}
+	.ui-progress-accent {
+		@apply daisy-progress-accent;
+	}
+	.ui-progress-success {
+		@apply daisy-progress-success;
+	}
+	.ui-progress-info {
+		@apply daisy-progress-info;
+	}
+	.ui-progress-error {
+		@apply daisy-progress-error;
+	}
+	.ui-progress-warning {
+		@apply daisy-progress-warning;
+	}
+}

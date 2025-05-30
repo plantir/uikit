@@ -1,0 +1,73 @@
+@reference "../../css/app.css";
+
+.ui-loading {
+	@apply daisy-loading daisy-loading-spinner;
+}
+
+.ui-loading-xs {
+	@apply daisy-loading-xs;
+}
+
+.ui-loading-sm {
+	@apply daisy-loading-sm;
+}
+
+.ui-loading-md {
+	@apply daisy-loading-md;
+}
+
+.ui-loading-lg {
+	@apply daisy-loading-lg;
+}
+
+.ui-loading-bars {
+	@apply daisy-loading-bars;
+}
+
+.ui-loading-spinner {
+	@apply daisy-loading-spinner;
+}
+
+.ui-loading-dots {
+	@apply daisy-loading-dots;
+}
+
+.ui-loading-ring {
+	@apply daisy-loading-ring;
+}
+
+.ui-loading-ball {
+	@apply daisy-loading-ball;
+}
+
+.ui-loading-infinity {
+	@apply daisy-loading-infinity;
+}
+
+.ui-loading-primary {
+	@apply text-primary;
+}
+
+.ui-loading-error {
+	@apply text-error;
+}
+
+.ui-loading-secondary {
+	@apply text-secondary;
+}
+
+.ui-loading-accent {
+	@apply text-accent;
+}
+
+.ui-loading-success {
+	@apply text-success;
+}
+
+.ui-loading-warning {
+	@apply text-warning;
+}
+
+.ui-loading-info {
+	@apply text-info;
+}

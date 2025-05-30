@@ -1,0 +1,103 @@
+@reference "../../css/app.css";
+
+.ui-chat {
+	@apply daisy-chat;
+}
+
+.ui-chat-start {
+	@apply daisy-chat-start;
+
+	.ui-chat-image {
+		grid-column-start: 1;
+	}
+
+	.ui-chat-header {
+		grid-column-start: 2;
+	}
+
+	.ui-chat-footer {
+		grid-column-start: 2;
+	}
+
+	.ui-chat-bubble {
+		border-end-start-radius: 0;
+		grid-column-start: 2;
+
+		&:before {
+			inset-inline-start: -0.749rem;
+			-webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Cpath d='M0 3h3V0c0 1-2 3-3 3'/%3E%3C/svg%3E");
+			mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Cpath d='M0 3h3V0c0 1-2 3-3 3'/%3E%3C/svg%3E");
+		}
+	}
+}
+
+.ui-chat-end {
+	@apply daisy-chat-end;
+
+	.ui-chat-footer {
+		grid-column-start: 1;
+	}
+
+	.ui-chat-header {
+		grid-column-start: 1;
+	}
+
+	.ui-chat-image {
+		grid-column-start: 2;
+	}
+
+	.ui-chat-bubble {
+		border-end-end-radius: 0;
+		grid-column-start: 1;
+
+		&:before {
+			inset-inline-start: 99.9%;
+			-webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Cpath d='M0 3h3C2 3 0 1 0 0'/%3E%3C/svg%3E");
+			mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Cpath d='M0 3h3C2 3 0 1 0 0'/%3E%3C/svg%3E");
+		}
+	}
+}
+
+.ui-chat-header {
+	@apply daisy-chat-header;
+}
+
+.ui-chat-image {
+	@apply daisy-chat-image;
+}
+
+.ui-chat-footer {
+	@apply daisy-chat-footer opacity-50;
+}
+
+.ui-chat-bubble {
+	@apply daisy-chat-bubble;
+}
+
+.ui-chat-bubble-primary {
+	@apply daisy-chat-bubble-primary;
+}
+
+.ui-chat-bubble-secondary {
+	@apply daisy-chat-bubble-secondary;
+}
+
+.ui-chat-bubble-accent {
+	@apply daisy-chat-bubble-accent;
+}
+
+.ui-chat-bubble-success {
+	@apply daisy-chat-bubble-success;
+}
+
+.ui-chat-bubble-info {
+	@apply daisy-chat-bubble-info;
+}
+
+.ui-chat-bubble-error {
+	@apply daisy-chat-bubble-error;
+}
+
+.ui-chat-bubble-warning {
+	@apply daisy-chat-bubble-warning;
+}

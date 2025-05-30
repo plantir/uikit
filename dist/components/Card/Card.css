@@ -1,0 +1,6 @@
+@reference "../../css/app.css";
+
+.ui-card {
+	/* DAISYTODO: daisy-card-bordered */
+	@apply daisy-card bg-base-100 shadow-xl rounded-lg;
+}
