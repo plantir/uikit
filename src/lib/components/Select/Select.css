@@ -8,7 +8,7 @@
 }
 
 .ui-select {
-	@apply daisy-select;
+	@apply daisy-select w-full;
 
 	.ui-select-multiple {
 		height: unset;

@@ -3,7 +3,7 @@
 	@apply inline-flex flex-col  gap-y-1;
 }
 .ui-textarea {
-	@apply daisy-textarea;
+	@apply daisy-textarea w-full;
 
 	.ui-textarea-bordered {
 		/* DAISYTODO: @apply daisy-textarea-bordered; */

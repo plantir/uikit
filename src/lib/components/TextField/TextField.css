@@ -9,7 +9,7 @@
 }
 
 .ui-text-field {
-	@apply daisy-input;
+	@apply daisy-input w-full;
 }
 
 .ui-text-field-bordered {
