@@ -15,6 +15,7 @@
 	<div class="block md:hidden max-w-sm w-full mb-4">
 		<TextField placeholder="Search..." class="w-full"></TextField>
 	</div>
+	slm
 	<Accordion on:clickItem={gotoLink} open={true} items={$components} title="Components">
 		<div slot="item" let:item>
 			<a

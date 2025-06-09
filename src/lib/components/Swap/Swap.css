@@ -1,0 +1,12 @@
+@reference "../../css/app.css";
+
+.ui-swap-wrapper{
+	@apply daisy-swap;
+	
+}
+.ui-swap-on{
+		@apply daisy-swap-on;
+}
+.ui-swap-off{
+		@apply daisy-swap-off;
+}
