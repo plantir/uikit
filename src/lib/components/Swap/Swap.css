@@ -1,12 +1,21 @@
-@reference "../../css/app.css";
+@reference "$lib/css/app.css";
 
 .ui-swap-wrapper{
 	@apply daisy-swap;
-	
 }
-.ui-swap-on{
-		@apply daisy-swap-on;
+
+.ui-swap-wrapper-rotate{
+	@apply daisy-swap-rotate;
 }
-.ui-swap-off{
-		@apply daisy-swap-off;
+
+.ui-swap-wrapper-flip{
+	@apply daisy-swap-flip;
+}
+
+.ui-swap-on {
+	@apply daisy-swap-on;
+}
+
+.ui-swap-off {
+	@apply daisy-swap-off;
 }
