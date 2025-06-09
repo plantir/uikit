@@ -11,7 +11,7 @@
 <div>
 	<div class="w-max">
 		{#each tabs as tab, index}
-			<Button class="!rounded-none" on:click={() => changeActive(index)}>{tab}</Button>
+			<Button class="rounded-none!" on:click={() => changeActive(index)}>{tab}</Button>
 		{/each}
 	</div>
 	<div class="border rounded-xl rounded-tl-none">
