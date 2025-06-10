@@ -4,7 +4,7 @@ import type { Placement } from '@floating-ui/dom';
 export type DropdownPlacement = Placement;
 
 export interface Dropdown extends Base {
-	placement?: DropdownPlacement;
+    placement?: DropdownPlacement;
     open?: boolean;
     offset?: number;
 }

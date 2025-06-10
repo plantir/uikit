@@ -1,16 +1,27 @@
 @reference "../../css/app.css";
 
+.ui-tabs{
+	@apply daisy-tabs;
+}
+.ui-tabs-lifted{
+	@apply daisy-tabs-lift;
+}
 .ui-tab-item {
 	@apply daisy-tab;
 }
-
-.ui-tab-item-active {
-	/* &:not(&-disabled):not([disabled]) {
-			border-color: var(--fallback-bc, oklch(var(--bc) / var(--tw-border-opacity)));
-			--tw-border-opacity: 1;
-			--tw-text-opacity: 1;
-		} */
+.ui-tabs-lifted>.ui-tab-item:is(.ui-tab-item-active,[aria-selected=true]):not(.ui-tab-item-disabled,[disabled]), .ui-tabs-lifted>.ui-tab-item:is(input:checked,label:has(:checked)) {
+    --tab-border: var(--border) var(--border) 0 var(--border);
+    --tab-border-colors: var(--daisy-tab-border-color) var(--daisy-tab-border-color) #0000 var(--daisy-tab-border-color);
+    --tab-paddings: 0 calc(var(--daisy-tab-p) - var(--border)) var(--border) calc(var(--daisy-tab-p) - var(--border));
+    --tab-inset: auto auto 0 auto;
+    --tab-grad: calc(69% - var(--border));
+    --radius-start: radial-gradient(circle at top left, #0000 var(--tab-grad), var(--daisy-tab-border-color) calc(var(--tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--tab-grad) + var(--border) + .25px));
+    --radius-end: radial-gradient(circle at top right, #0000 var(--tab-grad), var(--daisy-tab-border-color) calc(var(--tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--tab-grad) + var(--border) + .25px));
+    background-color: var(--daisy-tab-bg);
 }
+/* .ui-tab-item-active {
+	@apply daisy-tab-active;
+} */
 
 .ui-tab-item-content {
 	@apply daisy-tab-content block;

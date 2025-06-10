@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import Accordion from '$lib/DocsComponent/Accordion.svelte';
+	import Accordion from '$lib/DocsComponent/MenuAccordion.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import { components } from '$lib/store/index.js';
 	import { createEventDispatcher } from 'svelte';
@@ -15,7 +15,6 @@
 	<div class="block md:hidden max-w-sm w-full mb-4">
 		<TextField placeholder="Search..." class="w-full"></TextField>
 	</div>
-	slm
 	<Accordion on:clickItem={gotoLink} open={true} items={$components} title="Components">
 		<div slot="item" let:item>
 			<a

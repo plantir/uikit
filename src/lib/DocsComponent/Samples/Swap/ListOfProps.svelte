@@ -4,13 +4,13 @@
 	let items = [
 		{
 			name: 'on',
-			type: `string`,
-			default: 'undefined'
+			type: `string | slot`,
+			default: '""'
 		},
 		{
 			name: 'off',
-			type: `string`,
-			default: 'undefined'
+			type: `string | slot`,
+			default: '""'
 		},
 		{
 			name: 'value',
@@ -26,7 +26,7 @@
 			name: 'flip',
 			type: `boolean`,
 			default: 'false'
-		},
+		}
 	];
 </script>
 

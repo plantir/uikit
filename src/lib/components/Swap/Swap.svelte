@@ -12,7 +12,7 @@
 	export let rotate: boolean = false;
 	export let flip: boolean = false;
 	$: componentClass = {
-		disabled: disabled,
+		'opacity-50 cursor-not-allowed': disabled,
 		rotate: rotate,
 		flip: flip
 	};
@@ -27,18 +27,18 @@
 
 <label class={wrapperClass}>
 	<input type="checkbox" bind:checked={value} />
-	{#if typeof on === 'string'}
-		<div class=" {elClassOn}">{on}</div>
-	{:else}
+	{#if $$slots.on}
 		<div class=" {elClassOn}">
-			{@render on()}
+			<slot name="on" />
 		</div>
-	{/if}
-	{#if typeof off === 'string'}
-		<div class=" {elClassOff}">{off}</div>
 	{:else}
+		<div class=" {elClassOn}">{on}</div>
+	{/if}
+	{#if $$slots.off}
 		<div class=" {elClassOff}">
-			{@render off()}
+			<slot name="off" />
 		</div>
+	{:else}
+		<div class=" {elClassOff}">{off}</div>
 	{/if}
 </label>

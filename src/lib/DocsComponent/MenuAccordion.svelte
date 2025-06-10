@@ -34,14 +34,30 @@
 		</div>
 	</button>
 	{#if open}
-		<div class="flex flex-col gap-2" transition:slide>
+		<div class="flex flex-col gap-2 ml-2 border-l border-base-content/10 pl-4" transition:slide>
 			{#each items as item}
-				<slot name="item" {item}>
-					<button on:click={() => event(item.value)}>
-						{item.title}
-					</button>
-				</slot>
+				<div>
+					<div class="flex items-center gap-2">
+						{@html item.icon}
+						<span class="text-base-content/40 text-sm">
+							{item.title}
+						</span>
+					</div>
+					{#each item.items as menuItem}
+						<div class="pl-4 border-l border-base-content/10 ml-2">
+							<slot name="item" item={menuItem}>
+								<button on:click={() => event(menuItem.value)}>
+									{menuItem.title}
+								</button>
+							</slot>
+						</div>
+					{/each}
+				</div>
 			{/each}
 		</div>
 	{/if}
 </div>
+
+<style lang="scss">
+	
+</style>

@@ -2,7 +2,7 @@
 	import type { accordionItem } from '../../../type/index.js';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import Accordion from '$lib/DocsComponent/Accordion.svelte';
+	import Accordion from '$lib/DocsComponent/MenuAccordion.svelte';
 	import { page } from '$app/stores';
 	import { components } from '$lib/store/index.js';
 	let componentItems: accordionItem[] = [
