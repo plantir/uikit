@@ -4,6 +4,7 @@
 	import SetupExample from '$lib/DocsComponent/Samples/Dialog/SetupExample.svelte';
 	import DefaultExample from '$lib/DocsComponent/Samples/Dialog/DefaultExample.svelte';
 	import ConfirmExample from '$lib/DocsComponent/Samples/Dialog/ConfirmExample.svelte';
+	import PlacementExample from '$lib/DocsComponent/Samples/Dialog/PlacementExample.svelte';
 </script>
 
 <div class="component-wrapper">
@@ -27,6 +28,8 @@
 	<DefaultExample />
 	<Title id="confirm-Dialog" title="Confirm Example" />
 	<ConfirmExample />
+	<Title id="placement-Dialog" title="Placement Dialog" />
+	<PlacementExample />
 	<Title id="props" title="Props" />
 	<p>this is the list of the props that Dialog can have.</p>
 	<ListOfProps />

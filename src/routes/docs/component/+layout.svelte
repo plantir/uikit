@@ -166,6 +166,7 @@
 				</a>
 			</div>
 		</Accordion>
+		<div class="bg-base-100 pointer-events-none sticky bottom-0 flex h-40 [mask-image:linear-gradient(transparent,#000000)]"></div>
 	</div>
 	<div class="relative px-5 md:px-[60px] lg:px-[120px] flex-1">
 		<slot />

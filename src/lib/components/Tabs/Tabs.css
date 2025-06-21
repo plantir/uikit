@@ -25,25 +25,44 @@
 	/* DAISYTODO: @apply daisy-tabs-lifted; */
 
 	&>.ui-tab-item {
-		border: var(--tab-border, 1px) solid transparent;
-		border-bottom-color: var(--tab-border-color);
-		border-start-end-radius: var(--tab-radius, 0.5rem);
-		border-start-start-radius: var(--tab-radius, 0.5rem);
-		border-width: 0 0 var(--tab-border, 1px) 0;
-		padding-inline-end: var(--tab-padding, 1rem);
-		padding-inline-start: var(--tab-padding, 1rem);
-		padding-top: var(--tab-border, 1px);
+		--daisy-tab-border: 0 0 0 0;
+    --daisy-tab-radius-ss: min(var(--radius-field), var(--daisy-tab-radius-min));
+    --daisy-tab-radius-se: min(var(--radius-field), var(--daisy-tab-radius-min));
+    --daisy-tab-radius-es: 0;
+    --daisy-tab-radius-ee: 0;
+    --daisy-tab-paddings: var(--border) var(--daisy-tab-p) 0 var(--daisy-tab-p);
+    --daisy-tab-border-colors: #0000 #0000 var(--daisy-tab-border-color) #0000;
+    --daisy-tab-corner-width: calc(100% + min(var(--radius-field), var(--daisy-tab-radius-min)) * 2);
+    --daisy-tab-corner-height: min(var(--radius-field), var(--daisy-tab-radius-min));
+    --daisy-tab-corner-position: top left, top right;
+    border-width: var(--daisy-tab-border);
+    padding: var(--daisy-tab-paddings);
+    border-color: var(--daisy-tab-border-colors);
+    border-start-start-radius: var(--daisy-tab-radius-ss);
+    border-start-end-radius: var(--daisy-tab-radius-se);
+    border-end-end-radius: var(--daisy-tab-radius-ee);
+    border-end-start-radius: var(--daisy-tab-radius-es);
 
-		&-active {
-			background-color: var(--tab-bg);
-			border-inline-end-color: var(--tab-border-color);
-			border-inline-start-color: var(--tab-border-color);
-			border-top-color: var(--tab-border-color);
-			border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-			padding-inline-end: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-			padding-bottom: var(--tab-border, 1px);
-			padding-inline-start: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-			padding-top: 0;
+		&.ui-tab-item-active {
+			--daisy-tab-border: var(--border) var(--border) 0 var(--border);
+    --daisy-tab-border-colors: var(--daisy-tab-border-color) var(--daisy-tab-border-color) #0000 var(--daisy-tab-border-color);
+    --daisy-tab-paddings: 0 calc(var(--daisy-tab-p) - var(--border)) var(--border) calc(var(--daisy-tab-p) - var(--border));
+    --daisy-tab-inset: auto auto 0 auto;
+    --daisy-tab-grad: calc(69% - var(--border));
+    --radius-start: radial-gradient(circle at top left, #0000 var(--daisy-tab-grad), var(--daisy-tab-border-color) calc(var(--daisy-tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--daisy-tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--daisy-tab-grad) + var(--border) + .25px));
+    --radius-end: radial-gradient(circle at top right, #0000 var(--daisy-tab-grad), var(--daisy-tab-border-color) calc(var(--daisy-tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--daisy-tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--daisy-tab-grad) + var(--border) + .25px));
+    background-color: var(--daisy-tab-bg);
+	&::before{
+		z-index: 1;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--daisy-tab-bg);
+	top: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+	}
 		}
 	}
 }

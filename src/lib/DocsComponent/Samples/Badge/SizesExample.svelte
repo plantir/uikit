@@ -25,7 +25,7 @@
 		{#each sizes as size}
 			<TagCode name="p">
 				this is a <TagCode name="Badge" one_line dont_break props={[`size="${size}"`]}
-					>{size}</TagCode
+					>{size} badge</TagCode
 				> inside of a paragraph
 			</TagCode>
 		{/each}
@@ -33,7 +33,7 @@
 	<div slot="preview">
 		{#each sizes as size}
 			<p>
-				this is a <Badge {size}>{size}</Badge> inside of a paragraph
+				this is a <Badge {size}>{size} badge</Badge> inside of a paragraph
 			</p>
 		{/each}
 	</div>

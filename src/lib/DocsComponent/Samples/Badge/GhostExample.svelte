@@ -11,7 +11,16 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	let value: any;
 	let checked = true;
 </script>
@@ -21,7 +30,7 @@
 		<ScriptCode>
 			import Badge from '{$importDocumentSrc}/Badge.svelte';
 		</ScriptCode>
-		</pre>
+	</pre>
 	<div slot="html">
 		<TagCode name="p">
 			this is a <TagCode name="Badge" one_line dont_break props={['variant="ghost"']}

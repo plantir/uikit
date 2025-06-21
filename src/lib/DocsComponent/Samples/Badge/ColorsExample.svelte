@@ -11,7 +11,7 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = ['primary', 'secondary', 'accent','neutral', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>

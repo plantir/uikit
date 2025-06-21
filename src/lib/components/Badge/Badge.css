@@ -35,7 +35,9 @@
 .ui-badge-success {
 	@apply daisy-badge-success;
 }
-
+.ui-badge-neutral{
+	@apply daisy-badge-neutral;
+}
 .ui-badge-info {
 	@apply daisy-badge-info;
 }
@@ -49,9 +51,10 @@
 }
 
 .ui-badge-outline {
+	@apply daisy-badge-outline;
 	/* DAISYTODO: @apply daisy-badge-outline; */
 
-	&.ui-badge-primary {
+	/* &.ui-badge-primary {
 		@apply text-primary;
 	}
 
@@ -79,9 +82,9 @@
 		@apply text-accent;
 	}
 
-	&.ui-badge-natural {
+	&.ui-badge-neutral {
 		@apply text-base-content;
-	}
+	} */
 }
 
 .ui-badge-glass {
@@ -155,6 +158,13 @@
 
 		&::before {
 			@apply bg-base-content;
+		}
+	}
+	&.ui-badge-neutral {
+		@apply text-neutral;
+
+		&::before {
+			@apply bg-neutral;
 		}
 	}
 

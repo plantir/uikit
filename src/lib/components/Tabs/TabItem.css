@@ -9,20 +9,24 @@
 .ui-tab-item {
 	@apply daisy-tab;
 }
-.ui-tabs-lifted>.ui-tab-item:is(.ui-tab-item-active,[aria-selected=true]):not(.ui-tab-item-disabled,[disabled]), .ui-tabs-lifted>.ui-tab-item:is(input:checked,label:has(:checked)) {
-    --tab-border: var(--border) var(--border) 0 var(--border);
-    --tab-border-colors: var(--daisy-tab-border-color) var(--daisy-tab-border-color) #0000 var(--daisy-tab-border-color);
-    --tab-paddings: 0 calc(var(--daisy-tab-p) - var(--border)) var(--border) calc(var(--daisy-tab-p) - var(--border));
-    --tab-inset: auto auto 0 auto;
-    --tab-grad: calc(69% - var(--border));
-    --radius-start: radial-gradient(circle at top left, #0000 var(--tab-grad), var(--daisy-tab-border-color) calc(var(--tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--tab-grad) + var(--border) + .25px));
-    --radius-end: radial-gradient(circle at top right, #0000 var(--tab-grad), var(--daisy-tab-border-color) calc(var(--tab-grad) + .25px), var(--daisy-tab-border-color) calc(var(--tab-grad) + var(--border)), var(--daisy-tab-bg) calc(var(--tab-grad) + var(--border) + .25px));
-    background-color: var(--daisy-tab-bg);
-}
 /* .ui-tab-item-active {
 	@apply daisy-tab-active;
 } */
 
 .ui-tab-item-content {
-	@apply daisy-tab-content block;
+	@apply daisy-tab-content border-base-300 block rounded-xl overflow-hidden;
+}
+.ui-tabs-lifted .ui-tab-item:first-child + .ui-tab-item-content {
+	@apply rounded-tl-none;
+}
+:is(.tab:checked,.tab:is(label:has(:checked)),.tab:is(.tab-active,[aria-selected=true]))+.tab-content {
+    height: calc(100% - var(--tab-height) + var(--border));
+    display: block;
+}
+.ui-tabs-lifted .ui-tab-item-content {
+    --tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
+    --tabcontent-radius-ss: 0;
+    --tabcontent-radius-se: var(--radius-box);
+    --tabcontent-radius-es: var(--radius-box);
+    --tabcontent-radius-ee: var(--radius-box);
 }

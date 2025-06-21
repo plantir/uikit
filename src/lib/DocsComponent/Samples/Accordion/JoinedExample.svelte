@@ -9,25 +9,10 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import Accordion from '$lib/components/Accordion/Accordion.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let masks: any = [
-		'squircle',
-		'decagon',
-		'diamond',
-		'heart',
-		'hexagon',
-		'hexagon-2',
-		'circle',
-		'pentagon',
-		'square',
-		'star',
-		'star-2',
-		'triangle',
-		'triangle-2',
-		'triangle-3',
-		'triangle-4'
-	];
+	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	let checked = true;
 </script>
@@ -35,29 +20,23 @@
 <SampleWrapper>
 	<pre slot="javascript">
 		<ScriptCode>
-			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
+			import Accordion from '{$importDocumentSrc}/Accordion.svelte';
 		</ScriptCode>
 	</pre>
 	<div slot="html">
-		<TagCode name="div" props={['class="flex gap-4 flex-wrap"']}>
-			{#each masks as mask}
-				<TagCode name="div">
-					<TagCode name="div" one_line>{mask}</TagCode>
-					<TagCode name="Avatar" props={[`mask="${mask}"`]}>
-						<TagCode name="img" props={['src="your image source"']} close_self></TagCode>
-					</TagCode>
-				</TagCode>
-			{/each}
+		<TagCode name="Accordion" props={['title="accordion title 1"', 'open', 'join']}>
+			accordion content sample
+		</TagCode>
+		<TagCode name="Accordion" props={['title="accordion title 2"', 'join']}>
+			accordion content sample
+		</TagCode>
+		<TagCode name="Accordion" props={['title="accordion title 3"', 'join']}>
+			accordion content sample
 		</TagCode>
 	</div>
-	<div class="flex gap-4 flex-wrap" slot="preview">
-		{#each masks as mask}
-			<div>
-				<div>{mask}</div>
-				<Avatar {mask}>
-					<img src="/swiper-example-01.jpg" alt="" />
-				</Avatar>
-			</div>
-		{/each}
+	<div slot="preview" class="w-full">
+		<Accordion title="accordion title 1" open join>accordion content sample</Accordion>
+		<Accordion title="accordion title 2" join>accordion content sample</Accordion>
+		<Accordion title="accordion title 3" join>accordion content sample</Accordion>
 	</div>
 </SampleWrapper>

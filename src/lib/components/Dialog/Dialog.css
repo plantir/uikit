@@ -6,7 +6,7 @@
 
 .ui-dialog {
 	@apply daisy-modal;
-	
+
 	.ui-dialog-box {
 		@apply daisy-modal-box;
 	}
@@ -14,17 +14,108 @@
 	&[open] .ui-dialog-box {
 		opacity: 1;
 		scale: 1;
-	}	
+	}
+
+	&.ui-dialog-placement-bottom {
+		@apply daisy-modal-bottom;
+
+		.ui-dialog-box {
+			height: auto;
+			width: 100%;
+			max-width: none;
+			max-height: calc(100vh - 5em);
+			translate: 0 100%;
+			scale: 1;
+			--daisy-modal-tl: var(--radius-box);
+			--daisy-modal-tr: var(--radius-box);
+			--daisy-modal-bl: 0;
+			--daisy-modal-br: 0;
+		}
+
+		&[open] .ui-dialog-box {
+			opacity: 1;
+			scale: 1;
+			translate: 0 0;
+		}
+	}
+
+	&.ui-dialog-placement-top {
+		@apply daisy-modal-top;
+
+		.ui-dialog-box {
+			height: auto;
+			width: 100%;
+			max-width: none;
+			max-height: calc(100vh - 5em);
+			translate: 0 -100%;
+			scale: 1;
+			--daisy-modal-tl: 0;
+			--daisy-modal-tr: 0;
+			--daisy-modal-bl: var(--radius-box);
+			--daisy-modal-br: var(--radius-box);
+		}
+
+		&[open] .ui-dialog-box {
+			opacity: 1;
+			scale: 1;
+			translate: 0 0;
+		}
+
+	}
+
+	&.ui-dialog-placement-middle {
+		@apply daisy-modal-middle;
+	}
+
+	&.ui-dialog-placement-start {
+		@apply daisy-modal-start;
+		.ui-dialog-box {
+			height: 100vh;
+        max-height: none;
+        width: auto;
+        max-width: none;
+        translate: -100% 0;
+        scale: 1;
+        --daisy-modal-tl: 0;
+        --daisy-modal-tr: var(--radius-box);
+        --daisy-modal-bl: 0;
+        --daisy-modal-br: var(--radius-box);
+		}
+
+		&[open] .ui-dialog-box {
+			translate: 0 0;
+            scale: 1;
+            opacity: 1;
+		}
+	}
+
+	&.ui-dialog-placement-end {
+		@apply daisy-modal-end;
+		.ui-dialog-box {
+			height: 100vh;
+        max-height: none;
+        width: auto;
+        max-width: none;
+        translate: 100% 0;
+        scale: 1;
+        --daisy-modal-tl: 0;
+        --daisy-modal-tr: var(--radius-box);
+        --daisy-modal-bl: 0;
+        --daisy-modal-br: var(--radius-box);
+		}
+
+		&[open] .ui-dialog-box {
+			translate: 0 0;
+            scale: 1;
+            opacity: 1;
+		}
+	}
 
 	.ui-dialog-backdrop {
 		@apply daisy-modal-backdrop cursor-pointer backdrop-blur-xs;
 	}
-	
+
 	.ui-dialog-close-button {
 		@apply absolute right-4 top-4;
 	}
 }
-
-
-
-

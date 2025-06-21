@@ -26,4 +26,5 @@
 			</a>
 		</div>
 	</Accordion>
+	<div class="bg-base-100 pointer-events-none sticky bottom-0 flex h-40 [mask-image:linear-gradient(transparent,#000000)]"></div>
 </div>

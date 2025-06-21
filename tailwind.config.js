@@ -2,7 +2,9 @@
 module.exports = {
     content: ['./src/**/*.{svelte,html,js,ts}'],
     safelist: [],
+
     theme: {
+
         extend: {
             rotate: {
                 'y-180': 'rotateY(180deg)',

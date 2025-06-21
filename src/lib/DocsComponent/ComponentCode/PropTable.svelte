@@ -16,8 +16,8 @@
 		<tbody>
 			{#each items as item}
 				<tr>
-					<td class="  w-1/5">{item.name}</td>
-					<td class="  w-3/5">
+					<td class="  w-1/5 py-1">{item.name}</td>
+					<td class="  w-3/5 py-1">
 						<div class="flex flex-wrap gap-2 items-center justify-center">
 							{#each item.type.split(' | ') as type}
 							<Badge color="primary">
@@ -26,7 +26,7 @@
 							{/each}
 						</div>
 					</td>
-					<td class="  w-1/5">{item.default}</td>
+					<td class="  w-1/5 py-1">{item.default}</td>
 				</tr>
 			{/each}
 		</tbody>

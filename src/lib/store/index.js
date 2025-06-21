@@ -93,6 +93,10 @@ export const components = writable([
         icon: dataDisplayIcon,
         items: [
             {
+                title: 'Accordion',
+                value: 'component/accordion'
+            },
+            {
                 title: 'Avatar',
                 value: 'component/avatar'
             },

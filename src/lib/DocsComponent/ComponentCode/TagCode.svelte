@@ -24,7 +24,7 @@
 			<span></span>
 		{/if}
 	{/each}
-	<span>{close_self ? '/' : ''}&gt;</span>
+	<span>{#if close_self}'/'{/if}&gt;</span>
 	{#if !close_self}
 		{#if one_line}
 			<slot />
