@@ -8,23 +8,13 @@
 	import VerticalExample from '$lib/DocsComponent/Samples/Steps/VerticalExample.svelte';
 </script>
 
-<div class="component-wrapper">
-	<h1>Steps</h1>
-	<p>
-		Use the stepper component to show the number of steps required to complete a form inside your
-		application based on Tailwind CSS
-	</p>
-	<div class="line"></div>
-	<p>
-		The stepper component can be used to show a numbered list of steps next to a form component to
-		indicate the progress and number of steps that are required to complete and submit the form
-		data.
-	</p>
-	<p>
-		There are multiple examples that you can use including horizontal or vertical aligned stepper
-		components, different sizes, styles, and showing icons or numbers all coded with the utility
-		classes from Tailwind CSS.
-	</p>
+<div>
+	<div class="component-wrapper">
+		<h1>Steps</h1>
+		<p>Steps can be used to show a list of steps in a process.</p>
+	</div>
+	<ListOfProps />
+
 	<Title id="setup" title="Setup" />
 	<p>Import Steps component in the script tag and use it.</p>
 	<SetupExample />
@@ -48,8 +38,5 @@
 		<span class="badge">false</span>.
 	</p>
 	<VerticalExample />
-	<Title id="tabs-props" title="Props" />
-	<p>this is the list of the props that Steps can have.</p>
-	<ListOfProps />
 	<div class="py-10"></div>
 </div>
