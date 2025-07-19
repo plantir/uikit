@@ -34,6 +34,9 @@ export const themes = writable([
     "dim",
     "nord",
     "sunset",
+    "caramellatte",
+    "abyss",
+    "silk",
     "polaris",
     // "corporate",
     // "synthwave",
@@ -76,15 +79,15 @@ export const components = writable([
         items: [
             {
                 title: 'Button',
-                value: 'component/button'
+                value: 'button'
             },
             {
                 title: 'Dropdown',
-                value: 'component/dropdown'
+                value: 'dropdown'
             },
             {
                 title: "Swap",
-                value: "component/swap"
+                value: "swap"
             }
         ]
     },
@@ -94,23 +97,51 @@ export const components = writable([
         items: [
             {
                 title: 'Accordion',
-                value: 'component/accordion'
+                value: 'accordion'
             },
             {
                 title: 'Avatar',
-                value: 'component/avatar'
+                value: 'avatar'
             },
             {
                 title: 'Badge',
-                value: 'component/badge'
+                value: 'badge'
             },
             {
-                title: 'Collapse',
-                value: 'component/collapse'
+                title: 'Card',
+                value: 'card'
+            },
+            {
+                title: 'Chat',
+                value: 'chat'
+            },
+            {
+                title: 'CountDown',
+                value: 'countdown'
+            },
+            {
+                title: 'Diff',
+                value: 'diff'
+            },
+            {
+                title: 'Kbd',
+                value: 'kbd'
+            },
+            {
+                title: 'Stat',
+                value: 'stat'
+            },
+            {
+                title: 'Status',
+                value: 'status'
             },
             {
                 title: 'Table',
-                value: 'component/table'
+                value: 'table'
+            },
+            {
+                title: 'Timeline',
+                value: 'timeline'
             },
         ]
     },
@@ -119,24 +150,32 @@ export const components = writable([
         icon: navigationIcon,
         items: [
             {
-                title: 'Breadcrumb',
-                value: 'component/breadcrumb'
+                title: 'Breadcrumbs',
+                value: 'breadcrumbs'
+            },
+            {
+                title: 'Dock',
+                value: 'dock'
+            },
+            {
+                title: 'Menu',
+                value: 'menu'
             },
             {
                 title: 'Drawer',
-                value: 'component/drawer'
+                value: 'drawer'
             },
             {
                 title: 'Pagination',
-                value: 'component/pagination'
+                value: 'pagination'
             },
             {
                 title: 'Steps',
-                value: 'component/steps'
+                value: 'steps'
             },
             {
                 title: 'Tabs',
-                value: 'component/tabs'
+                value: 'tabs'
             },
         ]
     },
@@ -146,15 +185,15 @@ export const components = writable([
         items: [
             {
                 title: 'Alert',
-                value: 'component/alert'
+                value: 'alert'
             },
             {
                 title: 'Loading',
-                value: 'component/loading'
+                value: 'loading'
             },
             {
                 title: 'Progress',
-                value: 'component/progress'
+                value: 'progress'
             },
         ]
     },
@@ -164,65 +203,65 @@ export const components = writable([
         items: [
             {
                 title: 'Checkbox',
-                value: 'component/checkbox'
+                value: 'checkbox'
             },
             {
                 title: 'ColorPicker',
-                value: 'component/colorpicker'
+                value: 'colorpicker'
             },
             {
                 title: 'Datepicker',
-                value: 'component/datepicker'
+                value: 'datepicker'
             },
             {
                 title: 'Radio',
-                value: 'component/radio'
+                value: 'radio'
             },
             {
                 title: 'Range',
-                value: 'component/range'
+                value: 'range'
             },
             {
                 title: 'Select',
-                value: 'component/select'
+                value: 'select'
             },
 
             {
                 title: 'Swiper',
-                value: 'component/swiper'
+                value: 'swiper'
             },
             {
                 title: 'Switch',
-                value: 'component/switch'
+                value: 'switch'
             },
 
 
             {
                 title: 'Textarea',
-                value: 'component/textarea'
+                value: 'textarea'
             },
             {
                 title: 'Text field',
-                value: 'component/textfield'
+                value: 'textfield'
             }
         ]
     },
     {
-        title:'Layout',
+        title: 'Layout',
         icon: layoutIcon,
         items: [
             {
                 title: 'Divider',
-                value: 'component/divider'
+                value: 'divider'
             },
             {
                 title: 'Dialog',
-                value: 'component/dialog'
+                value: 'dialog'
             },
         ]
     },
 
-    
+
 
 
 

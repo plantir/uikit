@@ -1,0 +1,43 @@
+@import "../../css/app.css";
+
+.ui-diff {
+    @apply daisy-diff;
+}
+
+.ui-diff .item-1 {
+    @apply daisy-diff-item-1;
+}
+
+.ui-diff .item-1>* {
+    pointer-events: none;
+    object-fit: cover;
+    object-position: center;
+    width: 100cqi;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.ui-diff .item-2 {
+    @apply daisy-diff-item-2;
+}
+
+.ui-diff .item-2>* {
+    pointer-events: none;
+    object-fit: cover;
+    object-position: center;
+    width: 100cqi;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.ui-diff .ui-diff-resizer {
+    @apply daisy-diff-resizer;
+}

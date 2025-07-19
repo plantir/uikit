@@ -90,6 +90,7 @@
 		"flatpickr": "^4.6.13",
 		"highlight.js": "^11.11.1",
 		"lodash-es": "^4.17.21",
+		"moment": "^2.30.1",
 		"swiper": "^11.2.5",
 		"theme-change": "^2.5.0"
 	}

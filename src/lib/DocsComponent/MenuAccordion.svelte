@@ -44,7 +44,7 @@
 						</span>
 					</div>
 					{#each item.items as menuItem}
-						<div class="pl-4 border-l border-base-content/10 ml-2">
+						<div class="pl-2 border-l border-base-content/10 ml-2">
 							<slot name="item" item={menuItem}>
 								<button on:click={() => event(menuItem.value)}>
 									{menuItem.title}

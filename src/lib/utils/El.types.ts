@@ -3,7 +3,7 @@ import type { ComponentProps, SvelteComponent } from 'svelte';
 import type { HTMLAnchorAttributes, HTMLAttributes } from 'svelte/elements';
 // HTML Tags
 export type HTMLTags = keyof HTMLElementTagNameMap;
-export type GlobalSize = 'xs' | 'sm' | 'md' | 'lg' | undefined;
+export type GlobalSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined;
 export type GlobalColor =
 	| 'primary'
 	| 'secondary'
@@ -12,6 +12,7 @@ export type GlobalColor =
 	| 'warning'
 	| 'info'
 	| 'error'
+	| 'neutral'
 	| undefined;
 
 export interface Base extends ComponentProps<El> {

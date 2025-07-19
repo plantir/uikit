@@ -1,0 +1,38 @@
+@import "../../css/app.css";
+
+.ui-breadcrumbs {
+    @apply daisy-breadcrumbs
+}
+
+.ui-breadcrumbs>menu, .ui-breadcrumbs>ul, .ui-breadcrumbs>ol {
+    white-space: nowrap;
+    align-items: center;
+    min-height: min-content;
+    display: flex;
+}
+
+:is(.ui-breadcrumbs>menu, .ui-breadcrumbs>ul, .ui-breadcrumbs>ol)>li+:before {
+    content: "";
+    opacity: .4;
+    background-color: #0000;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    width: .375rem;
+    height: .375rem;
+    margin-left: .5rem;
+    margin-right: .75rem;
+    display: block;
+    rotate: 45deg;
+}
+
+:is(.ui-breadcrumbs>menu, .ui-breadcrumbs>ul, .ui-breadcrumbs>ol)>li {
+    align-items: center;
+    display: flex;
+}
+
+:is(.ui-breadcrumbs>menu, .ui-breadcrumbs>ul, .ui-breadcrumbs>ol)>li>* {
+    cursor: pointer;
+    align-items: center;
+    gap: .5rem;
+    display: flex;
+}

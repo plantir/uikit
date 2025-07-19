@@ -157,18 +157,24 @@
 		class="hidden md:block basis-72 component-menu-height px-8 overflow-y-auto border-r border-base-200 sticky top-16"
 	>
 		<Accordion on:clickItem={gotoLink} open={true} items={$components} title="Components">
-			<div slot="item" let:item>
-				<a
-					href="/docs/{item.value}"
-					class={$page.url.pathname.includes(item.value) ? 'text-error' : ''}
-				>
+			<div
+				slot="item"
+				class="menu-item {$page.url.pathname.split('/component/')[1].toLowerCase() ==
+				item.value.toLowerCase()
+					? 'menu-active'
+					: ''}"
+				let:item
+			>
+				<a href="/docs/component/{item.value}">
 					{item.title}
 				</a>
 			</div>
 		</Accordion>
-		<div class="bg-base-100 pointer-events-none sticky bottom-0 flex h-40 [mask-image:linear-gradient(transparent,#000000)]"></div>
+		<div
+			class="bg-base-100 pointer-events-none sticky bottom-0 flex h-40 [mask-image:linear-gradient(transparent,#000000)]"
+		></div>
 	</div>
-	<div class="relative px-5 md:px-[60px] lg:px-[120px] flex-1">
+	<div class="relative px-5 md:px-[60px] min-w-0 lg:px-[120px] flex-1">
 		<slot />
 	</div>
 	<div class="hidden md:block basis-72 h-max overflow-y-auto sticky top-16 pt-4">
@@ -187,10 +193,30 @@
 	</div>
 </div>
 
-<style lang="scss">
-	@reference "tailwindcss";
+<style>
+	@reference '../../../lib/css/app.css';
 
 	.component-menu-height {
 		height: calc(100vh - 64px);
+	}
+	.menu-item {
+		@apply px-2 py-1 rounded-sm;
+		--menu-active-fg: var(--color-neutral-content);
+		--menu-active-bg: var(--color-neutral);
+	}
+	.menu-item a {
+		@apply w-full block;
+	}
+	.menu-item:hover {
+		@apply bg-neutral/10;
+	}
+	.menu-item.menu-active {
+		box-shadow: 0 2px calc(var(--depth) * 3px) -2px var(--menu-active-bg);
+		--tw-outline-style: none;
+		color: var(--menu-active-fg);
+		background-color: var(--menu-active-bg);
+		background-size: auto, calc(var(--noise) * 100%);
+		background-image: none, var(--fx-noise);
+		outline-style: none;
 	}
 </style>

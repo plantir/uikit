@@ -21,6 +21,6 @@
 	@reference "$lib/css/app.css";
 
 	.main {
-		@apply min-h-screen pt-16;
+		@apply min-h-screen pt-16 max-w-[100rem] mx-auto;
 	}
 </style>

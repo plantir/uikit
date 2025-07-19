@@ -39,7 +39,7 @@
 		@apply w-full;
 		thead {
 			th {
-				@apply h-8 md:h-12;
+				@apply h-8 md:h-12 text-sm text-base-content/60;
 				&:first-child {
 					@apply rounded-l-lg;
 				}

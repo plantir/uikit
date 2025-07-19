@@ -12,12 +12,7 @@
 <div class="component-wrapper">
 	<h1>Collapse</h1>
 	<p>
-		Get started with the Collapse component to allow the user to create a accordion. collpase useage
-		for question and answer and in forms and every elemnt you want to build
-	</p>
-	<div class="line"></div>
-	<p>
-		The Collapse component can be used to show a title and a description about it in many shapes and colors.
+		Collapse is used for showing and hiding content.
 	</p>
 	<Title id="setup" title="Setup" />
 	<p>Import Collapse component in the script tag and use it.</p>
