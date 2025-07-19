@@ -265,15 +265,6 @@ export const components = writable([
             },
         ]
     },
-
-
-
-
-
-
-
-
-
-
-
 ])
+export const GlobalColorsText = ["primary", "secondary", "accent", "success", "warning", "info", "error", "neutral"]
+export const GlobalSizesText = ["xl", "lg", "md", "sm", "xs"]

@@ -1,32 +1,40 @@
 @reference "../../css/app.css";
 
-.ui-tabs{
-	@apply daisy-tabs;
+.ui-tabs {
+    @apply daisy-tabs;
 }
-.ui-tabs-lifted{
-	@apply daisy-tabs-lift;
+
+.ui-tabs-lifted {
+    @apply daisy-tabs-lift;
 }
+
 .ui-tab-item {
-	@apply daisy-tab;
+    @apply daisy-tab;
 }
-/* .ui-tab-item-active {
-	@apply daisy-tab-active;
-} */
+
+.ui-tab-item-active {
+    color: var(--color-base-content);
+}
 
 .ui-tab-item-content {
-	@apply daisy-tab-content border-base-300 block rounded-xl overflow-hidden;
+    @apply daisy-tab-content border-base-300 block overflow-hidden;
 }
-.ui-tabs-lifted .ui-tab-item:first-child + .ui-tab-item-content {
-	@apply rounded-tl-none;
+
+.ui-tabs-boxed {
+    .ui-tab-item-content {
+        @apply bg-base-100;
+    }
 }
-:is(.tab:checked,.tab:is(label:has(:checked)),.tab:is(.tab-active,[aria-selected=true]))+.tab-content {
+
+:is(.tab:checked, .tab:is(label:has(:checked)), .tab:is(.tab-active, [aria-selected=true]))+.tab-content {
     height: calc(100% - var(--tab-height) + var(--border));
     display: block;
 }
-.ui-tabs-lifted .ui-tab-item-content {
-    --tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
-    --tabcontent-radius-ss: 0;
-    --tabcontent-radius-se: var(--radius-box);
-    --tabcontent-radius-es: var(--radius-box);
-    --tabcontent-radius-ee: var(--radius-box);
+
+.ui-tabs-lifted>.ui-tab-item-content {
+    --daisy-tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
+    --daisy-tabcontent-radius-ss: 0;
+    --daisy-tabcontent-radius-se: var(--radius-box);
+    --daisy-tabcontent-radius-es: var(--radius-box);
+    --daisy-tabcontent-radius-ee: var(--radius-box);
 }

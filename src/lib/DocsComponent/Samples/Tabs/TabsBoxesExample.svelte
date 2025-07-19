@@ -24,8 +24,12 @@
 		<br />
 	</div>
 	<div slot="html">
+		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"']}>
+			<TagCode name="TabItem" props={['value="part1"', `title="part1"`]}>content in part 1</TagCode>
+			<TagCode name="TabItem" props={['value="part2"', `title="part2"`]}>content in part 2</TagCode>
+		</TagCode>
 		{#each colors as color}
-			<TagCode name="Tabs" props={['selected="part1"', `color="${color}`]}>
+			<TagCode name="Tabs" props={['selected="part1"', `color="${color}`, 'variant="box"']}>
 				<TagCode name="TabItem" props={['value="part1"', `title="${color}"`]}>
 					content in part 1
 				</TagCode>
@@ -37,10 +41,14 @@
 	</div>
 	<div slot="preview">
 		<div class="flex flex-wrap gap-4">
+			<Tabs selected="part1" variant="box">
+				<TabItem value="part1" title={'part1'}>content in part 1</TabItem>
+				<TabItem value="part2" title={'part2'}>content in part 2</TabItem>
+			</Tabs>
 			{#each colors as color}
-				<Tabs selected="part1" {color}>
-					<TabItem value="part1" title="{color}">content in part 1</TabItem>
-					<TabItem value="part2" title="{color}">content in part 2</TabItem>
+				<Tabs selected="part1" {color} variant="box">
+					<TabItem value="part1" title={color}>content in part 1</TabItem>
+					<TabItem value="part2" title={color}>content in part 2</TabItem>
 				</Tabs>
 			{/each}
 		</div>
