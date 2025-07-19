@@ -165,10 +165,7 @@ export const components = writable([
                 title: 'Navbar',
                 value: 'navbar'
             },
-            {
-                title: 'Drawer',
-                value: 'drawer'
-            },
+
             {
                 title: 'Pagination',
                 value: 'pagination'
@@ -261,6 +258,10 @@ export const components = writable([
             {
                 title: 'Dialog',
                 value: 'dialog'
+            },
+            {
+                title: 'Drawer',
+                value: 'drawer'
             },
         ]
     },
