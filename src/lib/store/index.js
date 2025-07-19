@@ -162,6 +162,10 @@ export const components = writable([
                 value: 'menu'
             },
             {
+                title: 'Navbar',
+                value: 'navbar'
+            },
+            {
                 title: 'Drawer',
                 value: 'drawer'
             },
