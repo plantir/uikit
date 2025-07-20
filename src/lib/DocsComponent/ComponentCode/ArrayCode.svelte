@@ -13,14 +13,20 @@
 	<span class="text-primary">let</span> <span class="text-green-600">{name}</span> = {'['}
 	<br />
 	{#each items as item, index}
-		<span class="item">
-			<span>{'{'}</span><br />
-			{#each Object.keys(item) as key}
-				<span class="text-red-600">{key}</span>:<span>{typeof item[key] == 'string' ? `"${item[key]}"` : item[key]},</span>
-				<br />
-			{/each}
-			<span>{'}'}</span>,<br />
-		</span>
+		{#if typeof item == 'string'}
+			<span class="item">"<span class="text-red-600">{item}</span>"</span><br />
+		{:else}
+			<span class="item">
+				<span>{'{'}</span><br />
+				{#each Object.keys(item) as key}
+					<span class="text-red-600">{key}</span>:<span
+						>{typeof item[key] == 'string' ? `"${item[key]}"` : item[key]},</span
+					>
+					<br />
+				{/each}
+				<span>{'}'}</span>,<br />
+			</span>
+		{/if}
 	{/each}
 	{']'};
 </span>

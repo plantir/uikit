@@ -12,15 +12,24 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Checkbox</span> from '{$importDocumentSrc}/Checkbox.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-4 gap-4"']}>
 			<TagCode name="Checkbox" props={['label="default"']} close_self></TagCode>

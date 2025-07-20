@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let name = '';
-	export let value = '';
+	export let value:any = '';
 	export let items: any = [];
 	export let dont_break = false;
 

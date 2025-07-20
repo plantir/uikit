@@ -39,7 +39,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<CheckboxGroup bind:value={selected}>
+		<CheckboxGroup bind:value={selected} column>
 			<Checkbox label="option 1" value="option-1" />
 			<Checkbox label="option 2" value="option-2" />
 		</CheckboxGroup>
