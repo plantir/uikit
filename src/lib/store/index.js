@@ -200,6 +200,10 @@ export const components = writable([
                 title: 'Radial progress',
                 value: 'radial-progress'
             },
+            {
+                title: 'Skeleton',
+                value: 'skeleton'
+            },
         ]
     },
     {
