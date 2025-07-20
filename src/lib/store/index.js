@@ -196,6 +196,10 @@ export const components = writable([
                 title: 'Progress',
                 value: 'progress'
             },
+            {
+                title: 'Radial progress',
+                value: 'radial-progress'
+            },
         ]
     },
     {

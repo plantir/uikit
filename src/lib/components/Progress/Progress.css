@@ -24,4 +24,7 @@
 	&.ui-progress-warning {
 		@apply daisy-progress-warning;
 	}
+	&.ui-progress-neutral {
+		@apply daisy-progress-neutral;
+	}
 }
