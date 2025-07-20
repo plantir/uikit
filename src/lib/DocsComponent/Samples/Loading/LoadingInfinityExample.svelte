@@ -7,17 +7,32 @@
 	import { importDocumentSrc } from '$lib/store/index.js';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
-	import TextField from '$lib/components/TextField/TextField.svelte';
+	import { Loading, Pagination, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
+	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Loading from '{$importDocumentSrc}/Loading.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Loading</span> from '{$importDocumentSrc}/Loading.svelte';
+		</TagCode>
+		<br />
+	</div>
+	<div slot="html">
+		<TagCode name="div" props={['class="flex items-center gap-4"']}>
+			{#each sizes as size}
+				<TagCode name="Loading" props={[`size="${size}"`, 'type="infinity"']} close_self />
+			{/each}
+		</TagCode>
+	</div>
+	<div slot="preview">
+		<div class="flex items-center gap-4">
+			{#each sizes as size, index}
+				<Loading {size} type="infinity" />
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>

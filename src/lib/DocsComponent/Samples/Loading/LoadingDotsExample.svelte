@@ -9,16 +9,8 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Loading, Pagination, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
-	let colors: any = [
-		'primary',
-		'secondary',
-		'accent',
-		'success',
-		'warning',
-		'info',
-		'error',
-		'neutral'
-	];
+	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
@@ -30,16 +22,16 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Loading" close_self />
-		{#each colors as color}
-			<TagCode name="Loading" props={[`color="${color}"`]} close_self />
-		{/each}
+		<TagCode name="div" props={['class="flex items-center gap-4"']}>
+			{#each sizes as size}
+				<TagCode name="Loading" props={[`size="${size}"`, 'type="dots"']} close_self />
+			{/each}
+		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-3 gap-4">
-			<Loading />
-			{#each colors as color, index}
-				<Loading {color} />
+		<div class="flex items-center gap-4">
+			{#each sizes as size, index}
+				<Loading {size} type="dots" />
 			{/each}
 		</div>
 	</div>

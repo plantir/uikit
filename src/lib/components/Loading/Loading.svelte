@@ -4,7 +4,7 @@
 	import './Loading.css';
 	type $$Props = Loading;
 	let componentName = 'loading';
-	export let type: LoadingType = undefined;
+	export let type: LoadingType = 'spinner';
 	export let size: LoadingSize = undefined;
 	export let color: LoadingColor = undefined;
 	$: componentClass = {
@@ -12,6 +12,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		spinner: type == 'spinner',
 		dots: type == 'dots',
 		ring: type == 'ring',
@@ -24,7 +25,8 @@
 		success: color == 'success',
 		warning: color == 'warning',
 		info: color == 'info',
-		error: color == 'error'
+		error: color == 'error',
+		neutral: color == 'neutral'
 	};
 </script>
 
