@@ -204,6 +204,10 @@ export const components = writable([
                 title: 'Skeleton',
                 value: 'skeleton'
             },
+            {
+                title: 'Toast',
+                value: 'toast'
+            },
         ]
     },
     {
