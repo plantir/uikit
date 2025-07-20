@@ -5,6 +5,7 @@
 	import RadialProgressColorsExample from '$lib/DocsComponent/Samples/RadialProgress/RadialProgressColorsExample.svelte';
 	import RadialProgressSizeExample from '$lib/DocsComponent/Samples/RadialProgress/RadialProgressSizeExample.svelte';
 	import RadialProgressTickExample from '$lib/DocsComponent/Samples/RadialProgress/RadialProgressTickExample.svelte';
+	import RadialProgressProps from '$lib/DocsComponent/Samples/RadialProgress/RadialProgressProps.svelte';
 </script>
 
 <div>
@@ -14,7 +15,7 @@
 			Radial progress can be used to show the progress of a task or to show the passing of time.
 		</p>
 	</div>
-	<ListOfProps />
+	<RadialProgressProps />
 	<Title id="default" title="Radial Progress" />
 	<RadialProgressDefaultExample />
 	<Title id="colors" title="Radial Progress Colors" />
