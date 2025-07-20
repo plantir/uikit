@@ -25,13 +25,13 @@
 	</div>
 	<div slot="html">
 		{#each colors as color}
-			<TagCode close_self name="Progress" props={['value={value}', `color="${color}"`]}></TagCode>
+			<TagCode close_self name="Progress" props={[`color="${color}"`]}></TagCode>
 		{/each}
 	</div>
 	<div slot="preview">
 		<div class="w-56">
 			{#each colors as color}
-				<Progress value="50" {color}></Progress>
+				<Progress {color}></Progress>
 			{/each}
 		</div>
 	</div>

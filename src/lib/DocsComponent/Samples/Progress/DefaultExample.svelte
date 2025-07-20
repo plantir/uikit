@@ -9,19 +9,27 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Progress from '{$importDocumentSrc}/Progress.svelte';
-				let value=50;
-			</ScriptCode>
-		</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Progress</span> from '{$importDocumentSrc}/Progress.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode close_self name="Progress"></TagCode>
-		<TagCode close_self name="Progress" props={['value={value}']}></TagCode>
+		<TagCode name="div" props={['class="w-56"']}>
+			<TagCode close_self name="Progress" props={['value="0"']}></TagCode>
+			<TagCode close_self name="Progress" props={['value="20"']}></TagCode>
+			<TagCode close_self name="Progress" props={['value="50"']}></TagCode>
+			<TagCode close_self name="Progress" props={['value="80"']}></TagCode>
+			<TagCode close_self name="Progress" props={['value="100"']}></TagCode>
+		</TagCode>
 	</div>
 	<div slot="preview">
-		<Progress></Progress>
-		<Progress {value}></Progress>
+		<div class="w-56">
+			<Progress value="0" />
+			<Progress value="20" />
+			<Progress value="50" />
+			<Progress value="80" />
+			<Progress value="100" />
+		</div>
 	</div>
 </SampleWrapper>
