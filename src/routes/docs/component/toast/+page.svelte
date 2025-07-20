@@ -18,6 +18,7 @@
 	import ToastBottomStartExample from '$lib/DocsComponent/Samples/Toast/ToastBottomStartExample.svelte';
 	import ToastBottomCenterExample from '$lib/DocsComponent/Samples/Toast/ToastBottomCenterExample.svelte';
 	import ToastBottomEndExample from '$lib/DocsComponent/Samples/Toast/ToastBottomEndExample.svelte';
+	import ToastProps from '$lib/DocsComponent/Samples/Toast/ToastProps.svelte';
 </script>
 
 <div>
@@ -25,6 +26,7 @@
 		<h1>Toast</h1>
 		<p>Toast is a wrapper to stack elements, positioned on the corner of page.</p>
 	</div>
+	<ToastProps />
 	<Title id="default" title="toast with alert inside" />
 	<ToastDefaultExample />
 	<Title id="top-start" title="Toast-top-start" />
