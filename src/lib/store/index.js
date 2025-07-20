@@ -208,6 +208,10 @@ export const components = writable([
                 title: 'Toast',
                 value: 'toast'
             },
+            {
+                title: 'Tooltip',
+                value: 'tooltip'
+            },
         ]
     },
     {
