@@ -2,7 +2,7 @@ import type { Base, GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
 import type { HTMLInputTypeAttribute } from 'svelte/elements';
 
 export type TextFieldSize = GlobalSize;
-export type TextFieldColor = 'natural' | GlobalColor;
+export type TextFieldColor = GlobalColor;
 export type TextFieldInputMode =
 	| 'none'
 	| 'text'

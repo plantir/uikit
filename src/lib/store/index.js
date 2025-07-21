@@ -235,6 +235,10 @@ export const components = writable([
                 value: 'fieldset'
             },
             {
+                title: 'File input',
+                value: 'fileinput'
+            },
+            {
                 title: 'Radio',
                 value: 'radio'
             },

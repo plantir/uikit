@@ -35,6 +35,9 @@
 .ui-text-field-lg {
 	@apply daisy-input-lg;
 }
+.ui-text-field-xl {
+	@apply daisy-input-xl;
+}
 
 .ui-text-field-primary {
 	@apply daisy-input-primary;
@@ -58,6 +61,9 @@
 
 .ui-text-field-error {
 	@apply daisy-input-error;
+}
+.ui-text-field-neutral {
+	@apply daisy-input-neutral;
 }
 
 .ui-text-field-warning {
