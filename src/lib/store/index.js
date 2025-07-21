@@ -231,6 +231,10 @@ export const components = writable([
                 value: 'datepicker'
             },
             {
+                title: 'Fieldset',
+                value: 'fieldset'
+            },
+            {
                 title: 'Radio',
                 value: 'radio'
             },

@@ -6,5 +6,5 @@ export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
 export interface Tooltip extends Base {
     placement?: TooltipPlacement;
     title?: string
-    colors?: GlobalColor
+    color?: GlobalColor
 }

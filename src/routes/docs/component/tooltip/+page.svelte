@@ -23,6 +23,7 @@
 	import TooltipCustomExample from '$lib/DocsComponent/Samples/Tooltip/TooltipCustomExample.svelte';
 	import TooltipPlacementExample from '$lib/DocsComponent/Samples/Tooltip/TooltipPlacementExample.svelte';
 	import TooltipColorsExample from '$lib/DocsComponent/Samples/Tooltip/TooltipColorsExample.svelte';
+	import TooltipProps from '$lib/DocsComponent/Samples/Tooltip/TooltipProps.svelte';
 </script>
 
 <div>
@@ -30,7 +31,7 @@
 		<h1>Tooltip</h1>
 		<p>Tooltip can be used to show a message when hovering over an element.</p>
 	</div>
-	<ToastProps />
+	<TooltipProps />
 	<Title id="default" title="Tooltip" />
 	<TooltipDefaultExample />
 	<Title id="custom-content" title="Tooltip custom content" />
