@@ -22,7 +22,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
-	import './RadioGroup.css';
+	// import './RadioGroup.css';
 
 	type $$Props = RadioGroup;
 

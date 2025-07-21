@@ -5,7 +5,7 @@
 		TextFieldInputMode,
 		TextFieldSize
 	} from './TextField.type.js';
-	import './TextField.css';
+	// import './TextField.css';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import El from '../../utils/El.svelte';
 	type $$Props = TextField;

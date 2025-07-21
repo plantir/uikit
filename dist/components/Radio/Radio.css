@@ -1,4 +1,4 @@
-@reference "../../css/app.css";
+/* @reference "../../css/app.css"; */
 .ui-radio-wrapper {
 	@apply inline-flex items-center gap-x-1;
 }

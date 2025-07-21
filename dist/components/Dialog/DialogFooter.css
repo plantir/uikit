@@ -1,4 +1,4 @@
-@reference "../../css/app.css";
+/* @reference "../../css/app.css"; */
 
 .ui-dialog-footer {
     @apply flex gap-2 justify-end;

@@ -9,7 +9,7 @@
 	} from '@floating-ui/dom';
 	import El from '../../utils/El.svelte';
 	import type { Tooltip, TooltipPlacement } from './Tooltip.type.js';
-	import './Tooltip.css';
+	// import './Tooltip.css';
 
 	type $$Props = Tooltip;
 

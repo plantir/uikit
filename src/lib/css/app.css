@@ -1,5 +1,6 @@
 @import "tailwindcss";
 /* @import "./component.css"; */
+@import './index.css';
 
 @plugin "daisyui" {
     themes: all;
@@ -13,4 +14,3 @@
  
   --color-base-200: oklch(100% 0 0);
 }
-

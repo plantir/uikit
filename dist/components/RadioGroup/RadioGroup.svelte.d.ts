@@ -7,7 +7,6 @@ export interface RadioCtxType {
 export declare function getRadioGroupContext(): RadioCtxType;
 export declare function setRadioGroupContext(value: RadioCtxType): RadioCtxType;
 import type { RadioGroup } from './RadioGroup.type.js';
-import './RadioGroup.css';
 declare const RadioGroup: any;
 type RadioGroup = InstanceType<typeof RadioGroup>;
 export default RadioGroup;

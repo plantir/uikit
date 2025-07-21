@@ -1,4 +1,4 @@
-@reference "../../css/app.css";
+/* @reference "../../css/app.css"; */
 .ui-date-picker-wrapper {
 	@apply inline-flex flex-col items-start gap-y-1;
 }

@@ -19,7 +19,7 @@
 	import { writable, type Writable } from 'svelte/store';
 	import El from '$lib/utils/El.svelte';
 	import type { Tab } from './Tabs.type.js';
-	import './Tabs.css';
+	// import './Tabs.css';
 
 	type $$Props = Tab;
 	let componentName = 'tabs';

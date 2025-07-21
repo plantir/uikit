@@ -11,7 +11,7 @@
 	import El from '../../utils/El.svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import type { Dropdown, DropdownPlacement } from './Dropdown.type.js';
-	import './Dropdown.css';
+	// import './Dropdown.css';
 
 	type $$Props = Dropdown;
 

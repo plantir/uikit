@@ -1,19 +1,19 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import type {
-		Avatar,
-		AvatarColor,
-		AvatarSize,
-		AvatarMask,
-		AvatarShape
+		Accordion,
+		AccordionColor,
+		AccordionSize,
+		AccordionMask,
+		AccordionShape
 	} from './Accordion.type.js';
-	import './Avatar.scss';
+	// import './Accordion.css';
 	import El from '../../utils/El.svelte';
-	type $$Props = Avatar;
-	let componentName = 'avatar';
-	export let size: AvatarSize = 'md';
-	export let color: AvatarColor = undefined;
-	export let shape: AvatarShape = undefined;
-	export let mask: AvatarMask = undefined;
+	type $$Props = Accordion;
+	let componentName = 'accordion';
+	export let size: AccordionSize = 'md';
+	export let color: AccordionColor = undefined;
+	export let shape: AccordionShape = undefined;
+	export let mask: AccordionMask = undefined;
 	export let ring = false;
 	export let text = false;
 	export let online = false;
@@ -46,4 +46,4 @@
 	<div>
 		<slot />
 	</div>
-</El>
+</El> -->

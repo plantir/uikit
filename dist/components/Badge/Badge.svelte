@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Badge, BadgeColor, BadgeSize, BadgeVariant } from './Badge.type.js';
-	import './Badge.css';
+	// import './Badge.css';
 	import El from '../../utils/El.svelte';
 	import Button from '../Button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';

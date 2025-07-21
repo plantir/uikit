@@ -5,7 +5,7 @@
 	import { getTabsContext } from './Tabs.svelte';
 	
 	import type { TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
-	import './TabItem.css';
+	// import './TabItem.css';
 
 	type $$Props = TabItem;
 	let componentName = 'tab-item';

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Collapse, CollapseColor, CollapseSize, CollapseVariant } from './Collapse.type.js';
-	import './Collapse.css';
+	// import './Collapse.css';
 	import El from '../../utils/El.svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	type $$Props = Collapse;

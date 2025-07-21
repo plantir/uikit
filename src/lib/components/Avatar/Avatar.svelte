@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Avatar, AvatarColor, AvatarSize, AvatarMask, AvatarShape } from './Avatar.type.js';
-	import './Avatar.css';
+	// // import './Avatar.css';
 	import El from '$lib/utils/El.svelte';
 	type $$Props = Avatar;
 	let componentName = 'avatar';

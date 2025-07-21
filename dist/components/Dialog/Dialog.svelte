@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {createEventDispatcher} from 'svelte'
 	import type { Dialog } from './Dialog.type.js';
-	import './Dialog.css';
+	// import './Dialog.css';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import Button from '../Button/Button.svelte';
 	type $$Props = Dialog;

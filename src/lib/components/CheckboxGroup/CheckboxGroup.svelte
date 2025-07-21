@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-	import './CheckboxGroup.css';
+	// import './CheckboxGroup.css';
 	import { createEventDispatcher } from 'svelte';
 	import type { CheckboxGroup } from './CheboxGroup.type.js';
 	import El from '$lib/utils/El.svelte';

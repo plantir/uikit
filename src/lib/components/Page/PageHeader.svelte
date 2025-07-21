@@ -3,7 +3,7 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import El from '$lib/utils/El.svelte';
 	import Icon from '../Icon/Icon.svelte';
-    import './PageHeader.css'
+    // import './PageHeader.css'
     
     type $$Props = PageHeader
 

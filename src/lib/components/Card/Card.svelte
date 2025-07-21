@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { Card } from './Card.type.ts';
-	import './Card.css';
+	// import './Card.css';
 	type $$Props = Card;
 	let componentName = 'card';
 	$: componentClass = {};

@@ -4,7 +4,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import type { Pagination, PaginationColor, PaginationSize } from './Pagination.type.js';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import './Pagination.css';
+	// import './Pagination.css';
 
 	type $$Props = Pagination;
 	let componentName = 'pagination';

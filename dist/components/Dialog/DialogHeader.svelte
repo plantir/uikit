@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '../../utils/El.svelte';
     import type {DialogHeader} from './DialogHeader.type.js'
-    import './DialogHeader.css'
+    // import './DialogHeader.css'
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 
     let componentName = 'dialog-header'

@@ -1,4 +1,4 @@
-@reference "../../css/app.css";
+/* @reference "../../css/app.css"; */
 
 .ui-steps {
 	@apply daisy-steps;

@@ -8,7 +8,7 @@
 		ButtonSize,
 		ButtonVariant
 	} from './Button.type.ts';
-	import './Button.css';
+	// import './Button.css';
 	type $$Props = Button;
 	let componentName = 'button';
 	export let disabled: boolean = false;

@@ -3,7 +3,7 @@
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import { getRadioGroupContext } from '../RadioGroup/RadioGroup.svelte';	
 	import type { Radio, RadioColor, RadioSize } from './Radio.type.js';
-	import './Radio.css';
+	// import './Radio.css';
 
 	type $$Props = Radio;
 

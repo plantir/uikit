@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Select, SelectColor, SelectSize } from './Select.type.ts';
-	import './Select.css';
+	// import './Select.css';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	type $$Props = Select;
 	let componentName = 'select';
