@@ -1,14 +1,11 @@
 <script lang="ts">
 	import Title from '$lib/DocsComponent/Doc/Title.svelte';
 	import ListOfProps from '$lib/DocsComponent/Samples/Radio/ListOfProps.svelte';
-	import SetupExample from '$lib/DocsComponent/Samples/Radio/SetupExample.svelte';
 	import DefaultExample from '$lib/DocsComponent/Samples/Radio/DefaultExample.svelte';
 	import ColorsExample from '$lib/DocsComponent/Samples/Radio/ColorsExample.svelte';
 	import DisableExample from '$lib/DocsComponent/Samples/Radio/DisableExample.svelte';
 	import DisableGroupExample from '$lib/DocsComponent/Samples/Radio/DisableGroupExample.svelte';
 	import SizesExample from '$lib/DocsComponent/Samples/Radio/SizesExample.svelte';
-	import MinMaxExample from '$lib/DocsComponent/Samples/Radio/MinMaxExample.svelte';
-	import StepExample from '$lib/DocsComponent/Samples/Radio/StepExample.svelte';
 	import ColumnExample from '$lib/DocsComponent/Samples/Radio/ColumnExample.svelte';
 	import JoinExample from '$lib/DocsComponent/Samples/Radio/JoinExample.svelte';
 	import ButtonExample from '$lib/DocsComponent/Samples/Radio/ButtonExample.svelte';

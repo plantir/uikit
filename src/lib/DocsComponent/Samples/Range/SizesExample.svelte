@@ -10,7 +10,7 @@
 	import { Range, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl','lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
@@ -28,8 +28,10 @@
 		{/each}
 	</div>
 	<div slot="preview">
-		{#each sizes as size}
-			<Range label={size} min="0" {size} />
-		{/each}
+		<div class="flex flex-col gap-4">
+			{#each sizes as size}
+				<Range label={size} min="0" {size} />
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>
