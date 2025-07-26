@@ -247,6 +247,10 @@ export const components = writable([
                 value: 'range'
             },
             {
+                title: 'Rating',
+                value: 'rating'
+            },
+            {
                 title: 'Select',
                 value: 'select'
             },
