@@ -15,11 +15,10 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Switch from '{$importDocumentSrc}/Switch.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Switch</span> from '{$importDocumentSrc}/Switch.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div">
@@ -92,12 +91,12 @@
 			<TagCode
 				name="Switch"
 				one_line
-				props={['label="natural"', 'colors="natural"', 'value={true}', 'disabled']}
+				props={['label="neutral"', 'colors="neutral"', 'value={true}', 'disabled']}
 			></TagCode>
 			<TagCode
 				name="Switch"
 				one_line
-				props={['label="natural"', 'colors="natural"', 'value={false}', 'disabled']}
+				props={['label="neutral"', 'colors="neutral"', 'value={false}', 'disabled']}
 			></TagCode>
 		</TagCode>
 		<TagCode name="div">
@@ -126,42 +125,43 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div>
-			<Switch label="default" value={true} disabled />
-			<Switch label="default" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="primary" color="primary" value={true} disabled />
-			<Switch label="primary" color="primary" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="secondary" color="secondary" value={true} disabled />
-			<Switch label="secondary" color="secondary" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="accent" color="accent" value={true} disabled />
-			<Switch label="accent" color="accent" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="error" color="error" value={true} disabled />
-			<Switch label="error" color="error" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="info" color="info" value={true} disabled />
-			<Switch label="info" color="info" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="natural" color="natural" value={true} disabled />
-			<Switch label="natural" color="natural" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="success" color="success" value={true} disabled />
-			<Switch label="success" color="success" value={false} disabled />
-		</div>
-		<div>
-			<Switch label="warning" color="warning" value={true} disabled />
-			<Switch label="warning" color="warning" value={false} disabled />
+		<div class="flex flex-col gap-4">
+			<div>
+				<Switch label="default" value={true} disabled />
+				<Switch label="default" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="primary" color="primary" value={true} disabled />
+				<Switch label="primary" color="primary" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="secondary" color="secondary" value={true} disabled />
+				<Switch label="secondary" color="secondary" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="accent" color="accent" value={true} disabled />
+				<Switch label="accent" color="accent" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="error" color="error" value={true} disabled />
+				<Switch label="error" color="error" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="info" color="info" value={true} disabled />
+				<Switch label="info" color="info" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="neutral" color="neutral" value={true} disabled />
+				<Switch label="neutral" color="neutral" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="success" color="success" value={true} disabled />
+				<Switch label="success" color="success" value={false} disabled />
+			</div>
+			<div>
+				<Switch label="warning" color="warning" value={true} disabled />
+				<Switch label="warning" color="warning" value={false} disabled />
+			</div>
 		</div>
 	</div>
 </SampleWrapper>
-

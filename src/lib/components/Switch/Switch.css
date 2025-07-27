@@ -5,40 +5,46 @@
 .ui-switch {
 	@apply daisy-toggle;
 
-	.ui-switch-disabled {
+	&.ui-switch-disabled {
 		/* DAISYTODO: @apply daisy-disabled; */
 	}
-	.ui-switch-xs {
+	&.ui-switch-xs {
 		@apply daisy-toggle-xs;
 	}
-	.ui-switch-sm {
+	&.ui-switch-sm {
 		@apply daisy-toggle-sm;
 	}
-	.ui-switch-md {
+	&.ui-switch-md {
 		@apply daisy-toggle-md;
 	}
-	.ui-switch-lg {
+	&.ui-switch-lg {
 		@apply daisy-toggle-lg;
 	}
-	.ui-switch-primary {
+	&.ui-switch-xl {
+		@apply daisy-toggle-xl;
+	}
+	&.ui-switch-primary {
 		@apply daisy-toggle-primary;
 	}
-	.ui-switch-secondary {
+	&.ui-switch-secondary {
 		@apply daisy-toggle-secondary;
 	}
-	.ui-switch-accent {
+	&.ui-switch-accent {
 		@apply daisy-toggle-accent;
 	}
-	.ui-switch-success {
+	&.ui-switch-success {
 		@apply daisy-toggle-success;
 	}
-	.ui-switch-info {
+	&.ui-switch-info {
 		@apply daisy-toggle-info;
 	}
-	.ui-switch-error {
+	&.ui-switch-error {
 		@apply daisy-toggle-error;
 	}
-	.ui-switch-warning {
+	&.ui-switch-warning {
 		@apply daisy-toggle-warning;
+	}
+	&.ui-switch-neutral {
+		@apply daisy-toggle-neutral;
 	}
 }
