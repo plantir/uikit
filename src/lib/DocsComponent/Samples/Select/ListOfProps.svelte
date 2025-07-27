@@ -4,12 +4,12 @@
 	let items = [
 		{
 			name: 'color',
-			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error'`,
+			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error' | 'neutral'`,
 			default: 'undefined'
 		},
 		{
 			name: 'size',
-			type: `'xs' | 'sm' | 'md' | 'lg'`,
+			type: `'xs' | 'sm' | 'md' | 'lg' | 'xl'`,
 			default: 'md'
 		},
 		{
@@ -32,11 +32,11 @@
 			type: `boolean`,
 			default: 'false'
 		},
-		{
-			name: 'bordered',
-			type: `boolean`,
-			default: 'true'
-		}
+		// {
+		// 	name: 'bordered',
+		// 	type: `boolean`,
+		// 	default: 'true'
+		// }
 	];
 </script>
 

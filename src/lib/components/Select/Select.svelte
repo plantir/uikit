@@ -34,6 +34,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled,
 		bordered,
 		primary: color == 'primary',
@@ -43,7 +44,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural',
+		neutral: color == 'neutral',
 		multiple,
 		'state-valid': state === 'valid',
 		'state-invalid': state === 'invalid'

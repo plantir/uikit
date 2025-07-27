@@ -10,56 +10,62 @@
 .ui-select {
 	@apply daisy-select w-full;
 
-	.ui-select-multiple {
+	&.ui-select-multiple {
 		height: unset;
 	}
-	.ui-select-bordered {
+	&.ui-select-bordered {
 		/* DAISYTODO: @apply daisy-select-bordered; */
 	}
 	.ui-select-disabled {
 		/* DAISYTODO: @apply daisy-disabled; */
 	}
-	.ui-select-xs {
+	&.ui-select-xs {
 		@apply daisy-select-xs;
 	}
-	.ui-select-sm {
+	&.ui-select-sm {
 		@apply daisy-select-sm;
 	}
-	.ui-select-md {
+	&.ui-select-md {
 		@apply daisy-select-md;
 	}
-	.ui-select-lg {
+	&.ui-select-lg {
 		@apply daisy-select-lg;
 	}
-	.ui-select-primary {
+	&.ui-select-xl {
+		@apply daisy-select-xl;
+	}
+	&.ui-select-primary {
 		@apply daisy-select-primary;
 	}
-	.ui-select-secondary {
+	&.ui-select-secondary {
 		@apply daisy-select-secondary;
 	}
-	.ui-select-accent {
+	&.ui-select-accent {
 		@apply daisy-select-accent;
 	}
-	.ui-select-success {
+	&.ui-select-success {
 		@apply daisy-select-success;
 	}
-	.ui-select-info {
+	&.ui-select-info {
 		@apply daisy-select-info;
 	}
-	.ui-select-error {
+	&.ui-select-error {
 		@apply daisy-select-error;
 	}
-	.ui-select-warning {
+	&.ui-select-warning {
 		@apply daisy-select-warning;
 	}
-	.ui-select-state-valid {
+	&.ui-select-neutral {
+		@apply daisy-select-neutral;
+	}
+	&.ui-select-state-valid {
 		@apply daisy-select-success;
 	}
-	.ui-select-state-invalid {
+	&.ui-select-state-invalid {
 		@apply daisy-select-error;
 	}
 
-    .ui-select-hint {
+    &.ui-select-hint {
 		@apply daisy-label;
 		 /* DAISYTODO: daisy-label-text-alt; */
         .ui-select-hint-state-valid {
