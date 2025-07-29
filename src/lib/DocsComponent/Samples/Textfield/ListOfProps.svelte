@@ -14,7 +14,7 @@
 		},
 		{
 			name: 'inputmode',
-			type: `'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'`,
+			type: `'color' | 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'` ,
 			default: 'undefined'
 		},
 		{
@@ -28,9 +28,9 @@
 			default: 'undefined'
 		},
 		{
-			name: 'bordered',
+			name: 'ghost',
 			type: `boolean`,
-			default: 'true'
+			default: 'false'
 		},
 		{
 			name: 'label',
