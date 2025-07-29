@@ -18,11 +18,10 @@ export interface TextArea extends Base {
 	placeholder?: string | undefined;
 	value?: string;
 	type?: HTMLInputTypeAttribute;
-	inputmode?: TextAreaInputMode;
 	name?: string;
 	size?: TextAreaSize;
 	color?: TextAreaColor;
 	disabled?: boolean;
 	readonly?: boolean;
-	bordered?: boolean;
+	ghost?: boolean;
 }

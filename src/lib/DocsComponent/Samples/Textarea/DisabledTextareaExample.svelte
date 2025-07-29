@@ -13,18 +13,15 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import TextArea from '{$importDocumentSrc}/TextArea.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextArea</span> from '{$importDocumentSrc}/TextArea.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="TextArea" props={['disabled', 'label="Disabled"']}></TagCode>
-		<TagCode name="TextArea" props={['label="Not Disabled"']}></TagCode>
+		<TagCode name="TextArea" props={['disabled', 'label="Description"']}></TagCode>
 	</div>
 	<div slot="preview">
-		<TextArea label="Name" disabled />
-		<TextArea label="Parent Name" />
+		<TextArea label="Description" disabled />
 	</div>
 </SampleWrapper>

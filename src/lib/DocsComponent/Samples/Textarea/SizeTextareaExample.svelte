@@ -10,6 +10,8 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextArea from '$lib/components/TextArea/TextArea.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '$lib/utils/El.types.js';
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>
@@ -21,17 +23,18 @@
         </pre>
 	</div>
 	<div slot="html">
-		<TagCode name="TextArea" props={['size="lg"', 'label="lg"']}></TagCode>
-		<TagCode name="TextArea" props={['size="md"', 'label="md"']}></TagCode>
-		<TagCode name="TextArea" props={['size="sm"', 'label="sm"']}></TagCode>
-		<TagCode name="TextArea" props={['size="xs"', 'label="xs"']}></TagCode>
+		{#each sizes as size}
+			<TagCode
+				name="TextArea"
+				props={[`size="${size}"`, `label="${size}"`, 'placeholder="plaese fill this input"']}
+			></TagCode>
+		{/each}
 	</div>
 	<div slot="preview">
-		<div class="flex flex-wrap gap-4">
-			<TextArea size="lg" label="lg"></TextArea>
-			<TextArea size="md" label="md"></TextArea>
-			<TextArea size="sm" label="sm"></TextArea>
-			<TextArea size="xs" label="xs"></TextArea>
+		<div class="flex flex-col gap-4">
+			{#each sizes as size}
+				<TextArea {size} label={size} placeholder="plaese fill this input"></TextArea>
+			{/each}
 		</div>
 	</div>
 </SampleWrapper>

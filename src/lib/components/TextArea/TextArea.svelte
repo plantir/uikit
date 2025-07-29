@@ -15,7 +15,7 @@
 	export let inputmode: TextAreaInputMode = 'text';
 	export let disabled: boolean = false;
 	export let readonly: boolean = false;
-	export let bordered: boolean = true;
+	export let ghost: boolean = false;
 	export let size: TextAreaSize = undefined;
 	export let color: TextAreaColor = undefined;
 	$: componentClass = {
@@ -23,8 +23,9 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled,
-		bordered,
+		ghost,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
 		accent: color == 'accent',
@@ -32,7 +33,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });

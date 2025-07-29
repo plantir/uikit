@@ -3,17 +3,12 @@
 	let items = [
 		{
 			name: 'color',
-			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error'`,
+			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error' | 'neutral'`,
 			default: 'undefined'
 		},
 		{
 			name: 'placeholder',
 			type: `string`,
-			default: 'undefined'
-		},
-		{
-			name: 'inputmode',
-			type: `'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'`,
 			default: 'undefined'
 		},
 		{
@@ -27,11 +22,6 @@
 			default: 'undefined'
 		},
 		{
-			name: 'bordered',
-			type: `boolean`,
-			default: 'true'
-		},
-		{
 			name: 'label',
 			type: `string`,
 			default: 'undefined'
@@ -43,6 +33,11 @@
 		},
 		{
 			name: 'readonly',
+			type: `boolean`,
+			default: 'false'
+		},
+		{
+			name: 'ghost',
 			type: `boolean`,
 			default: 'false'
 		}
