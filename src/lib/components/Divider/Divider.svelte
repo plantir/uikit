@@ -4,19 +4,17 @@
 	import El from '$lib/utils/El.svelte';
 	type $$Props = Divider;
 	let componentName = 'divider';
-	export let size: DividerSize = undefined;
+	export let size: DividerSize = 'md';
 	export let color: DividerColor = undefined;
 	export let start: boolean = false;
 	export let end: boolean = false;
 	export let horizontal: boolean = false;
-	export let vertical: boolean = false;
 	$: componentClass = {
-		[size as string]: size,
-		[color as string]: color,
+		size,
+		color,
 		start,
 		end,
-		horizontal,
-		vertical
+		horizontal
 	};
 </script>
 

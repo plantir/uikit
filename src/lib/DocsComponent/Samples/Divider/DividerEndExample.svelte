@@ -9,7 +9,6 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Divider, Switch, Table } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
-	import Card from '$lib/components/Card/Card.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
 </script>
@@ -18,21 +17,13 @@
 	<div slot="javascript">
 		<TagCode name="script">
 			import <span class="text-green-600">Divider</span> from '{$importDocumentSrc}/Divider.svelte';
-			import <span class="text-green-600">Card</span> from '{$importDocumentSrc}/Card.svelte';
-			<br />
 		</TagCode>
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Card" props={['class="w-full h-14 bg-base-300 flex items-center justify-center"']}>Content</TagCode>
-		<TagCode name="Divider">Divider</TagCode>
-		<TagCode name="Card" props={['class="w-full h-14 bg-base-300 flex items-center justify-center"']}>Content</TagCode>
+		<TagCode name="Divider" one_line props={['end']}>Divider end</TagCode>
 	</div>
 	<div slot="preview" class="w-full">
-		<div class="w-full">
-			<Card class="w-full h-14 bg-base-300 flex items-center justify-center">Content</Card>
-			<Divider>OR</Divider>
-			<Card class="w-full h-14 bg-base-300 flex items-center justify-center">Content</Card>
-		</div>
+		<Divider end>Divider end</Divider>
 	</div>
 </SampleWrapper>

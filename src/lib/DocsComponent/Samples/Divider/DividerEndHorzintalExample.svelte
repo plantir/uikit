@@ -34,7 +34,7 @@
 					nemo harum voluptates necessitatibus hic maiores.
 				</TagCode>
 			</TagCode>
-			<TagCode name="Divider" props={['horzintal']} one_line>Divider</TagCode>
+			<TagCode name="Divider" props={['horzintal','end']} one_line>Divider</TagCode>
 			<TagCode name="div">
 				<TagCode name="p">
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quasi commodi aut
@@ -63,7 +63,7 @@
 					nemo harum voluptates necessitatibus hic maiores.
 				</p>
 			</div>
-			<Divider horizontal>Divider</Divider>
+			<Divider horizontal end>Divider</Divider>
 			<div>
 				<p>
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis quasi commodi aut

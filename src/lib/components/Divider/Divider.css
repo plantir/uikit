@@ -14,13 +14,62 @@
 
 .ui-divider-horizontal {
 	@apply daisy-divider-horizontal;
+	flex-direction: column;
+	width: 1rem;
+	height: auto;
+
+	&.ui-divider-size-xs {
+
+		&:before,
+		&:after {
+			height: 100%;
+			width: 1px;
+		}
+	}
+
+	&.ui-divider-size-sm {
+
+		&:before,
+		&:after {
+			height: 100%;
+			width: 2px;
+		}
+	}
+
+	&.ui-divider-size-md {
+
+		&:before,
+		&:after {
+			height: 100%;
+			width: 4px;
+		}
+	}
+
+	&.ui-divider-size-lg {
+
+		&:before,
+		&:after {
+			height: 100%;
+			width: 8px;
+		}
+	}
+
+	&.ui-divider-size-xl {
+
+		&:before,
+		&:after {
+			height: 100%;
+
+			width: 12px;
+		}
+	}
 }
 
 .ui-divider-vertical {
 	@apply daisy-divider-vertical;
 }
 
-.ui-divider-xs {
+.ui-divider-size-xs {
 
 	&:before,
 	&:after {
@@ -28,7 +77,7 @@
 	}
 }
 
-.ui-divider-sm {
+.ui-divider-size-sm {
 
 	&:before,
 	&:after {
@@ -36,7 +85,7 @@
 	}
 }
 
-.ui-divider-md {
+.ui-divider-size-md {
 
 	&:before,
 	&:after {
@@ -44,38 +93,50 @@
 	}
 }
 
-.ui-divider-lg {
+.ui-divider-size-lg {
 
 	&:before,
 	&:after {
-		height: 16px;
+		height: 8px;
 	}
 }
 
-.ui-divider-primary {
+.ui-divider-size-xl {
+
+	&:before,
+	&:after {
+		height: 12px;
+	}
+}
+
+.ui-divider-color-primary {
 	@apply daisy-divider-primary;
 }
 
-.ui-divider-secondary {
+.ui-divider-color-secondary {
 	@apply daisy-divider-secondary;
 }
 
-.ui-divider-accent {
+.ui-divider-color-accent {
 	@apply daisy-divider-accent;
 }
 
-.ui-divider-success {
+.ui-divider-color-success {
 	@apply daisy-divider-success;
 }
 
-.ui-divider-warning {
+.ui-divider-color-warning {
 	@apply daisy-divider-warning;
 }
 
-.ui-divider-info {
+.ui-divider-color-info {
 	@apply daisy-divider-info;
 }
 
-.ui-divider-error {
+.ui-divider-color-error {
 	@apply daisy-divider-error;
+}
+
+.ui-divider-color-neutral {
+	@apply daisy-divider-neutral;
 }

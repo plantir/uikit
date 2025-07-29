@@ -7,54 +7,33 @@
 	import ColorsExample from '$lib/DocsComponent/Samples/Divider/ColorsExample.svelte';
 	import SizesExample from '$lib/DocsComponent/Samples/Divider/SizesExample.svelte';
 	import HorzintalExample from '$lib/DocsComponent/Samples/Divider/HorzintalExample.svelte';
+	import DividerStartExample from '$lib/DocsComponent/Samples/Divider/DividerStartExample.svelte';
+	import DividerEndExample from '$lib/DocsComponent/Samples/Divider/DividerEndExample.svelte';
+	import DividerStartHorzintalExample from '$lib/DocsComponent/Samples/Divider/DividerStartHorzintalExample.svelte';
+	import DividerEndHorzintalExample from '$lib/DocsComponent/Samples/Divider/DividerEndHorzintalExample.svelte';
 </script>
 
-<div class="component-wrapper">
-	<h1>Divider</h1>
-	<p>
-		Create a horizontal line using the `Divider` component to separate content such as paragraphs,
-		blockquotes, and other elements
-	</p>
-	<div class="line"></div>
-	<p>
-		The Divider component can be used to separate content using a horizontal line by adding space
-		between elements based on multiple styles, variants, and layouts.
-	</p>
-	<Title id="setup" title="Setup" />
-	<p>Import Divider component in the script tag and use it.</p>
-	<SetupExample />
-	<Title id="default-Divider" title="Default" />
+<div>
+	<div class="component-wrapper mb-4">
+		<h1>Divider</h1>
+		<p>Divider will be used to separate content vertically or horizontally.</p>
+	</div>
+	<ListOfProps />
+	<Title id="Divider" title="Divider" />
 	<DefaultExample />
-	<Title id="Position" title="Position" />
-	<p>
-		the default position of Divider is middle if you want to change the position you can pass these
-		two option :
-		<span class="badge">start</span>,
-		<span class="badge">end</span>,
-	</p>
-	<PositionExample />
-	<Title id="colors" title="Colors" />
-	<p>
-		Use these default divider styles with multiple colors to indicate an action or link within your
-		website. The default <span class="badge"> color </span>
-		is set to <span class="badge">divider</span>. You can change it by using the
-		<span class="badge"> color </span> prop.
-	</p>
+	<Title id="start" title="Divider Start" />
+	<DividerStartExample />
+	<Title id="end" title="Divider End" />
+	<DividerEndExample />
+	<Title id="colors" title="Divider Colors" />
 	<ColorsExample />
 	<Title id="size" title="Sizes" />
-	<p>
-		Use <span class="badge">size</span> prop to change size of a
-		<span class="badge">divider</span>. default size option for size is
-		<span class="badge">sm</span>.
-	</p>
 	<SizesExample />
 	<Title id="horizontal" title="Horizontal" />
-	<p>
-		you can use divider in Horizontal builds such as this example.
-	</p>
 	<HorzintalExample />
-	<Title id="props" title="Props" />
-	<p>this is the list of the props that Divider can have.</p>
-	<ListOfProps />
+	<Title id="horizontal" title="Horizontal Start" />
+	<DividerStartHorzintalExample />
+	<Title id="horizontal" title="Horizontal End" />
+	<DividerEndHorzintalExample />
 	<div class="py-10"></div>
 </div>
