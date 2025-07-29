@@ -28,31 +28,34 @@
 		bottomDrawer = true;
 	}
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	import FunctionCode from '$lib/DocsComponent/ComponentCode/FunctionCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
-				let leftDrawer = false;
-				let rightDrawer = false;
-				let topDrawer = false;
-				let bottomDrawer = false;
-				function openLeft() {'{'}
-					leftDrawer = true;
-				{'}'};
-				function openRightt() {'{'}
-					rightDrawer = true;
-				{'}'};
-				function openTop() {'{'}
-					topDrawer = true;
-				{'}'};
-				function openBottom() {'{'}
-					bottomDrawer = true;
-				{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Drawer</span> from '{$importDocumentSrc}/Drawer.svelte';
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+			<br />
+			<LetCode name="leftDrawer" value={false}></LetCode>
+			<LetCode name="rightDrawer" value={false}></LetCode>
+			<LetCode name="topDrawer" value={false}></LetCode>
+			<LetCode name="bottomDrawer" value={false}></LetCode>
+			<FunctionCode name="openLeft">
+				<span class="text-green-500">leftDrawer</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openRightt">
+				<span class="text-green-500">rightDrawer</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openTop">
+				<span class="text-green-500">topDrawer</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openBottom">
+				<span class="text-green-500">bottomDrawer</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="Button" one_line props={['on:click={openLeft}']}>Open left Drawer</TagCode>

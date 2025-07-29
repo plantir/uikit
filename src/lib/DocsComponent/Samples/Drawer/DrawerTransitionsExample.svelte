@@ -12,7 +12,7 @@
 	let form: any = {};
 	let value = '';
 	let open = false;
-	let type = 'fly';
+	let type: DrawerTransitionTypes = 'fly';
 	let items: DrawerTransitionTypes[] = [
 		'fly',
 		'fade',
@@ -52,14 +52,15 @@
 	</div>
 	<div slot="html">
 		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
-		<TagCode name="Drawer" props={['bind:open','clickOutside={false}']}>
+		<TagCode name="Drawer" props={['bind:open']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 			<TagCode one_line name="Button" props={['on:click={openDrawer}']}>Close</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
+		<Select bind:value={type} {items}></Select>
 		<Button on:click={openDrawer}>Open Drawer</Button>
-		<Drawer bind:open clickOutside={false}>
+		<Drawer bind:open transitionType={type}>
 			<div>content of inside Drawer</div>
 			<Button on:click={openDrawer}>Close</Button>
 		</Drawer>
