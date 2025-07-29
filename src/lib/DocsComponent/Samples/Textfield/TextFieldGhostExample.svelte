@@ -5,22 +5,10 @@
 	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
 	import SimpleCode from '$lib/DocsComponent/ComponentCode/SimpleCode.svelte';
 	import { importDocumentSrc } from '$lib/store/index.js';
-	import { onMount } from 'svelte';
-	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
+	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
-	import type { GlobalColor } from '$lib/utils/El.types.js';
-	let colors: GlobalColor[] = [
-		'primary',
-		'secondary',
-		'accent',
-		'success',
-		'warning',
-		'info',
-		'error',
-		'neutral'
-	];
 </script>
 
 <SampleWrapper>
@@ -31,15 +19,12 @@
 		</TagCode>
 	</div>
 	<div slot="html">
-		{#each colors as color}
-			<TagCode name="TextField" props={[`color="${color}"`, `label="${color}"`]}></TagCode>
-		{/each}
+		<TagCode
+			name="TextField"
+			props={['ghost', 'label="Ghost"', 'placeholder="plaese enter your username"']}
+		></TagCode>
 	</div>
 	<div slot="preview">
-		<div class="flex flex-col gap-4">
-			{#each colors as color}
-				<TextField {color} label={color}></TextField>
-			{/each}
-		</div>
+		<TextField label="User" placeholder="plaese enter your username" ghost />
 	</div>
 </SampleWrapper>

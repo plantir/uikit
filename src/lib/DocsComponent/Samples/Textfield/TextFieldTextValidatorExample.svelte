@@ -5,22 +5,12 @@
 	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
 	import SimpleCode from '$lib/DocsComponent/ComponentCode/SimpleCode.svelte';
 	import { importDocumentSrc } from '$lib/store/index.js';
-	import { onMount } from 'svelte';
-	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
+	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
-	import type { GlobalColor } from '$lib/utils/El.types.js';
-	let colors: GlobalColor[] = [
-		'primary',
-		'secondary',
-		'accent',
-		'success',
-		'warning',
-		'info',
-		'error',
-		'neutral'
-	];
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	let value = '';
 </script>
 
 <SampleWrapper>
@@ -28,18 +18,26 @@
 		<TagCode name="script">
 			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
 			<br />
+			<LetCode name="value" value="" />
 		</TagCode>
 	</div>
 	<div slot="html">
-		{#each colors as color}
-			<TagCode name="TextField" props={[`color="${color}"`, `label="${color}"`]}></TagCode>
-		{/each}
+		<TagCode
+			name="TextField"
+			props={['label="Username"', 'bind:value', 'placeholder="enter your username"']}
+		></TagCode>
 	</div>
 	<div slot="preview">
-		<div class="flex flex-col gap-4">
-			{#each colors as color}
-				<TextField {color} label={color}></TextField>
-			{/each}
-		</div>
+		<TextField
+			label="Username"
+			pattern="[A-Za-z][A-Za-z0-9\-]*"
+			minlength="5"
+			maxlength="30"
+			required
+			bind:value
+			hint="Must be 5 to 30 characters
+  <br />containing only letters, numbers or dash"
+			placeholder="enter your username"
+		/>
 	</div>
 </SampleWrapper>

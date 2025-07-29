@@ -10,6 +10,23 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { TextFieldInputMode } from '$lib/components/TextField/TextField.type.js';
+	import type { HTMLInputTypeAttribute } from 'svelte/elements';
+	let mods: HTMLInputTypeAttribute[] = [
+		'color',
+		'date',
+		'datetime-local',
+		'email',
+		'month',
+		'number',
+		'password',
+		'search',
+		'tel',
+		'text',
+		'time',
+		'url',
+		'week'
+	];
 </script>
 
 <SampleWrapper>
@@ -21,26 +38,15 @@
         </pre>
 	</div>
 	<div slot="html">
-		<TagCode name="TextField" props={['inputmode="none"', 'label="none"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="tel"', 'label="tel"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="url"', 'label="url"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="email"', 'label="email"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="numeric"', 'label="numeric"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="decimal"', 'label="decimal"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="search"', 'label="search"']}></TagCode>
-		<TagCode name="TextField" props={['inputmode="text"', 'label="default-text"']}></TagCode>
+		{#each mods as mod}
+			<TagCode name="TextField" props={[`type="${mod}"`, `label="${mod}"`]}></TagCode>
+		{/each}
 	</div>
 	<div slot="preview">
-		<div class="flex flex-wrap gap-4">
-			<TextField inputmode="none" label="none"></TextField>
-			<TextField inputmode="tel" label="tel"></TextField>
-			<TextField inputmode="url" label="url"></TextField>
-			<TextField inputmode="email" label="email"></TextField>
-			<TextField inputmode="numeric" label="numeric"></TextField>
-			<TextField inputmode="decimal" label="decimal"></TextField>
-			<TextField inputmode="search" label="search"></TextField>
-			<TextField inputmode="text" label="text"></TextField>
+		<div class="grid grid-cols-2 gap-4">
+			{#each mods as mod}
+				<TextField type={mod} label={mod}></TextField>
+			{/each}
 		</div>
 	</div>
 </SampleWrapper>
-

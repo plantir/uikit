@@ -10,28 +10,27 @@
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import TextField from '{$importDocumentSrc}/TextField.svelte';
-            </ScriptCode>
-        </pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="TextField" props={['size="lg"', 'label="lg"']}></TagCode>
-		<TagCode name="TextField" props={['size="md"', 'label="md"']}></TagCode>
-		<TagCode name="TextField" props={['size="sm"', 'label="sm"']}></TagCode>
-		<TagCode name="TextField" props={['size="xs"', 'label="xs"']}></TagCode>
+		{#each sizes as size}
+			<TagCode name="TextField" props={[`size="${size}"`, `label="${size}"`]}></TagCode>
+		{/each}
 	</div>
 	<div slot="preview">
-		<div class="flex flex-wrap gap-4">
-			<TextField size="lg" label="lg"></TextField>
-			<TextField size="md" label="md"></TextField>
-			<TextField size="sm" label="sm"></TextField>
-			<TextField size="xs" label="xs"></TextField>
+		<div class="flex flex-col gap-4">
+			{#each sizes as size}
+				<TextField {size} label={size}></TextField>
+			{/each}
 		</div>
 	</div>
 </SampleWrapper>

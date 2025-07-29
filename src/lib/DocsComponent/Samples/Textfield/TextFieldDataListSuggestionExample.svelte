@@ -5,22 +5,14 @@
 	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
 	import SimpleCode from '$lib/DocsComponent/ComponentCode/SimpleCode.svelte';
 	import { importDocumentSrc } from '$lib/store/index.js';
-	import { onMount } from 'svelte';
-	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
+	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
-	import type { GlobalColor } from '$lib/utils/El.types.js';
-	let colors: GlobalColor[] = [
-		'primary',
-		'secondary',
-		'accent',
-		'success',
-		'warning',
-		'info',
-		'error',
-		'neutral'
-	];
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	import ArrayCode from '$lib/DocsComponent/ComponentCode/ArrayCode.svelte';
+	let value = '';
+	let suggestions = ['Chrome', 'Firefox', 'Safari', 'Opera', 'Edge'];
 </script>
 
 <SampleWrapper>
@@ -28,18 +20,21 @@
 		<TagCode name="script">
 			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
 			<br />
+			<ArrayCode name="suggestions" items={suggestions} />
 		</TagCode>
 	</div>
 	<div slot="html">
-		{#each colors as color}
-			<TagCode name="TextField" props={[`color="${color}"`, `label="${color}"`]}></TagCode>
-		{/each}
+		<TagCode
+			name="TextField"
+			props={[
+				'label="Browser"',
+				'bind:value',
+				'placeholder="Which browser do you use"',
+				`suggestions={suggestions}`
+			]}
+		></TagCode>
 	</div>
 	<div slot="preview">
-		<div class="flex flex-col gap-4">
-			{#each colors as color}
-				<TextField {color} label={color}></TextField>
-			{/each}
-		</div>
+		<TextField label="Browser" bind:value placeholder="Which browser do you use" {suggestions} />
 	</div>
 </SampleWrapper>

@@ -4,12 +4,37 @@
 	@apply inline-flex flex-col;
 }
 
+.ui-text-field-pattern {
+	@apply daisy-validator
+}
+
+.ui-text-field-hint {
+	@apply daisy-validator-hint
+}
+
+.ui-text-field-hint.ui-text-field-hint-pattern-invalid {
+	visibility: visible;
+	color: var(--color-error);
+	display: block;
+}
+
+input:invalid~.ui-text-field-hint {
+	color: red;
+	font-weight: bold;
+	font-size: 14px;
+	/* هر چیزی که خواستی اضافه کن */
+}
+
 .ui-text-field-wrapper-label {
 	@apply mb-1;
 }
 
 .ui-text-field {
 	@apply daisy-input w-full;
+}
+
+.ui-text-field-ghost {
+	@apply daisy-input-ghost
 }
 
 .ui-text-field-bordered {
@@ -35,6 +60,7 @@
 .ui-text-field-lg {
 	@apply daisy-input-lg;
 }
+
 .ui-text-field-xl {
 	@apply daisy-input-xl;
 }
@@ -62,6 +88,7 @@
 .ui-text-field-error {
 	@apply daisy-input-error;
 }
+
 .ui-text-field-neutral {
 	@apply daisy-input-neutral;
 }
@@ -75,11 +102,11 @@
 }
 
 .ui-text-field-start-wrapper {
-	@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%];
+	@apply opacity-80 absolute flex ps-1 top-[50%] left-0 translate-y-[-50%] z-10;
 }
 
 .ui-text-field-end-wrapper {
-	@apply opacity-80 absolute flex pe-1 top-[50%] right-0 translate-y-[-50%];
+	@apply opacity-80 absolute flex pe-1 top-[50%] right-0 translate-y-[-50%] z-10;
 }
 
 .ui-text-field-has-start {
