@@ -3,7 +3,7 @@
 	import ScriptCode from '$lib/DocsComponent/ComponentCode/ScriptCode.svelte';
 	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
 	import { importDocumentSrc } from '$lib/store/index.js';
-	import { Dialog, DialogBody } from '$lib/index.js';
+	import { Dialog, DialogBody, DialogFooter, DialogHeader } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 	import FunctionCode from '$lib/DocsComponent/ComponentCode/FunctionCode.svelte';
@@ -18,6 +18,9 @@
 	<div slot="javascript">
 		<TagCode name="script">
 			import <span class="text-green-600">Dialog</span> from '{$importDocumentSrc}/Dialog.svelte';
+			import <span class="text-green-600">DialogHeader</span> from '{$importDocumentSrc}/DialogHeader.svelte';
+			import <span class="text-green-600">DialogBody</span> from '{$importDocumentSrc}/DialogBody.svelte';
+			import <span class="text-green-600">DialogFooter</span> from '{$importDocumentSrc}/DialogFooter.svelte';
 			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
 			<br />
 			<LetCode name="open" value={false}></LetCode>
@@ -30,13 +33,23 @@
 	<div slot="html">
 		<TagCode name="Button" one_line props={['on:click={openDialog}']}>Open Dialog</TagCode>
 		<TagCode name="Dialog" props={['bind:open']}>
-			<TagCode name="div">content of inside Dialog</TagCode>
+			<TagCode name="DialogHeader" props={['title="Are you sure?"']} />
+			<TagCode name="DialogBody">Do you want to delete these items?</TagCode>
+			<TagCode name="DialogFooter">
+				<TagCode name="Button">Cancel</TagCode>
+				<TagCode name="Button" props={['color="error"']}>Delete</TagCode>
+			</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<Button on:click={openDialog}>Open Dialog</Button>
 		<Dialog bind:open>
-			<div>content of inside Dialog</div>
+			<DialogHeader title="Are you sure?" />
+			<DialogBody>Do you want to delete these items?</DialogBody>
+			<DialogFooter>
+				<Button>Cancel</Button>
+				<Button color="error">Delete</Button>
+			</DialogFooter>
 		</Dialog>
 	</div>
 </SampleWrapper>

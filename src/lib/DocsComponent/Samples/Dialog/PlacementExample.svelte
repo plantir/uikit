@@ -5,6 +5,8 @@
 	import { importDocumentSrc } from '$lib/store/index.js';
 	import { Dialog, DialogBody } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	import FunctionCode from '$lib/DocsComponent/ComponentCode/FunctionCode.svelte';
 
 	let bottom_open = false;
 	function openBottom() {
@@ -30,32 +32,35 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Dialog from '{$importDocumentSrc}/Dialog.svelte';
-			import DialogBody from '{$importDocumentSrc}/DialogBody.svelte';
-			let bottom_open = false;
-			function openBottom() {'{'}
-			bottom_open = true;
-			{'}'}
-			let top_open = false;
-			function openTop() {'{'}
-			top_open = true;
-			{'}'}
-			let middle_open = false;
-			function openMiddle() {'{'}
-				middle_open = true;
-			{'}'}
-			let start_open = false;
-			function openStart() {'{'}
-				start_open = true;
-			{'}'}
-			let end_open = false;
-			function openEnd() {'{'}
-				end_open = true;
-			{'}'}
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Dialog</span> from '{$importDocumentSrc}/Dialog.svelte';
+			import <span class="text-green-600">DialogBody</span> from '{$importDocumentSrc}/DialogBody.svelte';
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+			<br />
+			<LetCode name="bottom_open" value={false} dont_break></LetCode>
+			<LetCode name="top_open" value={false} dont_break></LetCode>
+			<LetCode name="middle_open" value={false} dont_break></LetCode>
+			<LetCode name="start_open" value={false} dont_break></LetCode>
+			<LetCode name="end_open" value={false} dont_break></LetCode>
+			<FunctionCode name="openBottom">
+				<span class="text-green-500">bottom_open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openTop">
+				<span class="text-green-500">top_open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openMiddle">
+				<span class="text-green-500">middle_open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openStart">
+				<span class="text-green-500">start_open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+			<FunctionCode name="openEnd">
+				<span class="text-green-500">end_open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="Button" one_line props={['on:click={openBottom}']}>Open Bottom Dialog</TagCode>
 		<TagCode name="Dialog" props={['bind:open={bottom_open}', 'placement="bottom"']}>
