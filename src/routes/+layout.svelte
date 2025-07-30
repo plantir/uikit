@@ -3,6 +3,7 @@
 	import '$lib/css/app.css';
 	import '$lib/css/component.css';
 	import '$lib/css/Themes/polaris.css';
+	import '$lib/css/Themes/fluent.css';
 </script>
 
 <svelte:head>
