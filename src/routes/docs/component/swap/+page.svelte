@@ -7,9 +7,17 @@
 	import SlotExmaple from '$lib/DocsComponent/Samples/Swap/SlotExmaple.svelte';
 </script>
 
-<div class="component-wrapper">
-	<h1>Swap</h1>
-	<p>Swap allows you to toggle the visibility of two elements using a checkbox or a class name.</p>
+<div>
+	<div class="component-wrapper">
+		<h1>Swap</h1>
+		<p>
+			Swap allows you to toggle the visibility of two elements using a checkbox or a class name.
+		</p>
+		<div class="my-4">
+			<ListOfProps />
+		</div>
+	</div>
+
 	<Title id="default-Swap" title="Default" />
 	<DefaultExample />
 	<Title id="Swap-SwapRotate" title="Swap Rotate" />
@@ -18,8 +26,4 @@
 	<FlipExample />
 	<Title id="Swap-SwapSlot" title="Swap Slot" />
 	<SlotExmaple />
-	<Title id="tabs-props" title="Props" />
-	<p>this is the list of the props that Swap can have.</p>
-	<ListOfProps />
-	<div class="py-10"></div>
 </div>

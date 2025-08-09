@@ -12,15 +12,16 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Button from '{$importDocumentSrc}/Button.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="Button" props={['block']}>block</TagCode>
 	</div>
-	<div slot="preview">
+	<div slot="preview" class="flex w-full items-center justify-center">
 		<Button block>block</Button>
 	</div>
 </SampleWrapper>

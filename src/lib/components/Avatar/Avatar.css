@@ -1,7 +1,22 @@
 @reference '../../css/app.css';
 
 
-@layer utilities {
+@layer base {
+	.ui-avatar {
+		@apply relative inline-flex;
+
+		&>div {
+			@apply block aspect-square overflow-hidden bg-base-300;
+		}
+
+		img {
+			@apply h-full w-full object-cover;
+		}
+
+		&.ui-avatar-text>div {
+			@apply flex justify-center items-center;
+		}
+	}
 
 	.ui-avatar-mask-squircle>div {
 		@apply daisy-mask daisy-mask-squircle;
@@ -180,23 +195,4 @@
 		right: 7%;
 	}
 
-}
-
-
-@layer components {
-	.ui-avatar {
-		@apply relative inline-flex;
-
-		&>div {
-			@apply block aspect-square overflow-hidden bg-base-300;
-		}
-
-		img {
-			@apply h-full w-full object-cover;
-		}
-
-		&.ui-avatar-text>div {
-			@apply flex justify-center items-center;
-		}
-	}
 }

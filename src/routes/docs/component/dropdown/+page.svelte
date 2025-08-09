@@ -19,7 +19,9 @@
 		The Dropdown component show some extra contents when some other action is done e.g a button is
 		clicked.
 	</p>
-
+	<div class="my-4">
+		<ListOfProps />
+	</div>
 	<Title id="default" title="Default" />
 	<DefaultExample />
 	<Title id="placement" title="Placement" />
@@ -32,6 +34,4 @@
 	<LeftAlignmentExample />
 	<Title id="right-alignment" title="Right Alignment" />
 	<RightAlignmentExample />
-	<Title id="props" title="Props" />
-	<ListOfProps />
 </div>

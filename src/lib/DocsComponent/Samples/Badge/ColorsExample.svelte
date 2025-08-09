@@ -11,37 +11,38 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent','neutral', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	let value: any;
 	let checked = true;
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Badge from '{$importDocumentSrc}/Badge.svelte';
-		</ScriptCode>
-		</pre>
-	<div slot="html">
-		<TagCode name="p">
-			this is a <TagCode name="Badge" one_line dont_break>badge</TagCode> inside of a paragraph
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Badge</span> from '{$importDocumentSrc}/Badge.svelte';
 		</TagCode>
+	</div>
+	<div slot="html">
 		{#each colors as color}
-			<TagCode name="p">
-				this is a <TagCode name="Badge" one_line dont_break props={[`color="${color}"`]}
-					>{color}</TagCode
-				> inside of a paragraph
+			<TagCode name="Badge" props={[`color="${color}"`]} one_line>
+				{color}
 			</TagCode>
 		{/each}
 	</div>
 	<div slot="preview">
-		<p>
-			this is a <Badge>badge</Badge> inside of a paragraph
-		</p>
-		{#each colors as color}
-			<p>
-				this is a <Badge {color}>{color}</Badge> inside of a paragraph
-			</p>
-		{/each}
+		<div class="flex gap-4 flex-wrap">
+			{#each colors as color}
+				<Badge {color}>{color}</Badge>
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>

@@ -8,9 +8,15 @@
 	import ListOfProps from '$lib/DocsComponent/Samples/Accordion/ListOfProps.svelte';
 </script>
 
-<div class="component-wrapper">
+<div >
+	<div class="component-wrapper">
 	<h1>Accordion</h1>
 	<p>Accordion is used for showing and hiding content but only one item can stay open at a time.</p>
+	</div>
+	<div class="my-4">
+		<ListOfProps />
+	</div>
+
 	<Title id="default" title="Default" />
 	<DefaultExample />
 	<Title id="icons" title="Icons" />
@@ -20,9 +26,6 @@
 	<Title id="join" title="Join" />
 	<JoinedExample />
 	<Title id="named" title="Named" />
-	<p>You can bind Accordion with name prop. this is useful when you want to have multiple accordions on the same page.</p>
 	<NamedExample />
-	<Title id="Accordion-props" title="Props" />
-	<ListOfProps />
 	<div class="py-10"></div>
 </div>
