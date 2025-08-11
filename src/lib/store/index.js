@@ -39,6 +39,7 @@ export const themes = writable([
     "silk",
     "polaris",
     "fluent",
+    "fluent-dark",
     // "corporate",
     // "synthwave",
     // "retro",

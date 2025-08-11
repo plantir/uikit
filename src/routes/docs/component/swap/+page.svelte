@@ -26,4 +26,5 @@
 	<FlipExample />
 	<Title id="Swap-SwapSlot" title="Swap Slot" />
 	<SlotExmaple />
+	<div class="py-10"></div>
 </div>

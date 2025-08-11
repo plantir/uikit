@@ -33,11 +33,12 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Avatar</span> from '{$importDocumentSrc}/Avatar.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex gap-4 flex-wrap"']}>
 			{#each masks as mask}

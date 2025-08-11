@@ -518,9 +518,9 @@
 		}
 
 		&.ui-button-disabled {
-			background-color: var(--colorNeutralBackgroundDisabled);
-			border-color: var(--colorNeutralStrokeDisabled);
-			color: var(--colorNeutralForegroundDisabled);
+			background-color: color-mix(in srgb, var(--color-base-content) 10%, transparent);
+			box-shadow: none;
+			--btn-fg: color-mix(in oklch, var(--color-base-content) 20%, #0000);
 		}
 	}
 

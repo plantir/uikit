@@ -31,11 +31,9 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import TextField from '{$importDocumentSrc}/TextField.svelte';
-            </ScriptCode>
-        </pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
 		{#each mods as mod}

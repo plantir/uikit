@@ -13,17 +13,18 @@
 	let items = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
 	let selected = 'step-1';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '$lib/DocsComponent/ComponentCode/ArrayCode.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Steps from '{$importDocumentSrc}/Steps.svelte';
-				let items = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
-				let selected = 'step-1';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import Steps from '{$importDocumentSrc}/Steps.svelte';
+			<br />
+			<ArrayCode name="items" {items} />
+			<LetCode name="selected" value="step-1" />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode

@@ -18,11 +18,12 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Accordion from '{$importDocumentSrc}/Accordion.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Accordion</span> from '{$importDocumentSrc}/Accordion.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="Accordion" props={['title="accordion title 1"', 'open']}>
 			accordion content sample

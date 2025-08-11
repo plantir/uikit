@@ -19,4 +19,5 @@
 	<ColorsExample />
 	<Title id="Indeterminate" title="Indeterminate (without value)" />
 	<ProgressIndeterminateExample />
+	<div class="py-10"></div>
 </div>

@@ -24,4 +24,5 @@
 	<FieldsetDefaultExample />
 	<Title id="example" title="Fieldset login example" />
 	<FieldsetLoginExample />
+	<div class="py-10"></div>
 </div>

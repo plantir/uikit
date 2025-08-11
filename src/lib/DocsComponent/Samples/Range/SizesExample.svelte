@@ -16,11 +16,9 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Range from '{$importDocumentSrc}/Range.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Range</span> from '{$importDocumentSrc}/Range.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
 		{#each sizes as size}

@@ -4,6 +4,7 @@
 	import '$lib/css/component.css';
 	import '$lib/css/Themes/polaris.css';
 	import '$lib/css/Themes/fluent.css';
+	import '$lib/css/Themes/fluent-dark.css';
 </script>
 
 <svelte:head>

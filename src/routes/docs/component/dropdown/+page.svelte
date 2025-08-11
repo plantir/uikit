@@ -34,4 +34,5 @@
 	<LeftAlignmentExample />
 	<Title id="right-alignment" title="Right Alignment" />
 	<RightAlignmentExample />
+	<div class="py-10"></div>
 </div>

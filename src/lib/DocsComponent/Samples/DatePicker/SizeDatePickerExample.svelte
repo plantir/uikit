@@ -8,13 +8,12 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import TextField from '{$importDocumentSrc}/TextField.svelte';
-            </ScriptCode>
-        </pre>
+		<TagCode name="script">
+			import <span class="text-green-600">DatePicker</span> from '{$importDocumentSrc}/DatePicker.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
+		<TagCode name="DatePicker" props={['size="xl"', 'label="xl"']}></TagCode>
 		<TagCode name="DatePicker" props={['size="lg"', 'label="lg"']}></TagCode>
 		<TagCode name="DatePicker" props={['size="md"', 'label="md"']}></TagCode>
 		<TagCode name="DatePicker" props={['size="sm"', 'label="sm"']}></TagCode>
@@ -22,6 +21,7 @@
 	</div>
 	<div slot="preview">
 		<div class="flex flex-wrap gap-4">
+			<DatePicker size="xl" label="xl"></DatePicker>
 			<DatePicker size="lg" label="lg"></DatePicker>
 			<DatePicker size="md" label="md"></DatePicker>
 			<DatePicker size="sm" label="sm"></DatePicker>

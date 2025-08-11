@@ -19,5 +19,5 @@
 	<ConfirmExample />
 	<Title id="placement-Dialog" title="Dialog Placements" />
 	<PlacementExample />
-	<Title id="props" title="Props" />
+	<div class="py-10"></div>
 </div>

@@ -19,4 +19,5 @@
 	<SkeletonDefaultExample />
 	<Title id="colors" title="Skeleton example" />
 	<SkeletonCardExample />
+	<div class="py-10"></div>
 </div>

@@ -14,11 +14,10 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Table from '{$importDocumentSrc}/Table.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Table</span> from '{$importDocumentSrc}/Table.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="h-[120px] overfloe-y-auto"']}>

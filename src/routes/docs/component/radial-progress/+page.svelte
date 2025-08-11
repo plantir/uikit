@@ -24,4 +24,5 @@
 	<RadialProgressSizeExample />
     <Title id="tick" title="Radial Progress Tick" />
 	<RadialProgressTickExample />
+	<div class="py-10"></div>
 </div>

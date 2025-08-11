@@ -11,7 +11,7 @@
 	import ChatStartEndExample from '$lib/DocsComponent/Samples/Chat/ChatStartEndExample.svelte';
 </script>
 
-<div class="pb-10">
+<div class="">
 	<div class="component-wrapper">
 		<h1>Chat</h1>
 	</div>
@@ -24,4 +24,5 @@
 	<ChatStartEndExample />
 	<Title id="chat-colors" title="Chat Colors" />
 	<ChatColorsExample />
+	<div class="py-10"></div>
 </div>

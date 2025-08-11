@@ -20,17 +20,15 @@
 		'warning',
 		'info',
 		'error',
-		'neutral'
+		'neutral'	
 	];
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Divider from '{$importDocumentSrc}/Divider.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Divider</span> from '{$importDocumentSrc}/Divider.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="Divider" one_line>default</TagCode>
