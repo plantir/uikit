@@ -25,19 +25,19 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Accordion" props={['title="accordion title 1"', 'open']}>
+		<TagCode name="Accordion" props={['title="accordion title 1"', 'name="accordion-open"', 'open']}>
 			accordion content sample
 		</TagCode>
-		<TagCode name="Accordion" props={['title="accordion title 2"']}>
+		<TagCode name="Accordion" props={['title="accordion title 2"', 'name="accordion-open"']}>
 			accordion content sample
 		</TagCode>
-		<TagCode name="Accordion" props={['title="accordion title 3"']}>
+		<TagCode name="Accordion" props={['title="accordion title 3"', 'name="accordion-open"']}>
 			accordion content sample
 		</TagCode>
 	</div>
 	<div slot="preview" class="w-full">
-		<Accordion title="accordion title 1" open>accordion content sample</Accordion>
-		<Accordion title="accordion title 2">accordion content sample</Accordion>
-		<Accordion title="accordion title 3">accordion content sample</Accordion>
+		<Accordion title="accordion title 1" name="accordion-open" open>accordion content sample</Accordion>
+		<Accordion title="accordion title 2" name="accordion-open">accordion content sample</Accordion>
+		<Accordion title="accordion title 3" name="accordion-open">accordion content sample</Accordion>
 	</div>
 </SampleWrapper>

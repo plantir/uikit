@@ -10,9 +10,10 @@
 	import { Avatar, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
 	import Badge from '$lib/components/Badge/Badge.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '$lib/utils/El.types.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>

@@ -40,6 +40,7 @@ export const themes = writable([
     "polaris",
     "fluent",
     "fluent-dark",
+    "ktui"
     // "corporate",
     // "synthwave",
     // "retro",

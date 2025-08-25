@@ -20,10 +20,6 @@
 	}
 
 	&.ui-alert-type-soft {
-		background:
-			color-mix(in oklab, var(--daisy-alert-color, var(--color-base-content)) 8%, var(--color-base-100));
-		border-color:
-			color-mix(in oklab, var(--daisy-alert-color, var(--color-base-content)) 10%, var(--color-base-100));
 		color: var(--daisy-alert-color, var(--color-base-content));
 		background:
 			color-mix(in oklab, var(--daisy-alert-color, var(--color-base-content)) 8%, var(--color-base-100));

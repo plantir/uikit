@@ -34,7 +34,7 @@
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex gap-4"']}>
-			<TagCode name="Avatar" props={['text']} one_line>default</TagCode>
+			<TagCode name="Avatar" props={['text']} one_line>D</TagCode>
 			{#each colors as color}
 				<TagCode name="Avatar" props={['text', `color="${color}"`]} one_line>
 					{color.charAt(0).toUpperCase()}
@@ -54,7 +54,7 @@
 	</div>
 	<div slot="preview">
 		<div class="flex gap-4 flex-wrap">
-			<Avatar text>default</Avatar>
+			<Avatar text>D</Avatar>
 			{#each colors as color}
 				<Avatar text {color}>{color.charAt(0).toUpperCase()}</Avatar>
 			{/each}
