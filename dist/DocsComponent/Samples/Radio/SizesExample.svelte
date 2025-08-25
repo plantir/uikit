@@ -10,43 +10,42 @@
 	import { Radio, RadioGroup, Range, Switch, Table } from '../../../index.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Radio from '{$importDocumentSrc}/Radio.svelte';
-				import RadioGroup from '{$importDocumentSrc}/RadioGroup.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Radio</span> from '{$importDocumentSrc}/Radio.svelte';
+			import <span class="text-green-600">RadioGroup</span> from '{$importDocumentSrc}/RadioGroup.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="grid grid-cols-4 gap-4"']}>
+		<TagCode name="div" props={['class="flex items-center flex-wrap gap-4"']}>
 			{#each sizes as size}
 				<TagCode name="RadioGroup">
 					<TagCode
 						close_self
 						name="Radio"
-						props={['value="male"', 'label="male"', `size="${size}"`]}
+						props={['value="male"', `label="${size}"`, `size="${size}"`]}
 					></TagCode>
 					<TagCode
 						close_self
 						name="Radio"
-						props={['value="female"', 'label="female"', `size="${size}"`]}
+						props={['value="female"', `label="${size}"`, `size="${size}"`]}
 					></TagCode>
 				</TagCode>
 			{/each}
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+		<div class="flex items-center flex-wrap gap-4">
 			{#each sizes as size}
 				<RadioGroup value="male">
-					<Radio {size} value="male" label="male"></Radio>
-					<Radio {size} value="female" label="female"></Radio>
+					<Radio {size} value="male" label={size}></Radio>
+					<Radio {size} value="female" label={size}></Radio>
 				</RadioGroup>
 			{/each}
 		</div>

@@ -15,11 +15,10 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Switch from '{$importDocumentSrc}/Switch.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Switch</span> from '{$importDocumentSrc}/Switch.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div">

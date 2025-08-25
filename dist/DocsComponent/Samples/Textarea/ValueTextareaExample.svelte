@@ -12,17 +12,17 @@
 	let value = 'John Snow';
 	let parentName = 'Stark?!';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import TextArea from '{$importDocumentSrc}/TextArea.svelte';
-				let value = 'John Snow';
-				let parentName = 'Stark?!'
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextArea</span> from '{$importDocumentSrc}/TextArea.svelte';
+			<br />
+			<LetCode name="value" value="John Snow" dont_break></LetCode>
+			<LetCode name="parentName" value="Stark?!"></LetCode>
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="TextArea" props={['{value}', 'label="Name"']}></TagCode>

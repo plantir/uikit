@@ -9,24 +9,36 @@
 	import TabItem from '../../../components/Tabs/TabItem.svelte';
 	import { Avatar, Badge, Checkbox, Radio, RadioGroup, Range, Switch, Table } from '../../../index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalColor } from '../../../utils/El.types.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: GlobalColor[] = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	let value: any;
 	let checked = true;
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Avatar</span> from '{$importDocumentSrc}/Avatar.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex gap-4"']}>
-			<TagCode name="Avatar" props={['text']} one_line>default</TagCode>
+			<TagCode name="Avatar" props={['text']} one_line>D</TagCode>
 			{#each colors as color}
-				<TagCode name="Avatar" props={['text', `color="${color}"`]} one_line>{color[0]}</TagCode>
+				<TagCode name="Avatar" props={['text', `color="${color}"`]} one_line>
+					{color.charAt(0).toUpperCase()}
+				</TagCode>
 			{/each}
 		</TagCode>
 		<TagCode name="div" props={['class="flex gap-4 mt-4"']}>
@@ -42,9 +54,9 @@
 	</div>
 	<div slot="preview">
 		<div class="flex gap-4 flex-wrap">
-			<Avatar text>default</Avatar>
+			<Avatar text>D</Avatar>
 			{#each colors as color}
-				<Avatar text {color}>{color[0]}</Avatar>
+				<Avatar text {color}>{color.charAt(0).toUpperCase()}</Avatar>
 			{/each}
 		</div>
 		<div class="flex gap-4 flex-wrap mt-4">

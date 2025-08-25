@@ -10,17 +10,20 @@
 	import { Pagination, Switch, Table } from '../../../index.js';
 	let activeTab = 'Preview';
 	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Pagination from '{$importDocumentSrc}/Pagination.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Pagination</span> from '{$importDocumentSrc}/Pagination.svelte';
+			<br />
+			<LetCode name="page" value="5" />
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>

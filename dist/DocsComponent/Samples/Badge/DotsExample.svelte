@@ -11,17 +11,17 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error', 'neutral'];
 	let value: any;
 	let checked = true;
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Badge from '{$importDocumentSrc}/Badge.svelte';
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Badge</span> from '{$importDocumentSrc}/Badge.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		{#each colors as color}
 			<TagCode name="p">

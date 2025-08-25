@@ -6,17 +6,17 @@
 	let value2 = '2024/5/15';
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import { DatePicker } from '../../../index.js';
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import DatePicker from '{$importDocumentSrc}/DatePicker.svelte';
-				let value = '2024-5-15';
-				let value = '2024/5/15';
-			</ScriptCode>
-		</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">DatePicker</span> from '{$importDocumentSrc}/DatePicker.svelte';
+			<br />
+			<LetCode name="value1" value="2024-5-15" />
+			<LetCode name="value2" value="2024/5/15" />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="DatePicker" props={['{value}', 'label="Date"']}></TagCode>

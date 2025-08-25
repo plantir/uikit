@@ -16,13 +16,11 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Radio from '{$importDocumentSrc}/Radio.svelte';
-				import RadioGroup from '{$importDocumentSrc}/RadioGroup.svelte';
-				let value='';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Radio</span> from '{$importDocumentSrc}/Radio.svelte';
+			import <span class="text-green-600">RadioGroup</span> from '{$importDocumentSrc}/RadioGroup.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="RadioGroup" props={['bind:value', 'disabled']}>

@@ -1,49 +1,29 @@
 <script lang="ts">
-	import type {
-		Avatar,
-		AvatarColor,
-		AvatarSize,
-		AvatarMask,
-		AvatarShape
-	} from './Accordion.type.js';
-	import './Avatar.scss';
+	import type { Accordion, AccordionIcon } from './Accordion.type.js';
+	import './Accordion.css';
 	import El from '../../utils/El.svelte';
-	type $$Props = Avatar;
-	let componentName = 'avatar';
-	export let size: AvatarSize = 'md';
-	export let color: AvatarColor = undefined;
-	export let shape: AvatarShape = undefined;
-	export let mask: AvatarMask = undefined;
-	export let ring = false;
-	export let text = false;
-	export let online = false;
-	export let offline = false;
+	import { ClassMerge } from '../../utils/ClassMerge.js';
+	type $$Props = Accordion;
+	let componentName = 'accordion';
+
+	export let icon: AccordionIcon = '';
+	export let open = false;
+	export let join = false;
+	export let title = '';
+	export let name = `accordion`;
 	$: componentClass = {
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		[`mask-${mask}`]: mask,
-		online,
-		offline,
-		circle: shape == 'circle',
-		rounded: shape == 'rounded',
-		square: shape == 'square',
-		ring,
-		text,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural'
+		icon: icon,
+		join: join
 	};
+	$: elClass = ClassMerge({ name: componentName, componentClass });
+	$: titleClass = ClassMerge({ name: `${componentName}-title` });
+	$: contentClass = ClassMerge({ name: `${componentName}-content` });
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-	<div>
-		<slot />
+<El {componentName} {componentClass} class={elClass} {...$$restProps}>
+	<input type="radio" {name} checked={open} />
+	<div class={titleClass}>{title}</div>
+	<div class={contentClass}>
+		<slot></slot>
 	</div>
 </El>

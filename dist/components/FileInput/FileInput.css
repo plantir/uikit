@@ -1,0 +1,41 @@
+@import "../../css/app.css";
+
+@layer base {
+    .ui-file-input {
+        @apply block;
+
+        .ui-text-field-wrapper {
+            @apply w-full
+        }
+
+        &.ui-file-input-size-xs {
+            .ui-label {
+                font-size: 0.750rem;
+            }
+        }
+        &.ui-file-input-size-sm {
+            .ui-label {
+                font-size: 0.775rem;
+            }
+        }
+        &.ui-file-input-size-md {
+            .ui-label {
+                font-size: 0.825rem;
+            }
+        }
+        &.ui-file-input-size-lg {
+            .ui-label {
+                font-size: 0.900rem;
+            }
+        }
+        &.ui-file-input-size-xl {
+            .ui-label {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .ui-fieldset-title {
+        @apply daisy-fieldset-legend
+    }
+}

@@ -1,0 +1,6 @@
+@reference "../../css/app.css";
+
+.ui-skeleton {
+	@apply daisy-skeleton;
+
+}

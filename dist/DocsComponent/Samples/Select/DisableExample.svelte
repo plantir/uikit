@@ -13,29 +13,26 @@
 	let items = ['item-1', 'item-2', 'item-3'];
 	let value = '';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
 </script>
+
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Select from '{$importDocumentSrc}/Select.svelte';
-				let items = ['item-1', 'item-2', 'item-3'];
-				let value = '';
-			</ScriptCode>
-			</pre>
-    </div>
-    <div slot="html">
+		<TagCode name="script">
+			import <span class="text-green-600">Select</span> from '{$importDocumentSrc}/Select.svelte';
+			<br />
+			<ArrayCode name="items" {items} />
+			<br />
+		</TagCode>
+	</div>
+	<div slot="html">
 		<TagCode
-		close_self
-		name="Select"
-		props={['label="Default Select"', '{items}', 'bind:value', 'disabled']}
-	/>
-	<TagCode one_line name="span" props={['class="pl-4"']}>value : {'{'}value{'}'}</TagCode>
-    </div>
-    <div slot="preview">
-		<Select bind:value label="Default Select" {items} disabled />
-		<span class="pl-4">
-			value : {value}
-		</span>
-    </div>
+			close_self
+			name="Select"
+			props={['label="Default Select"', '{items}', 'disabled', 'class="w-xs"']}
+		/>
+	</div>
+	<div slot="preview">
+		<Select label="Default Select" {items} disabled class="w-xs" />
+	</div>
 </SampleWrapper>

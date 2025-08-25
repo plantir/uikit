@@ -9,25 +9,26 @@
 	import TabItem from '../../../components/Tabs/TabItem.svelte';
 	import Tabs from '../../../components/Tabs/Tabs.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '../../../utils/El.types.js';
 	let activeTab = 'Preview';
+	let sizes: GlobalSize[] = ['xl', 'lg', 'md', 'sm', 'xs'];
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Button from '{$importDocumentSrc}/Button.svelte';
-		</ScriptCode>
-	</pre>
-	<div slot="html">
-		<TagCode name="Button" props={['size="lg"']}>lg</TagCode>
-		<TagCode name="Button" props={['size="md"']}>md</TagCode>
-		<TagCode name="Button" props={['size="sm"']}>sm</TagCode>
-		<TagCode name="Button" props={['size="xs"']}>xs</TagCode>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+		</TagCode>
+		<br />
 	</div>
-	<div slot="preview">
-		<Button size="lg">lg</Button>
-		<Button size="md">md</Button>
-		<Button size="sm">sm</Button>
-		<Button size="xs">xs</Button>
+	<div slot="html">
+		{#each sizes as size}
+			<TagCode name="Button" props={[`size="${size}"`]}>{size}</TagCode>
+		{/each}
+	</div>
+	<div slot="preview" class="w-full flex items-center justify-center gap-2 flex-wrap">
+		{#each sizes as size}
+			<Button {size}>{size}</Button>
+		{/each}
 	</div>
 </SampleWrapper>

@@ -17,11 +17,12 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Avatar</span> from '{$importDocumentSrc}/Avatar.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>
 			<TagCode name="AvatarGroup">

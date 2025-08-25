@@ -29,7 +29,7 @@
 }
 
 .ui-drawer-content {
-	@apply overflow-y-auto z-[51] bg-white w-80 fixed;
+	@apply overflow-y-auto z-[51] bg-base-100 w-80 fixed;
 }
 
 .ui-drawer-backdrop {

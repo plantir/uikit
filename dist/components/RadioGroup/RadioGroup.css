@@ -1,13 +1,13 @@
 @reference "../../css/app.css";
 
 .ui-radio-group {
-	.ui-radio-group-inline {
+	&.ui-radio-group-inline {
 		@apply flex gap-x-2;
 	}
-	.ui-radio-group-column {
+	&.ui-radio-group-column {
 		@apply flex flex-col gap-y-2;
 	}
-	.ui-radio-group-join {
+	&.ui-radio-group-join {
 		@apply daisy-join gap-x-0;
 		.ui-radio-join:not(:first-child):not(:last-child) {
 			border-end-end-radius: 0;

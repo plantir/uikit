@@ -27,6 +27,9 @@
 .ui-checkbox-lg {
 	@apply daisy-checkbox-lg;
 }
+.ui-checkbox-xl {
+	@apply daisy-checkbox-xl;
+}
 
 .ui-checkbox-primary {
 	@apply daisy-checkbox-primary;
@@ -54,4 +57,7 @@
 
 .ui-checkbox-warning {
 	@apply daisy-checkbox-warning;
+}
+.ui-checkbox-neutral {
+	@apply daisy-checkbox-neutral;
 }

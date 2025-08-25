@@ -6,37 +6,46 @@
 	.ui-range-disabled {
 		/* DAISYTODO: @apply daisy-disabled; */
 	}
-	.ui-range-xs {
+	&.ui-range-xs {
 		@apply daisy-range-xs;
 	}
-	.ui-range-sm {
+	&.ui-range-sm {
 		@apply daisy-range-sm;
 	}
-	.ui-range-md {
+	&.ui-range-md {
 		@apply daisy-range-md;
 	}
-	.ui-range-lg {
+	&.ui-range-lg {
 		@apply daisy-range-lg;
 	}
-	.ui-range-primary {
+	&.ui-range-xl {
+		@apply daisy-range-xl;
+	}
+	&.ui-range-primary {
 		@apply daisy-range-primary;
 	}
-	.ui-range-secondary {
+	&.ui-range-secondary {
 		@apply daisy-range-secondary;
 	}
-	.ui-range-accent {
+	&.ui-range-accent {
 		@apply daisy-range-accent;
 	}
-	.ui-range-success {
+	&.ui-range-success {
 		@apply daisy-range-success;
 	}
-	.ui-range-info {
+	&.ui-range-info {
 		@apply daisy-range-info;
 	}
-	.ui-range-error {
+	&.ui-range-error {
 		@apply daisy-range-error;
 	}
-	.ui-range-warning {
+	&.ui-range-warning {
 		@apply daisy-range-warning;
+	}
+	&.ui-range-warning {
+		@apply daisy-range-warning;
+	}
+	&.ui-range-neutral {
+		@apply daisy-range-neutral;
 	}
 }

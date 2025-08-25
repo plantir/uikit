@@ -12,13 +12,21 @@
 	@apply daisy-btn-wide;
 }
 
-.ui-button-disabled {
-	/* DAISYTODO: @apply daisy-btn-disabled; */
+.ui-button-disabled:hover {
+	@apply cursor-not-allowed;
 	--tw-border-opacity: 0;
 	background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
 	--tw-bg-opacity: 0.2;
 	color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
 	--tw-text-opacity: 0.2;
+	box-shadow: none;
+}
+
+.ui-button-disabled {
+	pointer-events: none;
+	--daisy-btn-border: #0000;
+	--daisy-btn-noise: none;
+	--daisy-btn-fg: color-mix(in srgb, var(--color-base-content) 20%, #0000);
 }
 
 .ui-button-natural {
@@ -52,9 +60,13 @@
 .ui-button-warning {
 	@apply daisy-btn-warning;
 }
+.ui-button-neutral {
+	@apply daisy-btn-neutral;
+}
 
 .ui-button-active {
 	/* DAISYTODO: @apply daisy-btn-active; */
+	@apply daisy-btn-active;
 }
 
 .ui-button-outline {
@@ -175,6 +187,9 @@
 
 .ui-button-lg {
 	@apply daisy-btn-lg;
+}
+.ui-button-xl {
+	@apply daisy-btn-xl;
 }
 
 /* SASSTODO:

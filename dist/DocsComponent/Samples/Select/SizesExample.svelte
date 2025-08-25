@@ -12,35 +12,35 @@
 	let form: any = {};
 	let items = ['item-1', 'item-2', 'item-3'];
 	let value = '';
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Select from '{$importDocumentSrc}/Select.svelte';
-				let items = ['item-1', 'item-2', 'item-3'];
-				let value = '';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Select</span> from '{$importDocumentSrc}/Select.svelte';
+			<br />
+			<ArrayCode name="items" {items} />
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="grid grid-cols-1 md:grid-cols-4 gap-4"']}>
+		<TagCode name="div" props={['class="flex flex-col gap-4"']}>
 			{#each sizes as size}
 				<TagCode
 					close_self
 					name="Select"
-					props={['label="Default Select"', '{items}', `size="${size}""`]}
+					props={[`label="${size} Select"`, '{items}', `size="${size}"`, 'class="w-xs"']}
 				/>
 			{/each}
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+		<div class="flex flex-col gap-4">
 			{#each sizes as size}
-				<Select bind:value label="Default Select" {items} {size} />
+				<Select bind:value label="{size} Select" {items} {size} class="w-xs" />
 			{/each}
 		</div>
 	</div>

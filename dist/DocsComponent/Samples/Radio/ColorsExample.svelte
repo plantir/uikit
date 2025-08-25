@@ -10,27 +10,32 @@
 	import { Radio, RadioGroup, Range, Switch, Table } from '../../../index.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Radio from '{$importDocumentSrc}/Radio.svelte';
-				import RadioGroup from '{$importDocumentSrc}/RadioGroup.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Radio</span> from '{$importDocumentSrc}/Radio.svelte';
+			import <span class="text-green-600">RadioGroup</span> from '{$importDocumentSrc}/RadioGroup.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-4 gap-4"']}>
-			<TagCode name="RadioGroup">
-				<TagCode close_self name="Radio" props={['value="male"', 'label="male"']}></TagCode>
-				<TagCode close_self name="Radio" props={['value="female"', 'label="female"']}></TagCode>
-			</TagCode>
 			{#each colors as color}
-				<TagCode name="RadioGroup">
+				<TagCode name="RadioGroup" props={['value="male"']}>
 					<TagCode
 						close_self
 						name="Radio"
@@ -47,10 +52,6 @@
 	</div>
 	<div slot="preview">
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-			<RadioGroup value="male">
-				<Radio value="male" label="male"></Radio>
-				<Radio value="female" label="female"></Radio>
-			</RadioGroup>
 			{#each colors as color}
 				<RadioGroup value="male">
 					<Radio {color} value="male" label="male"></Radio>

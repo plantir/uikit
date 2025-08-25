@@ -20,7 +20,7 @@
 
 <div
 	class="
-bg-base-100/90 text-base-content fixed top-0 z-30 flex h-16 w-full justify-center backdrop-blur-sm transition-shadow duration-100 [transform:translate3d(0,0,0)]
+bg-base-100/90 text-base-content fixed top-0 z-30 max-w-[100rem] right-1/2 translate-x-1/2 flex h-16 w-full justify-center backdrop-blur-sm transition-shadow duration-100 [transform:translate3d(0,0,0)]
 "
 >
 	<div class="navbar">
@@ -82,10 +82,12 @@ bg-base-100/90 text-base-content fixed top-0 z-30 flex h-16 w-full justify-cente
 	/>
 </Drawer>
 <Drawer bind:open={menu} left>
-	<Menu on:close={() => {
-		console.log('omad into ?')
-		menu = false;
-	}} />
+	<Menu
+		on:close={() => {
+			console.log('omad into ?');
+			menu = false;
+		}}
+	/>
 </Drawer>
 
 <style>@reference "tailwindcss";

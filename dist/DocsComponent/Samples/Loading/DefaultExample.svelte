@@ -14,19 +14,18 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Loading from '{$importDocumentSrc}/Loading.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Loading</span> from '{$importDocumentSrc}/Loading.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="flex items-center justify-center h-[200px]"']}>
+		<TagCode name="div" props={['class="flex items-center justify-center"']}>
 			<TagCode name="Loading" close_self />
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="flex items-center justify-center h-[200px]">
+		<div class="flex items-center justify-center ">
 			<Loading />
 		</div>
 	</div>

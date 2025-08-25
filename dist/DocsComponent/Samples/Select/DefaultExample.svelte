@@ -10,29 +10,43 @@
 	import { Select, Switch, Table } from '../../../index.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let items = ['item-1', 'item-2', 'item-3'];
+	let items = [
+		{
+			title: 'item 1 text',
+			value: 'value_1'
+		},
+		{
+			title: 'item 2 text',
+			value: 'value_2'
+		},
+		{
+			title: 'item 3 text',
+			value: 'value_3'
+		}
+	];
 	let value = '';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Select from '{$importDocumentSrc}/Select.svelte';
-				let items = ['item-1', 'item-2', 'item-3'];
-				let value = '';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Select</span> from '{$importDocumentSrc}/Select.svelte';
+			<br />
+			<ArrayCode name="items" {items} />
+			<br />
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode close_self name="Select" props={['label="Default Select"', '{items}', 'bind:value']} />
-		<TagCode one_line name="span" props={['class="pl-4"']}>value : {'{'}value{'}'}</TagCode>
+		<TagCode
+			close_self
+			name="Select"
+			props={['label="Default Select"', '{items}', 'class="w-xs"']}
+		/>
 	</div>
 	<div slot="preview">
-		<Select bind:value label="Default Select" {items} />
-		<span class="pl-4">
-			value : {value}
-		</span>
+		<Select bind:value label="Default Select" class="w-xs" {items} />
 	</div>
 </SampleWrapper>

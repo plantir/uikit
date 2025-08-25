@@ -9,6 +9,8 @@
 	import TabItem from '../../../components/Tabs/TabItem.svelte';
 	import { Drawer, Range, Switch, Table } from '../../../index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import FunctionCode from '../../ComponentCode/FunctionCode.svelte';
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 	let activeTab = 'Preview';
 	let open = false;
 	function openDrawer() {
@@ -18,15 +20,16 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Drawer from '{$importDocumentSrc}/Drawer.svelte';
-				let open = false;
-				function openDrawer() {'{'}
-					open = true;
-				{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Drawer</span> from '{$importDocumentSrc}/Drawer.svelte';
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+			<br />
+			<LetCode name="open" value={false}></LetCode>
+			<FunctionCode name="openDrawer">
+				<span class="text-green-500">open</span> = <span class="text-red-600">true</span>;
+			</FunctionCode>
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>

@@ -8,11 +8,9 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import DatePicker from '{$importDocumentSrc}/DatePicker.svelte';
-			</ScriptCode>
-		</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">DatePicker</span> from '{$importDocumentSrc}/DatePicker.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="DatePicker"></TagCode>

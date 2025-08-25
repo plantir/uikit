@@ -14,18 +14,16 @@
 		type: 'progressbar'
 	};
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ObjectCode from '../../ComponentCode/ObjectCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-				let pagination = {'{'}
-					type: 'progressbar'
-				{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Swiper</span> from '{$importDocumentSrc}/Swiper.svelte';
+			<br />
+			<ObjectCode name="navigation" item={pagination}></ObjectCode>
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-2 gap-10"']}>

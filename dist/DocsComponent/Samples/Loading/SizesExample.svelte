@@ -10,27 +10,26 @@
 	import { Loading, Pagination, Switch, Table } from '../../../index.js';
 	let activeTab = 'Preview';
 	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl', 'lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Loading from '{$importDocumentSrc}/Loading.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Loading</span> from '{$importDocumentSrc}/Loading.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="grid grid-cols-1 gap-4"']}>
+		<TagCode name="div" props={['class="flex items-center gap-4"']}>
 			{#each sizes as size}
 				<TagCode name="Loading" props={[`size="${size}"`]} close_self />
 			{/each}
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-1 gap-4">
+		<div class="flex items-center gap-4">
 			{#each sizes as size, index}
 				<Loading {size} />
 			{/each}

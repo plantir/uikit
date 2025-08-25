@@ -1,0 +1,54 @@
+@reference "$lib/css/app.css";
+
+.ui-swap-wrapper{
+	@apply daisy-swap;
+}
+.ui-swap-wrapper>* {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    transition-property: transform, rotate, opacity;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+}
+.ui-swap-wrapper-rotate{
+	@apply daisy-swap-rotate;
+}
+
+.ui-swap-wrapper-flip{
+	@apply daisy-swap-flip;
+}
+.ui-swap-wrapper-rotate .ui-swap-on {
+	@apply rotate-45;
+  }
+  .ui-swap-wrapper-rotate input:is(:checked, :indeterminate) ~ .ui-swap-on {
+	@apply rotate-0;
+  }
+  .ui-swap-wrapper-rotate.ui-swap-active .ui-swap-off {
+	@apply -rotate-45;
+  }
+  
+  .ui-swap-wrapper-flip .ui-swap-on {
+	@apply [backface-visibility:hidden] rotate-y-180;
+  }
+  .ui-swap-wrapper-flip input:is(:checked, :indeterminate) ~ .ui-swap-on {
+	@apply rotate-y-0;
+  }
+  .ui-swap-wrapper-flip input:is(:checked, :indeterminate) ~ .ui-swap-off {
+	@apply [backface-visibility:hidden] -rotate-y-180 opacity-100;
+  }
+  .ui-swap-on {
+	@apply opacity-0 transition-all;
+  }
+  
+  .ui-swap-off {
+	@apply opacity-100 transition-all;
+  }
+  
+  .ui-swap-wrapper input:checked ~ .ui-swap-on,
+  .ui-swap-wrapper input:indeterminate ~ .ui-swap-indeterminate {
+	@apply opacity-100;
+  }
+  
+  .ui-swap-wrapper input:is(:checked, :indeterminate) ~ .ui-swap-off {
+	@apply opacity-0;
+  }

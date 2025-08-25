@@ -19,10 +19,6 @@
 		'hexagon',
 		'hexagon-2',
 		'circle',
-		'parallelogram',
-		'parallelogram-2',
-		'parallelogram-3',
-		'parallelogram-4',
 		'pentagon',
 		'square',
 		'star',
@@ -37,11 +33,12 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Avatar from '{$importDocumentSrc}/Avatar.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Avatar</span> from '{$importDocumentSrc}/Avatar.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex gap-4 flex-wrap"']}>
 			{#each masks as mask}
@@ -65,14 +62,3 @@
 		{/each}
 	</div>
 </SampleWrapper>
-<Tabs bind:selected={activeTab}>
-	<TabItem title="Javascript" value="javascript">
-		<ShowCode language="javascript"></ShowCode>
-	</TabItem>
-	<TabItem title="Html" value="html">
-		<ShowCode language="svelte"></ShowCode>
-	</TabItem>
-	<TabItem title="Preview" value="Preview">
-		<SimpleCode></SimpleCode>
-	</TabItem>
-</Tabs>

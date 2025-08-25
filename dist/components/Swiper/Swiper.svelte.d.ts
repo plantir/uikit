@@ -20,20 +20,7 @@ declare const Swiper: $$__sveltets_2_IsomorphicComponent<$$__sveltets_2_PropsWit
     slidesPerView?: string | number;
     spaceBetween?: string;
     centered?: boolean;
-    breakpoints?: {
-        320: {
-            slidesPerView: number;
-        };
-        640: {
-            slidesPerView: number;
-        };
-        768: {
-            slidesPerView: number;
-        };
-        1024: {
-            slidesPerView: number;
-        };
-    };
+    breakpoints?: any;
     navigation?: boolean | any;
     pagination?: boolean | any;
     loop?: boolean;

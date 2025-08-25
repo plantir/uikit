@@ -1,0 +1,51 @@
+<script lang="ts">
+	import TagCode from '../../ComponentCode/TagCode.svelte';
+	import { importDocumentSrc } from '../../../store/index.js';
+	import SampleWrapper from '../SampleWrapper.svelte';
+	import CountDown from '../../../components/CountDown/CountDown.svelte';
+	import moment from 'moment';
+	import Diff from '../../../components/Diff/Diff.svelte';
+	import Kbd from '../../../components/Kbd/Kbd.svelte';
+	import Stats from '../../../components/Stat/Stats.svelte';
+	import Stat from '../../../components/Stat/Stat.svelte';
+	import Button from '../../../components/Button/Button.svelte';
+</script>
+
+<SampleWrapper>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Stats</span> from '{$importDocumentSrc}/Stats.svelte';
+			import <span class="text-green-600">Stat</span> from '{$importDocumentSrc}/Stat.svelte';
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+		</TagCode>
+		<br />
+	</div>
+	<div slot="html">
+		<TagCode name="Stats" props={['class="shadow bg-base-100"']}>
+			<TagCode name="Stat">
+				<TagCode name="div" props={['slot="title"']}>title</TagCode>
+				<TagCode name="div" props={['slot="value"']}>value</TagCode>
+				<TagCode name="div" props={['slot="desc"']}>desc</TagCode>
+				<TagCode name="div" props={['slot="actions"']}>
+					<TagCode name="Button" props={['size="xs"']}>action 1</TagCode>
+					<TagCode name="Button" props={['size="xs"']}>action 2</TagCode>
+				</TagCode>
+			</TagCode>
+		</TagCode>
+	</div>
+	<div slot="preview" class="w-full">
+		<div class="flex items-center justify-center">
+			<Stats class="shadow bg-base-100">
+				<Stat>
+					<div slot="title">title</div>
+					<div slot="value">value</div>
+					<div slot="desc">desc</div>
+					<div slot="actions">
+						<Button size="xs">action 1</Button>
+						<Button size="xs">action 2</Button>
+					</div>
+				</Stat>
+			</Stats>
+		</div>
+	</div>
+</SampleWrapper>

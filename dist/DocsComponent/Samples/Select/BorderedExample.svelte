@@ -14,18 +14,18 @@
 	let value = '';
 	let value2 = '';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Select from '{$importDocumentSrc}/Select.svelte';
-				let items = ['item-1', 'item-2', 'item-3'];
-				let value = '';
-				let value2 = '';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Select</span> from '{$importDocumentSrc}/Select.svelte';
+			<br />
+			<ArrayCode name="items" {items} />
+			<br />
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode

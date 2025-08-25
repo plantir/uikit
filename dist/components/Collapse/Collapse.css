@@ -38,7 +38,25 @@
 		pointer-events: none;
 	}
 }
-
+.ui-collapse-arrow>.ui-collapse-title:after {
+    content: "";
+    transform-origin: 75% 75%;
+    pointer-events: none;
+    top: 1.9rem;
+    width: .5rem;
+    height: .5rem;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: absolute;
+    inset-inline-end: 1.4rem;
+    transform: translateY(-100%) rotate(45deg);
+    box-shadow: 2px 2px;
+}
+.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close)>.ui-accordion-title:after, .ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)>input:is([type=checkbox],[type=radio]):checked~.ui-accordion-title:after {
+    transform: translateY(-50%) rotate(225deg);
+}
 .ui-collapse-arrow {
 	@apply daisy-collapse-arrow;
 

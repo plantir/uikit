@@ -12,7 +12,7 @@
 	export let dismissable = false;
 	export let open = false;
 	export let plus = false;
-	export let arrow = !plus && true;
+	export let arrow = false;
 
 	$: componentClass = {
 		open,

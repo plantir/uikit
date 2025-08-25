@@ -1,176 +1,72 @@
 @import '../../css/app.css';
 
-@theme {
-	--ui-accordion-size-xs: 8;
-	--ui-accordion-size-sm: 12;
-	--ui-accordion-size-md: 16;
-	--ui-accordion-size-lg: 24;
-
-	--ui-accordion-color-primary: primary;
-	--ui-accordion-color-secondary: secondary;
-	--ui-accordion-color-accent: accent;
-	--ui-accordion-color-success: success;
-	--ui-accordion-color-info: info;
-	--ui-accordion-color-error: error;
-	--ui-accordion-color-warning: warning;
+.ui-accordion{
+	@apply daisy-collapse bg-base-100 border border-base-300 my-4;
 }
-
-@utility ui-accordion-mask--squircle {
-	&>div {
-		@apply daisy-mask daisy-mask-squircle
-	}
+.ui-accordion-icon-arrow{
+	@apply daisy-collapse-arrow;
 }
-
-@utility ui-accordion-mask--heart {
-	&>div {
-		@apply daisy-mask daisy-mask-heart
-	}
+.ui-accordion-join{
+	@apply my-0
 }
-
-@utility ui-accordion-mask--hexagon {
-	&>div {
-		@apply daisy-mask daisy-mask-hexagon
-	}
+.ui-accordion-join + .ui-accordion-join {
+	@apply rounded-none border-t-0;
 }
-
-@utility ui-accordion-mask--hexagon-2 {
-	&>div {
-		@apply daisy-mask daisy-mask-hexagon-2
-	}
+.ui-accordion-join:first-child{
+	@apply rounded-b-none
 }
-
-@utility ui-accordion-mask--decagon {
-	&>div {
-		@apply daisy-mask daisy-mask-decagon
-	}
+.ui-accordion-join:last-child{
+	@apply rounded-b-lg
 }
-
-@utility ui-accordion-mask--pentagon {
-	&>div {
-		@apply daisy-mask daisy-mask-pentagon
-	}
+.ui-accordion-icon-arrow>.ui-accordion-title:after {
+    content: "";
+    transform-origin: 75% 75%;
+    pointer-events: none;
+    top: 1.9rem;
+    width: .5rem;
+    height: .5rem;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: absolute;
+    inset-inline-end: 1.4rem;
+    transform: translateY(-100%) rotate(45deg);
+    box-shadow: 2px 2px;
 }
-
-@utility ui-accordion-mask--diamond {
-	&>div {
-		@apply daisy-mask daisy-mask-diamond
-	}
+.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close)>.ui-accordion-title:after, .ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)>input:is([type=checkbox],[type=radio]):checked~.ui-accordion-title:after {
+    transform: translateY(-50%) rotate(225deg);
 }
-
-@utility ui-accordion-mask--square {
-	&>div {
-		@apply daisy-mask daisy-mask-square
-	}
+.ui-accordion-icon-plus{
+	@apply daisy-collapse-plus;
 }
-
-@utility ui-accordion-mask--circle {
-	&>div {
-		@apply daisy-mask daisy-mask-circle
-	}
+.ui-accordion[open].ui-accordion-icon-plus>.ui-accordion-title:after, .ui-accordion.ui-accordion-icon-plus:focus:not(.ui-accordion-close)>.ui-accordion-title:after, .ui-accordion.ui-accordion-icon-plus:not(.ui-accordion-close)>input:is([type=checkbox],[type=radio]):checked~.ui-accordion-title:after {
+    content: "−";
 }
-
-@utility ui-accordion-mask--star {
-	&>div {
-		@apply daisy-mask daisy-mask-star
-	}
+.ui-accordion-icon-plus>.ui-accordion-title:after {
+    content: "+";
+    pointer-events: none;
+    top: .9rem;
+    width: .5rem;
+    height: .5rem;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: absolute;
+    inset-inline-end: 1.4rem;
 }
-
-@utility ui-accordion-mask--star-2 {
-	&>div {
-		@apply daisy-mask daisy-mask-star-2
-	}
+.ui-accordion-title{
+	@apply daisy-collapse-title font-semibold;
 }
-
-@utility ui-accordion-mask--triangle {
-	&>div {
-		@apply daisy-mask daisy-mask-triangle
-	}
+.ui-accordion-content{
+	@apply daisy-collapse-content text-sm;
 }
-
-@utility ui-accordion-mask--triangle-2 {
-	&>div {
-		@apply daisy-mask daisy-mask-triangle-2
-	}
+.ui-accordion:is([open],:focus:not(.ui-accordion-close))>.ui-accordion-content, .ui-accordion:not(.ui-accordion-close)>:where(input:is([type=checkbox],[type=radio]):checked~.ui-accordion-content) {
+    visibility: visible;
+    min-height: fit-content;
 }
-
-@utility ui-accordion-mask--triangle-3 {
-	&>div {
-		@apply daisy-mask daisy-mask-triangle-3
-	}
-}
-
-@utility ui-accordion-mask--triangle-4 {
-	&>div {
-		@apply daisy-mask daisy-mask-triangle-4
-	}
-}
-
-@utility ui-accordion-size-* {
-	>div {
-		@apply w-[calc(--value(--ui-accordion-size-*)_*_4px)];
-	}
-}
-
-@utility ui-accordion-rounded {
-	&>div {
-		@apply rounded;
-	}
-}
-
-@utility ui-accordion-circle {
-	&>div {
-		@apply rounded-full;
-	}
-}
-
-@utility ui-accordion-ring {
-	&>div {
-		@apply ring-3 ring-blue-500 ring-offset-base-100 ring-offset-2;
-	}
-}
-@utility ui-accordion-color-* {
-
-	.ui-accordion-text > div {
-		@apply bg-[--value(--ui-accordion-color-*)] text-[--value(--ui-accordion-color-*)]-content;
-	}
-	&.ui-accordion-ring > div {
-		@apply ring-[--value(--ui-accordion-color-*)];
-	}
-}
-
-
-@layer components {
-	.ui-accordion {
-		@apply relative inline-flex;
-
-		&>div {
-			@apply block aspect-square overflow-hidden bg-base-300;
-		}
-
-		img {
-			@apply h-full w-full object-cover;
-		}
-
-		.ui-accordion-text > div {
-			@apply flex justify-center items-center;
-		}
-
-		.ui-accordion-online::before {
-			content: '';
-			@apply bg-success outline-base-100 absolute z-10 block rounded-full outline outline-2;
-			width: 15%;
-			height: 15%;
-			top: 7%;
-			right: 7%;
-		}
-
-		.ui-accordion-offline::before {
-			content: '';
-			@apply bg-base-300 outline-base-100 absolute z-10 block rounded-full outline outline-2;
-			width: 15%;
-			height: 15%;
-			top: 7%;
-			right: 7%;
-		}
-	}
+.ui-accordion:is([open],:focus:not(.ui-accordion-close))>:where(.ui-accordion-content), .ui-accordion:not(.ui-accordion-close)>:where(input:is([type=checkbox],[type=radio]):checked~.ui-accordion-content) {
+    padding-bottom: 1rem;
+    transition: padding .2s ease-out, background-color .2s ease-out;
 }

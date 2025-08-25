@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LetCode from '../../ComponentCode/LetCode.svelte';
 	import ScriptCode from '../../ComponentCode/ScriptCode.svelte';
 	import TagCode from '../../ComponentCode/TagCode.svelte';
 	import DatePicker from '../../../components/DatePicker/DatePicker.svelte';
@@ -10,17 +11,16 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import TextField from '{$importDocumentSrc}/TextField.svelte';
-				let dates = ''
-			    let defaultDates = ['2024-5-15', '2024-5-16']
-            </ScriptCode>
-        </pre>
+		<TagCode name="script">
+			import <span class="text-green-600">DatePicker</span> from '{$importDocumentSrc}/DatePicker.svelte';
+			<br />
+			<LetCode name="dates" value="" />
+			<LetCode name="defaultDates" value="['2024-5-15', '2024-5-16']" />
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="DatePicker" props={['range', 'bind:value={dates}']}></TagCode>
-		<TagCode name="DatePicker" props={['range', 'bind:value={defaultDates}']}></TagCode>
+		<TagCode name="DatePicker" props={['range', 'bind:value={dates}', 'label="Range picker"']}></TagCode>
+		<TagCode name="DatePicker" props={['range', 'bind:value={defaultDates}', 'label="Default range"']}></TagCode>
 	</div>
 	<div slot="preview">
 		<div class="flex flex-wrap gap-4">

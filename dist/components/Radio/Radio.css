@@ -5,7 +5,7 @@
 .ui-radio {
 	@apply daisy-radio;
 
-	.ui-radio-button {
+	&.ui-radio-button {
 		@apply daisy-btn;
 		width: inherit !important;
 		box-shadow: none !important;
@@ -22,43 +22,49 @@
 			@apply daisy-btn-lg;
 		}
 	}
-	.ui-radio-join {
+	&.ui-radio-join {
 		@apply daisy-join-item;
 	}
-	.ui-radio-disabled {
+	&.ui-radio-disabled {
 		/* DAISYTODO: @apply daisy-disabled; */
 	}
-	.ui-radio-xs {
+	&.ui-radio-xs {
 		@apply daisy-radio-xs;
 	}
-	.ui-radio-sm {
+	&.ui-radio-sm {
 		@apply daisy-radio-sm;
 	}
-	.ui-radio-md {
+	&.ui-radio-md {
 		@apply daisy-radio-md;
 	}
-	.ui-radio-lg {
+	&.ui-radio-lg {
 		@apply daisy-radio-lg;
 	}
-	.ui-radio-primary {
+	&.ui-radio-xl {
+		@apply daisy-radio-xl;
+	}
+	&.ui-radio-primary {
 		@apply daisy-radio-primary;
 	}
-	.ui-radio-secondary {
+	&.ui-radio-secondary {
 		@apply daisy-radio-secondary;
 	}
-	.ui-radio-accent {
+	&.ui-radio-accent {
 		@apply daisy-radio-accent;
 	}
-	.ui-radio-success {
+	&.ui-radio-success {
 		@apply daisy-radio-success;
 	}
-	.ui-radio-info {
+	&.ui-radio-info {
 		@apply daisy-radio-info;
 	}
-	.ui-radio-error {
+	&.ui-radio-error {
 		@apply daisy-radio-error;
 	}
-	.ui-radio-warning {
+	&.ui-radio-warning {
 		@apply daisy-radio-warning;
+	}
+	&.ui-radio-neutral {
+		@apply daisy-radio-neutral;
 	}
 }

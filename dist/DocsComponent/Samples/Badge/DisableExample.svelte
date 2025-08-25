@@ -11,33 +11,44 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	let value: any;
 	let checked = true;
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Badge from '{$importDocumentSrc}/Badge.svelte';
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Badge</span> from '{$importDocumentSrc}/Badge.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		<TagCode name="p">
 			this is a <br />
-			<TagCode name="Badge" one_line props={['dismissable']}>badge</TagCode>
-			<TagCode name="Badge" one_line props={['dismissable']}>badge</TagCode>
-			<TagCode name="Badge" one_line props={['dismissable']}>badge</TagCode>
-			<TagCode name="Badge" one_line props={['dismissable']}>badge</TagCode>
-			<TagCode name="Badge" one_line props={['dismissable']}>badge</TagCode> inside of a paragraph
+			<TagCode name="Badge" one_line props={['dismissable']}>badge1</TagCode>
+			<TagCode name="Badge" one_line props={['dismissable']}>badge2</TagCode>
+			<TagCode name="Badge" one_line props={['dismissable']}>badge3</TagCode>
+			<TagCode name="Badge" one_line props={['dismissable']}>badge4</TagCode>
+			<TagCode name="Badge" one_line props={['dismissable']}>badge5</TagCode> inside of a paragraph
 		</TagCode>
 	</div>
-	<p slot="preview">
-		this is a
-		<Badge dismissable>badge1</Badge>
-		<Badge dismissable>badge2</Badge>
-		<Badge dismissable>badge3</Badge>
-		<Badge dismissable>badge4</Badge>
-		<Badge dismissable>badge5</Badge> inside of a paragraph
-	</p>
+	<div slot="preview">
+		<p>
+			this is a
+			<Badge dismissable>badge1</Badge>
+			<Badge dismissable>badge2</Badge>
+			<Badge dismissable>badge3</Badge>
+			<Badge dismissable>badge4</Badge>
+			<Badge dismissable>badge5</Badge> inside of a paragraph
+		</p>
+	</div>
 </SampleWrapper>

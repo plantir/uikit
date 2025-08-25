@@ -16,7 +16,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 </script>

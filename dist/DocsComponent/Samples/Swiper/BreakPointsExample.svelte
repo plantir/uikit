@@ -24,29 +24,16 @@
 		}
 	};
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ObjectCode from '../../ComponentCode/ObjectCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-		<ScriptCode>
-			import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-			let breakpoints = {'{'}
-				320:{'{'}
-					slidesPerView: 1
-				{'}'},
-				640:{'{'}
-					slidesPerView: 2
-				{'}'},
-				768:{'{'}
-					slidesPerView: 3
-				{'}'},
-				1024:{'{'}
-					slidesPerView: 4
-				{'}'},
-			{'}'}
-		</ScriptCode>
-		</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Swiper</span> from '{$importDocumentSrc}/Swiper.svelte';
+			<br />
+			<ObjectCode name="breakpoints" item={breakpoints}></ObjectCode>
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="w-[290px] md:w-[460px] mx-auto"']}>

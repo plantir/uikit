@@ -12,17 +12,18 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Button from '{$importDocumentSrc}/Button.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="Button" props={['href="/home"']}>goto home</TagCode>
-		<TagCode name="Button" props={['href="google.com"']}>google</TagCode>
+		<TagCode name="Button" props={['href="https://google.com"']}>google</TagCode>
 	</div>
-	<div slot="preview">
+	<div slot="preview" class="w-full flex items-center justify-center gap-2 flex-wrap">
 		<Button href="/home">goto home</Button>
-		<Button href="google.com">google</Button>
+		<Button href="https://google.com">google</Button>
 	</div>
 </SampleWrapper>

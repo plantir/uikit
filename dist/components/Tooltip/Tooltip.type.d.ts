@@ -1,8 +1,7 @@
-import type { Base } from '../../utils/El.types.js';
-import type { Placement } from '@floating-ui/dom';
-export type TooltipPlacement = Placement;
+import type { Base, GlobalColor } from '../../utils/El.types.js';
+export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
 export interface Tooltip extends Base {
     placement?: TooltipPlacement;
-    open?: boolean;
-    offset?: number;
+    title?: string;
+    color?: GlobalColor;
 }

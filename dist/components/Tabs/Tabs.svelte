@@ -25,18 +25,18 @@
 	let componentName = 'tabs';
 
 	export let size: $$Props['size'] = undefined;
-	export let variant: $$Props['variant'] = 'border';
+	export let variant: $$Props['variant'] = undefined;
 	export let color: $$Props['color'] = undefined;
 	export let selected: $$Props['selected'] = undefined;
 
 	const ctx = setTabsContext({
 		selected: writable(selected)
 	});
-	
+
 	ctx.selected.subscribe((val) => {
 		selected = val;
 	});
-	
+
 	$: componentClass = {
 		bordered: variant == 'border',
 		boxed: variant == 'box',
@@ -45,6 +45,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		primary: color == 'primary',
 		secondary: color == 'secondary',
 		accent: color == 'accent',
@@ -52,7 +53,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 </script>
 

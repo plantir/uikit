@@ -20,6 +20,10 @@
 	@apply daisy-loading-lg;
 }
 
+.ui-loading-xl {
+	@apply daisy-loading-xl;
+}
+
 .ui-loading-bars {
 	@apply daisy-loading-bars;
 }
@@ -70,4 +74,7 @@
 
 .ui-loading-info {
 	@apply text-info;
+}
+.ui-loading-neutral {
+	@apply text-neutral;
 }

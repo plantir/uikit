@@ -6,9 +6,9 @@ export interface Table extends Base {
     value?: string;
     name?: string;
     size?: TableSize;
-    color?: TableColor;
     disabled?: boolean;
     zebra?: boolean;
     hover?: boolean;
     pinHead?: boolean;
+    pinCols?: boolean;
 }

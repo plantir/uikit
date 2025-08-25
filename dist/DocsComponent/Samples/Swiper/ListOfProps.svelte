@@ -34,8 +34,8 @@
 		},
 		{
 			name: 'breakpoints',
-			type: `Object`,
-			default: '320:SPV / 5 | 640: SPV / 3 | 768: SPV / 2 | 1024: SPV(SlidesPerView)'
+			type: `Object | null`,
+			default: 'null'
 		},
 	];
 </script>

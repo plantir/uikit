@@ -17,11 +17,12 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Badge from '{$importDocumentSrc}/Badge.svelte';
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Badge</span> from '{$importDocumentSrc}/Badge.svelte';
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="p">
 			this is a <TagCode name="Badge" one_line dont_break props={['variant="outline"']}

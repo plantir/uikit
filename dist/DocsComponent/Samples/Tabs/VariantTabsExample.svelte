@@ -11,27 +11,23 @@
 	import TextField from '../../../components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
+
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import Tabs from '{$importDocumentSrc}/Tabs.svelte';
-                import TabItem from '{$importDocumentSrc}/TabItem.svelte';
-            </ScriptCode>
-        </pre>
-    </div>
-    <div slot="html">
-        <TagCode name="Tabs" props={['selected="part1"', 'variant="box"']}>
+		<TagCode name="script">
+			import <span class="text-green-600">Tabs</span> from '{$importDocumentSrc}/Tabs.svelte';
+			import <span class="text-green-600">TabItem</span> from '{$importDocumentSrc}/TabItem.svelte';
+		</TagCode>
+		<br />
+	</div>
+	<div slot="html">
+		<TagCode name="Tabs" props={['selected="part1"', 'variant="box"']}>
 			<TagCode name="TabItem" props={['value="part1"', 'title="box"']}>content in part 1</TagCode>
 			<TagCode name="TabItem" props={['value="part2"', 'title="box"']}>content in part 2</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="lift"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="lift"']}>
-				content in part 1
-			</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="lift"']}>
-				content in part 2
-			</TagCode>
+			<TagCode name="TabItem" props={['value="part1"', 'title="lift"']}>content in part 1</TagCode>
+			<TagCode name="TabItem" props={['value="part2"', 'title="lift"']}>content in part 2</TagCode>
 		</TagCode>
 		<TagCode name="Tabs" props={['selected="part1"', 'variant="border"']}>
 			<TagCode name="TabItem" props={['value="part1"', 'title="border"']}>
@@ -41,8 +37,8 @@
 				content in part 2
 			</TagCode>
 		</TagCode>
-    </div>
-    <div slot="preview">
+	</div>
+	<div slot="preview">
 		<div class="flex flex-wrap gap-4">
 			<Tabs selected="part1" variant="box">
 				<TabItem value="part1" title="box">content in part 1</TabItem>
@@ -57,5 +53,5 @@
 				<TabItem value="part2" title="border">content in part 2</TabItem>
 			</Tabs>
 		</div>
-    </div>
+	</div>
 </SampleWrapper>

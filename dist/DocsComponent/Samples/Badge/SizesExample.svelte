@@ -10,31 +10,30 @@
 	import { Checkbox, Radio, RadioGroup, Range, Switch, Table } from '../../../index.js';
 	import Badge from '../../../components/Badge/Badge.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '../../../utils/El.types.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Badge</span> from '{$importDocumentSrc}/Badge.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		{#each sizes as size}
-			<TagCode name="p">
-				this is a <TagCode name="Badge" one_line dont_break props={[`size="${size}"`]}
-					>{size}</TagCode
-				> inside of a paragraph
+			<TagCode name="Badge" props={[`size="${size}"`]} one_line>
+				{size} badge
 			</TagCode>
 		{/each}
 	</div>
 	<div slot="preview">
-		{#each sizes as size}
-			<p>
-				this is a <Badge {size}>{size}</Badge> inside of a paragraph
-			</p>
-		{/each}
+		<div class="flex gap-4 flex-wrap">
+			{#each sizes as size}
+				<Badge {size}>{size} badge</Badge>
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>

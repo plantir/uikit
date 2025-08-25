@@ -16,39 +16,12 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Switch from '{$importDocumentSrc}/Switch.svelte';
-				let form={'{'}{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">ColorPicker</span> from '{$importDocumentSrc}/ColorPicker.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="div">
-			<TagCode
-				name="Switch"
-				one_line
-				props={['label="do you like sports ?"', 'bind:value={form.sport}']}
-			></TagCode>
-		</TagCode>
-		<TagCode name="div">
-			<TagCode
-				name="Switch"
-				one_line
-				props={['label="do you like sleep ?"', 'bind:value={form.sleep}']}
-			></TagCode>
-		</TagCode>
-		<TagCode name="div">
-			<TagCode
-				name="Switch"
-				one_line
-				props={['label="do you like games ?"', 'bind:value={form.games}']}
-			></TagCode>
-		</TagCode>
-		<TagCode name="div">
-			<TagCode name="Switch" one_line props={['label="do you like sea ?"', 'bind:value={form.sea}']}
-			></TagCode>
-		</TagCode>
+		<TagCode name="ColorPicker" one_line props={['label="pick a color"']} />
 	</div>
 	<div slot="preview">
 		<ColorPicker label="pick a color" />

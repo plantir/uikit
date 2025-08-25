@@ -8,8 +8,13 @@
 			default: 'false'
 		},
 		{
+			name: 'pinCols',
+			type: `boolean`,
+			default: 'false'
+		},
+		{
 			name: 'size',
-			type: `'xs' | 'sm' | 'md' | 'lg'`,
+			type: `'xs' | 'sm' | 'md' | 'lg' | 'xl'`,
 			default: 'md'
 		},
 		{
@@ -17,6 +22,11 @@
 			type: `boolean`,
 			default: 'false'
 		},
+		{
+			name: 'hover',
+			type: `boolean`,
+			default: 'false'
+		}
 	];
 </script>
 

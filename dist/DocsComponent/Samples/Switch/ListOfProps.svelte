@@ -4,12 +4,12 @@
 	let items = [
 		{
 			name: 'color',
-			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error'`,
+			type: `'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error' | 'neutral'`,
 			default: 'undefined'
 		},
 		{
 			name: 'size',
-			type: `'xs' | 'sm' | 'md' | 'lg'`,
+			type: `'xs' | 'sm' | 'md' | 'lg' | 'xl'`,
 			default: 'md'
 		},
 		{

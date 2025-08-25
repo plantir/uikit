@@ -32,7 +32,7 @@
 }
 
 .ui-chat-end {
-	@apply daisy-chat-end;
+	@apply daisy-chat-end ;
 
 	.ui-chat-footer {
 		grid-column-start: 1;
@@ -100,4 +100,7 @@
 
 .ui-chat-bubble-warning {
 	@apply daisy-chat-bubble-warning;
+}
+.ui-chat-bubble-neutral {
+	@apply daisy-chat-bubble-neutral;
 }

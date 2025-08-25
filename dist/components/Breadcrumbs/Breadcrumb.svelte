@@ -1,0 +1,15 @@
+<script lang="ts">
+	import './Breadcrumb.css';
+	import El from '../../utils/El.svelte';
+	import type { Breadcrumbs } from './Breadcrumbs.type.js';
+	import type { GlobalColor, GlobalSize } from '../../utils/El.types.js';
+	type $$Props = Breadcrumbs;
+	let componentName = 'breadcrumb';
+	$: componentClass = {};
+</script>
+
+<!-- <span transition:fade> -->
+<El {componentName} {componentClass} {...$$restProps} tag="li">
+	<slot></slot>
+</El>
+<!-- </span> -->

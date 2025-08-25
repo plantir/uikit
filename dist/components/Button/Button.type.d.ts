@@ -1,6 +1,6 @@
 import type { Base, GlobalColor, GlobalSize } from '../../utils/El.types.js';
 export type ButtonSize = GlobalSize;
-export type ButtonColor = 'natural' | GlobalColor;
+export type ButtonColor = GlobalColor;
 export type ButtonVariant = 'ghost' | 'link' | 'outline' | 'glass' | undefined;
 export type ButtonShape = 'circle' | 'square' | undefined;
 export interface Button extends Base {

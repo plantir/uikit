@@ -23,7 +23,7 @@
 			info: color == 'info',
 			error: color == 'error',
 			warning: color == 'warning',
-			natural: color == 'natural'
+			neutral: color == 'neutral'
 		}
 	});
 	$: footerClass = ClassMerge({
@@ -37,20 +37,18 @@
 	});
 </script>
 
-<span transition:fade>
-	<El {componentName} {componentClass} {...$$restProps}>
-		<div class={headerClass}>
-			<slot name="header" />
-		</div>
-		<div class={imageClass}>
-			<slot name="image" />
-		</div>
-		<div class={bubbleClass}>
-			<slot />
-		</div>
+<El {componentName} {componentClass} {...$$restProps}>
+	<div class={headerClass}>
+		<slot name="header" />
+	</div>
+	<div class={imageClass}>
+		<slot name="image" />
+	</div>
+	<div class={bubbleClass}>
+		<slot />
+	</div>
 
-		<div class={footerClass}>
-			<slot name="footer" />
-		</div>
-	</El>
-</span>
+	<div class={footerClass}>
+		<slot name="footer" />
+	</div>
+</El>

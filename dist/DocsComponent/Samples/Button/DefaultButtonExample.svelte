@@ -9,35 +9,35 @@
 	import TabItem from '../../../components/Tabs/TabItem.svelte';
 	import Tabs from '../../../components/Tabs/Tabs.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalColor } from '../../../utils/El.types.js';
 	let activeTab = 'Preview';
+	let colors: GlobalColor[] = [
+		'primary',
+		'secondary',
+		'accent',
+		'error',
+		'info',
+		'success',
+		'warning',
+		'neutral'
+	];
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Button from '{$importDocumentSrc}/Button.svelte';
-		</ScriptCode>
-	</pre>
-	<div slot="html">
-		<TagCode name="Button" props={['color="primary"']}>primary</TagCode>
-		<TagCode name="Button" props={['color="secondary"']}>secondary</TagCode>
-		<TagCode name="Button" props={['color="accent"']}>accent</TagCode>
-		<TagCode name="Button" props={['color="error"']}>error</TagCode>
-		<TagCode name="Button" props={['color="info"']}>info</TagCode>
-		<TagCode name="Button" props={['color="success"']}>success</TagCode>
-		<TagCode name="Button" props={['color="warning"']}>warning</TagCode>
-		<TagCode name="Button">default</TagCode>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+		</TagCode>
+		<br />
 	</div>
-	<div slot="preview">
-		<div class="flex flex-wrap gap-2">
-			<Button color="primary">primary</Button>
-			<Button color="secondary">secondary</Button>
-			<Button color="accent">accent</Button>
-			<Button color="error">error</Button>
-			<Button color="info">info</Button>
-			<Button color="success">success</Button>
-			<Button color="warning">warning</Button>
-			<Button>default</Button>
-		</div>
+	<div slot="html">
+		{#each colors as color}
+			<TagCode name="Button" props={[`color="${color}"`]}>{color}</TagCode>
+		{/each}
+	</div>
+	<div slot="preview" class="w-full flex items-center justify-center gap-2 flex-wrap">
+		{#each colors as color}
+			<Button {color}>{color}</Button>
+		{/each}
 	</div>
 </SampleWrapper>

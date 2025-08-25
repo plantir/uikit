@@ -1,0 +1,11 @@
+@import "../../css/app.css";
+
+@layer base {
+    .ui-fieldset {
+        @apply daisy-fieldset
+    }
+
+    .ui-fieldset-title {
+        @apply daisy-fieldset-legend
+    }
+}
