@@ -1,6 +1,10 @@
 <script>
 	import Header from '$lib/Layout/Header.svelte';
 	import '$lib/css/app.css';
+	import '$lib/css/Themes/polaris.css';
+	import '$lib/css/Themes/ktui.css';
+	import '$lib/css/Themes/fluent.css';
+	import '$lib/css/Themes/fluent-dark.css';
 	import '$lib/css/component.css';
 
 </script>
