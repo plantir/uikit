@@ -46,6 +46,7 @@
 			"svelte": "./dist/index.js"
 		},
 		"./css/*": "./dist/css/*",
+		"./css/Themes/*": "./dist/css/Themes/*",
 		"./components/*": "./dist/components/*"
 	},
 	"svelte": "./dist/index.js",
