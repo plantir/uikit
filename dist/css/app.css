@@ -2,10 +2,10 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 /* @import "./component.css"; */
-@import '$lib/css/Themes/polaris.css';
-@import '$lib/css/Themes/ktui.css';
-@import '$lib/css/Themes/fluent.css';
-@import '$lib/css/Themes/fluent-dark.css';
+@import './Themes/polaris.css';
+@import './Themes/ktui.css';
+@import './Themes/fluent.css';
+@import './Themes/fluent-dark.css';
 @plugin "daisyui" {
 	themes: all;
 	prefix: daisy-;
