@@ -45,6 +45,7 @@
 			"main": "./dist/index.js",
 			"svelte": "./dist/index.js"
 		},
+		"./dist/css/app.css": "./dist/css/app.css",
 		"./components/*": "./dist/components/*"
 	},
 	"svelte": "./dist/index.js",
