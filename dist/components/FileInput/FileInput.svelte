@@ -21,7 +21,7 @@
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
 	$: labelClass = ClassMerge({ name: 'label', componentClass });
-	const selectFile = () => {
+	const selectFile = (e: Event) => {
 		input.click();
 	};
 	const checkFiles = () => {
@@ -48,10 +48,10 @@
 
 <!-- <span transition:fade> -->
 {#if custom}
-	<label class={elClass} onclick={selectFile}>
+	<div class={elClass} onclick={selectFile}>
 		<input type="file" bind:this={input} {accept} oninput={checkFiles} {multiple} class="hidden" />
 		<slot></slot>
-	</label>
+	</div>
 {:else}
 	<label class={elClass}>
 		{#if label}
