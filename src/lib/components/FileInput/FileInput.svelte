@@ -21,7 +21,8 @@
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
 	$: labelClass = ClassMerge({ name: 'label', componentClass });
-	const selectFile = () => {
+	const selectFile = (e: Event) => {
+		e.preventDefault();
 		input.click();
 	};
 	const checkFiles = () => {
