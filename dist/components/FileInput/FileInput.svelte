@@ -49,7 +49,7 @@
 <!-- <span transition:fade> -->
 {#if custom}
 	<div class={elClass} onclick={selectFile}>
-		<input type="file" bind:this={input} {accept} oninput={checkFiles} {multiple} class="hidden" />
+		<input type="file" bind:this={input} {accept} oninput={checkFiles} {multiple} style="display: none;" />
 		<slot></slot>
 	</div>
 {:else}
