@@ -1,5 +1,6 @@
 @reference "../../css/app.css";
-
-.ui-dialog-footer {
-    @apply flex gap-2 justify-end;
+@layer components {
+	.ui-dialog-footer {
+		@apply flex gap-2 justify-end;
+	}
 }
