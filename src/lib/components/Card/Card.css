@@ -1,6 +1,6 @@
 @reference "../../css/app.css";
 
-@layer base {
+@layer components {
 
 	.ui-card {
 		/* DAISYTODO: daisy-card-bordered */

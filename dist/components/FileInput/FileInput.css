@@ -1,6 +1,6 @@
 @import "../../css/app.css";
 
-@layer base {
+@layer components {
     .ui-file-input {
         @apply block;
 

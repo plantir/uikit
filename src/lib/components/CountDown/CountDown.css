@@ -1,152 +1,160 @@
 @reference "../../css/app.css";
+@layer components {
+	.ui-countdown {
+		display: flex;
+	}
 
-.ui-countdown {
-    display: flex;
-}
+	.ui-countdown {
+		@apply gap-1;
+	}
 
-.ui-countdown {
-    @apply gap-1;
-}
+	.ui-countdown .item {
+		@apply flex gap-1 align-bottom;
+	}
 
-.ui-countdown .item {
-    @apply flex gap-1 align-bottom;
-}
+	.ui-countdown.ui-countdown-colons .item:not(:last-child)::after {
+		content: ':';
+	}
 
-.ui-countdown.ui-countdown-colons .item:not(:last-child)::after {
-    content: ':';
-}
+	.ui-countdown.ui-countdown-xs .item {
+		@apply text-sm;
+	}
 
-.ui-countdown.ui-countdown-xs .item {
-    @apply text-sm;
-}
+	.ui-countdown.ui-countdown-sm .item {
+		@apply text-lg;
+	}
 
-.ui-countdown.ui-countdown-sm .item {
-    @apply text-lg;
-}
+	.ui-countdown.ui-countdown-md .item {
+		@apply text-2xl;
+	}
 
-.ui-countdown.ui-countdown-md .item {
-    @apply text-2xl
-}
+	.ui-countdown.ui-countdown-lg .item {
+		@apply text-4xl;
+	}
 
-.ui-countdown.ui-countdown-lg .item {
-    @apply text-4xl;
-}
+	.ui-countdown.ui-countdown-xs .countdown-number-wrapper {
+		height: 1.4em;
+	}
 
-.ui-countdown.ui-countdown-xs .countdown-number-wrapper {
-    height: 1.4em;
-}
+	.ui-countdown.ui-countdown-sm .countdown-number-wrapper {
+		height: 1.5em;
+	}
 
-.ui-countdown.ui-countdown-sm .countdown-number-wrapper {
-    height: 1.5em;
-}
+	.ui-countdown.ui-countdown-md .countdown-number-wrapper {
+		height: 1.5em;
+	}
 
-.ui-countdown.ui-countdown-md .countdown-number-wrapper {
-    height: 1.5em;
-}
+	.ui-countdown.ui-countdown-lg .countdown-number-wrapper {
+		height: 1.5em;
+	}
 
-.ui-countdown.ui-countdown-lg .countdown-number-wrapper {
-    height: 1.5em;
-}
+	.countdown-number-wrapper {
+		@apply relative flex items-center min-w-[2ch] overflow-hidden;
+	}
 
-.countdown-number-wrapper {
-    @apply relative flex items-center min-w-[2ch] overflow-hidden;
-}
+	.ui-countdown.ui-countdown-xs .countdown-label {
+		@apply text-xs;
+	}
 
-.ui-countdown.ui-countdown-xs .countdown-label {
-    @apply text-xs;
-}
+	.ui-countdown.ui-countdown-sm .countdown-label {
+		@apply text-sm;
+	}
 
-.ui-countdown.ui-countdown-sm .countdown-label {
-    @apply text-sm;
-}
+	.ui-countdown.ui-countdown-md .countdown-label {
+		@apply text-base;
+	}
 
-.ui-countdown.ui-countdown-md .countdown-label {
-    @apply text-base;
-}
+	.ui-countdown.ui-countdown-lg .countdown-label {
+		@apply text-lg;
+	}
 
-.ui-countdown.ui-countdown-lg .countdown-label {
-    @apply text-lg
-}
+	.ui-countdown-box .item,
+	.ui-countdown-box_label .item {
+		@apply bg-base-200 p-2 rounded-md;
+	}
 
-.ui-countdown-box .item,
-.ui-countdown-box_label .item {
-    @apply bg-base-200 p-2 rounded-md;
-}
+	.ui-countdown-labels_under .item,
+	.ui-countdown-box_label .item {
+		@apply flex-col;
+	}
 
-.ui-countdown-labels_under .item,
-.ui-countdown-box_label .item {
-    @apply flex-col;
-}
+	.ui-countdown-color-primary {
+		@apply text-primary;
+	}
 
-.ui-countdown-color-primary {
-    @apply text-primary
-}
+	.ui-countdown-color-warning {
+		@apply text-warning;
+	}
 
-.ui-countdown-color-warning {
-    @apply text-warning
-}
+	.ui-countdown-color-secondary {
+		@apply text-secondary;
+	}
 
-.ui-countdown-color-secondary {
-    @apply text-secondary
-}
+	.ui-countdown-color-info {
+		@apply text-info;
+	}
 
-.ui-countdown-color-info {
-    @apply text-info
-}
+	.ui-countdown-color-error {
+		@apply text-error;
+	}
 
-.ui-countdown-color-error {
-    @apply text-error
-}
+	.ui-countdown-color-success {
+		@apply text-success;
+	}
 
-.ui-countdown-color-success {
-    @apply text-success
-}
+	.ui-countdown-color-neutral {
+		@apply text-neutral;
+	}
 
-.ui-countdown-color-neutral {
-    @apply text-neutral
-}
+	.ui-countdown-color-accent {
+		@apply text-accent;
+	}
 
-.ui-countdown-color-accent {
-    @apply text-accent
-}
+	.ui-countdown-color-primary.ui-countdown-box .item,
+	.ui-countdown-color-primary.ui-countdown-box_label .item {
+		@apply bg-primary text-primary-content;
+	}
 
-.ui-countdown-color-primary.ui-countdown-box .item, .ui-countdown-color-primary.ui-countdown-box_label .item {
-    @apply bg-primary text-primary-content;
-}
+	.ui-countdown-color-warning.ui-countdown-box .item,
+	.ui-countdown-color-warning.ui-countdown-box_label .item {
+		@apply bg-warning text-warning-content;
+	}
 
-.ui-countdown-color-warning.ui-countdown-box .item,
-.ui-countdown-color-warning.ui-countdown-box_label .item {
-    @apply bg-warning text-warning-content;
-}
+	.ui-countdown-color-secondary.ui-countdown-box .item,
+	.ui-countdown-color-secondary.ui-countdown-box_label .item {
+		@apply bg-secondary text-secondary-content;
+	}
 
-.ui-countdown-color-secondary.ui-countdown-box .item, .ui-countdown-color-secondary.ui-countdown-box_label .item {
-     @apply bg-secondary text-secondary-content;
-}
+	.ui-countdown-color-info.ui-countdown-box .item,
+	.ui-countdown-color-info.ui-countdown-box_label .item {
+		@apply bg-info text-info-content;
+	}
 
-.ui-countdown-color-info.ui-countdown-box .item, .ui-countdown-color-info.ui-countdown-box_label .item {
-     @apply bg-info text-info-content;
-}
+	.ui-countdown-color-error.ui-countdown-box .item,
+	.ui-countdown-color-error.ui-countdown-box_label .item {
+		@apply bg-error text-error-content;
+	}
 
-.ui-countdown-color-error.ui-countdown-box .item, .ui-countdown-color-error.ui-countdown-box_label .item {
-     @apply bg-error text-error-content;
-}
+	.ui-countdown-color-success.ui-countdown-box .item,
+	.ui-countdown-color-success.ui-countdown-box_label .item {
+		@apply bg-success text-success-content;
+	}
 
-.ui-countdown-color-success.ui-countdown-box .item, .ui-countdown-color-success.ui-countdown-box_label .item {
-     @apply bg-success text-success-content;
-}
+	.ui-countdown-color-neutral.ui-countdown-box .item,
+	.ui-countdown-color-neutral.ui-countdown-box_label .item {
+		@apply bg-neutral text-neutral-content;
+	}
 
-.ui-countdown-color-neutral.ui-countdown-box .item, .ui-countdown-color-neutral.ui-countdown-box_label .item {
-     @apply bg-neutral text-neutral-content;
-}
+	.ui-countdown-color-accent.ui-countdown-box .item,
+	.ui-countdown-color-accent.ui-countdown-box_label .item {
+		@apply bg-accent text-accent-content;
+	}
 
-.ui-countdown-color-accent.ui-countdown-box .item, .ui-countdown-color-accent.ui-countdown-box_label .item {
-     @apply bg-accent text-accent-content;
-}
-
-.countdown-number {
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    width: 100%;
+	.countdown-number {
+		position: absolute;
+		left: 0;
+		right: 0;
+		text-align: center;
+		width: 100%;
+	}
 }

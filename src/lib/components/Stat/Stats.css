@@ -1,9 +1,10 @@
-@import "../../css/app.css";
+@import '../../css/app.css';
+@layer components {
+	.ui-stats {
+		@apply daisy-stats daisy-stats-vertical md:daisy-stats-horizontal;
+	}
 
-.ui-stats {
-    @apply daisy-stats daisy-stats-vertical md:daisy-stats-horizontal;
-}
-
-.ui-stats.ui-stats-vertical {
-    @apply daisy-stats-vertical!
+	.ui-stats.ui-stats-vertical {
+		@apply daisy-stats-vertical!;
+	}
 }

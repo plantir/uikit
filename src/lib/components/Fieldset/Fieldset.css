@@ -1,6 +1,6 @@
 @import "../../css/app.css";
 
-@layer base {
+@layer components {
     .ui-fieldset {
         @apply daisy-fieldset
     }
