@@ -1,3 +1,4 @@
+export { default as Autocomplete } from './components/Autocomplete/Autocomplete.svelte';
 export { default as Avatar } from './components/Avatar/Avatar.svelte';
 export { default as AvatarGroup } from './components/AvatarGroup/AvatarGroup.svelte';
 export { default as Badge } from './components/Badge/Badge.svelte';

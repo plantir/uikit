@@ -1,8 +1,8 @@
 <script lang="ts">
-	import ArrayCode from '$lib/DocsComponent/ComponentCode/ArrayCode.svelte';
-	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
+	import ArrayCode from '../../ComponentCode/ArrayCode.svelte';
+	import TagCode from '../../ComponentCode/TagCode.svelte';
 	import { importDocumentSrc } from '../../../store/index.js';
-	import { Autocomplete } from '$lib/index.js';
+	import { Autocomplete } from '../../../index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
 	
 	let items: any[] = [];

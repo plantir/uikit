@@ -145,7 +145,7 @@
 	});
 </script>
 
-<TextField   {...$$restProps} {label} bind:node = {input} {placeholder} >
+<TextField   {...$$restProps} {label} bind:node={input} {placeholder} >
 	<slot name="label"  slot="label" />
 	<slot name="start"  slot="start" />
 	<slot name="end"  slot="end" />

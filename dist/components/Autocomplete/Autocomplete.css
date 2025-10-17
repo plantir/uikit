@@ -1,0 +1,134 @@
+@reference "../../css/app.css";
+
+@layer components {
+	.ui-autocomplete-wrapper {
+		@apply relative inline-flex flex-col;
+
+		.ui-autocomplete-label {
+			@apply mb-1;
+		}
+	}
+
+    .ui-autocomplete-menu {
+        @apply absolute shadow-xl p-2 rounded-xl bg-base-100;
+        z-index: 999;
+        top: auto;
+        left: 0;
+		--ui-autocomplete-menu-offset: 8px;
+		max-width: calc(100vw - 16px);
+		width: 100%;
+
+        &:not(.ui-autocomplete-menu-show) {
+            @apply hidden;
+        }
+        .ui-autocomplete-option {
+            @apply p-2 block w-full text-start hover:bg-base-300 cursor-pointer;
+            padding: 8px !important;
+        }
+    }
+
+    .ui-autocomplete {
+		@apply daisy-select w-full flex-wrap cursor-text;
+        height: unset;
+        padding: 4px !important;
+        min-height: var(--daisy-size);
+
+        .ui-autocomplete-input {
+            @apply outline-none;
+        }
+
+        .ui-autocomplete-badge {
+            @apply daisy-badge daisy-badge-primary;
+            padding: 4px 8px !important;
+        }
+    
+		&.ui-autocomplete-bordered {
+			/* DAISYTODO: @apply daisy-select-bordered; */
+		}
+		.ui-autocomplete-disabled {
+			/* DAISYTODO: @apply daisy-disabled; */
+		}
+		&.ui-autocomplete-xs  .ui-autocomplete-control {
+			@apply daisy-select-xs;
+		}
+		&.ui-autocomplete-sm .ui-autocomplete-control {
+			@apply daisy-select-sm;
+		}
+		&.ui-autocomplete-md .ui-autocomplete-control {
+			@apply daisy-select-md;
+		}
+		&.ui-autocomplete-lg .ui-autocomplete-control {
+			@apply daisy-select-lg;
+		}
+		&.ui-autocomplete-xl .ui-autocomplete-control {
+			@apply daisy-select-xl;
+		}
+		&.ui-autocomplete-primary {
+			@apply daisy-select-primary;
+		}
+		&.ui-autocomplete-secondary {
+			@apply daisy-select-secondary;
+		}
+		&.ui-autocomplete-accent {
+			@apply daisy-select-accent;
+		}
+		&.ui-autocomplete-success {
+			@apply daisy-select-success;
+		}
+		&.ui-autocomplete-info {
+			@apply daisy-select-info;
+		}
+		&.ui-autocomplete-error {
+			@apply daisy-select-error;
+		}
+		&.ui-autocomplete-warning {
+			@apply daisy-select-warning;
+		}
+		&.ui-autocomplete-neutral {
+			@apply daisy-select-neutral;
+		}
+
+        &.ui-autocomplete-primary .ui-autocomplete-badge {
+			@apply daisy-badge-primary;
+		}
+		&.ui-autocomplete-secondary .ui-autocomplete-badge {
+			@apply daisy-badge-secondary;
+		}
+		&.ui-autocomplete-accent .ui-autocomplete-badge {
+			@apply daisy-badge-accent;
+		}
+		&.ui-autocomplete-success .ui-autocomplete-badge {
+			@apply daisy-badge-success;
+		}
+		&.ui-autocomplete-info .ui-autocomplete-badge {
+			@apply daisy-badge-info;
+		}
+		&.ui-autocomplete-error .ui-autocomplete-badge {
+			@apply daisy-badge-error;
+		}
+		&.ui-autocomplete-warning .ui-autocomplete-badge {
+			@apply daisy-badge-warning;
+		}
+		&.ui-autocomplete-neutral .ui-autocomplete-badge {
+			@apply daisy-badge-neutral;
+		}
+
+        &.ui-autocomplete-state-valid .ui-autocomplete-control {
+			@apply daisy-select-success;
+		}
+		&.ui-autocomplete-state-invalid .ui-autocomplete-control {
+			@apply daisy-select-error;
+		}
+
+		&.ui-autocomplete-hint {
+			@apply daisy-label;
+			/* DAISYTODO: daisy-label-text-alt; */
+			.ui-autocomplete-hint-state-valid {
+				@apply text-green-500;
+			}
+			.ui-autocomplete-hint-state-invalid {
+				@apply text-red-500;
+			}
+		}
+	}
+}
