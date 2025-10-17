@@ -222,6 +222,10 @@ export const components = writable([
         icon: dataInputIcon,
         items: [
             {
+                title: 'Autocomplete',
+                value: 'autocomplete'
+            },
+            {
                 title: 'Checkbox',
                 value: 'checkbox'
             },
