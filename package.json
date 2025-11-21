@@ -14,6 +14,7 @@
 		"lint": "prettier --check ."
 	},
 	"files": [
+		"src/lib",
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
