@@ -14,7 +14,6 @@
 		"lint": "prettier --check ."
 	},
 	"files": [
-		"src/lib",
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
@@ -29,6 +28,9 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./css/*": {
+			"default": "./dist/css/*"
 		}
 	},
 	"peerDependencies": {
