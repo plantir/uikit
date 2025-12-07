@@ -60,3 +60,4 @@ npm publish
 
 some change for test
 some new changes
+some new changes
