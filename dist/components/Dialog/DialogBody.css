@@ -1,5 +1,0 @@
-@layer components {
-	.ui-dialog-body {
-		@apply py-4;
-	}
-}

@@ -1,9 +1,0 @@
-@layer components {
-	.ui-stats {
-		@apply daisy-stats daisy-stats-vertical md:daisy-stats-horizontal;
-	}
-
-	.ui-stats.ui-stats-vertical {
-		@apply daisy-stats-vertical!;
-	}
-}

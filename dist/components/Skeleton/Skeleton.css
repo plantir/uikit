@@ -1,5 +1,0 @@
-@layer components {
-	.ui-skeleton {
-		@apply daisy-skeleton;
-	}
-}

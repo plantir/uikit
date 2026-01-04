@@ -1,9 +1,0 @@
-@layer components {
-	.ui-dialog-header {
-		/*  */
-	}
-
-	.ui-dialog-header-title {
-		@apply font-bold text-lg;
-	}
-}

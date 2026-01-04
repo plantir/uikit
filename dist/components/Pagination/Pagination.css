@@ -1,9 +1,0 @@
-@layer components {
-	.ui-pagination {
-		/* // @apply .daisy-join; */
-
-		&-item {
-			/* // @apply .daisy-join-item; */
-		}
-	}
-}
