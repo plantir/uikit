@@ -34,6 +34,9 @@
 		"./css/*": "./dist/css/*",
 		"./css/themes/*": "./dist/css/themes/*"
 	},
+	"imports": {
+		"#app.css": "./src/lib/css/app.css"
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},

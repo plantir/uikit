@@ -941,7 +941,7 @@
 </div>
 
 <style global>
-	@reference "tailwindcss";
+	@im "tailwindcss";
 
 	.mockup-window {
 		position: relative;

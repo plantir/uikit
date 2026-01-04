@@ -1,4 +1,4 @@
-@reference '../app.css';
+@import '#app.css';
 
 [data-theme='fluent'] {
 	&:root {

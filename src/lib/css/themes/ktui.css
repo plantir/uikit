@@ -1,4 +1,4 @@
-@reference '../app.css';
+@import '#app.css';
 
 [data-theme='ktui'] {
 	&:root {
@@ -24,8 +24,8 @@
 			--tw-font-weight: var(--font-weight-medium);
 			font-weight: var(--font-weight-medium);
 			color: var(--color-mono);
-			&:after{
-				color:var(--color-muted-foreground)
+			&:after {
+				color: var(--color-muted-foreground);
 			}
 		}
 		.ui-accordion-content {
