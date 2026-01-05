@@ -3,53 +3,63 @@
 	import './Badge.css';
 	import El from '$lib/utils/El.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
-	import { createEventDispatcher } from 'svelte';
 	import { fade } from 'svelte/transition';
-	type $$Props = Badge;
-	let componentName = 'badge';
-	export let disabled: boolean = false;
-	export let size: BadgeSize = undefined;
-	export let color: BadgeColor = undefined;
-	export let variant: BadgeVariant = undefined;
-	export let dismissable = false;
-	let dispatch = createEventDispatcher();
-	let show = true;
-	function close() {
-		dispatch('close');
-		show = false;
-	}
-	$: componentClass = {
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		xl: size == 'xl',
-		disabled: disabled,
+	import type { Snippet } from 'svelte';
+	let {
+		disabled = false,
+		size = 'md',
+		color,
+		variant,
 		dismissable,
-		outline: variant == 'outline',
-		glass: variant == 'glass',
-		soft: variant == 'soft',
-		dash: variant == 'dash',
-		ghost: variant == 'ghost',
-		dot: variant == 'dot',
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		neutral: color == 'neutral'
+		children,
+		close_snippet = defaultCloseSnippet,
+		onClose,
+		...others
+	}: {
+		disabled: boolean;
+		size: BadgeSize;
+		color: BadgeColor;
+		variant: BadgeVariant;
+		dismissable: boolean;
+		children: any;
+		close_snippet: Snippet;
+		onClose: any;
+	} = $props();
+	let componentName = 'badge';
+	let show = $state(true);
+	const closeBreadCrumb = () => {
+		if (onClose) {
+			onClose();
+		}
+		show = false;
 	};
+	let componentClass = $derived({
+		size,
+		disabled,
+		dismissable,
+		variant,
+		color
+	});
 </script>
 
+{#snippet defaultCloseSnippet()}
+	✕
+{/snippet}
 {#if show}
 	<span transition:fade>
-		<El {componentName} {componentClass} {...$$restProps}>
-			<slot />
+		<El {componentName} {componentClass} {...others}>
+			{#if children}
+				{@render children()}
+			{/if}
 			{#if dismissable}
-				<Button on:click={close} shape="circle" size="xs" variant="link" aria-label="close">
-					<slot name="close">✕</slot>
+				<Button
+					on:click={closeBreadCrumb}
+					shape="circle"
+					size="xs"
+					variant="link"
+					aria-label="close"
+				>
+					{@render close_snippet()}
 				</Button>
 			{/if}
 		</El>

@@ -2,12 +2,18 @@
 	import type { AvatarGroup } from './AvatarGroup.type.js';
 	import './AvatarGroup.css';
 	import El from '$lib/utils/El.svelte';
-	type $$Props = AvatarGroup;
+	let {
+		children,
+		...others
+	}: {
+		children: any;
+	} = $props();
 	let componentName = 'avatar-group';
-
-	$: componentClass = {};
+	let componentClass = $derived({});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-	<slot />
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

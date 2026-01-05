@@ -9,59 +9,62 @@
 		ButtonVariant
 	} from './Button.type.ts';
 	import './Button.css';
-	type $$Props = Button;
+	import type { Snippet } from 'svelte';
+	let {
+		disabled = false,
+		href = '',
+		loading = $bindable(false),
+		wide = false,
+		active = false,
+		block = false,
+		size,
+		variant,
+		shape,
+		color,
+		children,
+		loader = defaultLoader,
+		...others
+	}: {
+		disabled?: boolean;
+		href?: string;
+		loading?: boolean;
+		wide?: boolean;
+		active?: boolean;
+		block?: boolean;
+		size?: ButtonSize;
+		variant?: ButtonVariant;
+		shape?: ButtonShape;
+		color?: ButtonColor;
+		loader?: Snippet;
+		children?: Snippet;
+	} = $props();
 	let componentName = 'button';
-	export let disabled: boolean = false;
-	export let href: string = '';
-	export let loading = false;
-	export let wide = false;
-	export let active = false;
-	export let block = false;
-	export let size: ButtonSize = undefined;
-	export let variant: ButtonVariant = undefined;
-	export let shape: ButtonShape = undefined;
-	export let color: ButtonColor = undefined;
-	$: componentClass = {
+	let componentClass = $derived({
 		wide,
 		block,
 		loading,
 		active,
-		outline: variant == 'outline',
-		glass: variant == 'glass',
-		link: variant == 'link',
-		ghost: variant == 'ghost',
-		square: shape == 'square',
-		circle: shape == 'circle',
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		xl: size == 'xl',
+		variant,
+		size,
 		disabled: disabled || loading,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		neutral: color == 'neutral'
-	};
+		color
+	});
 </script>
 
+{#snippet defaultLoader()}
+	<Loading size="xs" />
+{/snippet}
 <El
 	tag={href ? 'a' : 'button'}
 	href={href ? href : undefined}
 	{componentName}
 	{componentClass}
-	{...$$restProps}
+	{...others}
 	on:click
 >
 	{#if loading}
-		<slot name="loader">
-			<Loading size="xs" />
-		</slot>
-	{:else}
-		<slot />
+		{@render loader()}
+	{:else if children}
+		{@render children()}
 	{/if}
 </El>
