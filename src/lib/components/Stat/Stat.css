@@ -1,40 +1,41 @@
 @import '../../css/app.css';
-@layer components {
-	.ui-stat {
-		@apply daisy-stat;
-	}
 
-	@media (width >=48rem) {
-		.ui-stats .ui-stat:not(:last-child) {
-			border-inline-end: none;
-			border-block-end: var(--border) dashed color-mix(in oklab, currentColor 10%, #0000);
-		}
-	}
-	.ui-stats-vertical .ui-stat:not(:last-child) {
+.ui-stat {
+	@apply daisy-stat;
+}
+
+@media (width >=48rem) {
+	.ui-stats .ui-stat:not(:last-child) {
 		border-inline-end: none;
 		border-block-end: var(--border) dashed color-mix(in oklab, currentColor 10%, #0000);
 	}
-	.ui-stat-figure {
-		@apply daisy-stat-figure;
-	}
+}
 
-	.ui-stat-title {
-		@apply daisy-stat-title;
-	}
+.ui-stats-vertical .ui-stat:not(:last-child) {
+	border-inline-end: none;
+	border-block-end: var(--border) dashed color-mix(in oklab, currentColor 10%, #0000);
+}
 
-	.ui-stat-value {
-		@apply daisy-stat-value;
-	}
+.ui-stat-figure {
+	@apply daisy-stat-figure;
+}
 
-	.ui-stat-desc {
-		@apply daisy-stat-desc;
-	}
+.ui-stat-title {
+	@apply daisy-stat-title;
+}
 
-	.ui-stat-actions {
-		@apply daisy-stat-actions;
-	}
+.ui-stat-value {
+	@apply daisy-stat-value;
+}
 
-	.ui-stat-center {
-		@apply place-items-center;
-	}
+.ui-stat-desc {
+	@apply daisy-stat-desc;
+}
+
+.ui-stat-actions {
+	@apply daisy-stat-actions;
+}
+
+.ui-stat-center {
+	@apply place-items-center;
 }

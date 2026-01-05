@@ -1,6 +1,5 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-dialog-body {
-		@apply py-4;
-	}
+
+.ui-dialog-body {
+	@apply py-4;
 }

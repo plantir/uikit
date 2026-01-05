@@ -1,19 +1,18 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-dropdown {
-		@apply daisy-dropdown;
 
-		.ui-dropdown-toggler {
-			@apply inline-flex;
-		}
+.ui-dropdown {
+	@apply daisy-dropdown;
 
-		.ui-dropdown-content {
-			/* DAISYTODO: @apply daisy-dropdown-content; */
-			@apply absolute p-2 shadow-sm daisy-menu z-[1] bg-base-100 rounded-box w-52;
+	.ui-dropdown-toggler {
+		@apply inline-flex;
+	}
 
-			&.ui-dropdown-content-hidden {
-				display: none;
-			}
+	.ui-dropdown-content {
+		/* DAISYTODO: @apply daisy-dropdown-content; */
+		@apply absolute p-2 shadow-sm daisy-menu z-[1] bg-base-100 rounded-box w-52;
+
+		&.ui-dropdown-content-hidden {
+			display: none;
 		}
 	}
 }

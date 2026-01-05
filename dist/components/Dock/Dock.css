@@ -1,63 +1,62 @@
 @import '../../css/app.css';
-@layer components {
-	.ui-dock {
-		@apply daisy-dock;
-	}
 
-	.ui-dock-size-xs {
-		@apply daisy-dock-xs;
-		font-size: 0.625rem;
-	}
+.ui-dock {
+	@apply daisy-dock;
+}
 
-	.ui-dock-size-sm {
-		@apply daisy-dock-sm;
-		font-size: 0.625rem;
-	}
+.ui-dock-size-xs {
+	@apply daisy-dock-xs;
+	font-size: 0.625rem;
+}
 
-	.ui-dock-size-md {
-		@apply daisy-dock-md;
-		font-size: 0.6875rem;
-	}
+.ui-dock-size-sm {
+	@apply daisy-dock-sm;
+	font-size: 0.625rem;
+}
 
-	.ui-dock-size-lg {
-		@apply daisy-dock-lg;
-		font-size: 0.6875rem;
-	}
+.ui-dock-size-md {
+	@apply daisy-dock-md;
+	font-size: 0.6875rem;
+}
 
-	.ui-dock-size-xl {
-		@apply daisy-dock-xl;
-		font-size: 0.75rem;
-	}
+.ui-dock-size-lg {
+	@apply daisy-dock-lg;
+	font-size: 0.6875rem;
+}
 
-	.ui-dock-color-primary {
-		@apply bg-primary text-primary-content;
-	}
+.ui-dock-size-xl {
+	@apply daisy-dock-xl;
+	font-size: 0.75rem;
+}
 
-	.ui-dock-color-secondary {
-		@apply bg-secondary text-secondary-content;
-	}
+.ui-dock-color-primary {
+	@apply bg-primary text-primary-content;
+}
 
-	.ui-dock-color-accent {
-		@apply bg-accent text-accent-content;
-	}
+.ui-dock-color-secondary {
+	@apply bg-secondary text-secondary-content;
+}
 
-	.ui-dock-color-info {
-		@apply bg-info text-info-content;
-	}
+.ui-dock-color-accent {
+	@apply bg-accent text-accent-content;
+}
 
-	.ui-dock-color-warning {
-		@apply bg-warning text-warning-content;
-	}
+.ui-dock-color-info {
+	@apply bg-info text-info-content;
+}
 
-	.ui-dock-color-error {
-		@apply bg-error text-error-content;
-	}
+.ui-dock-color-warning {
+	@apply bg-warning text-warning-content;
+}
 
-	.ui-dock-color-success {
-		@apply bg-success text-success-content;
-	}
+.ui-dock-color-error {
+	@apply bg-error text-error-content;
+}
 
-	.ui-dock-color-neutral {
-		@apply bg-neutral text-neutral-content;
-	}
+.ui-dock-color-success {
+	@apply bg-success text-success-content;
+}
+
+.ui-dock-color-neutral {
+	@apply bg-neutral text-neutral-content;
 }

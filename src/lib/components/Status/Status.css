@@ -1,66 +1,65 @@
 @import '../../css/app.css';
-@layer components {
-	.ui-status {
-		@apply daisy-status;
-	}
 
-	.ui-status-color-primary {
-		@apply daisy-status-primary;
-	}
+.ui-status {
+	@apply daisy-status;
+}
 
-	.ui-status-color-secondary {
-		@apply daisy-status-secondary;
-	}
+.ui-status-color-primary {
+	@apply daisy-status-primary;
+}
 
-	.ui-status-color-accent {
-		@apply daisy-status-accent;
-	}
+.ui-status-color-secondary {
+	@apply daisy-status-secondary;
+}
 
-	.ui-status-color-info {
-		@apply daisy-status-info;
-	}
+.ui-status-color-accent {
+	@apply daisy-status-accent;
+}
 
-	.ui-status-color-warning {
-		@apply daisy-status-warning;
-	}
+.ui-status-color-info {
+	@apply daisy-status-info;
+}
 
-	.ui-status-color-error {
-		@apply daisy-status-error;
-	}
+.ui-status-color-warning {
+	@apply daisy-status-warning;
+}
 
-	.ui-status-color-neutral {
-		@apply daisy-status-neutral;
-	}
+.ui-status-color-error {
+	@apply daisy-status-error;
+}
 
-	.ui-status-color-success {
-		@apply daisy-status-success;
-	}
+.ui-status-color-neutral {
+	@apply daisy-status-neutral;
+}
 
-	.ui-status-size-xs {
-		@apply daisy-status-xs;
-	}
+.ui-status-color-success {
+	@apply daisy-status-success;
+}
 
-	.ui-status-size-sm {
-		@apply daisy-status-sm;
-	}
+.ui-status-size-xs {
+	@apply daisy-status-xs;
+}
 
-	.ui-status-size-md {
-		@apply daisy-status-md;
-	}
+.ui-status-size-sm {
+	@apply daisy-status-sm;
+}
 
-	.ui-status-size-lg {
-		@apply daisy-status-lg;
-	}
+.ui-status-size-md {
+	@apply daisy-status-md;
+}
 
-	.ui-status-size-xl {
-		@apply daisy-status-xl;
-	}
+.ui-status-size-lg {
+	@apply daisy-status-lg;
+}
 
-	.ui-status-animate-ping {
-		@apply animate-ping;
-	}
+.ui-status-size-xl {
+	@apply daisy-status-xl;
+}
 
-	.ui-status-animate-bounce {
-		@apply animate-bounce;
-	}
+.ui-status-animate-ping {
+	@apply animate-ping;
+}
+
+.ui-status-animate-bounce {
+	@apply animate-bounce;
 }

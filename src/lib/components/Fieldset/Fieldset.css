@@ -1,11 +1,9 @@
 @import "../../css/app.css";
 
-@layer components {
-    .ui-fieldset {
-        @apply daisy-fieldset
-    }
+.ui-fieldset {
+    @apply daisy-fieldset
+}
 
-    .ui-fieldset-title {
-        @apply daisy-fieldset-legend
-    }
+.ui-fieldset-title {
+    @apply daisy-fieldset-legend
 }

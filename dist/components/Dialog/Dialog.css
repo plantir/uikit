@@ -1,121 +1,122 @@
 @reference "../../css/app.css";
-@layer components {
-	:root:has(:is(.ui-dialog[open])) {
-		overflow: hidden;
+
+:root:has(:is(.ui-dialog[open])) {
+	overflow: hidden;
+}
+
+.ui-dialog {
+	@apply daisy-modal;
+
+	.ui-dialog-box {
+		@apply daisy-modal-box;
 	}
 
-	.ui-dialog {
-		@apply daisy-modal;
+	&[open] .ui-dialog-box {
+		opacity: 1;
+		scale: 1;
+	}
+
+	&.ui-dialog-placement-bottom {
+		@apply daisy-modal-bottom;
 
 		.ui-dialog-box {
-			@apply daisy-modal-box;
+			height: auto;
+			width: 100%;
+			max-width: none;
+			max-height: calc(100vh - 5em);
+			translate: 0 100%;
+			scale: 1;
+			--daisy-modal-tl: var(--radius-box);
+			--daisy-modal-tr: var(--radius-box);
+			--daisy-modal-bl: 0;
+			--daisy-modal-br: 0;
 		}
 
 		&[open] .ui-dialog-box {
 			opacity: 1;
 			scale: 1;
+			translate: 0 0;
+		}
+	}
+
+	&.ui-dialog-placement-top {
+		@apply daisy-modal-top;
+
+		.ui-dialog-box {
+			height: auto;
+			width: 100%;
+			max-width: none;
+			max-height: calc(100vh - 5em);
+			translate: 0 -100%;
+			scale: 1;
+			--daisy-modal-tl: 0;
+			--daisy-modal-tr: 0;
+			--daisy-modal-bl: var(--radius-box);
+			--daisy-modal-br: var(--radius-box);
 		}
 
-		&.ui-dialog-placement-bottom {
-			@apply daisy-modal-bottom;
+		&[open] .ui-dialog-box {
+			opacity: 1;
+			scale: 1;
+			translate: 0 0;
+		}
+	}
 
-			.ui-dialog-box {
-				height: auto;
-				width: 100%;
-				max-width: none;
-				max-height: calc(100vh - 5em);
-				translate: 0 100%;
-				scale: 1;
-				--daisy-modal-tl: var(--radius-box);
-				--daisy-modal-tr: var(--radius-box);
-				--daisy-modal-bl: 0;
-				--daisy-modal-br: 0;
-			}
+	&.ui-dialog-placement-middle {
+		@apply daisy-modal-middle;
+	}
 
-			&[open] .ui-dialog-box {
-				opacity: 1;
-				scale: 1;
-				translate: 0 0;
-			}
+	&.ui-dialog-placement-start {
+		@apply daisy-modal-start;
+
+		.ui-dialog-box {
+			height: 100vh;
+			max-height: none;
+			width: auto;
+			max-width: none;
+			translate: -100% 0;
+			scale: 1;
+			--daisy-modal-tl: 0;
+			--daisy-modal-tr: var(--radius-box);
+			--daisy-modal-bl: 0;
+			--daisy-modal-br: var(--radius-box);
 		}
 
-		&.ui-dialog-placement-top {
-			@apply daisy-modal-top;
+		&[open] .ui-dialog-box {
+			translate: 0 0;
+			scale: 1;
+			opacity: 1;
+		}
+	}
 
-			.ui-dialog-box {
-				height: auto;
-				width: 100%;
-				max-width: none;
-				max-height: calc(100vh - 5em);
-				translate: 0 -100%;
-				scale: 1;
-				--daisy-modal-tl: 0;
-				--daisy-modal-tr: 0;
-				--daisy-modal-bl: var(--radius-box);
-				--daisy-modal-br: var(--radius-box);
-			}
+	&.ui-dialog-placement-end {
+		@apply daisy-modal-end;
 
-			&[open] .ui-dialog-box {
-				opacity: 1;
-				scale: 1;
-				translate: 0 0;
-			}
+		.ui-dialog-box {
+			height: 100vh;
+			max-height: none;
+			width: auto;
+			max-width: none;
+			translate: 100% 0;
+			scale: 1;
+			--daisy-modal-tl: 0;
+			--daisy-modal-tr: var(--radius-box);
+			--daisy-modal-bl: 0;
+			--daisy-modal-br: var(--radius-box);
 		}
 
-		&.ui-dialog-placement-middle {
-			@apply daisy-modal-middle;
+		&[open] .ui-dialog-box {
+			translate: 0 0;
+			scale: 1;
+			opacity: 1;
 		}
+	}
 
-		&.ui-dialog-placement-start {
-			@apply daisy-modal-start;
-			.ui-dialog-box {
-				height: 100vh;
-				max-height: none;
-				width: auto;
-				max-width: none;
-				translate: -100% 0;
-				scale: 1;
-				--daisy-modal-tl: 0;
-				--daisy-modal-tr: var(--radius-box);
-				--daisy-modal-bl: 0;
-				--daisy-modal-br: var(--radius-box);
-			}
+	.ui-dialog-backdrop {
+		@apply daisy-modal-backdrop cursor-pointer backdrop-blur-xs;
+	}
 
-			&[open] .ui-dialog-box {
-				translate: 0 0;
-				scale: 1;
-				opacity: 1;
-			}
-		}
-
-		&.ui-dialog-placement-end {
-			@apply daisy-modal-end;
-			.ui-dialog-box {
-				height: 100vh;
-				max-height: none;
-				width: auto;
-				max-width: none;
-				translate: 100% 0;
-				scale: 1;
-				--daisy-modal-tl: 0;
-				--daisy-modal-tr: var(--radius-box);
-				--daisy-modal-bl: 0;
-				--daisy-modal-br: var(--radius-box);
-			}
-
-			&[open] .ui-dialog-box {
-				translate: 0 0;
-				scale: 1;
-				opacity: 1;
-			}
-		}
-
-		.ui-dialog-backdrop {
-			@apply daisy-modal-backdrop cursor-pointer backdrop-blur-xs;
-		}
-
-		.ui-dialog-close-button {
-			@apply absolute right-4 top-4;
-		}
+	.ui-dialog-close-button {
+		@apply absolute right-4 top-4;
 	}
 }

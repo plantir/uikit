@@ -1,62 +1,61 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-table {
-		@apply daisy-table;
-	}
 
-	.ui-table-size-xs {
-		@apply daisy-table-xs;
-	}
+.ui-table {
+	@apply daisy-table;
+}
 
-	.ui-table-size-md {
-		@apply daisy-table-md;
-	}
+.ui-table-size-xs {
+	@apply daisy-table-xs;
+}
 
-	.ui-table-size-lg {
-		@apply daisy-table-lg;
-	}
+.ui-table-size-md {
+	@apply daisy-table-md;
+}
 
-	.ui-table-size-sm {
-		@apply daisy-table-sm;
-	}
+.ui-table-size-lg {
+	@apply daisy-table-lg;
+}
 
-	.ui-table-size-xl {
-		@apply daisy-table-xl;
-	}
+.ui-table-size-sm {
+	@apply daisy-table-sm;
+}
 
-	.ui-table-zebra {
-		@apply daisy-table-zebra;
-	}
+.ui-table-size-xl {
+	@apply daisy-table-xl;
+}
 
-	.ui-table-pin-head {
-		thead {
-			tr {
-				z-index: 1;
+.ui-table-zebra {
+	@apply daisy-table-zebra;
+}
+
+.ui-table-pin-head {
+	thead {
+		tr {
+			z-index: 1;
+			background-color: var(--color-base-100);
+			position: sticky;
+			top: 0;
+		}
+	}
+}
+
+.ui-table-pin-cols {
+	tbody {
+		tr {
+			th {
 				background-color: var(--color-base-100);
 				position: sticky;
-				top: 0;
+				left: 0;
+				right: 0;
 			}
 		}
 	}
+}
 
-	.ui-table-pin-cols {
-		tbody {
-			tr {
-				th {
-					background-color: var(--color-base-100);
-					position: sticky;
-					left: 0;
-					right: 0;
-				}
-			}
-		}
-	}
-
-	.ui-table-hover {
-		tbody {
-			tr:hover {
-				background-color: var(--color-base-200);
-			}
+.ui-table-hover {
+	tbody {
+		tr:hover {
+			background-color: var(--color-base-200);
 		}
 	}
 }

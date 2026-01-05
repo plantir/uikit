@@ -1,21 +1,25 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-card .ui-card-title {
-		@apply daisy-card-title;
-	}
-	.ui-card.ui-card-xs .ui-card-title {
-		--daisy-cardtitle-fs: 0.875rem;
-	}
-	.ui-card.ui-card-sm .ui-card-title {
-		--daisy-cardtitle-fs: 1rem;
-	}
-	.ui-card.ui-card-md .ui-card-title {
-		--daisy-cardtitle-fs: 1.25rem;
-	}
-	.ui-card.ui-card-lg .ui-card-title {
-		--daisy-cardtitle-fs: 1.5rem;
-	}
-	.ui-card.ui-card-xl .ui-card-title {
-		--daisy-cardtitle-fs: 2rem;
-	}
+
+.ui-card .ui-card-title {
+	@apply daisy-card-title;
+}
+
+.ui-card.ui-card-xs .ui-card-title {
+	--daisy-cardtitle-fs: 0.875rem;
+}
+
+.ui-card.ui-card-sm .ui-card-title {
+	--daisy-cardtitle-fs: 1rem;
+}
+
+.ui-card.ui-card-md .ui-card-title {
+	--daisy-cardtitle-fs: 1.25rem;
+}
+
+.ui-card.ui-card-lg .ui-card-title {
+	--daisy-cardtitle-fs: 1.5rem;
+}
+
+.ui-card.ui-card-xl .ui-card-title {
+	--daisy-cardtitle-fs: 2rem;
 }

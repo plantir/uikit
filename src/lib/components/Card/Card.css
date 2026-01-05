@@ -1,92 +1,90 @@
 @reference "../../css/app.css";
 
-@layer components {
 
-	.ui-card {
-		/* DAISYTODO: daisy-card-bordered */
-		@apply daisy-card bg-base-100 shadow-sm rounded-lg;
-	}
+.ui-card {
+	/* DAISYTODO: daisy-card-bordered */
+	@apply daisy-card bg-base-100 shadow-sm rounded-lg;
+}
 
-	.ui-card.ui-card-border {
-		border: var(--border) solid var(--color-base-content);
-		@apply shadow-none;
-	}
+.ui-card.ui-card-border {
+	border: var(--border) solid var(--color-base-content);
+	@apply shadow-none;
+}
 
-	.ui-card.ui-card-dashed {
-		border: var(--border) dashed var(--color-base-content);
-		@apply shadow-none;
-	}
+.ui-card.ui-card-dashed {
+	border: var(--border) dashed var(--color-base-content);
+	@apply shadow-none;
+}
 
-	.ui-card.ui-card-full-image {
-		@apply grid;
-	}
+.ui-card.ui-card-full-image {
+	@apply grid;
+}
 
-	.ui-card.ui-card-full-image>* {
-		grid-row-start: 1;
-		grid-column-start: 1;
-	}
+.ui-card.ui-card-full-image>* {
+	grid-row-start: 1;
+	grid-column-start: 1;
+}
 
-	.ui-card.ui-card-full-image .ui-card-body {
-		color: var(--color-neutral-content);
-		position: relative;
-	}
+.ui-card.ui-card-full-image .ui-card-body {
+	color: var(--color-neutral-content);
+	position: relative;
+}
 
-	.ui-card.ui-card-full-image :where(figure) {
-		border-radius: inherit;
-		overflow: hidden;
-	}
+.ui-card.ui-card-full-image :where(figure) {
+	border-radius: inherit;
+	overflow: hidden;
+}
 
-	.ui-card.ui-card-full-image :where(figure) img {
-		object-fit: cover;
-		filter: brightness(28%);
-		height: 100%;
-	}
+.ui-card.ui-card-full-image :where(figure) img {
+	object-fit: cover;
+	filter: brightness(28%);
+	height: 100%;
+}
 
-	.ui-card.ui-card-side {
-		@apply md:flex-row md:items-stretch;
-	}
+.ui-card.ui-card-side {
+	@apply md:flex-row md:items-stretch;
+}
 
-	.ui-card.ui-card-side :where(figure:first-child) {
-		@apply md:rounded-r-none md:overflow-hidden;
-	}
+.ui-card.ui-card-side :where(figure:first-child) {
+	@apply md:rounded-r-none md:overflow-hidden;
+}
 
-	.ui-card.ui-card-side :where(figure>*) {
-		@apply md:object-cover md:w-full md:h-full;
-	}
+.ui-card.ui-card-side :where(figure>*) {
+	@apply md:object-cover md:w-full md:h-full;
+}
 
-	.ui-card.ui-card-side figure>* {
-		@apply md:max-w-[unset]
-	}
+.ui-card.ui-card-side figure>* {
+	@apply md:max-w-[unset]
+}
 
-	.ui-card.ui-card-primary {
-		@apply bg-primary text-primary-content
-	}
+.ui-card.ui-card-primary {
+	@apply bg-primary text-primary-content
+}
 
-	.ui-card.ui-card-secondary {
-		@apply bg-secondary text-secondary-content
-	}
+.ui-card.ui-card-secondary {
+	@apply bg-secondary text-secondary-content
+}
 
-	.ui-card.ui-card-info {
-		@apply bg-info text-info-content
-	}
+.ui-card.ui-card-info {
+	@apply bg-info text-info-content
+}
 
-	.ui-card.ui-card-error {
-		@apply bg-error text-error-content
-	}
+.ui-card.ui-card-error {
+	@apply bg-error text-error-content
+}
 
-	.ui-card.ui-card-success {
-		@apply bg-success text-success-content
-	}
+.ui-card.ui-card-success {
+	@apply bg-success text-success-content
+}
 
-	.ui-card.ui-card-accent {
-		@apply bg-accent text-accent-content
-	}
+.ui-card.ui-card-accent {
+	@apply bg-accent text-accent-content
+}
 
-	.ui-card.ui-card-warning {
-		@apply bg-warning text-warning-content
-	}
+.ui-card.ui-card-warning {
+	@apply bg-warning text-warning-content
+}
 
-	.ui-card.ui-card-neutral {
-		@apply bg-neutral text-neutral-content
-	}
+.ui-card.ui-card-neutral {
+	@apply bg-neutral text-neutral-content
 }

@@ -1,69 +1,71 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-textarea-wrapper {
-		@apply inline-flex flex-col gap-y-1;
-	}
 
-	.ui-textarea {
-		@apply daisy-textarea w-full;
-	}
+.ui-textarea-wrapper {
+	@apply inline-flex flex-col gap-y-1;
+}
 
-	.ui-textarea-ghost {
-		@apply daisy-textarea-ghost
-	/* DAISYTODO: @apply daisy-textarea-bordered; */;
-	}
+.ui-textarea {
+	@apply daisy-textarea w-full;
+}
 
-	.ui-textarea-disabled {
-		/* DAISYTODO: @apply daisy-disabled; */
-	}
+.ui-textarea-ghost {
+	@apply daisy-textarea-ghost
+	/* DAISYTODO: @apply daisy-textarea-bordered; */
+	;
+}
 
-	.ui-textarea-xs {
-		@apply daisy-textarea-xs;
-	}
+.ui-textarea-disabled {
+	/* DAISYTODO: @apply daisy-disabled; */
+}
 
-	.ui-textarea-sm {
-		@apply daisy-textarea-sm;
-	}
+.ui-textarea-xs {
+	@apply daisy-textarea-xs;
+}
 
-	.ui-textarea-md {
-		@apply daisy-textarea-md;
-	}
+.ui-textarea-sm {
+	@apply daisy-textarea-sm;
+}
 
-	.ui-textarea-lg {
-		@apply daisy-textarea-lg;
-	}
-	.ui-textarea-xl {
-		@apply daisy-textarea-xl;
-	}
+.ui-textarea-md {
+	@apply daisy-textarea-md;
+}
 
-	.ui-textarea-primary {
-		@apply daisy-textarea-primary;
-	}
+.ui-textarea-lg {
+	@apply daisy-textarea-lg;
+}
 
-	.ui-textarea-secondary {
-		@apply daisy-textarea-secondary;
-	}
+.ui-textarea-xl {
+	@apply daisy-textarea-xl;
+}
 
-	.ui-textarea-accent {
-		@apply daisy-textarea-accent;
-	}
+.ui-textarea-primary {
+	@apply daisy-textarea-primary;
+}
 
-	.ui-textarea-success {
-		@apply daisy-textarea-success;
-	}
+.ui-textarea-secondary {
+	@apply daisy-textarea-secondary;
+}
 
-	.ui-textarea-info {
-		@apply daisy-textarea-info;
-	}
+.ui-textarea-accent {
+	@apply daisy-textarea-accent;
+}
 
-	.ui-textarea-error {
-		@apply daisy-textarea-error;
-	}
+.ui-textarea-success {
+	@apply daisy-textarea-success;
+}
 
-	.ui-textarea-warning {
-		@apply daisy-textarea-warning;
-	}
-	.ui-textarea-neutral {
-		@apply daisy-textarea-neutral;
-	}
+.ui-textarea-info {
+	@apply daisy-textarea-info;
+}
+
+.ui-textarea-error {
+	@apply daisy-textarea-error;
+}
+
+.ui-textarea-warning {
+	@apply daisy-textarea-warning;
+}
+
+.ui-textarea-neutral {
+	@apply daisy-textarea-neutral;
 }

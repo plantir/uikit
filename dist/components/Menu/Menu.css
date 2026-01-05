@@ -1,95 +1,96 @@
 @import '../../css/app.css';
-@layer components {
-	.ui-menu {
-		@apply daisy-menu;
-	}
 
-	.ui-menu :where(li) {
-		flex-flow: column wrap;
-		flex-shrink: 0;
-		align-items: stretch;
-		display: flex;
-		position: relative;
-	}
+.ui-menu {
+	@apply daisy-menu;
+}
 
-	.ui-menu :where(li:not(.menu-title) > :not(ul, details, .menu-title, .btn)),
-	.ui-menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
-		border-radius: var(--radius-field);
-		text-align: start;
-		text-wrap: balance;
-		-webkit-user-select: none;
-		user-select: none;
-		grid-auto-columns: minmax(auto, max-content) auto max-content;
-		grid-auto-flow: column;
-		align-content: flex-start;
-		align-items: center;
-		gap: 0.5rem;
-		padding-block: 0.375rem;
-		padding-inline: 0.75rem;
-		transition-property: color, background-color, box-shadow;
-		transition-duration: 0.2s;
-		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-		display: grid;
-	}
+.ui-menu :where(li) {
+	flex-flow: column wrap;
+	flex-shrink: 0;
+	align-items: stretch;
+	display: flex;
+	position: relative;
+}
 
-	.menu-title {
-		color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
-	}
+.ui-menu :where(li:not(.menu-title) > :not(ul, details, .menu-title, .btn)),
+.ui-menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+	border-radius: var(--radius-field);
+	text-align: start;
+	text-wrap: balance;
+	-webkit-user-select: none;
+	user-select: none;
+	grid-auto-columns: minmax(auto, max-content) auto max-content;
+	grid-auto-flow: column;
+	align-content: flex-start;
+	align-items: center;
+	gap: 0.5rem;
+	padding-block: 0.375rem;
+	padding-inline: 0.75rem;
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	display: grid;
+}
 
-	.ui-menu :where(li details ul):before {
-		background-color: var(--color-base-content);
-		opacity: 0.1;
-		width: var(--border);
-		content: '';
-		inset-inline-start: 0;
-		position: absolute;
-		top: 0.75rem;
-		bottom: 0.75rem;
-	}
+.menu-title {
+	color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
+}
 
-	.menu-title {
-		color: color-mix(in srgb, var(--color-base-content) 40%, transparent);
-		padding-block: 0.5rem;
-		padding-inline: 0.75rem;
-		font-size: 0.875rem;
-		font-weight: 600;
-	}
+.ui-menu :where(li details ul):before {
+	background-color: var(--color-base-content);
+	opacity: 0.1;
+	width: var(--border);
+	content: '';
+	inset-inline-start: 0;
+	position: absolute;
+	top: 0.75rem;
+	bottom: 0.75rem;
+}
 
-	.ui-menu :where(li).ui-menu-item-disabled {
-		pointer-events: none;
-		color: color-mix(in srgb, var(--color-base-content) 20%, transparent);
-	}
-	.ui-menu :where(li).ui-menu-item-active {
-		border-radius: var(--radius-field);
-		box-shadow: 0 2px calc(var(--depth) * 3px) -2px var(--daisy-menu-active-bg);
-		--tw-outline-style: none;
-		color: var(--daisy-menu-active-fg);
-		background-color: var(--daisy-menu-active-bg);
-		background-size: auto, calc(var(--noise) * 100%);
-		background-image: none, var(--fx-noise);
-		outline-style: none;
-	}
-	.ui-menu-horzintal {
-		@apply daisy-menu-horizontal;
-	}
+.menu-title {
+	color: color-mix(in srgb, var(--color-base-content) 40%, transparent);
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
 
-	.ui-menu-size-xs {
-		@apply daisy-menu-xs;
-	}
+.ui-menu :where(li).ui-menu-item-disabled {
+	pointer-events: none;
+	color: color-mix(in srgb, var(--color-base-content) 20%, transparent);
+}
 
-	.ui-menu-size-sm {
-		@apply daisy-menu-sm;
-	}
+.ui-menu :where(li).ui-menu-item-active {
+	border-radius: var(--radius-field);
+	box-shadow: 0 2px calc(var(--depth) * 3px) -2px var(--daisy-menu-active-bg);
+	--tw-outline-style: none;
+	color: var(--daisy-menu-active-fg);
+	background-color: var(--daisy-menu-active-bg);
+	background-size: auto, calc(var(--noise) * 100%);
+	background-image: none, var(--fx-noise);
+	outline-style: none;
+}
 
-	.ui-menu-size-md {
-		@apply daisy-menu-md;
-	}
+.ui-menu-horzintal {
+	@apply daisy-menu-horizontal;
+}
 
-	.ui-menu-size-lg {
-		@apply daisy-menu-lg;
-	}
+.ui-menu-size-xs {
+	@apply daisy-menu-xs;
+}
 
-	.ui-menu-size-xl {
-		@apply daisy-menu-xl;
-	}
+.ui-menu-size-sm {
+	@apply daisy-menu-sm;
+}
+
+.ui-menu-size-md {
+	@apply daisy-menu-md;
+}
+
+.ui-menu-size-lg {
+	@apply daisy-menu-lg;
+}
+
+.ui-menu-size-xl {
+	@apply daisy-menu-xl;
 }

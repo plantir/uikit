@@ -1,138 +1,152 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-collapse {
-		@apply daisy-collapse;
+
+.ui-collapse {
+	@apply daisy-collapse;
+}
+
+.ui-collapse-title {
+	@apply daisy-collapse-title cursor-pointer;
+}
+
+.ui-collapse-content {
+	@apply daisy-collapse-content;
+}
+
+.ui-collapse-plus {
+	@apply daisy-collapse-plus;
+
+	&:after {
+		position: absolute;
+		display: block;
+		height: 0.5rem
+			/* 8px */
+		;
+		width: 0.5rem
+			/* 8px */
+		;
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 300ms;
+		top: 0.9rem
+			/* 14.4px */
+		;
+		inset-inline-end: 1.4rem
+			/* 22.4px */
+		;
+		content: '+';
+		pointer-events: none;
+	}
+}
+
+.ui-collapse-arrow>.ui-collapse-title:after {
+	content: '';
+	transform-origin: 75% 75%;
+	pointer-events: none;
+	top: 1.9rem;
+	width: 0.5rem;
+	height: 0.5rem;
+	transition-property: all;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	display: block;
+	position: absolute;
+	inset-inline-end: 1.4rem;
+	transform: translateY(-100%) rotate(45deg);
+	box-shadow: 2px 2px;
+}
+
+.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close)>.ui-accordion-title:after,
+.ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)>input:is([type='checkbox'], [type='radio']):checked~.ui-accordion-title:after {
+	transform: translateY(-50%) rotate(225deg);
+}
+
+.ui-collapse-arrow {
+	@apply daisy-collapse-arrow;
+
+	&:after {
+		position: absolute;
+		display: block;
+		height: 0.5rem
+			/* 8px */
+		;
+		width: 0.5rem
+			/* 8px */
+		;
+		--tw-translate-y: -100%;
+		--tw-rotate: 45deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 150ms;
+		transition-duration: 0.2s;
+		top: 1.9rem
+			/* 30.4px */
+		;
+		inset-inline-end: 1.4rem
+			/* 22.4px */
+		;
+		content: '';
+		transform-origin: 75% 75%;
+		box-shadow: 2px 2px;
+		pointer-events: none;
+	}
+}
+
+.ui-collapse-open {
+	grid-template-rows: auto 1fr;
+
+	&.ui-collapse-plus:after {
+		content: '−';
 	}
 
-	.ui-collapse-title {
-		@apply daisy-collapse-title cursor-pointer;
+	&.ui-collapse-arrow:after {
+		--tw-translate-y: -50%;
+		--tw-rotate: 225deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	}
 
 	.ui-collapse-content {
-		@apply daisy-collapse-content;
+		visibility: visible;
+		min-height: fit-content !important;
+		padding-bottom: 1rem
+			/* 16px */
+		;
+		transition:
+			padding 0.2s ease-out,
+			background-color 0.2s ease-out;
 	}
+}
 
-	.ui-collapse-plus {
-		@apply daisy-collapse-plus;
+.ui-collapse-primary {
+	@apply bg-primary text-primary-content;
+}
 
-		&:after {
-			position: absolute;
-			display: block;
-			height: 0.5rem /* 8px */;
-			width: 0.5rem /* 8px */;
-			transition-property: all;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-			transition-duration: 300ms;
-			top: 0.9rem /* 14.4px */;
-			inset-inline-end: 1.4rem /* 22.4px */;
-			content: '+';
-			pointer-events: none;
-		}
-	}
-	.ui-collapse-arrow > .ui-collapse-title:after {
-		content: '';
-		transform-origin: 75% 75%;
-		pointer-events: none;
-		top: 1.9rem;
-		width: 0.5rem;
-		height: 0.5rem;
-		transition-property: all;
-		transition-duration: 0.2s;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		display: block;
-		position: absolute;
-		inset-inline-end: 1.4rem;
-		transform: translateY(-100%) rotate(45deg);
-		box-shadow: 2px 2px;
-	}
-	.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close) > .ui-accordion-title:after,
-	.ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)
-		> input:is([type='checkbox'], [type='radio']):checked
-		~ .ui-accordion-title:after {
-		transform: translateY(-50%) rotate(225deg);
-	}
-	.ui-collapse-arrow {
-		@apply daisy-collapse-arrow;
+.ui-collapse-secondary {
+	@apply bg-secondary text-secondary-content;
+}
 
-		&:after {
-			position: absolute;
-			display: block;
-			height: 0.5rem /* 8px */;
-			width: 0.5rem /* 8px */;
-			--tw-translate-y: -100%;
-			--tw-rotate: 45deg;
-			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
-				skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
-				scaleY(var(--tw-scale-y));
-			transition-property: all;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-			transition-duration: 150ms;
-			transition-duration: 0.2s;
-			top: 1.9rem /* 30.4px */;
-			inset-inline-end: 1.4rem /* 22.4px */;
-			content: '';
-			transform-origin: 75% 75%;
-			box-shadow: 2px 2px;
-			pointer-events: none;
-		}
-	}
+.ui-collapse-accent {
+	@apply bg-accent text-accent-content;
+}
 
-	.ui-collapse-open {
-		grid-template-rows: auto 1fr;
+.ui-collapse-success {
+	@apply bg-success text-success-content;
+}
 
-		&.ui-collapse-plus:after {
-			content: '−';
-		}
+.ui-collapse-info {
+	@apply bg-info text-info-content;
+}
 
-		&.ui-collapse-arrow:after {
-			--tw-translate-y: -50%;
-			--tw-rotate: 225deg;
-			transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
-				skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
-				scaleY(var(--tw-scale-y));
-		}
+.ui-collapse-error {
+	@apply bg-error text-error-content;
+}
 
-		.ui-collapse-content {
-			visibility: visible;
-			min-height: fit-content !important;
-			padding-bottom: 1rem /* 16px */;
-			transition:
-				padding 0.2s ease-out,
-				background-color 0.2s ease-out;
-		}
-	}
+.ui-collapse-warning {
+	@apply bg-warning text-warning-content;
+}
 
-	.ui-collapse-primary {
-		@apply bg-primary text-primary-content;
-	}
-
-	.ui-collapse-secondary {
-		@apply bg-secondary text-secondary-content;
-	}
-
-	.ui-collapse-accent {
-		@apply bg-accent text-accent-content;
-	}
-
-	.ui-collapse-success {
-		@apply bg-success text-success-content;
-	}
-
-	.ui-collapse-info {
-		@apply bg-info text-info-content;
-	}
-
-	.ui-collapse-error {
-		@apply bg-error text-error-content;
-	}
-
-	.ui-collapse-warning {
-		@apply bg-warning text-warning-content;
-	}
-
-	.ui-collapse-disabled {
-		@apply pointer-events-none;
-	}
+.ui-collapse-disabled {
+	@apply pointer-events-none;
 }

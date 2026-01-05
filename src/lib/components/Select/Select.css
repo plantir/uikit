@@ -1,79 +1,98 @@
 @reference "../../css/app.css";
-@layer components {
-	.ui-select-wrapper {
-		@apply inline-flex flex-col;
-		.ui-select-label {
-			@apply mb-1;
-		}
+
+.ui-select-wrapper {
+	@apply inline-flex flex-col;
+
+	.ui-select-label {
+		@apply mb-1;
+	}
+}
+
+.ui-select {
+	@apply daisy-select w-full;
+
+	&.ui-select-multiple {
+		height: unset;
 	}
 
-	.ui-select {
-		@apply daisy-select w-full;
+	&.ui-select-bordered {
+		/* DAISYTODO: @apply daisy-select-bordered; */
+	}
 
-		&.ui-select-multiple {
-			height: unset;
-		}
-		&.ui-select-bordered {
-			/* DAISYTODO: @apply daisy-select-bordered; */
-		}
-		.ui-select-disabled {
-			/* DAISYTODO: @apply daisy-disabled; */
-		}
-		&.ui-select-xs {
-			@apply daisy-select-xs;
-		}
-		&.ui-select-sm {
-			@apply daisy-select-sm;
-		}
-		&.ui-select-md {
-			@apply daisy-select-md;
-		}
-		&.ui-select-lg {
-			@apply daisy-select-lg;
-		}
-		&.ui-select-xl {
-			@apply daisy-select-xl;
-		}
-		&.ui-select-primary {
-			@apply daisy-select-primary;
-		}
-		&.ui-select-secondary {
-			@apply daisy-select-secondary;
-		}
-		&.ui-select-accent {
-			@apply daisy-select-accent;
-		}
-		&.ui-select-success {
-			@apply daisy-select-success;
-		}
-		&.ui-select-info {
-			@apply daisy-select-info;
-		}
-		&.ui-select-error {
-			@apply daisy-select-error;
-		}
-		&.ui-select-warning {
-			@apply daisy-select-warning;
-		}
-		&.ui-select-neutral {
-			@apply daisy-select-neutral;
-		}
-		&.ui-select-state-valid {
-			@apply daisy-select-success;
-		}
-		&.ui-select-state-invalid {
-			@apply daisy-select-error;
+	.ui-select-disabled {
+		/* DAISYTODO: @apply daisy-disabled; */
+	}
+
+	&.ui-select-xs {
+		@apply daisy-select-xs;
+	}
+
+	&.ui-select-sm {
+		@apply daisy-select-sm;
+	}
+
+	&.ui-select-md {
+		@apply daisy-select-md;
+	}
+
+	&.ui-select-lg {
+		@apply daisy-select-lg;
+	}
+
+	&.ui-select-xl {
+		@apply daisy-select-xl;
+	}
+
+	&.ui-select-primary {
+		@apply daisy-select-primary;
+	}
+
+	&.ui-select-secondary {
+		@apply daisy-select-secondary;
+	}
+
+	&.ui-select-accent {
+		@apply daisy-select-accent;
+	}
+
+	&.ui-select-success {
+		@apply daisy-select-success;
+	}
+
+	&.ui-select-info {
+		@apply daisy-select-info;
+	}
+
+	&.ui-select-error {
+		@apply daisy-select-error;
+	}
+
+	&.ui-select-warning {
+		@apply daisy-select-warning;
+	}
+
+	&.ui-select-neutral {
+		@apply daisy-select-neutral;
+	}
+
+	&.ui-select-state-valid {
+		@apply daisy-select-success;
+	}
+
+	&.ui-select-state-invalid {
+		@apply daisy-select-error;
+	}
+
+	&.ui-select-hint {
+		@apply daisy-label;
+
+		/* DAISYTODO: daisy-label-text-alt; */
+		.ui-select-hint-state-valid {
+			@apply text-green-500;
 		}
 
-		&.ui-select-hint {
-			@apply daisy-label;
-			/* DAISYTODO: daisy-label-text-alt; */
-			.ui-select-hint-state-valid {
-				@apply text-green-500;
-			}
-			.ui-select-hint-state-invalid {
-				@apply text-red-500;
-			}
+		.ui-select-hint-state-invalid {
+			@apply text-red-500;
 		}
 	}
 }
