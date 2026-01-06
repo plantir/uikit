@@ -3,33 +3,34 @@
 	import El from '$lib/utils/El.svelte';
 	import type { TimeLine, TimeLineItems } from './TimeLine.type.js';
 	import type { GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
-	type $$Props = TimeLine;
+
+	let {
+		value = $bindable(''),
+		items = [],
+		color,
+		icon = true,
+		clickable = false,
+		reverse = false,
+		vertical = false,
+		...others
+	}: TimeLine = $props();
+
 	let componentName = 'timeline';
-	export let value: any = '';
-	export let items: TimeLineItems[] = [];
-	export let color: GlobalColor = undefined;
-	export let icon: any = true;
-	export let clickable: boolean = false;
-	export let reverse: boolean = false;
-	export let vertical: boolean = false;
-	$: componentClass = {
+	let componentClass = $derived({
 		color: color,
 		reverse,
 		vertical
-	};
+	});
 	const activeValue = (val: any) => {
 		if (clickable) {
 			value = val;
 		}
 	};
-	let valueIndex = 0;
-	$: {
-		valueIndex = items.findIndex((x) => x.value == value);
-	}
+	let valueIndex = $derived(items.findIndex((x) => x.value == value));
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}>
+<El {componentName} {componentClass} {...others}>
 	{#each items as item, index}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->

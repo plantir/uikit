@@ -3,18 +3,22 @@
 	import El from '$lib/utils/El.svelte';
 	import type { Status, StatusAnimate } from './Status.type.js';
 	import type { GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
-	type $$Props = Status;
+
+	let {
+		color,
+		size,
+		animate,
+		...others
+	}: Status = $props();
+
 	let componentName = 'status';
-	export let color: GlobalColor = undefined;
-	export let size: GlobalSize = undefined;
-	export let animate: StatusAnimate = undefined;
-	$: componentClass = {
+	let componentClass = $derived({
 		color: color,
 		size: size,
 		animate: animate
-	};
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}></El>
+<El {componentName} {componentClass} {...others}></El>
 <!-- </span> -->

@@ -2,14 +2,24 @@
 	import El from '$lib/utils/El.svelte';
 	import type { Toast, Toastplacement } from './Toast.type.js';
 	import './Toast.css';
-	type $$Props = Toast;
+	import type { Snippet } from 'svelte';
+
+	let {
+		placement = 'bottom-end',
+		children,
+		...others
+	}: Toast & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'toast';
-	export let placement: Toastplacement = 'bottom-end';
-	$: componentClass = {
+	let componentClass = $derived({
 		placement: placement
-	};
+	});
 </script>
 
-<El {componentClass} {componentName} {...$$restProps}>
-	<slot></slot>
+<El {componentClass} {componentName} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

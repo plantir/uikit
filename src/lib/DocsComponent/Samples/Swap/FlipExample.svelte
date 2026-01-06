@@ -23,16 +23,12 @@
 	</div>
 	<div slot="html">
 		<TagCode name="div">
-			<TagCode
-				name="Swap"
-				one_line
-				props={['on="ON"', 'off="OFF"', 'value={false}', 'flip']}
-			></TagCode>
+			<TagCode name="Swap" one_line props={['value={false}', 'flip']}></TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div>
-			<Swap value={false} on="ON" off="OFF" flip />
+			<Swap value={false} flip />
 		</div>
 	</div>
 </SampleWrapper>

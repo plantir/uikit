@@ -57,34 +57,34 @@
 	@apply md:max-w-[unset]
 }
 
-.ui-card.ui-card-primary {
+.ui-card.ui-card-color-primary {
 	@apply bg-primary text-primary-content
 }
 
-.ui-card.ui-card-secondary {
+.ui-card.ui-card-color-secondary {
 	@apply bg-secondary text-secondary-content
 }
 
-.ui-card.ui-card-info {
+.ui-card.ui-card-color-info {
 	@apply bg-info text-info-content
 }
 
-.ui-card.ui-card-error {
+.ui-card.ui-card-color-error {
 	@apply bg-error text-error-content
 }
 
-.ui-card.ui-card-success {
+.ui-card.ui-card-color-success {
 	@apply bg-success text-success-content
 }
 
-.ui-card.ui-card-accent {
+.ui-card.ui-card-color-accent {
 	@apply bg-accent text-accent-content
 }
 
-.ui-card.ui-card-warning {
+.ui-card.ui-card-color-warning {
 	@apply bg-warning text-warning-content
 }
 
-.ui-card.ui-card-neutral {
+.ui-card.ui-card-color-neutral {
 	@apply bg-neutral text-neutral-content
 }

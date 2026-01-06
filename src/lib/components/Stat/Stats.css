@@ -5,5 +5,5 @@
 }
 
 .ui-stats.ui-stats-vertical {
-	@apply daisy-stats-vertical !;
+	@apply daisy-stats-vertical;
 }

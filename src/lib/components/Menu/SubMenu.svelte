@@ -3,29 +3,41 @@
 	import El from '$lib/utils/El.svelte';
 	import type { SubMenu } from './SubMenu.type.js';
 	import type { GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
-	type $$Props = SubMenu;
+	import type { Snippet } from 'svelte';
+
+	let {
+		collapse = false,
+		title = '',
+		children,
+		...others
+	}: SubMenu & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'sub-menu';
-	export let collapse: boolean = false;
-	export let title = '';
-	$: componentClass = {};
+	let componentClass = $derived({});
 </script>
 
 <!-- <span transition:fade> -->
 {#if collapse}
-	<details open {...$$restProps}>
+	<details open {...others}>
 		{#if title}
 			<summary>{title}</summary>
 		{/if}
 		<ul>
-			<slot></slot>
+			{#if children}
+				{@render children()}
+			{/if}
 		</ul>
 	</details>
 {:else}
 	{#if title}
 		<a>{title}</a>
 	{/if}
-	<El {componentName} {componentClass} {...$$restProps} tag="ul">
-		<slot></slot>
+	<El {componentName} {componentClass} {...others} tag="ul">
+		{#if children}
+			{@render children()}
+		{/if}
 	</El>
 {/if}
 <!-- </span> -->

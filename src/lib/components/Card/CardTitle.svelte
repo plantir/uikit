@@ -2,18 +2,19 @@
 	import El from '$lib/utils/El.svelte';
 	import type { CardTitle } from './CardTitle.type.js';
 	import './CardTitle.css';
-	type $$Props = CardTitle;
+	import type { Snippet } from 'svelte';
+	let {
+		children,
+		...others
+	}: {
+		children?: Snippet;
+	} = $props();
 	let componentName = 'card-title';
-    
-	$: componentClass = {
-        
-	};
+	let componentClass = $derived({});
 </script>
 
-<El
-	tag="h2"
-	{componentName}
-	{componentClass}
-	{...$$restProps}>
-    <slot />
+<El tag="h2" {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

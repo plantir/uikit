@@ -11,25 +11,37 @@
 	import type { Tooltip, TooltipPlacement } from './Tooltip.type.js';
 	import './Tooltip.css';
 	import type { GlobalColor } from '$lib/utils/El.types.js';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = Tooltip;
+	let {
+		placement = 'top',
+		title = '',
+		color,
+		titleSnippet,
+		children,
+		...others
+	}: Tooltip & {
+		titleSnippet?: Snippet;
+		children?: Snippet;
+	} = $props();
 
-	export let placement: TooltipPlacement = 'top';
-	export let title: string = '';
-	export let color: GlobalColor = undefined;
 	let componentName = 'tooltip';
 
-	$: componentClass = {
+	let componentClass = $derived({
 		placement,
 		color
-	};
+	});
+
+	let dataTip = $derived(titleSnippet ? '' : title);
 </script>
 
-<El {componentClass} {componentName} {...$$restProps} data-tip={$$slots.title ? '' : title}>
-	{#if $$slots.title}
+<El {componentClass} {componentName} {...others} data-tip={dataTip}>
+	{#if titleSnippet}
 		<div class="tooltip-content">
-			<slot name="title" />
+			{@render titleSnippet()}
 		</div>
 	{/if}
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

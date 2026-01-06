@@ -1,65 +1,80 @@
 <script lang="ts">
-    import type { PageHeader } from './PageHeader.type.js'
+	import type { PageHeader } from './PageHeader.type.js';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import El from '$lib/utils/El.svelte';
 	import Icon from '../Icon/Icon.svelte';
-    import './PageHeader.css'
-    
-    type $$Props = PageHeader
+	import './PageHeader.css';
+	import type { Snippet } from 'svelte';
 
-    export let back: boolean | undefined = false;
-    export let title: string | undefined = undefined;
-    export let subtitle: string | undefined = undefined;
-    
-    let componentName = 'page-header'
-    
-    function onBack() {
-        history.back()
-    }
-    
-    $: componentClass = {}
+	let {
+		back = false,
+		title,
+		subtitle,
+		children,
+		...others
+	}: PageHeader & {
+		children?: Snippet;
+	} = $props();
 
-	$: actionsClass = ClassMerge({
-        name: `${componentName}-actions`,
-	});
+	let componentName = 'page-header';
 
-	$: backClass = ClassMerge({
-        name: `${componentName}-back`,
-	});
+	function onBack() {
+		history.back();
+	}
 
-	$: subtitleClass = ClassMerge({
-        name: `${componentName}-subtitle`,
-	});
+	let componentClass = $derived({});
 
-    $: innerClass = ClassMerge({
-        name: `${componentName}-inner`
-    })
+	let actionsClass = $derived(
+		ClassMerge({
+			name: `${componentName}-actions`
+		})
+	);
 
-    $: titleWrapperClass = ClassMerge({
-        name: `${componentName}-title-wrapper`,
-    })
+	let backClass = $derived(
+		ClassMerge({
+			name: `${componentName}-back`
+		})
+	);
+
+	let subtitleClass = $derived(
+		ClassMerge({
+			name: `${componentName}-subtitle`
+		})
+	);
+
+	let innerClass = $derived(
+		ClassMerge({
+			name: `${componentName}-inner`
+		})
+	);
+
+	let titleWrapperClass = $derived(
+		ClassMerge({
+			name: `${componentName}-title-wrapper`
+		})
+	);
 </script>
 
-<El {componentClass} {componentName} {...$$restProps}>
-    <div class={innerClass}>
+<El {componentClass} {componentName} {...others}>
+	<div class={innerClass}>
 		<div class={titleWrapperClass}>
-            {#if back}
-                <button type="button" on:click={onBack} class={backClass}>
-                    <Icon name="ArrowLeftMinor" />
-                </button>
-            {/if}
-            {#if title}
-                <h1>{title}</h1>
-            {/if}
+			{#if back}
+				<button type="button" onclick={onBack} class={backClass}>
+					<Icon name="ArrowLeftMinor" />
+				</button>
+			{/if}
+			{#if title}
+				<h1>{title}</h1>
+			{/if}
 		</div>
-        {#if $$slots.default}
-            <div class={actionsClass}>
-                <slot />
-            </div>
-        {/if}
+		{#if children}
+			<div class={actionsClass}>
+				{@render children()}
+			</div>
+		{/if}
 	</div>
-    {#if subtitle}
-        <p class={subtitleClass}>{subtitle}</p>
-    {/if}
+	{#if subtitle}
+		<p class={subtitleClass}>{subtitle}</p>
+	{/if}
 </El>
 

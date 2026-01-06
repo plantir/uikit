@@ -2,23 +2,26 @@
 	import './Progress.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { Progress, ProgressColor, ProgressSize } from './Progress.type.js';
-	type $$Props = Progress;
+
+	let {
+		value=$bindable(),
+		color,
+		max = 100,
+		...others
+	}: Progress = $props();
+
 	let componentName = 'progress';
-	export let label: string | undefined = undefined;
-	export let value: string | number | undefined = undefined;
-	export let color: ProgressColor = undefined;
-	export let max: string | number | undefined = 100;
-	$: componentClass = {
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		neutral: color == 'neutral'
-	};
-	$: elClass = ClassMerge({ name: componentName, componentClass });
+	let componentClass = $derived({
+		primary: color === 'primary',
+		secondary: color === 'secondary',
+		accent: color === 'accent',
+		success: color === 'success',
+		info: color === 'info',
+		error: color === 'error',
+		warning: color === 'warning',
+		neutral: color === 'neutral'
+	});
+	let elClass = $derived(ClassMerge({ name: componentName, componentClass }));
 </script>
 
-<progress {...$$restProps} {value} class={elClass} {max} />
+<progress {value} class={elClass} {max} ></progress>

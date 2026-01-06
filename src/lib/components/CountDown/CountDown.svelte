@@ -10,37 +10,40 @@
 		CountDownSize,
 		CountDownColors
 	} from './CountDown.type.js';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, type Snippet } from 'svelte';
 	import { slide, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	type $$Props = CountDown;
+	let {
+		value = $bindable(),
+		type = 'colons',
+		size = 'md',
+		color,
+		children,
+		...others
+	}: CountDown & {
+		children?: Snippet;
+	} = $props();
 	let componentName = 'countdown';
-	export let value: CountDownValue = undefined;
-	export let type: CountDownType = 'colons';
-	export let size: CountDownSize = 'md';
-	export let color: CountDownColors | null = null;
-	$: componentClass = {
+
+	let componentClass = $derived({
 		colons: type == 'colons',
 		clock: type == 'clock',
 		box: type == 'box',
 		labels: type == 'labels',
 		labels_under: type == 'labels-under',
 		box_label: type == 'box-label',
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		color: color
-	};
-	let diff = {
+		size,
+		color
+	});
+	let diff = $state({
 		years: 0,
 		months: 0,
 		days: 0,
 		hours: 0,
 		minutes: 0,
 		seconds: 0
-	};
-	let interval: any | undefined = undefined;
+	});
+	let interval: any = $state();
 	onMount(() => {
 		interval = setInterval(() => {
 			diff.days = moment(value).diff(moment(), 'days');
@@ -62,7 +65,7 @@
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}>
+<El {componentName} {componentClass} {...others}>
 	{#if diff.days}
 		<div class="item">
 			<div>

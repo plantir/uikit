@@ -1,21 +1,29 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
-    import type {DialogHeader} from './DialogHeader.type.js'
-    import './DialogHeader.css'
+	import type { DialogHeader } from './DialogHeader.type.js';
+	import './DialogHeader.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
+	import type { Snippet } from 'svelte';
 
-    let componentName = 'dialog-header'
-    type $$Props = DialogHeader
-    export let title: $$Props['title'] = undefined;
+	let {
+		title,
+		children = defaultChildren,
+		...others
+	}: DialogHeader & {
+		children?: Snippet;
+	} = $props();
 
-    $: titleClass = ClassMerge({name: `${componentName}-title`})
-    $: componentClass = {}
+	let componentName = 'dialog-header';
+	let titleClass = $derived(ClassMerge({ name: `${componentName}-title` }));
+	let componentClass = $derived({});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-    <slot>
-        {#if title}
-            <h3 class={titleClass}>{title}</h3>
-        {/if}
-    </slot>
+{#snippet defaultChildren()}
+	{#if title}
+		<h3 class={titleClass}>{title}</h3>
+	{/if}
+{/snippet}
+
+<El {componentName} {componentClass} {...others}>
+	{@render children()}
 </El>

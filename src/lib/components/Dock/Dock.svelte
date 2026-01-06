@@ -3,18 +3,28 @@
 	import El from '$lib/utils/El.svelte';
 	import type { Dock } from './Dock.type.js';
 	import type { GlobalColor, GlobalSize } from '$lib/utils/El.types.js';
-	type $$Props = Dock;
+	import type { Snippet } from 'svelte';
+
+	let {
+		size = 'md',
+		color,
+		children,
+		...others
+	}: Dock & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'dock';
-	export let size: GlobalSize = 'md';
-	export let color: GlobalColor = undefined;
-	$: componentClass = {
+	let componentClass = $derived({
 		size,
 		color
-	};
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} >
-	<slot></slot>
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>
 <!-- </span> -->

@@ -1,47 +1,58 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import Button from '../Button/Button.svelte';
-	import { createEventDispatcher } from 'svelte';
 	import type { Pagination, PaginationColor, PaginationSize } from './Pagination.type.js';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import './Pagination.css';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = Pagination;
+	let {
+		page = $bindable(1),
+		lastPage = 1,
+		color,
+		size,
+		prev,
+		next,
+		onChange,
+		...others
+	}: Pagination & {
+		prev?: Snippet;
+		next?: Snippet;
+		onChange?: (page: number) => void;
+	} = $props();
+
 	let componentName = 'pagination';
-	let dispatch = createEventDispatcher();
-	export let page = 1;
-	export let lastPage = 1;
-	export let color: PaginationColor = undefined;
-	export let size: PaginationSize = undefined;
 	const changePage = (p: number) => {
 		page = p;
-		dispatch('change', page);
+		onChange?.(page);
 	};
-	$: componentClass = {
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
+	let componentClass = $derived({
+		xs: size === 'xs',
+		sm: size === 'sm',
+		md: size === 'md',
+		lg: size === 'lg',
 		color
-	};
+	});
 
 	// TODO: should remove staticClasses when daisyui bug resolved and daisy-join class below
 	// https://github.com/saadeghi/daisyui/issues/3084
-	$: paginationItemClass = ClassMerge({
-		name: componentName + '-item',
-		staticClassess: 'daisy-join-item'
-	});
+	let paginationItemClass = $derived(
+		ClassMerge({
+			name: componentName + '-item',
+			staticClassess: 'daisy-join-item'
+		})
+	);
 </script>
 
-<El class="daisy-join" {componentName} {componentClass} {...$$restProps}>
-	{#if $$slots.prev}
+<El class="daisy-join" {componentName} {componentClass} {...others}>
+	{#if prev}
 		<Button
 			{size}
-			on:click={(e) => changePage(+page - 1)}
+			onclick={() => changePage(+page - 1)}
 			disabled={page == 1}
 			class={paginationItemClass}
 		>
-			<slot name="prev"></slot>
+			{@render prev()}
 		</Button>
 	{/if}
 	{#if lastPage <= 6}
@@ -49,7 +60,7 @@
 			<Button
 				{size}
 				color={page == i + 1 ? color : undefined}
-				on:click={(e) => changePage(+i + 1)}
+				onclick={() => changePage(+i + 1)}
 				active={page == i + 1}
 				class={paginationItemClass}
 			>
@@ -58,7 +69,7 @@
 		{/each}
 	{:else}
 		{#if page > 2}
-			<Button {size} on:click={(e) => changePage(1)} class={paginationItemClass}>1</Button>
+			<Button {size} onclick={() => changePage(1)} class={paginationItemClass}>1</Button>
 		{/if}
 		{#if page > 3}
 			<Button {size} class={paginationItemClass}>...</Button>
@@ -66,7 +77,7 @@
 		{#if page > 1}
 			<Button
 				{size}
-				on:click={(e) => changePage(+page - 1)}
+				onclick={() => changePage(+page - 1)}
 				active={page == page - 1}
 				class={paginationItemClass}
 			>
@@ -79,7 +90,7 @@
 		{#if page < lastPage}
 			<Button
 				{size}
-				on:click={(e) => changePage(+page + 1)}
+				onclick={() => changePage(+page + 1)}
 				class={paginationItemClass}
 				active={page == +page + 1}
 			>
@@ -93,7 +104,7 @@
 		{#if page < lastPage - 1}
 			<Button
 				{size}
-				on:click={(e) => changePage(lastPage)}
+				onclick={() => changePage(lastPage)}
 				class={paginationItemClass}
 				active={page == lastPage}
 			>
@@ -101,14 +112,14 @@
 			</Button>
 		{/if}
 	{/if}
-	{#if $$slots.next}
+	{#if next}
 		<Button
 			{size}
 			disabled={page == lastPage}
-			on:click={(e) => changePage(+page + 1)}
+			onclick={() => changePage(+page + 1)}
 			class={paginationItemClass}
 		>
-			<slot name="next"></slot>
+			{@render next()}
 		</Button>
 	{/if}
 </El>

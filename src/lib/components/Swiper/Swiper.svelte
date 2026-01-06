@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { register } from 'swiper/element/bundle';
-	
-	let isRegistered = false;
-	
+	import type { Snippet } from 'svelte';
+
+	let isRegistered = $state(false);
+
 	onMount(() => {
 		// register Swiper custom elements only after component is mounted
 		try {
@@ -13,30 +14,46 @@
 			console.warn('Swiper registration error:', error);
 		}
 	});
-	
-	export let slidesPerView: string | number = '6';
-	export let spaceBetween = '10';
-	export let centered = false;
-	export let breakpoints: any = null;
-	export let navigation: boolean | any = false;
-	export let pagination: boolean | any = false;
-	export let loop = false;
-	export let lazy = false;
-	
+
+	let {
+		slidesPerView = '6',
+		spaceBetween = '10',
+		centered = false,
+		breakpoints = null,
+		navigation = false,
+		pagination = false,
+		loop = false,
+		lazy = false,
+		children,
+		...others
+	}: {
+		slidesPerView?: string | number;
+		spaceBetween?: string;
+		centered?: boolean;
+		breakpoints?: any;
+		navigation?: boolean | any;
+		pagination?: boolean | any;
+		loop?: boolean;
+		lazy?: boolean;
+		children?: Snippet;
+	} = $props();
+
 	// Convert breakpoints to JSON string for Swiper only if provided
-	$: breakpointsString = breakpoints ? JSON.stringify(breakpoints) : null;
-	
+	let breakpointsString = $derived(breakpoints ? JSON.stringify(breakpoints) : null);
+
 	// Debug logging
-	$: if (breakpoints) {
-		console.log('Breakpoints provided:', breakpoints);
-		console.log('Breakpoints string:', breakpointsString);
-	}
-	
-	const onProgress = (e) => {
+	$effect(() => {
+		if (breakpoints) {
+			console.log('Breakpoints provided:', breakpoints);
+			console.log('Breakpoints string:', breakpointsString);
+		}
+	});
+
+	const onProgress = (e: any) => {
 		const [swiper, progress] = e.detail;
 		console.log(progress);
 	};
-	const onSlideChange = (e) => {
+	const onSlideChange = (e: any) => {
 		console.log('slide changed');
 	};
 </script>
@@ -51,9 +68,12 @@
 		{lazy}
 		{loop}
 		{breakpoints}
-		on:swiperprogress
-		on:swiperslidechange
+		onswiperprogress={onProgress}
+		onswiperslidechange={onSlideChange}
+		{...others}
 	>
-		<slot />
+		{#if children}
+			{@render children()}
+		{/if}
 	</swiper-container>
 {/if}

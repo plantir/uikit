@@ -6,49 +6,65 @@
 
 	import type { TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
 	import './TabItem.css';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = TabItem;
+	let {
+		value,
+		title,
+		titleSnippet,
+		children,
+		...others
+	}: TabItem & {
+		titleSnippet?: Snippet;
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'tab-item';
 
-	export let value: string | undefined = undefined;
-	export let title: string | undefined = undefined;
 	const ctx = getTabsContext();
 
-	const selected = ctx?.selected ?? writable<HTMLElement>();
+	const selected = ctx?.selected ?? writable<string | number>();
 
-	$: componentClass = {
+	let active = $derived($selected === value);
+	let componentClass = $derived({
 		active
-	};
-	$: tabContentClass = ClassMerge({ name: `${componentName}-content` });
-	$: active = $selected == value;
+	});
+	let tabContentClass = $derived(ClassMerge({ name: `${componentName}-content` }));
 
 	const onClick = () => {
-		selected.set(value);
+		if (value !== undefined) {
+			selected.set(value);
+		}
 	};
 </script>
 
 <El
 	{componentName}
 	{componentClass}
-	{...$$restProps}
-	on:blur
-	on:click
-	on:contextmenu
-	on:focus
-	on:keydown
-	on:keypress
-	on:keyup
-	on:mouseenter
-	on:mouseleave
-	on:mouseover
-	on:click={onClick}
+	{...others}
+	onblur
+	onclick={onClick}
+	oncontextmenu
+	onfocus
+	onkeydown
+	onkeypress
+	onkeyup
+	onmouseenter
+	onmouseleave
+	onmouseover
 >
-	<slot name="title">{title}</slot>
+	{#if titleSnippet}
+		{@render titleSnippet()}
+	{:else if title}
+		{title}
+	{/if}
 </El>
 {#if active}
 	<div class={tabContentClass}>
 		<div>
-			<slot />
+			{#if children}
+				{@render children()}
+			{/if}
 		</div>
 	</div>
 {/if}

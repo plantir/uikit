@@ -4,22 +4,22 @@
 	@apply daisy-card-title;
 }
 
-.ui-card.ui-card-xs .ui-card-title {
+.ui-card.ui-card-size-xs .ui-card-title {
 	--daisy-cardtitle-fs: 0.875rem;
 }
 
-.ui-card.ui-card-sm .ui-card-title {
+.ui-card.ui-card-size-sm .ui-card-title {
 	--daisy-cardtitle-fs: 1rem;
 }
 
-.ui-card.ui-card-md .ui-card-title {
+.ui-card.ui-card-size-md .ui-card-title {
 	--daisy-cardtitle-fs: 1.25rem;
 }
 
-.ui-card.ui-card-lg .ui-card-title {
+.ui-card.ui-card-size-lg .ui-card-title {
 	--daisy-cardtitle-fs: 1.5rem;
 }
 
-.ui-card.ui-card-xl .ui-card-title {
+.ui-card.ui-card-size-xl .ui-card-title {
 	--daisy-cardtitle-fs: 2rem;
 }

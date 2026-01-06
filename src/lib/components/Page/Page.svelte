@@ -1,19 +1,26 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
-    import type { Page } from './Page.type.ts'
-    import './Page.css'
+	import type { Page } from './Page.type.ts';
+	import './Page.css';
+	import type { Snippet } from 'svelte';
 
-    type $$Props = Page
+	let {
+		container = true,
+		children,
+		...others
+	}: Page & {
+		children?: Snippet;
+	} = $props();
 
-    export let container: boolean | undefined = true;
+	let componentName = 'page';
 
-    let componentName = 'page'
-
-    $: componentClass = {
-        container
-    }
+	let componentClass = $derived({
+		container
+	});
 </script>
 
-<El {componentClass} {componentName} {...$$restProps}>
-    <slot/>
+<El {componentClass} {componentName} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

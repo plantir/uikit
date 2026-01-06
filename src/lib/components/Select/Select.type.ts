@@ -5,7 +5,7 @@ export type SelectColor = 'natural' | GlobalColor;
 export interface Select extends Base {
 	label?: string | undefined;
 	items?: any[];
-	value?: string;
+	value?: any;
 	name?: string;
 	size?: SelectSize;
 	color?: SelectColor;

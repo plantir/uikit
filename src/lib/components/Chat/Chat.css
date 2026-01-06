@@ -74,34 +74,34 @@
 	@apply daisy-chat-bubble;
 }
 
-.ui-chat-bubble-primary {
+.ui-chat-bubble-color-primary {
 	@apply daisy-chat-bubble-primary;
 }
 
-.ui-chat-bubble-secondary {
+.ui-chat-bubble-color-secondary {
 	@apply daisy-chat-bubble-secondary;
 }
 
-.ui-chat-bubble-accent {
+.ui-chat-bubble-color-accent {
 	@apply daisy-chat-bubble-accent;
 }
 
-.ui-chat-bubble-success {
+.ui-chat-bubble-color-success {
 	@apply daisy-chat-bubble-success;
 }
 
-.ui-chat-bubble-info {
+.ui-chat-bubble-color-info {
 	@apply daisy-chat-bubble-info;
 }
 
-.ui-chat-bubble-error {
+.ui-chat-bubble-color-error {
 	@apply daisy-chat-bubble-error;
 }
 
-.ui-chat-bubble-warning {
+.ui-chat-bubble-color-warning {
 	@apply daisy-chat-bubble-warning;
 }
 
-.ui-chat-bubble-neutral {
+.ui-chat-bubble-color-neutral {
 	@apply daisy-chat-bubble-neutral;
 }

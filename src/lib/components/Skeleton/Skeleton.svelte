@@ -3,11 +3,14 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { Skeleton } from './Skeleton.type.js';
 	import El from '$lib/utils/El.svelte';
-	type $$Props = Skeleton;
+
+	let {
+		...others
+	}: Skeleton = $props();
+
 	let componentName = 'skeleton';
-	$: componentClass = {
-	};
-	$: elClass = ClassMerge({ name: componentName, componentClass });
+	let componentClass = $derived({});
+	let elClass = $derived(ClassMerge({ name: componentName, componentClass }));
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}></El>
+<El {componentName} {componentClass} {...others}></El>

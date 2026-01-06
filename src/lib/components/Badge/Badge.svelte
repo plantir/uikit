@@ -16,14 +16,14 @@
 		onClose,
 		...others
 	}: {
-		disabled: boolean;
-		size: BadgeSize;
-		color: BadgeColor;
-		variant: BadgeVariant;
-		dismissable: boolean;
-		children: any;
-		close_snippet: Snippet;
-		onClose: any;
+		disabled?: boolean;
+		size?: BadgeSize;
+		color?: BadgeColor;
+		variant?: BadgeVariant;
+		dismissable?: boolean;
+		children?: any;
+		close_snippet?: Snippet;
+		onClose?: any;
 	} = $props();
 	let componentName = 'badge';
 	let show = $state(true);
@@ -53,7 +53,7 @@
 			{/if}
 			{#if dismissable}
 				<Button
-					on:click={closeBreadCrumb}
+					onclick={closeBreadCrumb}
 					shape="circle"
 					size="xs"
 					variant="link"

@@ -5,60 +5,65 @@
 	import Accordion from '$lib/DocsComponent/MenuAccordion.svelte';
 	import { page } from '$app/stores';
 	import { components } from '$lib/store/index.js';
-	let scrollY: any;
+	let scrollY: any = $state();
+	let sections: any = $state([]);
 	function gotoLink(event: any) {
 		goto(`/docs/${event.detail}`);
 	}
-	// $: scrollY = scrollY;
-	let headers: any = [];
-	onMount(() => {
-		let tags: any = document.getElementsByClassName('title-document');
-		let array = [];
-		for (let index = 0; index < tags.length; index++) {
-			const element = tags[index];
+	onMount(() => {});
+	const checkHeaders = () => {
+		sections = document.getElementsByClassName('title-document');
+	};
+	let headers = $derived.by(() => {
+		let array: any = [];
+		for (let index = 0; index < sections.length; index++) {
+			const element = document.getElementById(sections[index].id);
+			if (!element) return;
+			const rect = element.getBoundingClientRect();
+			let top = element.offsetTop;
+			let new_element = element;
+			while (new_element.parentElement) {
+				top += new_element.parentElement.offsetTop;
+				new_element = new_element.parentElement;
+			}
 			array.push({
-				id: element.id,
-				text: element.innerHTML,
-				active: false
+				id: sections[index].id,
+				text: sections[index].innerHTML,
+				active: scrollY >= top - 100 && scrollY < top + 100
 			});
 		}
-		headers = array;
+		return array;
 	});
-	function handleLink(e: any) {
-		const link = e.currentTarget;
-		const anchorId = new URL(link.href).hash.replace('#', '');
-		console.log(anchorId);
 
-		const anchor: any = document.getElementById(anchorId);
-		console.log(anchor.getBoundingClientRect().y);
-		window.scrollTo({
-			top: anchor.getBoundingClientRect().y,
-			behavior: 'smooth'
-		});
-	}
-	$: if (scrollY) {
-		checkActiveHeader();
-	}
-	function checkActiveHeader() {
-		let array: any = [...headers];
-		array.forEach((header: any) => {
-			const element: any = document.getElementById(header.id);
-			if (element) {
-				const rect = element.getBoundingClientRect();
-				if (rect.top > -20 && rect.top < 250) {
-					header.active = true;
-				} else {
-					header.active = false;
-				}
-			}
-		});
-		headers = array;
-	}
-	function changePosition(header: any) {
+	$effect(() => {
+		$page;
+		checkHeaders();
+	});
+	// $effect(() => {
+	// 	if (!scrollY) return;
+	// 	clearTimeout(timeout);
+	// 	timeout = setTimeout(() => {
+	// 		updateActiveHeaders();
+	// 	}, 500);
+	// });
+	// const updateActiveHeaders = () => {
+	// 	headers = headers.map((header) => {
+	// 		const element = document.getElementById(header.id);
+	// 		if (!element) return header;
+
+	// 		const rect = element.getBoundingClientRect();
+
+	// 		return {
+	// 			...header,
+	// 			active: rect.top > -20 && rect.top < 250
+	// 		};
+	// 	});
+	// };
+	const changePosition = (header: any) => {
 		const object = { ...header };
 		object.active = true;
 		header = object;
-	}
+	};
 </script>
 
 <svelte:window bind:scrollY />

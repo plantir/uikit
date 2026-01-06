@@ -14,15 +14,15 @@
 		children,
 		...others
 	}: {
-		size: AvatarSize;
-		color: AvatarColor;
-		shape: AvatarShape;
-		mask: AvatarMask;
-		ring: boolean;
-		text: boolean;
-		online: boolean;
-		offline: boolean;
-		children: any;
+		size?: AvatarSize;
+		color?: AvatarColor;
+		shape?: AvatarShape;
+		mask?: AvatarMask;
+		ring?: boolean;
+		text?: boolean;
+		online?: boolean;
+		offline?: boolean;
+		children?: any;
 	} = $props();
 	let componentName = 'avatar';
 	let componentClass = $derived({

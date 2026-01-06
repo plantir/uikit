@@ -23,6 +23,7 @@
 		color,
 		children,
 		loader = defaultLoader,
+		class: className,
 		...others
 	}: {
 		disabled?: boolean;
@@ -36,6 +37,7 @@
 		shape?: ButtonShape;
 		color?: ButtonColor;
 		loader?: Snippet;
+		class?: string;
 		children?: Snippet;
 	} = $props();
 	let componentName = 'button';
@@ -45,6 +47,7 @@
 		loading,
 		active,
 		variant,
+		shape,
 		size,
 		disabled: disabled || loading,
 		color
@@ -60,7 +63,7 @@
 	{componentName}
 	{componentClass}
 	{...others}
-	on:click
+	class={className}
 >
 	{#if loading}
 		{@render loader()}

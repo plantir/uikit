@@ -2,22 +2,32 @@
 	import type { Divider, DividerColor, DividerSize } from './Divider.type.js';
 	import './Divider.css';
 	import El from '$lib/utils/El.svelte';
-	type $$Props = Divider;
+	import type { Snippet } from 'svelte';
+
+	let {
+		size = 'md',
+		color,
+		start = false,
+		end = false,
+		horizontal = false,
+		children,
+		...others
+	}: Divider & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'divider';
-	export let size: DividerSize = 'md';
-	export let color: DividerColor = undefined;
-	export let start: boolean = false;
-	export let end: boolean = false;
-	export let horizontal: boolean = false;
-	$: componentClass = {
+	let componentClass = $derived({
 		size,
 		color,
 		start,
 		end,
 		horizontal
-	};
+	});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-	<slot />
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

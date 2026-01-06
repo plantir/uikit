@@ -16,35 +16,35 @@
 	content: ':';
 }
 
-.ui-countdown.ui-countdown-xs .item {
+.ui-countdown.ui-countdown--size-xs .item {
 	@apply text-sm;
 }
 
-.ui-countdown.ui-countdown-sm .item {
+.ui-countdown.ui-countdown--size-sm .item {
 	@apply text-lg;
 }
 
-.ui-countdown.ui-countdown-md .item {
+.ui-countdown.ui-countdown--size-md .item {
 	@apply text-2xl;
 }
 
-.ui-countdown.ui-countdown-lg .item {
+.ui-countdown.ui-countdown--size-lg .item {
 	@apply text-4xl;
 }
 
-.ui-countdown.ui-countdown-xs .countdown-number-wrapper {
+.ui-countdown.ui-countdown--size-xs .countdown-number-wrapper {
 	height: 1.4em;
 }
 
-.ui-countdown.ui-countdown-sm .countdown-number-wrapper {
+.ui-countdown.ui-countdown--size-sm .countdown-number-wrapper {
 	height: 1.5em;
 }
 
-.ui-countdown.ui-countdown-md .countdown-number-wrapper {
+.ui-countdown.ui-countdown--size-md .countdown-number-wrapper {
 	height: 1.5em;
 }
 
-.ui-countdown.ui-countdown-lg .countdown-number-wrapper {
+.ui-countdown.ui-countdown--size-lg .countdown-number-wrapper {
 	height: 1.5em;
 }
 
@@ -52,19 +52,19 @@
 	@apply relative flex items-center min-w-[2ch] overflow-hidden;
 }
 
-.ui-countdown.ui-countdown-xs .countdown-label {
+.ui-countdown.ui-countdown--size-xs .countdown-label {
 	@apply text-xs;
 }
 
-.ui-countdown.ui-countdown-sm .countdown-label {
+.ui-countdown.ui-countdown--size-sm .countdown-label {
 	@apply text-sm;
 }
 
-.ui-countdown.ui-countdown-md .countdown-label {
+.ui-countdown.ui-countdown--size-md .countdown-label {
 	@apply text-base;
 }
 
-.ui-countdown.ui-countdown-lg .countdown-label {
+.ui-countdown.ui-countdown--size-lg .countdown-label {
 	@apply text-lg;
 }
 

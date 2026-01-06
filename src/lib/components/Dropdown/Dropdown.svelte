@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import {
 		computePosition,
 		shift,
@@ -12,23 +12,33 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { Dropdown, DropdownPlacement } from './Dropdown.type.js';
 	import './Dropdown.css';
-
-	type $$Props = Dropdown;
-
-	export let placement: DropdownPlacement = 'bottom';
-	export let open: boolean = false;
-	export let offset: number = 8;
+	let {
+		placement = 'bottom',
+		open = false,
+		offset = 8,
+		children,
+		togglerSnippet,
+		style: styleClass,
+		...others
+	}: {
+		placement?: DropdownPlacement;
+		open?: boolean;
+		offset?: number;
+		children?: Snippet;
+		togglerSnippet?: Snippet;
+		style?: string;
+	} = $props();
 
 	let componentName = 'dropdown';
 
-	let top = '';
-	let left = '';
+	let top = $state('');
+	let left = $state('');
 
-	let arrowEl: HTMLElement;
-	let floating: HTMLElement | undefined = undefined;
-	let toggler: HTMLElement | undefined | null = undefined;
+	let arrowEl: HTMLElement | undefined = $state(undefined);
+	let floating: HTMLElement | undefined = $state(undefined);
+	let toggler: HTMLElement | undefined = $state(undefined);
 
-	function updatePosition() {
+	const updatePosition = () => {
 		if (floating && toggler) {
 			computePosition(toggler, floating, {
 				placement: placement,
@@ -36,41 +46,46 @@
 					offsetMiddleware(offset),
 					flip(),
 					shift({ padding: offset }),
-					arrow({ element: arrowEl })
+					arrow({ element: arrowEl! })
 				]
 			}).then(({ x, y }) => {
 				(left = `${x}px`), (top = `${y}px`);
 			});
 		}
-	}
-	
-	function show() {
+	};
+
+	const show = () => {
 		open = true;
-	}
+	};
 
-	function hide() {
+	const hide = () => {
 		open = false;
-	}
+	};
 
-	function toggle(event: any) {
+	const toggle = (event: any) => {
 		open ? hide() : show();
-	}
+	};
 
-	function onClickOutside(event: any) {
-		if (floating && !floating.contains(event.target) && !toggler.contains(event.target)) {
+	const onClickOutside = (event: any) => {
+		if (
+			floating &&
+			!floating.contains(event.target) &&
+			toggler &&
+			!toggler.contains(event.target)
+		) {
 			hide();
 		}
-	}
+	};
 	onMount(() => {
 		if (!toggler || !floating) return;
-		
+
 		toggler.addEventListener('click', toggle);
 		document.addEventListener('click', onClickOutside);
 
 		const cleanup = autoUpdate(toggler, floating, updatePosition);
 
-		if(open) {
-			show()
+		if (open) {
+			show();
 		}
 
 		return () => {
@@ -79,32 +94,37 @@
 			document.removeEventListener('click', onClickOutside);
 		};
 	});
-
-	$: componentClass = {};
-	
-	$: togglerClass = ClassMerge({ 
-		name: `${componentName}-toggler` 
-	});
-	
-	$: contentClass = ClassMerge({
-		name: `${componentName}-content`,
-		componentClass: {
-			hidden: !open
-		}
-	});
+	let componentClass = $derived({});
+	let togglerClass = $derived(
+		ClassMerge({
+			name: `${componentName}-toggler`
+		})
+	);
+	let contentClass = $derived(
+		ClassMerge({
+			name: `${componentName}-content`,
+			componentClass: {
+				hidden: !open
+			}
+		})
+	);
 </script>
 
-<El {componentClass} {componentName} {...$$restProps}>
+<El {componentClass} {componentName} {...others}>
 	<div bind:this={toggler} class={togglerClass}>
-		<slot name="toggler" />
+		{#if togglerSnippet}
+			{@render togglerSnippet()}
+		{/if}
 	</div>
 	<!-- svelte-ignore a11y-no-noninteropen-tabindex -->
 	<div
 		bind:this={floating}
 		class={contentClass}
-		style="top: {top}; left: {left}; {$$props.style}"
+		style="top: {top}; left: {left}; {styleClass}"
 		tabindex="0"
 	>
-		<slot />
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 </El>

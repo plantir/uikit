@@ -2,32 +2,68 @@
 	import type { Action } from 'svelte/action';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { ClassMerge } from './ClassMerge.js';
+	import type { Snippet } from 'svelte';
 
 	const noop = () => {};
-	interface $$Props extends HTMLAnchorAttributes {
+
+	let {
+		componentName = 'El',
+		componentClass = {},
+		href,
+		tag = href ? 'a' : 'div',
+		node,
+		use = noop,
+		options = {},
+		role,
+		class: className,
+		children,
+		onclick,
+		onkeydown,
+		onkeyup,
+		onkeypress,
+		onfocus,
+		onblur,
+		onmouseenter,
+		onmouseleave,
+		onmouseover,
+		onmouseout,
+		onmousedown,
+		onmouseup,
+		oncontextmenu,
+		...others
+	}: {
 		componentClass?: object;
 		componentName?: string;
+		href?: string;
 		tag?: string;
 		node?: HTMLElement | undefined;
 		use?: Action<HTMLElement, any>;
 		options?: object;
 		class?: string;
 		role?: string;
-	}
-	export let componentName: string = 'El';
-	export let componentClass: object = {};
-	export let tag: string = $$restProps.href ? 'a' : 'div';
-	export let node: HTMLElement | undefined = undefined;
-	// Action function and its params
-	export let use: Action<HTMLElement, any> = noop;
-	export let options = {};
-	export let role: string | undefined = undefined;
-	let frameClass: string;
-	$: frameClass = ClassMerge({
-		name: componentName,
-		componentClass,
-		staticClassess: $$props.class
-	});
+		children?: Snippet;
+		onclick?: (event: MouseEvent) => void;
+		onkeydown?: (event: KeyboardEvent) => void;
+		onkeyup?: (event: KeyboardEvent) => void;
+		onkeypress?: (event: KeyboardEvent) => void;
+		onfocus?: (event: FocusEvent) => void;
+		onblur?: (event: FocusEvent) => void;
+		onmouseenter?: (event: MouseEvent) => void;
+		onmouseleave?: (event: MouseEvent) => void;
+		onmouseover?: (event: MouseEvent) => void;
+		onmouseout?: (event: MouseEvent) => void;
+		onmousedown?: (event: MouseEvent) => void;
+		onmouseup?: (event: MouseEvent) => void;
+		oncontextmenu?: (event: MouseEvent) => void;
+	} = $props();
+
+	let frameClass = $derived(
+		ClassMerge({
+			name: componentName,
+			componentClass,
+			staticClassess: className
+		})
+	);
 </script>
 
 <svelte:element
@@ -35,14 +71,23 @@
 	use:use={options}
 	bind:this={node}
 	{role}
-	{...$$restProps}
+	{...others}
 	class={frameClass}
-	on:click
-	on:change
-	on:mouseenter
-	on:mouseleave
-	on:focusin
-	on:focusout
+	{onclick}
+	{onkeydown}
+	{onkeyup}
+	{onkeypress}
+	{onfocus}
+	{onblur}
+	{onmouseenter}
+	{onmouseleave}
+	{onmouseover}
+	{onmouseout}
+	{onmousedown}
+	{onmouseup}
+	{oncontextmenu}
 >
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </svelte:element>

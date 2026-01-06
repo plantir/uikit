@@ -1,14 +1,22 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
-    import type {DialogBody} from './DialogBody.type.js'
-    import './DialogBody.css'
+	import type { DialogBody } from './DialogBody.type.js';
+	import './DialogBody.css';
+	import type { Snippet } from 'svelte';
 
-    let componentName = 'dialog-body'
-    type $$Props = DialogBody
+	let {
+		children,
+		...others
+	}: DialogBody & {
+		children?: Snippet;
+	} = $props();
 
-    $: componentClass = {}
+	let componentName = 'dialog-body';
+	let componentClass = $derived({});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-    <slot />
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

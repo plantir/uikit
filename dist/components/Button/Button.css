@@ -174,23 +174,23 @@
 	@apply daisy-btn-circle;
 }
 
-.ui-button-xs {
+.ui-button-size-xs {
 	@apply daisy-btn-xs;
 }
 
-.ui-button-sm {
+.ui-button-size-sm {
 	@apply daisy-btn-sm;
 }
 
-.ui-button-md {
+.ui-button-size-md {
 	@apply daisy-btn-md;
 }
 
-.ui-button-lg {
+.ui-button-size-lg {
 	@apply daisy-btn-lg;
 }
 
-.ui-button-xl {
+.ui-button-size-xl {
 	@apply daisy-btn-xl;
 }
 

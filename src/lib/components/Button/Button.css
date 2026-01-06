@@ -29,39 +29,39 @@
 	--daisy-btn-fg: color-mix(in srgb, var(--color-base-content) 20%, #0000);
 }
 
-.ui-button-natural {
+.ui-button-color-natural {
 	@apply daisy-btn-neutral;
 }
 
-.ui-button-primary {
+.ui-button-color-primary {
 	@apply daisy-btn-primary;
 }
 
-.ui-button-secondary {
+.ui-button-color-secondary {
 	@apply daisy-btn-secondary;
 }
 
-.ui-button-accent {
+.ui-button-color-accent {
 	@apply daisy-btn-accent;
 }
 
-.ui-button-success {
+.ui-button-color-success {
 	@apply daisy-btn-success;
 }
 
-.ui-button-info {
+.ui-button-color-info {
 	@apply daisy-btn-info;
 }
 
-.ui-button-error {
+.ui-button-color-error {
 	@apply daisy-btn-error;
 }
 
-.ui-button-warning {
+.ui-button-color-warning {
 	@apply daisy-btn-warning;
 }
 
-.ui-button-neutral {
+.ui-button-color-neutral {
 	@apply daisy-btn-neutral;
 }
 
@@ -70,10 +70,10 @@
 	@apply daisy-btn-active;
 }
 
-.ui-button-outline {
+.ui-button-variant-outline {
 	@apply daisy-btn-outline;
 
-	&.ui-button-primary {
+	&.ui-button-color-primary {
 		@apply text-primary;
 
 		&:hover {
@@ -83,7 +83,7 @@
 		}
 	}
 
-	&.ui-button-secondary {
+	&.ui-button-color-secondary {
 		@apply text-secondary;
 
 		&:hover {
@@ -93,7 +93,7 @@
 		}
 	}
 
-	&.ui-button-success {
+	&.ui-button-color-success {
 		@apply text-success;
 
 		&:hover {
@@ -103,7 +103,7 @@
 		}
 	}
 
-	&.ui-button-error {
+	&.ui-button-color-error {
 		@apply text-error;
 
 		&:hover {
@@ -113,7 +113,7 @@
 		}
 	}
 
-	&.ui-button-warning {
+	&.ui-button-color-warning {
 		@apply text-warning;
 
 		&:hover {
@@ -123,7 +123,7 @@
 		}
 	}
 
-	&.ui-button-info {
+	&.ui-button-color-info {
 		@apply text-info;
 
 		&:hover {
@@ -133,7 +133,7 @@
 		}
 	}
 
-	&.ui-button-accent {
+	&.ui-button-color-accent {
 		@apply text-accent;
 
 		&:hover {
@@ -143,7 +143,7 @@
 		}
 	}
 
-	&.ui-button-natural {
+	&.ui-button-color-natural {
 		@apply text-base-content;
 
 		&:hover {
@@ -154,43 +154,43 @@
 	}
 }
 
-.ui-button-glass {
+.ui-button-variant-glass {
 	@apply daisy-glass;
 }
 
-.ui-button-link {
+.ui-button-variant-link {
 	@apply daisy-btn-link;
 }
 
-.ui-button-ghost {
+.ui-button-variant-ghost {
 	@apply daisy-btn-ghost;
 }
 
-.ui-button-square {
+.ui-button-shape-square {
 	@apply daisy-btn-square;
 }
 
-.ui-button-circle {
+.ui-button-shape-circle {
 	@apply daisy-btn-circle;
 }
 
-.ui-button-xs {
+.ui-button-size-xs {
 	@apply daisy-btn-xs;
 }
 
-.ui-button-sm {
+.ui-button-size-sm {
 	@apply daisy-btn-sm;
 }
 
-.ui-button-md {
+.ui-button-size-md {
 	@apply daisy-btn-md;
 }
 
-.ui-button-lg {
+.ui-button-size-lg {
 	@apply daisy-btn-lg;
 }
 
-.ui-button-xl {
+.ui-button-size-xl {
 	@apply daisy-btn-xl;
 }
 

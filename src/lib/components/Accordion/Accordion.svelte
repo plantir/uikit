@@ -12,14 +12,13 @@
 		children,
 		...others
 	}: {
-		icon: AccordionIcon;
-		open: boolean;
-		join: boolean;
-		title: string;
-		name: string;
-		children: any;
+		icon?: AccordionIcon;
+		open?: boolean;
+		join?: boolean;
+		title?: string;
+		name?: string;
+		children?: any;
 	} = $props();
-	type $$Props = Accordion;
 	let componentName = 'accordion';
 	let componentClass = $derived({
 		icon: icon,

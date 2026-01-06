@@ -7,6 +7,7 @@ export interface DrawerTransitionParamTypes {
 	opacity?: number;
 	x?: number;
 	y?: number;
+	axis?: string;
 }
 export type DrawerTransitionTypes =
 	| 'fade'

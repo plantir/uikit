@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { setContext, getContext } from 'svelte';
+	import { setContext, getContext, type Snippet } from 'svelte';
 	import { writable, type Writable } from 'svelte/store';
 
 	interface CheckboxCtxType {
@@ -20,48 +20,57 @@
 
 <script lang="ts">
 	import './CheckboxGroup.css';
-	import { createEventDispatcher } from 'svelte';
-	import type { CheckboxGroup } from './CheboxGroup.type.js';
 	import El from '$lib/utils/El.svelte';
-	type $$Props = CheckboxGroup;
-	let dispatch = createEventDispatcher();
+	let {
+		value = $bindable(),
+		inline = false,
+		join = false,
+		column = false,
+		disabled = false,
+		children,
+		onChange,
+		...others
+	}: {
+		value?: any;
+		inline?: boolean;
+		join?: boolean;
+		column?: boolean;
+		disabled?: boolean;
+		children?: Snippet;
+		onChange?: any;
+	} = $props();
 	let componentName = 'checkbox-group';
-
-	export let value: $$Props['value'] = undefined;
-	export let inline: $$Props['inline'] = false;
-	export let join: $$Props['inline'] = false;
-	export let column: $$Props['column'] = false;
-	export let disabled: boolean = false; // Added disabled prop
 
 	let selected = writable(value);
 	const disabledStore = writable(disabled); // Create a writable store for disabled
 
 	setCheckboxGroupContext({
 		selected,
-		disabled: disabledStore, // Pass disabled store to context
+		disabled: disabledStore // Pass disabled store to context
 	});
 
 	// Subscribe ONCE to selected, update value and dispatch
 	selected.subscribe((val) => {
 		if (val && val !== value) {
 			value = val;
-			dispatch('change', value);
+			if (onChange) {
+				onChange(value);
+			}
 		}
 	});
-
-	function onValueChange() {
+	$effect(() => {
 		selected.set(value ?? []);
-	}
-	$: value, onValueChange();
-
-	$: componentClass = {
+	});
+	let componentClass = $derived({
 		inline,
 		join,
 		column,
 		disabled
-	};
+	});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-	<slot />
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

@@ -12,54 +12,54 @@
 	/* DAISYTODO: @apply daisy-disabled; */
 }
 
-.ui-checkbox-xs {
+.ui-checkbox-size-xs {
 	@apply daisy-checkbox-xs;
 }
 
-.ui-checkbox-sm {
+.ui-checkbox-size-sm {
 	@apply daisy-checkbox-sm;
 }
 
-.ui-checkbox-md {
+.ui-checkbox-size-md {
 	@apply daisy-checkbox-md;
 }
 
-.ui-checkbox-lg {
+.ui-checkbox-size-lg {
 	@apply daisy-checkbox-lg;
 }
 
-.ui-checkbox-xl {
+.ui-checkbox-size-xl {
 	@apply daisy-checkbox-xl;
 }
 
-.ui-checkbox-primary {
+.ui-checkbox-color-primary {
 	@apply daisy-checkbox-primary;
 }
 
-.ui-checkbox-secondary {
+.ui-checkbox-color-secondary {
 	@apply daisy-checkbox-secondary;
 }
 
-.ui-checkbox-accent {
+.ui-checkbox-color-accent {
 	@apply daisy-checkbox-accent;
 }
 
-.ui-checkbox-success {
+.ui-checkbox-color-success {
 	@apply daisy-checkbox-success;
 }
 
-.ui-checkbox-info {
+.ui-checkbox-color-info {
 	@apply daisy-checkbox-info;
 }
 
-.ui-checkbox-error {
+.ui-checkbox-color-error {
 	@apply daisy-checkbox-error;
 }
 
-.ui-checkbox-warning {
+.ui-checkbox-color-warning {
 	@apply daisy-checkbox-warning;
 }
 
-.ui-checkbox-neutral {
+.ui-checkbox-color-neutral {
 	@apply daisy-checkbox-neutral;
 }
