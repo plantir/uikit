@@ -1,0 +1,42 @@
+/* @reference "../../css/app.css"; */
+
+.ui-range {
+	@apply daisy-range;
+
+	.ui-range-disabled {
+		/* DAISYTODO: @apply daisy-disabled; */
+	}
+	.ui-range-xs {
+		@apply daisy-range-xs;
+	}
+	.ui-range-sm {
+		@apply daisy-range-sm;
+	}
+	.ui-range-md {
+		@apply daisy-range-md;
+	}
+	.ui-range-lg {
+		@apply daisy-range-lg;
+	}
+	.ui-range-primary {
+		@apply daisy-range-primary;
+	}
+	.ui-range-secondary {
+		@apply daisy-range-secondary;
+	}
+	.ui-range-accent {
+		@apply daisy-range-accent;
+	}
+	.ui-range-success {
+		@apply daisy-range-success;
+	}
+	.ui-range-info {
+		@apply daisy-range-info;
+	}
+	.ui-range-error {
+		@apply daisy-range-error;
+	}
+	.ui-range-warning {
+		@apply daisy-range-warning;
+	}
+}

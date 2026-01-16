@@ -40,7 +40,7 @@
 	};
 	let section: any = [];
 	let demo_1_ClassNames = [
-		'bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95',
+		'bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95',
 		'btn btn-primary'
 	];
 	$: demo_1_ClassNameHandler = () => {
@@ -513,7 +513,7 @@
 
 							<div class="flex shrink-0 gap-6 pe-4 xl:flex-col xl:pe-0">
 								<div
-									class="flex flex-col rounded-2xl bg-base-100 shadow-sm will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-sm max-[1279px]:![transform:translate3d(0,0,0)]"
+									class="flex flex-col rounded-2xl bg-base-100 shadow-xs will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-xs max-[1279px]:![transform:translate3d(0,0,0)]"
 									style={`--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), calc(${animateValue(
 										section['hero'],
 										[0, 0.5],
@@ -581,7 +581,7 @@
 									</div>
 								</div>
 								<div
-									class="flex flex-col rounded-2xl bg-base-100 shadow-sm will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-sm max-[1279px]:![transform:translate3d(0,0,0)]"
+									class="flex flex-col rounded-2xl bg-base-100 shadow-xs will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-xs max-[1279px]:![transform:translate3d(0,0,0)]"
 									style={`--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), calc(${animateValue(
 										section['hero'],
 										[4, 4.5],
@@ -854,7 +854,7 @@
 									>&quot;&gt;
 		&lt;div class=&quot;<span class="text-rose-600">flex flex-col gap-2 p-8</span>&quot;&gt;
 		  &lt;input placeholder=&quot;Email&quot; class=&quot;<span class="text-rose-600"
-										>w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100</span
+										>w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-hidden focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100</span
 									>&quot; /&gt;
 		  &lt;label class=&quot;<span class="text-rose-600"
 										>flex cursor-pointer items-center justify-between p-1</span
@@ -862,7 +862,7 @@
 			Accept terms of use
 			&lt;div class=&quot;<span class="text-rose-600">relative inline-block</span>&quot;&gt;
 			  &lt;input type=&quot;checkbox&quot; class=&quot;<span class="text-rose-600"
-										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
+										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
 									>&quot; /&gt;
 			  &lt;span class=&quot;<span class="text-rose-600"
 										>pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900</span
@@ -875,7 +875,7 @@
 			Submit to newsletter
 			&lt;div class=&quot;<span class="text-rose-600">relative inline-block</span>&quot;&gt;
 			  &lt;input type=&quot;checkbox&quot; class=&quot;<span class="text-rose-600"
-										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
+										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
 									>&quot; /&gt;
 			  &lt;span class=&quot;<span class="text-rose-600"
 										>pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900</span
@@ -883,7 +883,7 @@
 			&lt;/div&gt;
 		  &lt;/label&gt;
 		  &lt;button class=&quot;<span class="text-rose-600"
-										>inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95</span
+										>inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95</span
 									>&quot;&gt;Save&lt;/button&gt;
 		&lt;/div&gt;
 	  &lt;/div&gt;</pre>
@@ -898,7 +898,7 @@
 										<input
 											name="sample-email"
 											placeholder="Email"
-											class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100"
+											class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-hidden focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100"
 										/>
 										<label class="flex cursor-pointer items-center justify-between p-1">
 											Accept terms of use
@@ -906,11 +906,11 @@
 												<input
 													name="sample-checkbox"
 													type="checkbox"
-													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
 												/>
 												<span
 													class="pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900"
-												/>
+												></span>
 											</div>
 										</label>
 										<label class="flex cursor-pointer items-center justify-between p-1">
@@ -919,7 +919,7 @@
 												<input
 													type="checkbox"
 													name="sample-checkbox"
-													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
 												/>
 												<span
 													class="pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900"
@@ -927,7 +927,7 @@
 											</span>
 										</label>
 										<button
-											class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
+											class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
 										>
 											Save
 										</button>
@@ -943,6 +943,8 @@
 </div>
 
 <style lang="scss" global>
+	@reference "tailwindcss";
+
 	.mockup-window {
 		position: relative;
 		display: flex;

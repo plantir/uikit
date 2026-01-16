@@ -1,0 +1,25 @@
+/* @reference "../../css/app.css"; */
+
+.ui-page-header {
+    @apply py-4 w-full flex flex-col;
+
+    .ui-page-header-actions {
+        @apply ms-auto flex gap-2;
+    }
+
+    .ui-page-header-inner {
+        @apply flex flex-wrap-reverse justify-between items-center;
+    }
+
+    .ui-page-header-title-wrapper {
+        @apply flex gap-4 flex-row text-4xl font-bold
+    }
+
+    .ui-page-header-back {
+        @apply flex items-center justify-center;
+    }
+
+    .ui-page-header-subtitle {
+        @apply text-gray-700 dark:text-gray-300;
+    }
+}

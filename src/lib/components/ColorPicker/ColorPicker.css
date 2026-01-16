@@ -1,0 +1,7 @@
+/* @reference "../../css/app.css"; */
+.ui-color-picker-wrapper {
+	@apply inline-flex flex-col;
+}
+.ui-color-picker-wrapper-label {
+	@apply mb-1;
+}

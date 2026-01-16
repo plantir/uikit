@@ -6,7 +6,7 @@
 		ButtonSize,
 		ButtonVariant
 	} from './ColorPicker.type.ts';
-	import './ColorPicker.scss';
+	// import './ColorPicker.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import { Button } from '$lib/index.js';
 	let componentName = 'color-picker';

@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { Icon } from './Icon.type.js';
-    import './Icon.scss';
+    // import './Icon.css';
 	
     import polaris from './libraries/polaris.json'
 	import El from '$lib/utils/El.svelte';

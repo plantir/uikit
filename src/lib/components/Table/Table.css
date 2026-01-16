@@ -1,0 +1,27 @@
+/* @reference "../../css/app.css"; */
+.ui-table {
+	@apply daisy-table;
+
+	.ui-table-zebra {
+		@apply daisy-table-zebra;
+	}
+	.ui-table-pin-head {
+		thead {
+			tr {
+				position: sticky;
+				top: 0;
+				z-index: 1;
+				--tw-bg-opacity: 1;
+				background-color: var(--fallback-b1, oklch(var(--b1) / var(--tw-bg-opacity)));
+			}
+		}
+	}
+	.ui-table-hover {
+		tbody {
+			tr:hover {
+				--tw-bg-opacity: 1;
+				background-color: var(--fallback-b2, oklch(var(--b2) / var(--tw-bg-opacity)));
+			}
+		}
+	}
+}

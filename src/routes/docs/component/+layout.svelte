@@ -187,6 +187,8 @@
 </div>
 
 <style lang="scss">
+	@reference "tailwindcss";
+
 	.component-menu-height {
 		height: calc(100vh - 64px);
 	}

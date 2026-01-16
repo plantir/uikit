@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { Step, StepColor, StepSize, StepVariant, StepItem } from './Steps.type.js';
-	import './Steps.scss';
+	// import './Steps.css';
 	type $$Props = Step;
 	let componentName = 'steps';
 	export let size: StepSize = undefined;

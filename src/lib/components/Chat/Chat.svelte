@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Chat, ChatColor } from './Chat.type.js';
-	import './Chat.scss';
+	// import './Chat.css';
 	import El from '$lib/utils/El.svelte';
 	import { fade } from 'svelte/transition';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';

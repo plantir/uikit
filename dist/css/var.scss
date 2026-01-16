@@ -1,0 +1,31 @@
+@use 'sass:selector';
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+    theme: all;
+    prefix: daisy-;
+}
+
+$prefix: 'ui-' !default;
+
+$stateColors: ('primary', 'secondary', 'accent', 'success', 'info', 'error', 'warning');
+
+$rootColors: (
+	'primary': 'p',
+	'secondary': 's',
+	'accent': 'a',
+	'success': 'su',
+	'info': 'in',
+	'error': 'er',
+	'warning': 'wa'
+);
+/* @import './daisyui.placeholder'; */
+
+@mixin unify-parent($input1, $input2) {
+	@at-root #{selector.unify(&+$input1, &+$input2)} {
+		@content;
+	}
+}
+html {
+  scroll-behavior: smooth;
+}

@@ -5,7 +5,7 @@
 		TextAreaInputMode,
 		TextAreaSize
 	} from './TextArea.type.js';
-	import './TextArea.scss';
+	// import './TextArea.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = TextArea;
 	let componentName = 'textarea';

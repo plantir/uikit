@@ -20,7 +20,7 @@
 
 <div
 	class="
-bg-base-100 text-base-content fixed top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-shadow duration-100 [transform:translate3d(0,0,0)]
+bg-base-100/90 text-base-content fixed top-0 z-30 flex h-16 w-full justify-center backdrop-blur-sm transition-shadow duration-100 [transform:translate3d(0,0,0)]
 "
 >
 	<div class="navbar">
@@ -89,6 +89,8 @@ bg-base-100 text-base-content fixed top-0 z-30 flex h-16 w-full justify-center b
 </Drawer>
 
 <style lang="scss">
+	@reference "tailwindcss";
+
 	.navbar {
 		@apply px-4 flex h-full items-center gap-1 justify-between w-full;
 	}

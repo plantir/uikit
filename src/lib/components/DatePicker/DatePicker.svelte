@@ -2,7 +2,7 @@
 	import { onMount, createEventDispatcher, tick } from 'svelte';
 	import flatpickr from 'flatpickr';
 	import type { DatePicker, DatePickerColor, DatePickerSize } from './DatePicker.js';
-	import './DatePicker.scss';
+	// import './DatePicker.css';
 	import 'flatpickr/dist/flatpickr.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import TextField from '../TextField/TextField.svelte';

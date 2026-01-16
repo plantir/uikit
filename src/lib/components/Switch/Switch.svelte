@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Switch, SwitchColor, SwitchSize } from './Switch.type.js';
-	import './Switch.scss';
+	// import './Switch.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Switch;
 	let componentName = 'switch';

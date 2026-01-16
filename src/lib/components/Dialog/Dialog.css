@@ -1,0 +1,30 @@
+/* @reference "../../css/app.css"; */
+
+:root:has(:is(.ui-dialog[open])) {
+	overflow: hidden;
+}
+
+.ui-dialog {
+	@apply daisy-modal;
+	
+	.ui-dialog-box {
+		@apply daisy-modal-box;
+	}
+
+	&[open] .ui-dialog-box {
+		opacity: 1;
+		scale: 1;
+	}	
+
+	.ui-dialog-backdrop {
+		@apply daisy-modal-backdrop cursor-pointer backdrop-blur-xs;
+	}
+	
+	.ui-dialog-close-button {
+		@apply absolute right-4 top-4;
+	}
+}
+
+
+
+
