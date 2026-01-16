@@ -36,6 +36,37 @@
 	&-warning {
 		@apply daisy-badge-warning;
 	}
+	&-primary-soft {
+		@apply daisy-badge-primary text-primary;
+		border-color: transparent;
+		background-color: oklch(var(--p) / 0.28);
+	}
+	&-secondary-soft {
+		@apply daisy-badge-secondary text-secondary;
+		border-color: transparent;
+		background-color: oklch(var(--s)/ 0.28);
+	}
+	&-accent-soft {
+		@apply daisy-badge-accent;
+		border-color: transparent;
+		background-color: oklch(var(--a)/ 0.28);
+	}
+	&-success-soft {
+		@apply  daisy-badge-success;
+		background-color: oklch(var(--su)/ 0.28);
+	}
+	&-info-soft {
+		@apply daisy-badge-info;
+		background-color: oklch(var(--in)/ 0.28);
+	}
+	&-error-soft {
+		@apply daisy-badge-error;
+		background-color: oklch(var(--er)/ 0.28);
+	}
+	&-warning-soft {
+		@apply daisy-badge-warning;
+		background-color: oklch(var(--wa)/ 0.28);
+	}
 	&-outline {
 		@apply daisy-badge-outline;
 		&.#{$prefix}badge-primary {

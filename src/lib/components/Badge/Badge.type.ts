@@ -16,4 +16,5 @@ export interface Badge extends Base {
 	variant?: BadgeVariant;
 	shape?: BadgeShape;
 	dismissable?: boolean;
+	soft?: boolean;
 }
