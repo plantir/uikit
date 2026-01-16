@@ -12,16 +12,17 @@
 	let form: any = {};
 	let value = '';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Range from '{$importDocumentSrc}/Range.svelte';
-				let value = '';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Range</span> from '{$importDocumentSrc}/Range.svelte';
+			<br />
+			<LetCode name="value" value="40" />
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode

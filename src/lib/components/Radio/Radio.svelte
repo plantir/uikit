@@ -1,35 +1,41 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
-	import { getRadioGroupContext } from '../RadioGroup/RadioGroup.svelte';	
+	import { getRadioGroupContext } from '../RadioGroup/RadioGroup.svelte';
 	import type { Radio, RadioColor, RadioSize } from './Radio.type.js';
-	import './Radio.scss';
+	import './Radio.css';
+	import { onMount } from 'svelte';
 
 	type $$Props = Radio;
 
 	let componentName = 'radio';
 
-	export let label: $$Props["label"] = undefined;
-	export let value: $$Props["value"] = '';
-	export let disabled: $$Props["disabled"] = false;
-	export let size: $$Props["size"] = undefined;
-	export let color: $$Props["color"] = undefined;
-	export let button: $$Props["button"] = false;
+	export let label: $$Props['label'] = undefined;
+	export let value: $$Props['value'] = '';
+	export let disabled: $$Props['disabled'] = false;
+	export let size: $$Props['size'] = undefined;
+	export let color: $$Props['color'] = undefined;
+	export let button: $$Props['button'] = false;
 
 	const ctx = getRadioGroupContext();
 	const disabledStore = ctx?.disabled;
 	const selected = ctx?.selected ?? writable();
-	
+
 	function onChange(e: any) {
 		selected.set(e.currentTarget.value);
 	}
-
-	$: disabledCombined = disabledStore ? (disabled || $disabledStore) : disabled 
+	onMount(() => {
+		if ($disabledStore) {
+			disabled = true;
+		}
+	});
+	$: disabledCombined = disabledStore ? disabled || $disabledStore : disabled;
 	$: componentClass = {
 		xs: size == 'xs',
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled: disabledCombined,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
@@ -38,7 +44,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural',
+		neutral: color == 'neutral',
 		button,
 		join: ctx?.join
 	};

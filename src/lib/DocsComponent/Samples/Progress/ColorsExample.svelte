@@ -4,17 +4,24 @@
 	import { importDocumentSrc } from '$lib/store/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import { Progress } from '$lib/index.js';
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Progress from '{$importDocumentSrc}/Progress.svelte';
-				let value = 50;
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Progress</span> from '{$importDocumentSrc}/Progress.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		{#each colors as color}
@@ -22,8 +29,10 @@
 		{/each}
 	</div>
 	<div slot="preview">
-		{#each colors as color}
-			<Progress value="50" {color}></Progress>
-		{/each}
+		<div class="w-56">
+			{#each colors as color}
+				<Progress value="50" {color}></Progress>
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>

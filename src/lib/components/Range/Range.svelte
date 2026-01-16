@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Range, RangeColor, RangeSize } from './Range.type.js';
-	import './Range.scss';
+	import './Range.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Range;
 	let componentName = 'range';
@@ -18,6 +18,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled: disabled,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
@@ -26,7 +27,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });

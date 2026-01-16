@@ -2,7 +2,7 @@
 	import { onMount, createEventDispatcher, tick } from 'svelte';
 	import flatpickr from 'flatpickr';
 	import type { DatePicker, DatePickerColor, DatePickerSize } from './DatePicker.js';
-	import './DatePicker.scss';
+	import './DatePicker.css';
 	import 'flatpickr/dist/flatpickr.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import TextField from '../TextField/TextField.svelte';
@@ -145,7 +145,7 @@
 	});
 </script>
 
-<TextField   {...$$restProps} {label} bind:node = {input} {placeholder} >
+<TextField   {...$$restProps} {label} bind:node={input} {placeholder} >
 	<slot name="label"  slot="label" />
 	<slot name="start"  slot="start" />
 	<slot name="end"  slot="end" />

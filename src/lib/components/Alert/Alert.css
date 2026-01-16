@@ -1,0 +1,54 @@
+@reference '../../css/app.css';
+
+@layer components {
+	.ui-alert {
+		@apply daisy-alert;
+
+		&.ui-alert-type-outline {
+			color: var(--daisy-alert-color);
+			box-shadow: none;
+			background-color: transparent;
+			background-image: none;
+		}
+
+		&.ui-alert-type-dash {
+			color: var(--daisy-alert-color);
+			box-shadow: none;
+			background-color: #0000;
+			background-image: none;
+			border-style: dashed;
+		}
+
+		&.ui-alert-type-soft {
+			color: var(--daisy-alert-color, var(--color-base-content));
+			background: color-mix(
+				in oklab,
+				var(--daisy-alert-color, var(--color-base-content)) 8%,
+				var(--color-base-100)
+			);
+			border-color: color-mix(
+				in oklab,
+				var(--daisy-alert-color, var(--color-base-content)) 10%,
+				var(--color-base-100)
+			);
+			box-shadow: none;
+			background-image: none;
+		}
+	}
+
+	.ui-alert-color-warning {
+		@apply daisy-alert-warning;
+	}
+
+	.ui-alert-color-info {
+		@apply daisy-alert-info;
+	}
+
+	.ui-alert-color-error {
+		@apply daisy-alert-error;
+	}
+
+	.ui-alert-color-success {
+		@apply daisy-alert-success;
+	}
+}

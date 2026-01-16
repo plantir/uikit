@@ -1,0 +1,9 @@
+@reference "../../css/app.css";
+@layer components {
+	.ui-avatar-group {
+		@apply flex overflow-hidden -space-x-6;
+		:where(.ui-avatar) {
+			@apply border-base-100 overflow-hidden rounded-full border-4;
+		}
+	}
+}

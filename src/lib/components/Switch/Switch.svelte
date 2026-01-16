@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Switch, SwitchColor, SwitchSize } from './Switch.type.js';
-	import './Switch.scss';
+	import './Switch.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Switch;
 	let componentName = 'switch';
@@ -14,6 +14,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled: disabled,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
@@ -22,7 +23,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
 	$: elClass = ClassMerge({ name: componentName, componentClass });

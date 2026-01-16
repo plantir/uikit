@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { CardTitle } from './CardTitle.type.js';
-	import './CardTitle.scss';
+	import './CardTitle.css';
 	type $$Props = CardTitle;
 	let componentName = 'card-title';
     

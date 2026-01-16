@@ -10,17 +10,15 @@
 	import { Range, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: any = ['xl','lg', 'md', 'sm', 'xs'];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Range from '{$importDocumentSrc}/Range.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Range</span> from '{$importDocumentSrc}/Range.svelte';
+		</TagCode>
 	</div>
 	<div slot="html">
 		{#each sizes as size}
@@ -28,8 +26,10 @@
 		{/each}
 	</div>
 	<div slot="preview">
-		{#each sizes as size}
-			<Range label={size} min="0" {size} />
-		{/each}
+		<div class="flex flex-col gap-4">
+			{#each sizes as size}
+				<Range label={size} min="0" {size} />
+			{/each}
+		</div>
 	</div>
 </SampleWrapper>

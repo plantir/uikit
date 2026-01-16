@@ -9,226 +9,75 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Table } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '$lib/utils/El.types.js';
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Table from '{$importDocumentSrc}/Table.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Table</span> from '{$importDocumentSrc}/Table.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Table" props={['size="xs']}>
-			<TagCode name="thead">
-				<TagCode name="tr">
-					<TagCode name="th" one_line>Name</TagCode>
-					<TagCode name="th" one_line>Job</TagCode>
-					<TagCode name="th" one_line>Age</TagCode>
+		{#each sizes as size}
+			<TagCode name="Table" props={[`size="${size}"`]}>
+				<TagCode name="thead">
+					<TagCode name="tr">
+						<TagCode name="th" one_line>Name</TagCode>
+						<TagCode name="th" one_line>Job</TagCode>
+						<TagCode name="th" one_line>Age</TagCode>
+					</TagCode>
+				</TagCode>
+				<TagCode name="tbody">
+					<TagCode name="tr">
+						<TagCode name="td" one_line>Cy Ganderton</TagCode>
+						<TagCode name="td" one_line>Quality Control Specialist</TagCode>
+						<TagCode name="td" one_line>23</TagCode>
+					</TagCode>
+					<TagCode name="tr">
+						<TagCode name="td" one_line>Hart Hagerty</TagCode>
+						<TagCode name="td" one_line>Desktop Support Technician</TagCode>
+						<TagCode name="td" one_line>25</TagCode>
+					</TagCode>
+					<TagCode name="tr">
+						<TagCode name="td" one_line>Brice Swyre</TagCode>
+						<TagCode name="td" one_line>Tax Accountant</TagCode>
+						<TagCode name="td" one_line>21</TagCode>
+					</TagCode>
 				</TagCode>
 			</TagCode>
-			<TagCode name="tbody">
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Cy Ganderton</TagCode>
-					<TagCode name="td" one_line>Quality Control Specialist</TagCode>
-					<TagCode name="td" one_line>23</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Hart Hagerty</TagCode>
-					<TagCode name="td" one_line>Desktop Support Technician</TagCode>
-					<TagCode name="td" one_line>25</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Brice Swyre</TagCode>
-					<TagCode name="td" one_line>Tax Accountant</TagCode>
-					<TagCode name="td" one_line>21</TagCode>
-				</TagCode>
-			</TagCode>
-		</TagCode>
-		<TagCode name="Table" props={['size="sm']}>
-			<TagCode name="thead">
-				<TagCode name="tr">
-					<TagCode name="th" one_line>Name</TagCode>
-					<TagCode name="th" one_line>Job</TagCode>
-					<TagCode name="th" one_line>Age</TagCode>
-				</TagCode>
-			</TagCode>
-			<TagCode name="tbody">
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Cy Ganderton</TagCode>
-					<TagCode name="td" one_line>Quality Control Specialist</TagCode>
-					<TagCode name="td" one_line>23</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Hart Hagerty</TagCode>
-					<TagCode name="td" one_line>Desktop Support Technician</TagCode>
-					<TagCode name="td" one_line>25</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Brice Swyre</TagCode>
-					<TagCode name="td" one_line>Tax Accountant</TagCode>
-					<TagCode name="td" one_line>21</TagCode>
-				</TagCode>
-			</TagCode>
-		</TagCode>
-		<TagCode name="Table" props={['size="md']}>
-			<TagCode name="thead">
-				<TagCode name="tr">
-					<TagCode name="th" one_line>Name</TagCode>
-					<TagCode name="th" one_line>Job</TagCode>
-					<TagCode name="th" one_line>Age</TagCode>
-				</TagCode>
-			</TagCode>
-			<TagCode name="tbody">
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Cy Ganderton</TagCode>
-					<TagCode name="td" one_line>Quality Control Specialist</TagCode>
-					<TagCode name="td" one_line>23</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Hart Hagerty</TagCode>
-					<TagCode name="td" one_line>Desktop Support Technician</TagCode>
-					<TagCode name="td" one_line>25</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Brice Swyre</TagCode>
-					<TagCode name="td" one_line>Tax Accountant</TagCode>
-					<TagCode name="td" one_line>21</TagCode>
-				</TagCode>
-			</TagCode>
-		</TagCode>
-		<TagCode name="Table" props={['size="lg']}>
-			<TagCode name="thead">
-				<TagCode name="tr">
-					<TagCode name="th" one_line>Name</TagCode>
-					<TagCode name="th" one_line>Job</TagCode>
-					<TagCode name="th" one_line>Age</TagCode>
-				</TagCode>
-			</TagCode>
-			<TagCode name="tbody">
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Cy Ganderton</TagCode>
-					<TagCode name="td" one_line>Quality Control Specialist</TagCode>
-					<TagCode name="td" one_line>23</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Hart Hagerty</TagCode>
-					<TagCode name="td" one_line>Desktop Support Technician</TagCode>
-					<TagCode name="td" one_line>25</TagCode>
-				</TagCode>
-				<TagCode name="tr">
-					<TagCode name="td" one_line>Brice Swyre</TagCode>
-					<TagCode name="td" one_line>Tax Accountant</TagCode>
-					<TagCode name="td" one_line>21</TagCode>
-				</TagCode>
-			</TagCode>
-		</TagCode>
+		{/each}
 	</div>
-	<div slot="preview">
-		<Table size="xs">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Job</th>
-					<th>Age</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Cy Ganderton</td>
-					<td> Quality Control Specialist </td>
-					<td> 23 </td>
-				</tr>
-				<tr>
-					<td>Hart Hagerty</td>
-					<td> Desktop Support Technician </td>
-					<td> 25</td>
-				</tr>
-				<tr>
-					<td>Brice Swyre</td>
-					<td> Tax Accountant </td>
-					<td> 21 </td>
-				</tr>
-			</tbody>
-		</Table>
-		<Table size="sm">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Job</th>
-					<th>Age</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Cy Ganderton</td>
-					<td> Quality Control Specialist </td>
-					<td> 23 </td>
-				</tr>
-				<tr>
-					<td>Hart Hagerty</td>
-					<td> Desktop Support Technician </td>
-					<td> 25</td>
-				</tr>
-				<tr>
-					<td>Brice Swyre</td>
-					<td> Tax Accountant </td>
-					<td> 21 </td>
-				</tr>
-			</tbody>
-		</Table>
-		<Table size="md">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Job</th>
-					<th>Age</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Cy Ganderton</td>
-					<td> Quality Control Specialist </td>
-					<td> 23 </td>
-				</tr>
-				<tr>
-					<td>Hart Hagerty</td>
-					<td> Desktop Support Technician </td>
-					<td> 25</td>
-				</tr>
-				<tr>
-					<td>Brice Swyre</td>
-					<td> Tax Accountant </td>
-					<td> 21 </td>
-				</tr>
-			</tbody>
-		</Table>
-		<Table size="lg">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Job</th>
-					<th>Age</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Cy Ganderton</td>
-					<td> Quality Control Specialist </td>
-					<td> 23 </td>
-				</tr>
-				<tr>
-					<td>Hart Hagerty</td>
-					<td> Desktop Support Technician </td>
-					<td> 25</td>
-				</tr>
-				<tr>
-					<td>Brice Swyre</td>
-					<td> Tax Accountant </td>
-					<td> 21 </td>
-				</tr>
-			</tbody>
-		</Table>
+	<div slot="preview" class="flex flex-wrap gap-4">
+		{#each sizes as size}
+			<Table {size}>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Job</th>
+						<th>Age</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cy Ganderton</td>
+						<td> Quality Control Specialist </td>
+						<td> 23 </td>
+					</tr>
+					<tr>
+						<td>Hart Hagerty</td>
+						<td> Desktop Support Technician </td>
+						<td> 25</td>
+					</tr>
+					<tr>
+						<td>Brice Swyre</td>
+						<td> Tax Accountant </td>
+						<td> 21 </td>
+					</tr>
+				</tbody>
+			</Table>
+		{/each}
 	</div>
 </SampleWrapper>

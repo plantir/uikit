@@ -40,7 +40,7 @@
 	};
 	let section: any = [];
 	let demo_1_ClassNames = [
-		'bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95',
+		'bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95',
 		'btn btn-primary'
 	];
 	$: demo_1_ClassNameHandler = () => {
@@ -96,7 +96,7 @@
 <svelte:window bind:scrollY bind:innerHeight />
 <div>
 	<div
-		class="flex min-h-[550vh] max-w-[100vw] flex-col items-center justify-start xl:flex-row xl:items-start xl:justify-between"
+		class="flex min-h-[550vh] max-w-screen flex-col items-center justify-start xl:flex-row xl:items-start xl:justify-between"
 		bind:this={section['hero']}
 	>
 		<div class="shrink xl:w-1/2">
@@ -116,13 +116,13 @@
 						<br />
 						<span class="inline-grid">
 							<span
-								class="pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text blur-xl [-webkit-text-fill-color:transparent] [transform:translate3d(0,0,0)] before:content-[attr(data-text)] [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
+								class="pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,var(--color-error)_0%,var(--color-secondary)_9%,var(--color-secondary)_42%,var(--color-primary)_47%,var(--color-accent)_100%)] bg-clip-text blur-xl [-webkit-text-fill-color:transparent] [transform:translate3d(0,0,0)] before:content-[attr(data-text)] [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
 								aria-hidden="true"
 								data-text={'component library'}
 							>
 							</span>
 							<span
-								class="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
+								class="[&::selection]:text-base-content relative col-start-1 row-start-1 bg-[linear-gradient(90deg,var(--color-error)_0%,var(--color-secondary)_9%,var(--color-secondary)_42%,var(--color-primary)_47%,var(--color-accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&::selection]:bg-blue-700/20 [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
 							>
 								component library
 							</span>
@@ -169,7 +169,7 @@
 			</div>
 			<div class="xl:h-[calc(20vh)]" />
 			<div>
-				<div class="max-w-[100vw] px-2 py-10 lg:px-10 xl:max-w-[50vw]">
+				<div class="max-w-screen px-2 py-10 lg:px-10 xl:max-w-[50vw]">
 					<div class="font-title text-center xl:text-start">
 						<h2 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-none">
 							{@html "don't re-invent <br/>the wheel <br/>every time"}
@@ -226,7 +226,7 @@
 			</div>
 		</div>
 		<div
-			class="invisible sticky bottom-4 flex w-[calc(100%-2rem)] shrink duration-700 xl:visible xl:-end-32 xl:bottom-auto xl:top-16 xl:w-auto xl:!transform-none xl:overflow-x-hidden xl:overflow-y-clip xl:bg-transparent xl:pb-16 xl:pt-16"
+			class="invisible sticky bottom-4 flex w-[calc(100%-2rem)] shrink duration-700 xl:visible xl:-end-32 xl:bottom-auto xl:top-16 xl:w-auto xl:transform-none! xl:overflow-x-hidden xl:overflow-y-clip xl:bg-transparent xl:pb-16 xl:pt-16"
 			style={`${
 				section['hero'] && scrollY > section['hero'].clientHeight * 0.2
 					? 'visibility: visible;'
@@ -234,7 +234,7 @@
 			}transform:translateY(${animateValue(section['hero'], [17, 25], [120, 0])}%)`}
 		>
 			<div
-				class="mockup mockup-window bg-base-200/90 xl:bg-base-200 mx-auto origin-top overflow-visible pb-4 backdrop-blur will-change-auto [--rtl-reverse:1] [transform:rotateX(20deg)rotateZ(-20deg)skewY(8deg)scale(1)] rtl:[--rtl-reverse:-1] rtl:[transform:rotateX(20deg)rotateZ(20deg)skewY(-8deg)scale(1)] max-[1279px]:![transform:translate3d(0,0,0)] xl:-end-20 xl:-me-10 xl:h-[32rem] xl:w-[50rem] xl:rounded-e-none xl:pe-4 xl:shadow-[-0.05rem_0.1rem_0rem_#00000014] xl:backdrop-blur-0"
+				class="mockup mockup-window bg-base-200/90 xl:bg-base-200 mx-auto origin-top overflow-visible pb-4 backdrop-blur will-change-auto [--rtl-reverse:1] [transform:rotateX(20deg)rotateZ(-20deg)skewY(8deg)scale(1)] rtl:[--rtl-reverse:-1] rtl:[transform:rotateX(20deg)rotateZ(20deg)skewY(-8deg)scale(1)] max-[1279px]:[transform:translate3d(0,0,0)]! xl:-end-20 xl:-me-10 xl:h-128 xl:w-200 xl:rounded-e-none xl:pe-4 xl:shadow-[-0.05rem_0.1rem_0rem_#00000014] xl:backdrop-blur-0"
 				style={section['hero'] &&
 					`transform: rotateX(${animateValue(
 						section['hero'],
@@ -254,7 +254,7 @@
 				<div class="grid">
 					<div
 						style={`opacity:${animateValue(section['hero'], [15, 17], [1, 0])}`}
-						class="z-[1] col-start-1 row-start-1 grid overflow-y-hidden overflow-x-scroll [scrollbar-width:none] xl:visible xl:overflow-x-visible xl:overflow-y-visible [&::-webkit-scrollbar]:hidden"
+						class="z-1 col-start-1 row-start-1 grid overflow-y-hidden overflow-x-scroll [scrollbar-width:none] xl:visible xl:overflow-x-visible xl:overflow-y-visible [&::-webkit-scrollbar]:hidden"
 						class:invisible={section['hero'] && scrollY < section['hero'].clientHeight}
 					>
 						<!-- flying components -->
@@ -263,7 +263,7 @@
 						>
 							<div class="flex gap-6 xl:w-60 xl:flex-col xl:gap-0">
 								<div
-									class="relative z-[1] w-80 will-change-auto motion-reduce:!transform-none max-[1279px]:![transform:translate3d(0,0,0)] xl:-start-6 xl:w-auto xl:[filter:drop-shadow(-1rem_3rem_1rem_#00000012)]"
+									class="relative z-1 w-80 will-change-auto motion-reduce:transform-none! max-[1279px]:[transform:translate3d(0,0,0)]! xl:-start-6 xl:w-auto xl:filter-[drop-shadow(-1rem_3rem_1rem_#00000012)]"
 									style={`filter: drop-shadow(calc(-1rem * var(--rtl-reverse)) 3rem 1rem #00000012);transform:translate(calc(${animateValue(
 										section['hero'],
 										[8, 15],
@@ -397,7 +397,7 @@
 																</Avatar>
 															</div>
 															<div
-																class="chat-bubble text-xs [.chat_&]:before:[inset-inline-start:-0.73rem]"
+																class="chat-bubble text-xs in-[.chat]:before:start-[-0.73rem]"
 															>
 																Use Tailwind CSS but write fewer class names.
 															</div>
@@ -433,7 +433,7 @@
 									class="flex w-60 flex-col justify-end gap-4 xl:w-auto xl:justify-normal xl:p-6"
 								>
 									<div
-										class="flex gap-3 items-center p-4 rounded-btn border-base-300 border will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-none max-[1279px]:![transform:translate3d(0,0,0)]"
+										class="flex gap-3 items-center p-4 rounded-btn border-base-300 border will-change-auto motion-reduce:transform-none! motion-reduce:shadow-none! max-[1279px]:[transform:translate3d(0,0,0)]!"
 										style={`box-shadow:calc(${animateValue(
 											section['hero'],
 											[5, 5.5],
@@ -473,7 +473,7 @@
 										</span>
 									</div>
 									<div
-										class="flex gap-3 items-center p-4 rounded-btn border-base-300 border will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-none max-[1279px]:![transform:translate3d(0,0,0)]"
+										class="flex gap-3 items-center p-4 rounded-btn border-base-300 border will-change-auto motion-reduce:transform-none! motion-reduce:shadow-none! max-[1279px]:[transform:translate3d(0,0,0)]!"
 										style={`box-shadow:calc(${animateValue(
 											section['hero'],
 											[6, 6.5],
@@ -513,7 +513,7 @@
 
 							<div class="flex shrink-0 gap-6 pe-4 xl:flex-col xl:pe-0">
 								<div
-									class="flex flex-col rounded-2xl bg-base-100 shadow-sm will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-sm max-[1279px]:![transform:translate3d(0,0,0)]"
+									class="flex flex-col rounded-2xl bg-base-100 shadow-xs will-change-auto motion-reduce:transform-none! motion-reduce:shadow-xs! max-[1279px]:[transform:translate3d(0,0,0)]!"
 									style={`--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), calc(${animateValue(
 										section['hero'],
 										[0, 0.5],
@@ -560,7 +560,7 @@
 												checkbox-lg
 											</div>
 										</div>
-										<RadioGroup class="!grid grid-cols-4 items-end gap-4 w-full">
+										<RadioGroup class="grid! grid-cols-4 items-end gap-4 w-full">
 											<div class="flex flex-col items-center gap-1">
 												<Radio color="secondary" value="xs" size="xs"></Radio>
 												<span class="text-base-content/70 text-[.6rem]">radio-xs</span>
@@ -581,7 +581,7 @@
 									</div>
 								</div>
 								<div
-									class="flex flex-col rounded-2xl bg-base-100 shadow-sm will-change-auto motion-reduce:!transform-none motion-reduce:!shadow-sm max-[1279px]:![transform:translate3d(0,0,0)]"
+									class="flex flex-col rounded-2xl bg-base-100 shadow-xs will-change-auto motion-reduce:transform-none! motion-reduce:shadow-xs! max-[1279px]:[transform:translate3d(0,0,0)]!"
 									style={`--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), calc(${animateValue(
 										section['hero'],
 										[4, 4.5],
@@ -682,13 +682,13 @@
 	<div class="w-full px-2 py-10 md:py-20 lg:py-40 lg:px-10" bind:this={section['nextlevel']}>
 		<div class="text-center">
 			<h2
-				class="font-title relative z-[2] mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none will-change-auto [transform:translate3d(0,0,0)] motion-reduce:!tracking-normal max-[1279px]:!tracking-normal"
+				class="font-title relative z-2 mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none will-change-auto [transform:translate3d(0,0,0)] motion-reduce:tracking-normal! max-[1279px]:tracking-normal!"
 				style={`letter-spacing:${animateValue(section['nextlevel'], [-100, 20], [1, 0])}rem`}
 			>
 				Take Tailwind CSS
 				<br />
 				<span
-					class="bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text will-change-auto [-webkit-text-fill-color:transparent] [transform:translate3d(0,0,0)] motion-reduce:!tracking-normal max-[1279px]:!tracking-normal [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
+					class="bg-[linear-gradient(90deg,var(--color-error)_0%,var(--color-secondary)_9%,var(--color-secondary)_42%,var(--color-primary)_47%,var(--color-accent)_100%)] bg-clip-text will-change-auto [-webkit-text-fill-color:transparent] [transform:translate3d(0,0,0)] motion-reduce:tracking-normal! max-[1279px]:tracking-normal! [@supports(color:oklch(0%_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]"
 					style={`letter-spacing:${animateValue(section['nextlevel'], [-100, 20], [0, 1])}rem`}
 				>
 					to the next level
@@ -719,10 +719,10 @@
 				<div class="w-full px-2 py-10 md:py-20 lg:py-40 lg:px-10">
 					<div class="text-center">
 						<h2
-							class="font-title relative z-[2] mx-auto text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-none"
+							class="font-title relative z-2 mx-auto text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-none"
 						>
 							<span
-								class="motion-reduce:!opacity-100"
+								class="motion-reduce:opacity-100!"
 								style={`opacity:${
 									section['uglyhtml'] &&
 									((scrollY - section['uglyhtml'].offsetTop) / section['uglyhtml'].clientHeight) *
@@ -738,7 +738,7 @@
 								No
 							</span>
 							<span
-								class="motion-reduce:!opacity-100"
+								class="motion-reduce:opacity-100!"
 								style={`opacity:${
 									section['uglyhtml'] &&
 									((scrollY - section['uglyhtml'].offsetTop) / section['uglyhtml'].clientHeight) *
@@ -754,7 +754,7 @@
 								more
 							</span>
 							<span
-								class="motion-reduce:!opacity-100"
+								class="motion-reduce:opacity-100!"
 								style={`opacity:${
 									section['uglyhtml'] &&
 									((scrollY - section['uglyhtml'].offsetTop) / section['uglyhtml'].clientHeight) *
@@ -770,7 +770,7 @@
 								ugly
 							</span>
 							<span
-								class="motion-reduce:!opacity-100"
+								class="motion-reduce:opacity-100!"
 								style={`opacity:${
 									section['uglyhtml'] &&
 									((scrollY - section['uglyhtml'].offsetTop) / section['uglyhtml'].clientHeight) *
@@ -786,7 +786,7 @@
 								HTML
 							</span>
 						</h2>
-						<p class="text-base-content/70 font-title relative z-[2] py-4 font-light md:text-3xl">
+						<p class="text-base-content/70 font-title relative z-2 py-4 font-light md:text-3xl">
 							{@html 'Write fewer class names<br />Use component class names<br />modify them using Tailwind CSS utilities.'}
 						</p>
 						<div class="h-4" />
@@ -854,7 +854,7 @@
 									>&quot;&gt;
 		&lt;div class=&quot;<span class="text-rose-600">flex flex-col gap-2 p-8</span>&quot;&gt;
 		  &lt;input placeholder=&quot;Email&quot; class=&quot;<span class="text-rose-600"
-										>w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100</span
+										>w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-hidden focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100</span
 									>&quot; /&gt;
 		  &lt;label class=&quot;<span class="text-rose-600"
 										>flex cursor-pointer items-center justify-between p-1</span
@@ -862,7 +862,7 @@
 			Accept terms of use
 			&lt;div class=&quot;<span class="text-rose-600">relative inline-block</span>&quot;&gt;
 			  &lt;input type=&quot;checkbox&quot; class=&quot;<span class="text-rose-600"
-										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
+										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
 									>&quot; /&gt;
 			  &lt;span class=&quot;<span class="text-rose-600"
 										>pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900</span
@@ -875,7 +875,7 @@
 			Submit to newsletter
 			&lt;div class=&quot;<span class="text-rose-600">relative inline-block</span>&quot;&gt;
 			  &lt;input type=&quot;checkbox&quot; class=&quot;<span class="text-rose-600"
-										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
+										>peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2</span
 									>&quot; /&gt;
 			  &lt;span class=&quot;<span class="text-rose-600"
 										>pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900</span
@@ -883,7 +883,7 @@
 			&lt;/div&gt;
 		  &lt;/label&gt;
 		  &lt;button class=&quot;<span class="text-rose-600"
-										>inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95</span
+										>inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95</span
 									>&quot;&gt;Save&lt;/button&gt;
 		&lt;/div&gt;
 	  &lt;/div&gt;</pre>
@@ -898,7 +898,7 @@
 										<input
 											name="sample-email"
 											placeholder="Email"
-											class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100"
+											class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:outline-hidden focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-100"
 										/>
 										<label class="flex cursor-pointer items-center justify-between p-1">
 											Accept terms of use
@@ -906,11 +906,11 @@
 												<input
 													name="sample-checkbox"
 													type="checkbox"
-													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
 												/>
 												<span
 													class="pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900"
-												/>
+												></span>
 											</div>
 										</label>
 										<label class="flex cursor-pointer items-center justify-between p-1">
@@ -919,7 +919,7 @@
 												<input
 													type="checkbox"
 													name="sample-checkbox"
-													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+													class="peer h-6 w-12 cursor-pointer appearance-none rounded-full border border-gray-300 bg-white checked:border-gray-900 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
 												/>
 												<span
 													class="pointer-events-none absolute start-1 top-1 block h-4 w-4 rounded-full bg-gray-400 transition-all duration-200 peer-checked:start-7 peer-checked:bg-gray-900"
@@ -927,7 +927,7 @@
 											</span>
 										</label>
 										<button
-											class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
+											class="inline-block cursor-pointer rounded-md bg-gray-700 px-4 py-3.5 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-800 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-700 focus-visible:ring-offset-2 active:scale-95"
 										>
 											Save
 										</button>
@@ -943,6 +943,8 @@
 </div>
 
 <style lang="scss" global>
+	@reference "tailwindcss";
+
 	.mockup-window {
 		position: relative;
 		display: flex;

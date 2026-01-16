@@ -1,14 +1,22 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
-import { purgeCss } from 'vite-plugin-svelte-purgecss';
-import examples from 'mdsvexamples/vite';
 import path from 'path';
-export default defineConfig({
-	plugins: [sveltekit(), examples],
+import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite'
+import examples from 'mdsvexamples/vite';
 
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
+export default defineConfig({
+	plugins: [sveltekit(), tailwindcss(), examples],
+	css: {
+		postcss: {
+			plugins: [
+				// Loop
+				
+			]
+		}
 	},
+	// test: {
+	// 	include: ['src/**/*.{test,spec}.{js,ts}']
+	// },
 	resolve: {
 		alias: {
 		  'uikit': path.resolve(process.cwd(), './src/lib/index.ts'),

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Select, SelectColor, SelectSize } from './Select.type.ts';
-	import './Select.scss';
+	import './Select.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Select;
 	let componentName = 'select';
@@ -34,6 +34,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled,
 		bordered,
 		primary: color == 'primary',
@@ -43,7 +44,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural',
+		neutral: color == 'neutral',
 		multiple,
 		'state-valid': state === 'valid',
 		'state-invalid': state === 'invalid'

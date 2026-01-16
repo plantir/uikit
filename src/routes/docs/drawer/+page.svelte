@@ -5,7 +5,7 @@
 </script>
 
 <div>
-	<div class="w-[100vw] h-[100vh] bg-green-600 flex justify-center items-center">
+	<div class="w-screen h-screen bg-green-600 flex justify-center items-center">
 		<Button on:click={() => (open = !open)}>open Drawer</Button>
 	</div>
 	<!-- <Drawer bind:open>

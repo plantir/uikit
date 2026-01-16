@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Badge, BadgeColor, BadgeSize, BadgeVariant } from './Badge.type.js';
-	import './Badge.scss';
+	import './Badge.css';
 	import El from '$lib/utils/El.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
@@ -23,11 +23,13 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled: disabled,
 		dismissable,
 		outline: variant == 'outline',
 		glass: variant == 'glass',
-		link: variant == 'link',
+		soft: variant == 'soft',
+		dash: variant == 'dash',
 		ghost: variant == 'ghost',
 		dot: variant == 'dot',
 		primary: color == 'primary',
@@ -37,7 +39,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 </script>
 

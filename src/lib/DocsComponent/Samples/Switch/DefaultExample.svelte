@@ -11,16 +11,16 @@
 	let activeTab = 'Preview';
 	let form: any = {};
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ObjectCode from '$lib/DocsComponent/ComponentCode/ObjectCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Switch from '{$importDocumentSrc}/Switch.svelte';
-				let form={'{'}{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Switch</span> from '{$importDocumentSrc}/Switch.svelte';
+			<br />
+			<ObjectCode name="form" item={form}></ObjectCode>
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div">
@@ -50,17 +50,19 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div>
-			<Switch label="do you like sports ?" bind:value={form.sport} />
-		</div>
-		<div>
-			<Switch label="do you like sleep ?" bind:value={form.sleep} />
-		</div>
-		<div>
-			<Switch label="do you like games ?" bind:value={form.games} />
-		</div>
-		<div>
-			<Switch label="do you like sea ?" bind:value={form.sea} />
+		<div class="flex flex-col gap-4">
+			<div>
+				<Switch label="do you like sports ?" bind:value={form.sport} />
+			</div>
+			<div>
+				<Switch label="do you like sleep ?" bind:value={form.sleep} />
+			</div>
+			<div>
+				<Switch label="do you like games ?" bind:value={form.games} />
+			</div>
+			<div>
+				<Switch label="do you like sea ?" bind:value={form.sea} />
+			</div>
 		</div>
 	</div>
 </SampleWrapper>

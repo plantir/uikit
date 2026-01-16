@@ -9,17 +9,25 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Loading, Pagination, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	import SampleWrapper from '../SampleWrapper.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Loading from '{$importDocumentSrc}/Loading.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Loading</span> from '{$importDocumentSrc}/Loading.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="Loading" close_self />

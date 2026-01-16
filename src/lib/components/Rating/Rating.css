@@ -1,0 +1,207 @@
+@reference "../../css/app.css";
+@layer components {
+	.ui-rating {
+		@apply daisy-rating;
+
+		input {
+			@apply daisy-mask;
+		}
+
+		&.ui-rating-half {
+			@apply daisy-rating-half;
+
+			input {
+				&.half-1 {
+					@apply daisy-mask-half-1;
+				}
+
+				&.half-0 {
+					@apply daisy-mask-half-2;
+				}
+			}
+		}
+
+		&.ui-rating-mask-squircle {
+			input {
+				@apply daisy-mask-squircle;
+			}
+		}
+
+		&.ui-rating-mask-heart {
+			input {
+				@apply daisy-mask-heart;
+			}
+		}
+
+		&.ui-rating-mask-hexagon {
+			input {
+				@apply daisy-mask-hexagon;
+			}
+		}
+
+		&.ui-rating-mask-hexagon-2 {
+			input {
+				@apply daisy-mask-hexagon-2;
+			}
+		}
+
+		&.ui-rating-mask-decagon {
+			input {
+				@apply daisy-mask-decagon;
+			}
+		}
+
+		&.ui-rating-mask-pentagon {
+			input {
+				@apply daisy-mask-pentagon;
+			}
+		}
+
+		&.ui-rating-mask-diamond {
+			input {
+				@apply daisy-mask-diamond;
+			}
+		}
+
+		&.ui-rating-mask-circle {
+			input {
+				@apply daisy-mask-circle;
+			}
+		}
+
+		&.ui-rating-mask-star {
+			input {
+				@apply daisy-mask-star;
+			}
+		}
+
+		&.ui-rating-mask-star-2 {
+			input {
+				@apply daisy-mask-star-2;
+			}
+		}
+
+		&.ui-rating-mask-triangle {
+			input {
+				@apply daisy-mask-triangle;
+			}
+		}
+
+		&.ui-rating-mask-triangle-2 {
+			input {
+				@apply daisy-mask-triangle-2;
+			}
+		}
+
+		&.ui-rating-mask-triangle-3 {
+			input {
+				@apply daisy-mask-triangle-3;
+			}
+		}
+
+		&.ui-rating-mask-triangle-4 {
+			input {
+				@apply daisy-mask-triangle-4;
+			}
+		}
+
+		&.ui-rating-xs {
+			input {
+				width: 1rem;
+				height: 1rem;
+			}
+		}
+
+		&.ui-rating-sm {
+			input {
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+		}
+
+		&.ui-rating-md {
+			input {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
+
+		&.ui-rating-lg {
+			input {
+				width: 1.75rem;
+				height: 1.75rem;
+			}
+		}
+
+		&.ui-rating-xl {
+			input {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+
+		&.ui-range-sm {
+			@apply daisy-range-sm;
+		}
+
+		&.ui-range-md {
+			@apply daisy-range-md;
+		}
+
+		&.ui-range-lg {
+			@apply daisy-range-lg;
+		}
+
+		&.ui-range-xl {
+			@apply daisy-range-xl;
+		}
+
+		&.ui-rating-primary {
+			input {
+				@apply bg-primary;
+			}
+		}
+
+		&.ui-rating-secondary {
+			input {
+				@apply bg-secondary;
+			}
+		}
+
+		&.ui-rating-accent {
+			input {
+				@apply bg-accent;
+			}
+		}
+
+		&.ui-rating-success {
+			input {
+				@apply bg-success;
+			}
+		}
+
+		&.ui-rating-info {
+			input {
+				@apply bg-info;
+			}
+		}
+
+		&.ui-rating-error {
+			input {
+				@apply bg-error;
+			}
+		}
+
+		&.ui-rating-warning {
+			input {
+				@apply bg-warning;
+			}
+		}
+
+		&.ui-rating-neutral {
+			input {
+				@apply bg-neutral;
+			}
+		}
+	}
+}

@@ -8,6 +8,8 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	import FunctionCode from '$lib/DocsComponent/ComponentCode/FunctionCode.svelte';
 	let activeTab = 'Preview';
 	let loading_button = false;
 	function click() {
@@ -19,18 +21,20 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Button from '{$importDocumentSrc}/Button.svelte';
-			let loading_button = false;
-			function click(){'{'}
-			loading_button = true;
-			setTimeout(() => {'{'}
-				loading_button = false;
-			{'}'}, 2000);
-			{'}'}
-		</ScriptCode>
-	</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Button</span> from '{$importDocumentSrc}/Button.svelte';
+			<br />
+			<LetCode name="loading_button" value="false" />
+			<FunctionCode name="click">
+				loading_button = true;<br />
+				setTimeout(() => {'{'}<br />
+				loading_button = false;<br />
+				{'}'}, 2000);
+			</FunctionCode>
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
 		<TagCode name="Button" props={['loading={loading_button}', 'on:click={click}']}
 			>click me</TagCode

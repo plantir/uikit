@@ -5,5 +5,4 @@ export interface CheckboxGroup extends Base {
 	inline?: boolean;
 	column?: boolean;
 	join?: boolean;
-	disabled?: boolean;
 }

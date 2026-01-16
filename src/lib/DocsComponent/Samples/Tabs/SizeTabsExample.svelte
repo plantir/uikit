@@ -4,71 +4,44 @@
 	import ShowCode from '$lib/DocsComponent/ComponentCode/ShowCode.svelte';
 	import TagCode from '$lib/DocsComponent/ComponentCode/TagCode.svelte';
 	import SimpleCode from '$lib/DocsComponent/ComponentCode/SimpleCode.svelte';
-	import { importDocumentSrc } from '$lib/store/index.js';
+	import { GlobalSizesText, importDocumentSrc } from '$lib/store/index.js';
 	import { onMount } from 'svelte';
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '$lib/utils/El.types.js';
+	let sizes: GlobalSize[] = GlobalSizesText;
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-            <ScriptCode>
-                import Tabs from '{$importDocumentSrc}/Tabs.svelte';
-                import TabItem from '{$importDocumentSrc}/TabItem.svelte';
-            </ScriptCode>
-        </pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Tabs</span> from '{$importDocumentSrc}/Tabs.svelte';
+			import <span class="text-green-600">TabItem</span> from '{$importDocumentSrc}/TabItem.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Tabs" props={['selected="part1"', 'size="xs"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="xs"']}>content in part 1</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="xs"']}>content in part 2</TagCode>
-		</TagCode>
-		<TagCode name="Tabs" props={['selected="part1"', 'size="sm"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="sm"']}>content in part 1</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="sm"']}>content in part 2</TagCode>
-		</TagCode>
-		<TagCode name="Tabs" props={['selected="part1"', 'size="md"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="md"']}>content in part 1</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="md"']}>content in part 2</TagCode>
-		</TagCode>
-		<TagCode name="Tabs" props={['selected="part1"', 'size="lg"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="lg"']}>content in part 1</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="lg"']}>content in part 2</TagCode>
-		</TagCode>
-		<TagCode name="Tabs" props={['selected="part1"']}>
-			<TagCode name="TabItem" props={['value="part1"', 'title="default"']}>
-				content in part 1
+		{#each sizes as size}
+			<TagCode name="Tabs" props={['selected="part1"', `size="${size}"`]}>
+				<TagCode name="TabItem" props={['value="part1"', `title="${size}"`]}
+					>content in part 1</TagCode
+				>
+				<TagCode name="TabItem" props={['value="part2"', `title="${size}"`]}
+					>content in part 2</TagCode
+				>
 			</TagCode>
-			<TagCode name="TabItem" props={['value="part2"', 'title="default"']}>
-				content in part 2
-			</TagCode>
-		</TagCode>
+		{/each}
 	</div>
 	<div slot="preview">
-		<div class="flex flex-wrap gap-4">
-			<Tabs selected="part1" size="xs">
-				<TabItem value="part1" title="xs">content in part 1</TabItem>
-				<TabItem value="part2" title="xs">content in part 2</TabItem>
-			</Tabs>
-			<Tabs selected="part1" size="sm">
-				<TabItem value="part1" title="sm">content in part 1</TabItem>
-				<TabItem value="part2" title="sm">content in part 2</TabItem>
-			</Tabs>
-			<Tabs selected="part1" size="md">
-				<TabItem value="part1" title="md">content in part 1</TabItem>
-				<TabItem value="part2" title="md">content in part 2</TabItem>
-			</Tabs>
-			<Tabs selected="part1" size="lg">
-				<TabItem value="part1" title="lg">content in part 1</TabItem>
-				<TabItem value="part2" title="lg">content in part 2</TabItem>
-			</Tabs>
-			<Tabs selected="part1">
-				<TabItem value="part1" title="default">content in part 1</TabItem>
-				<TabItem value="part2" title="default">content in part 2</TabItem>
-			</Tabs>
+		<div class="flex flex-wrap gap-4 flex-col">
+			{#each sizes as size}
+				<Tabs selected="part1" {size}>
+					<TabItem value="part1" title={size}>content in part 1</TabItem>
+					<TabItem value="part2" title={size}>content in part 2</TabItem>
+				</Tabs>
+			{/each}
 		</div>
 	</div>
 </SampleWrapper>

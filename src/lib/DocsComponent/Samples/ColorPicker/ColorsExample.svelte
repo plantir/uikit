@@ -12,18 +12,18 @@
 	let form: any = {};
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import ColorPicker from '$lib/components/ColorPicker/ColorPicker.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value = '';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import ColorPicker from '{$importDocumentSrc}/ColorPicker.svelte';
-				let value = '';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">ColorPicker</span> from '{$importDocumentSrc}/ColorPicker.svelte';
+			<br />
+			<LetCode name="value" value="" />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex flex-wrap gap-2 md:gap-4"']}>
@@ -35,7 +35,7 @@
 				/>
 			</TagCode>
 			<TagCode name="div">
-value is : {'{'}value{'}'}
+				value is : {'{'}value{'}'}
 			</TagCode>
 		</TagCode>
 	</div>
@@ -52,6 +52,8 @@ value is : {'{'}value{'}'}
 </SampleWrapper>
 
 <style lang="scss">
+	@reference "tailwindcss";
+
 	.custom-gradient {
 		background: conic-gradient(from 180deg, red, orange, #ff0, green, blue);
 	}

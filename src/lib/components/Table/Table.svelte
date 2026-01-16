@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './Table.scss';
+	import './Table.css';
 	import type { Table, TableColor, TableSize } from './Table.type.js';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	type $$Props = Table;
@@ -8,25 +8,15 @@
 	export let zebra: boolean = false;
 	export let hover: boolean = false;
 	export let size: TableSize = undefined;
-	export let color: TableColor = undefined;
 	export let pinHead: boolean = false;
+	export let pinCols: boolean = false;
 	$: componentClass = {
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
+		size:size,
 		disabled,
 		zebra,
 		hover,
 		'pin-head': pinHead,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural'
+		'pin-cols': pinCols,
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
 </script>

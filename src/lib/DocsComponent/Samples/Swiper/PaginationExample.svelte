@@ -14,18 +14,16 @@
 		type: 'progressbar'
 	};
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import ObjectCode from '$lib/DocsComponent/ComponentCode/ObjectCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-				let pagination = {'{'}
-					type: 'progressbar'
-				{'}'};
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Swiper</span> from '{$importDocumentSrc}/Swiper.svelte';
+			<br />
+			<ObjectCode name="navigation" item={pagination}></ObjectCode>
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="grid grid-cols-2 gap-10"']}>
@@ -81,6 +79,8 @@
 </SampleWrapper>
 
 <style lang="scss" global>
+	@reference "tailwindcss";
+
 	.swiper-navigation-to-right {
 		@apply absolute top-1/2 -translate-y-1/2 z-10 right-4 bg-white w-5 h-5 select-none rounded-full flex items-center justify-center;
 		&.swiper-button-disabled {

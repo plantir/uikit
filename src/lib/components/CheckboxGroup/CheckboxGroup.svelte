@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-	import './CheckboxGroup.scss';
+	import './CheckboxGroup.css';
 	import { createEventDispatcher } from 'svelte';
 	import type { CheckboxGroup } from './CheboxGroup.type.js';
 	import El from '$lib/utils/El.svelte';
@@ -31,26 +31,23 @@
 	export let inline: $$Props['inline'] = false;
 	export let join: $$Props['inline'] = false;
 	export let column: $$Props['column'] = false;
-	export let disabled: $$Props['disabled'] = false;
+	export let disabled: boolean = false; // Added disabled prop
 
 	let selected = writable(value);
+	const disabledStore = writable(disabled); // Create a writable store for disabled
 
-	const disabledStore = writable(disabled);
 	setCheckboxGroupContext({
 		selected,
-		disabled: disabledStore
+		disabled: disabledStore, // Pass disabled store to context
 	});
 
+	// Subscribe ONCE to selected, update value and dispatch
 	selected.subscribe((val) => {
-		selected.subscribe((val) => {
-			if (val && val != value) {
-				value = val;
-				dispatch('change', value);
-			}
-		});
+		if (val && val !== value) {
+			value = val;
+			dispatch('change', value);
+		}
 	});
-
-	$: disabled, disabledStore.set(disabled!);
 
 	function onValueChange() {
 		selected.set(value ?? []);

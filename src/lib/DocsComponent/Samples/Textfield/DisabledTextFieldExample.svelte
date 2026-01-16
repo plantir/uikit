@@ -13,18 +13,15 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Textfield from '{$importDocumentSrc}/TextField.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="TextField" props={['disabled', 'label="Disabled"']}></TagCode>
-		<TagCode name="TextField" props={['label="Not Disabled"']}></TagCode>
 	</div>
 	<div slot="preview">
-		<TextField label="Name" disabled />
-		<TextField label="Parent Name" />
+		<TextField label="Disabled" disabled />
 	</div>
 </SampleWrapper>

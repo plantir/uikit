@@ -9,19 +9,14 @@
 		},
 		{
 			name: 'size',
-			type: `'xs' | 'sm' | 'md' | 'lg'`,
+			type: `'xs' | 'sm' | 'md' | 'lg' | 'xl'`,
 			default: 'md'
 		},
 		{
-			name: 'page',
-			type: `number`,
-			default: '1'
+			name: 'type',
+			type: `"spinner" | "dots" | "ring" | "ball" | "bars" | "infinity" | undefined`,
+			default: '"spinner"'
 		},
-		{
-			name: 'lastpage',
-			type: `number`,
-			default: '1'
-		}
 	];
 </script>
 

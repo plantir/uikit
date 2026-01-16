@@ -13,17 +13,17 @@
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Radio from '{$importDocumentSrc}/Radio.svelte';
-				import RadioGroup from '{$importDocumentSrc}/RadioGroup.svelte';
-				let value='';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Radio</span> from '{$importDocumentSrc}/Radio.svelte';
+			import <span class="text-green-600">RadioGroup</span> from '{$importDocumentSrc}/RadioGroup.svelte';
+			<LetCode name="value" value=""></LetCode>
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="RadioGroup" props={['bind:value']}>
@@ -32,7 +32,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<RadioGroup bind:value join>
+		<RadioGroup bind:value>
 			<Radio value="male" label="male"></Radio>
 			<Radio value="female" label="female"></Radio>
 		</RadioGroup>

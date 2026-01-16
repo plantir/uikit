@@ -15,12 +15,10 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-				let slideItem = 3;
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Swiper</span> from '{$importDocumentSrc}/Swiper.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="w-[290px] md:w-[460px] mx-auto"']}>

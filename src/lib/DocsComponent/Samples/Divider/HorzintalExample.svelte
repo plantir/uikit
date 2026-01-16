@@ -15,11 +15,10 @@
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Divider from '{$importDocumentSrc}/Divider.svelte';
-			</ScriptCode>
-		</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Divider</span> from '{$importDocumentSrc}/Divider.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="flex gap-4"']}>

@@ -1,0 +1,69 @@
+@reference "../../css/app.css";
+@layer components {
+	.ui-toast {
+		@apply daisy-toast;
+
+		&.ui-toast-placement-top-start {
+			--daisy-toast-y: 0;
+			top: 1rem;
+			bottom: auto;
+			--daisy-toast-x: 0;
+			inset-inline: 1rem auto;
+		}
+
+		&.ui-toast-placement-top-center {
+			--daisy-toast-y: 0;
+			top: 1rem;
+			bottom: auto;
+			--daisy-toast-x: -50%;
+			inset-inline: 50%;
+		}
+
+		&.ui-toast-placement-top-end {
+			--daisy-toast-y: 0;
+			top: 1rem;
+			bottom: auto;
+			--daisy-toast-x: 0;
+			inset-inline: auto 1rem;
+		}
+
+		&.ui-toast-placement-middle-start {
+			--daisy-toast-y: -50%;
+			top: 50%;
+			bottom: auto;
+			--daisy-toast-x: 0;
+			inset-inline: 1rem auto;
+		}
+
+		&.ui-toast-placement-middle-center {
+			--daisy-toast-y: -50%;
+			top: 50%;
+			bottom: auto;
+			--daisy-toast-x: -50%;
+			inset-inline: 50%;
+		}
+
+		&.ui-toast-placement-middle-end {
+			--daisy-toast-y: -50%;
+			top: 50%;
+			bottom: auto;
+			--daisy-toast-x: 0;
+			inset-inline: auto 1rem;
+		}
+
+		&.ui-toast-placement-bottom-start {
+			--daisy-toast-x: 0;
+			inset-inline: 1rem auto;
+		}
+
+		&.ui-toast-placement-bottom-center {
+			--daisy-toast-x: -50%;
+			inset-inline: 50%;
+		}
+
+		&.ui-toast-placement-bottom-end {
+			--daisy-toast-x: 0;
+			inset-inline: auto 1rem;
+		}
+	}
+}

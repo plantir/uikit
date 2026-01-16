@@ -29,7 +29,7 @@
 		},
 		{
 			name: 'size',
-			type: `'xs' | 'sm' | 'md' | 'lg'`,
+			type: `'xs' | 'sm' | 'md' | 'lg' | 'xl'`,
 			default: 'md'
 		},
 
@@ -55,14 +55,7 @@
 		},
 		{
 			name: 'color',
-			type: ` 'primary'
-					| 'secondary'
-					| 'accent'
-					| 'success'
-					| 'warning'
-					| 'info'
-					| 'error' 
-					| 'undefined'`,
+			type: ` 'primary' | 'secondary' | 'accent' | 'success' | 'warning' | 'info' | 'error' | 'neutral'  | 'undefined'`,
 			default: 'undefined'
 		}
 	];

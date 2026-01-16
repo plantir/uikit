@@ -11,21 +11,21 @@
 	let activeTab = 'Preview';
 	let form: any = {};
 	import SampleWrapper from '../SampleWrapper.svelte';
+	
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Swiper from '{$importDocumentSrc}/Swiper.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Swiper</span> from '{$importDocumentSrc}/Swiper.svelte';
+			<br />
+		</TagCode>
 	</div>
 	<div slot="html">
 		<TagCode name="div" props={['class="w-[290px] md:w-[460px] mx-auto"']}>
 			<TagCode name="Swiper">
 				{#each { length: 12 } as item, i}
-					<TagCode name="swiper-slide">
+					<TagCode name="SwiperItem">
 						<TagCode close_self name="img" props={['src="your image url"']}></TagCode>
 					</TagCode>
 				{/each}
@@ -35,7 +35,7 @@
 	<div slot="preview">
 		<div class="w-[290px] md:w-[460px] mx-auto">
 			<Swiper>
-				{#each { length: 12 } as index, i}
+				{#each { length: 12 } as item, i}
 					<swiper-slide>
 						<img src="/swiper-example-0{(i % 3) + 1}.jpg" alt="" />
 					</swiper-slide>

@@ -10,9 +10,9 @@
 <Badge size="lg" variant="dot" color="primary">Hello</Badge>
 <Badge size="lg" variant="dot" color="natural">Hello</Badge>
 <Badge size="lg" variant="dot" color="error">Hello</Badge>
-<Badge size="lg" variant="dot" class="before:bg-cyan-500 !text-cyan-500">Hello</Badge>
+<Badge size="lg" variant="dot" class="before:bg-cyan-500 text-cyan-500!">Hello</Badge>
 <Button class="relative mt-4" color="error"
-	>Notifications <Badge class="absolute -left-1 -top-2 !w-6 !h-6 rounded-full" color="warning"
+	>Notifications <Badge class="absolute -left-1 -top-2 w-6! h-6! rounded-full" color="warning"
 		>14</Badge
 	></Button
 >

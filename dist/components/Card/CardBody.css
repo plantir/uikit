@@ -1,0 +1,26 @@
+@reference "../../css/app.css";
+@layer components {
+	.ui-card-body {
+		@apply daisy-card-body;
+	}
+	.ui-card.ui-card-xs .ui-card-body {
+		--daisy-card-p: 0.5rem;
+		--daisy-card-fs: 0.6875rem;
+	}
+	.ui-card.ui-card-sm .ui-card-body {
+		--daisy-card-p: 1rem;
+		--daisy-card-fs: 0.75rem;
+	}
+	.ui-card.ui-card-md .ui-card-body {
+		--daisy-card-p: 1.5rem;
+		--daisy-card-fs: 0.875rem;
+	}
+	.ui-card.ui-card-lg .ui-card-body {
+		--daisy-card-p: 2rem;
+		--daisy-card-fs: 1rem;
+	}
+	.ui-card.ui-card-xl .ui-card-body {
+		--daisy-card-p: 2.5rem;
+		--daisy-card-fs: 1.125rem;
+	}
+}

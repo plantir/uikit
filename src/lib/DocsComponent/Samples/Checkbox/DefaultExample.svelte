@@ -9,30 +9,39 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Checkbox, Radio, RadioGroup, Range, Switch, Table } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import CheckboxGroup from '$lib/components/CheckboxGroup/CheckboxGroup.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	import ArrayCode from '$lib/DocsComponent/ComponentCode/ArrayCode.svelte';
 	let activeTab = 'Preview';
 	let form: any = {};
 	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
 	let value: any;
-	let checked = true;
+	let checked = 'test';
+	let selected: any = $state(['option-2']);
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-			let checked=true;
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Checkbox</span> from '{$importDocumentSrc}/Checkbox.svelte';
+			import <span class="text-green-600">CheckboxGroup</span> from '{$importDocumentSrc}/CheckboxGroup.svelte';
+			<br />
+			<ArrayCode name="selected" items={selected} />
+		</TagCode>
+		<br />
+	</div>
 	<div slot="html">
-		<TagCode name="Checkbox" props={['label="default checkbox"']} close_self></TagCode>
-		<TagCode name="Checkbox" props={['label="checked state"', 'bind:value={checked}']} close_self
-		></TagCode>
-		<TagCode name="Checkbox" props={['label="indeterminate"', 'indeterminate']} close_self
-		></TagCode>
+		<TagCode name="CheckboxGroup" props={['bind:value={selected}']}>
+			<TagCode name="Checkbox" props={['label="option 1"', 'value="option-1"']} close_self
+			></TagCode>
+			<TagCode name="Checkbox" props={['label="option 2"', 'value="option-2"']} close_self
+			></TagCode>
+		</TagCode>
 	</div>
 	<div slot="preview">
-		<Checkbox label="default checkbox" />
-		<Checkbox label="checked state" bind:value={checked} />
-		<Checkbox label="indeterminate" indeterminate />
+		<CheckboxGroup bind:value={selected}>
+			<Checkbox label="option 1" value="option-1" />
+			<Checkbox label="option 2" value="option-2" />
+		</CheckboxGroup>
 	</div>
 </SampleWrapper>

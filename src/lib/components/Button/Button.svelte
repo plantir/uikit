@@ -8,7 +8,7 @@
 		ButtonSize,
 		ButtonVariant
 	} from './Button.type.ts';
-	import './Button.scss';
+	import './Button.css';
 	type $$Props = Button;
 	let componentName = 'button';
 	export let disabled: boolean = false;
@@ -36,6 +36,7 @@
 		sm: size == 'sm',
 		md: size == 'md',
 		lg: size == 'lg',
+		xl: size == 'xl',
 		disabled: disabled || loading,
 		primary: color == 'primary',
 		secondary: color == 'secondary',
@@ -44,7 +45,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 </script>
 

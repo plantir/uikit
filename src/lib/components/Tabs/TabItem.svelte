@@ -3,15 +3,13 @@
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import El from '$lib/utils/El.svelte';
 	import { getTabsContext } from './Tabs.svelte';
-	
+
 	import type { TabItem, TabItemColor, TabItemSize } from './TabItem.type.js';
-	import './TabItem.scss';
+	import './TabItem.css';
 
 	type $$Props = TabItem;
 	let componentName = 'tab-item';
 
-	export let size: TabItemSize = undefined;
-	export let color: TabItemColor = undefined;
 	export let value: string | undefined = undefined;
 	export let title: string | undefined = undefined;
 	const ctx = getTabsContext();
@@ -19,19 +17,7 @@
 	const selected = ctx?.selected ?? writable<HTMLElement>();
 
 	$: componentClass = {
-		active,
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural'
+		active
 	};
 	$: tabContentClass = ClassMerge({ name: `${componentName}-content` });
 	$: active = $selected == value;

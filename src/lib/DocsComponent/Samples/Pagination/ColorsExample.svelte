@@ -10,20 +10,31 @@
 	import { Pagination, Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
 	let pages: any = [5, 5, 5, 5, 5, 5, 5, 5, 5];
-	let colors: any = ['primary', 'secondary', 'accent', 'success', 'warning', 'info', 'error'];
+	let colors: any = [
+		'primary',
+		'secondary',
+		'accent',
+		'success',
+		'warning',
+		'info',
+		'error',
+		'neutral'
+	];
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Pagination from '{$importDocumentSrc}/Pagination.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Pagination</span> from '{$importDocumentSrc}/Pagination.svelte';
+			<br />
+			<LetCode name="page" value="5" />
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="div" props={['class="grid grid-cols-3 gap-4"']}>
+		<TagCode name="div" props={['class="grid grid-cols-2 gap-4"']}>
 			<TagCode name="Pagination" props={['bind:page', 'lastPage={10}']} close_self />
 			{#each colors as color}
 				<TagCode
@@ -35,7 +46,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 			<Pagination bind:page={pages[0]} lastPage={10} />
 			{#each colors as color, index}
 				<Pagination bind:page={pages[index + 1]} lastPage={10} {color} />

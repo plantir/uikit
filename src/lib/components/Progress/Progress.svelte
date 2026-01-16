@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './Progress.scss';
+	import './Progress.css';
 	import { ClassMerge } from '$lib/utils/ClassMerge.js';
 	import type { Progress, ProgressColor, ProgressSize } from './Progress.type.js';
 	type $$Props = Progress;
@@ -16,7 +16,7 @@
 		info: color == 'info',
 		error: color == 'error',
 		warning: color == 'warning',
-		natural: color == 'natural'
+		neutral: color == 'neutral'
 	};
 	$: elClass = ClassMerge({ name: componentName, componentClass });
 </script>

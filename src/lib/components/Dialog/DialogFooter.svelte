@@ -1,7 +1,7 @@
 <script lang="ts">
 	import El from '$lib/utils/El.svelte';
 	import type { DialogFooter } from './DialogFooter.type.js';
-	import './DialogFooter.scss';
+	import './DialogFooter.css';
 
 	let componentName = 'dialog-footer';
 	type $$Props = DialogFooter;

@@ -9,20 +9,25 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
+	let value = '';
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Textfield from '{$importDocumentSrc}/TextField.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">TextField</span> from '{$importDocumentSrc}/TextField.svelte';
+			<br />
+			<LetCode name="value" value="" />
+		</TagCode>
 	</div>
 	<div slot="html">
-		<TagCode name="TextField"></TagCode>
+		<TagCode
+			name="TextField"
+			props={['label="Username"', 'bind:value', 'placeholder="enter your username"']}
+		></TagCode>
 	</div>
 	<div slot="preview">
-		<TextField />
+		<TextField label="Username" bind:value placeholder="enter your username" />
 	</div>
 </SampleWrapper>

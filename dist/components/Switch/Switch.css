@@ -1,0 +1,52 @@
+@reference "../../css/app.css";
+@layer components {
+	.ui-switch-wrapper {
+		@apply inline-flex items-center gap-x-1 cursor-pointer;
+	}
+	.ui-switch {
+		@apply daisy-toggle;
+
+		&.ui-switch-disabled {
+			/* DAISYTODO: @apply daisy-disabled; */
+		}
+		&.ui-switch-xs {
+			@apply daisy-toggle-xs;
+		}
+		&.ui-switch-sm {
+			@apply daisy-toggle-sm;
+		}
+		&.ui-switch-md {
+			@apply daisy-toggle-md;
+		}
+		&.ui-switch-lg {
+			@apply daisy-toggle-lg;
+		}
+		&.ui-switch-xl {
+			@apply daisy-toggle-xl;
+		}
+		&.ui-switch-primary {
+			@apply daisy-toggle-primary;
+		}
+		&.ui-switch-secondary {
+			@apply daisy-toggle-secondary;
+		}
+		&.ui-switch-accent {
+			@apply daisy-toggle-accent;
+		}
+		&.ui-switch-success {
+			@apply daisy-toggle-success;
+		}
+		&.ui-switch-info {
+			@apply daisy-toggle-info;
+		}
+		&.ui-switch-error {
+			@apply daisy-toggle-error;
+		}
+		&.ui-switch-warning {
+			@apply daisy-toggle-warning;
+		}
+		&.ui-switch-neutral {
+			@apply daisy-toggle-neutral;
+		}
+	}
+}

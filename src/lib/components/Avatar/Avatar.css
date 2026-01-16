@@ -1,0 +1,195 @@
+@reference '../../css/app.css';
+
+@layer components {
+	.ui-avatar {
+		@apply relative inline-flex;
+
+		& > div {
+			@apply block aspect-square overflow-hidden bg-base-300;
+		}
+
+		img {
+			@apply h-full w-full object-cover;
+		}
+
+		&.ui-avatar-text > div {
+			@apply flex justify-center items-center;
+		}
+	}
+
+	.ui-avatar-mask-squircle > div {
+		@apply daisy-mask daisy-mask-squircle;
+	}
+
+	.ui-avatar-mask-heart > div {
+		@apply daisy-mask daisy-mask-heart;
+	}
+
+	.ui-avatar-mask-hexagon > div {
+		@apply daisy-mask daisy-mask-hexagon;
+	}
+
+	.ui-avatar-mask-hexagon-2 > div {
+		@apply daisy-mask daisy-mask-hexagon-2;
+	}
+
+	.ui-avatar-mask-decagon > div {
+		@apply daisy-mask daisy-mask-decagon;
+	}
+
+	.ui-avatar-mask-pentagon > div {
+		@apply daisy-mask daisy-mask-pentagon;
+	}
+
+	.ui-avatar-mask-diamond > div {
+		@apply daisy-mask daisy-mask-diamond;
+	}
+
+	.ui-avatar-mask-circle > div {
+		@apply daisy-mask daisy-mask-circle;
+	}
+
+	.ui-avatar-mask-star > div {
+		@apply daisy-mask daisy-mask-star;
+	}
+
+	.ui-avatar-mask-star-2 > div {
+		@apply daisy-mask daisy-mask-star-2;
+	}
+
+	.ui-avatar-mask-triangle > div {
+		@apply daisy-mask daisy-mask-triangle;
+	}
+
+	.ui-avatar-mask-triangle-2 > div {
+		@apply daisy-mask daisy-mask-triangle-2;
+	}
+
+	.ui-avatar-mask-triangle-3 > div {
+		@apply daisy-mask daisy-mask-triangle-3;
+	}
+
+	.ui-avatar-mask-triangle-4 > div {
+		@apply daisy-mask daisy-mask-triangle-4;
+	}
+
+	.ui-avatar-mask-square > div {
+		/* @apply daisy-mask daisy-mask-square; */
+	}
+
+	.ui-avatar-size-xs > div {
+		@apply w-8;
+	}
+
+	.ui-avatar-size-sm > div {
+		@apply w-12;
+	}
+
+	.ui-avatar-size-md > div {
+		@apply w-16;
+	}
+
+	.ui-avatar-size-lg > div {
+		@apply w-24;
+	}
+	.ui-avatar-size-xl > div {
+		@apply w-32;
+	}
+
+	.ui-avatar-shape-rounded > div {
+		@apply rounded;
+	}
+
+	.ui-avatar-shape-square > div {
+		/*  */
+	}
+
+	.ui-avatar-shape-circle > div {
+		@apply rounded-full;
+	}
+
+	.ui-avatar-ring > div {
+		@apply ring-3 ring-blue-500 ring-offset-base-100 ring-offset-2;
+	}
+
+	.ui-avatar-text.ui-avatar-color-primary > div {
+		@apply bg-primary text-primary-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-primary > div {
+		@apply ring-primary;
+	}
+
+	.ui-avatar-text.ui-avatar-color-secondary > div {
+		@apply bg-secondary text-secondary-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-secondary > div {
+		@apply ring-secondary;
+	}
+
+	.ui-avatar-text.ui-avatar-color-accent > div {
+		@apply bg-accent text-accent-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-accent > div {
+		@apply ring-accent;
+	}
+
+	.ui-avatar-text.ui-avatar-color-success > div {
+		@apply bg-success text-success-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-success > div {
+		@apply ring-success;
+	}
+
+	.ui-avatar-text.ui-avatar-color-info > div {
+		@apply bg-info text-info-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-info > div {
+		@apply ring-info;
+	}
+
+	.ui-avatar-text.ui-avatar-color-error > div {
+		@apply bg-error text-error-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-error > div {
+		@apply ring-error;
+	}
+
+	.ui-avatar-text.ui-avatar-color-warning > div {
+		@apply bg-warning text-warning-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-warning > div {
+		@apply ring-warning;
+	}
+	.ui-avatar-text.ui-avatar-color-neutral > div {
+		@apply bg-neutral text-neutral-content;
+	}
+
+	.ui-avatar-ring.ui-avatar-color-neutral > div {
+		@apply ring-neutral;
+	}
+
+	.ui-avatar-online::before {
+		content: '';
+		@apply bg-success outline-base-100 absolute z-10 block rounded-full outline-2;
+		width: 15%;
+		height: 15%;
+		top: 7%;
+		right: 7%;
+	}
+
+	.ui-avatar-offline::before {
+		content: '';
+		@apply bg-base-300 outline-base-100 absolute z-10 block rounded-full outline-2;
+		width: 15%;
+		height: 15%;
+		top: 7%;
+		right: 7%;
+	}
+}

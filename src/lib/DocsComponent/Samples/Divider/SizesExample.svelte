@@ -9,25 +9,25 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Divider, Switch, Table } from '$lib/index.js';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalSize } from '$lib/utils/El.types.js';
 	let activeTab = 'Preview';
 	let form: any = {};
-	let sizes: any = ['lg', 'md', 'sm', 'xs'];
+	let sizes: GlobalSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
 </script>
 
 <SampleWrapper>
 	<div slot="javascript">
-		<pre>
-			<ScriptCode>
-				import Divider from '{$importDocumentSrc}/Divider.svelte';
-			</ScriptCode>
-			</pre>
+		<TagCode name="script">
+			import <span class="text-green-600">Divider</span> from '{$importDocumentSrc}/Divider.svelte';
+		</TagCode>
+		<br />
 	</div>
 	<div slot="html">
 		{#each sizes as size}
 			<TagCode name="Divider" props={[`size="${size}"`]} one_line>{size}</TagCode>
 		{/each}
 	</div>
-	<div slot="preview">
+	<div slot="preview" class="w-full">
 		{#each sizes as size}
 			<Divider {size}>{size}</Divider>
 		{/each}

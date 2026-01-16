@@ -15,11 +15,11 @@
 </script>
 
 <SampleWrapper>
-	<pre slot="javascript">
-		<ScriptCode>
-			import Checkbox from '{$importDocumentSrc}/Checkbox.svelte';
-		</ScriptCode>
-		</pre>
+	<div slot="javascript">
+		<TagCode name="script">
+			import <span class="text-green-600">Checkbox</span> from '{$importDocumentSrc}/Checkbox.svelte';
+		</TagCode>
+	</div>
 	<div slot="html">
 		<TagCode name="Checkbox" close_self props={['disabled', 'label="disabled"']}></TagCode>
 	</div>
