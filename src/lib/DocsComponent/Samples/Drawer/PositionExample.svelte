@@ -11,10 +11,10 @@
 	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
-	let leftDrawer = false;
-	let rightDrawer = false;
-	let topDrawer = false;
-	let bottomDrawer = false;
+	let leftDrawer = $state(false);
+	let rightDrawer = $state(false);
+	let topDrawer = $state(false);
+	let bottomDrawer = $state(false);
 	function openLeft() {
 		leftDrawer = true;
 	}
@@ -58,10 +58,10 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" one_line props={['on:click={openLeft}']}>Open left Drawer</TagCode>
-		<TagCode name="Button" one_line props={['on:click={openRightt}']}>Open right Drawer</TagCode>
-		<TagCode name="Button" one_line props={['on:click={openTop}']}>Open top Drawer</TagCode>
-		<TagCode name="Button" one_line props={['on:click={openBottom}']}>Open bottom Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openLeft}']}>Open left Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openRightt}']}>Open right Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openTop}']}>Open top Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openBottom}']}>Open bottom Drawer</TagCode>
 		<TagCode name="Drawer" props={['bind:open={leftDrawer}']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
 		</TagCode>
@@ -77,10 +77,10 @@
 	</div>
 	<div slot="preview">
 		<div class="flex flex-wrap gap-2">
-			<Button on:click={openLeft}>Open left Drawer</Button>
-			<Button on:click={openRightt}>Open right Drawer</Button>
-			<Button on:click={openTop}>Open top Drawer</Button>
-			<Button on:click={openBottom}>Open bottom Drawer</Button>
+			<Button onclick={openLeft}>Open left Drawer</Button>
+			<Button onclick={openRightt}>Open right Drawer</Button>
+			<Button onclick={openTop}>Open top Drawer</Button>
+			<Button onclick={openBottom}>Open bottom Drawer</Button>
 		</div>
 		<Drawer bind:open={leftDrawer}>
 			<div>content of left Drawer</div>

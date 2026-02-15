@@ -42,16 +42,7 @@
 	{componentName}
 	{componentClass}
 	{...others}
-	onblur
 	onclick={onClick}
-	oncontextmenu
-	onfocus
-	onkeydown
-	onkeypress
-	onkeyup
-	onmouseenter
-	onmouseleave
-	onmouseover
 >
 	{#if titleSnippet}
 		{@render titleSnippet()}

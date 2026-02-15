@@ -15,9 +15,8 @@
 		return getContext(ctx);
 	}
 </script>
-
 <script lang="ts">
-	import { writable, type Writable } from 'svelte/store';
+	import { writable } from 'svelte/store';
 	import El from '$lib/utils/El.svelte';
 	import type { Tab } from './Tabs.type.js';
 	import './Tabs.css';
@@ -64,7 +63,7 @@
 	});
 </script>
 
-<El {componentName} {componentClass} {...others} onclick>
+<El {componentName} {componentClass} {...others}>
 	{#if children}
 		{@render children()}
 	{/if}

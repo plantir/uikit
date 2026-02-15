@@ -24,6 +24,7 @@
 		children,
 		loader = defaultLoader,
 		class: className,
+		onclick,
 		...others
 	}: {
 		disabled?: boolean;
@@ -39,6 +40,7 @@
 		loader?: Snippet;
 		class?: string;
 		children?: Snippet;
+		onclick?: () => void;
 	} = $props();
 	let componentName = 'button';
 	let componentClass = $derived({
@@ -64,6 +66,7 @@
 	{componentClass}
 	{...others}
 	class={className}
+	onclick={onclick}
 >
 	{#if loading}
 		{@render loader()}

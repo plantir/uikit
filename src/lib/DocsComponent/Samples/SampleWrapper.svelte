@@ -14,7 +14,7 @@
 	{#if $$slots.preview}
 		<TabItem title="Preview" value="Preview">
 			<SimpleCode>
-			<slot name="preview" />
+				<slot name="preview" />
 			</SimpleCode>
 		</TabItem>
 	{/if}

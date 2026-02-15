@@ -9,6 +9,7 @@
 	import Alert from '$lib/components/Alert/Alert.svelte';
 	import Button from '$lib/components/Button/Button.svelte';
 	import Tooltip from '$lib/components/Tooltip/Tooltip.svelte';
+	import SnippetTagCode from '$lib/DocsComponent/ComponentCode/SnippetTagCode.svelte';
 	let show = $state(false);
 	const showToast = () => {
 		show = true;
@@ -27,23 +28,23 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Toast">
-			<TagCode name="div" props={['slot="title"']}>
+		<TagCode name="Tooltip">
+			<SnippetTagCode name="titleSnippet">
 				<TagCode
 					name="div"
 					props={['class="animate-bounce text-orange-400 -rotate-10 text-2xl font-black"']}
 					>Wow!</TagCode
 				>
-			</TagCode>
+			</SnippetTagCode>
 			<TagCode name="Button">Hover me</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div class="h-[250px] flex items-center justify-center">
 			<Tooltip>
-				<div slot="title">
+				{#snippet titleSnippet()}
 					<div class="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">Wow!</div>
-				</div>
+				{/snippet}
 				<Button>Hover me</Button>
 			</Tooltip>
 		</div>

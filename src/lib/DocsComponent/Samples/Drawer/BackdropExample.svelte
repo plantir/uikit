@@ -12,7 +12,7 @@
 	import FunctionCode from '$lib/DocsComponent/ComponentCode/FunctionCode.svelte';
 	import LetCode from '$lib/DocsComponent/ComponentCode/LetCode.svelte';
 	let activeTab = 'Preview';
-	let open = false;
+	let open = $state(false);
 	function openDrawer() {
 		open = true;
 	}
@@ -32,13 +32,13 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openDrawer}']}>Open Drawer</TagCode>
 		<TagCode name="Drawer" props={['bind:open', 'backdrop={false}']}>
 			<TagCode name="div">content of inside Drawer with no backdrop</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<Button on:click={openDrawer}>Open Drawer</Button>
+		<Button onclick={openDrawer}>Open Drawer</Button>
 		<Drawer bind:open backdrop={false}>
 			<div>content of inside Drawer with no backdrop</div>
 		</Drawer>

@@ -9,7 +9,12 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import { Switch, Table } from '$lib/index.js';
 	let activeTab = 'Preview';
-	let form: any = {};
+	let form: any = $state({
+		sport: false,
+		sleep: false,
+		games: false,
+		sea: false
+	});
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import ObjectCode from '$lib/DocsComponent/ComponentCode/ObjectCode.svelte';
 </script>

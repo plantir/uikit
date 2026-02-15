@@ -14,6 +14,7 @@
 		themeChange(false);
 	});
 	function openMenu() {
+		console.log('openMenu');
 		menu = true;
 	}
 </script>
@@ -25,7 +26,7 @@ bg-base-100/90 text-base-content fixed top-0 z-30 max-w-[100rem] right-1/2 trans
 >
 	<div class="navbar">
 		<div class="flex flex-1 gap-1 lg:gap-2">
-			<Button shape="square" variant="ghost" on:click={openMenu}>
+			<Button shape="square" variant="ghost" onclick={openMenu}>
 				<svg
 					width="20"
 					height="20"
@@ -49,7 +50,7 @@ bg-base-100/90 text-base-content fixed top-0 z-30 max-w-[100rem] right-1/2 trans
 		<div class="flex gap-1 lg:gap-2">
 			<Button href="/docs/component/button" class="hidden md:flex">Components</Button>
 			<Button
-				on:click={() => {
+				onclick={() => {
 					themedialog = true;
 				}}
 			>

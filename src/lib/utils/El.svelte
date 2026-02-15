@@ -73,6 +73,7 @@
 	{role}
 	{...others}
 	class={frameClass}
+	{href}
 	{onclick}
 	{onkeydown}
 	{onkeyup}

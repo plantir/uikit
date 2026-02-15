@@ -6,6 +6,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import TextField from '$lib/components/TextField/TextField.svelte';
 	import type { GlobalColor } from '$lib/utils/El.types.js';
+	import SnippetTagCode from '$lib/DocsComponent/ComponentCode/SnippetTagCode.svelte';
 	let colors: GlobalColor[] = [
 		'primary',
 		'secondary',
@@ -30,17 +31,19 @@
 	<div slot="html">
 		{#each colors as color}
 			<TagCode name="Navbar" props={[`color="${color}"`]}>
-				<TagCode name="div" props={['slot="start"']}>
+				<SnippetTagCode name="start">
 					<TagCode name="Button">Logo</TagCode>
-				</TagCode>
-				<TagCode name="div" props={['slot="center"', 'class="flex items-center gap-2"']}>
-					<TagCode name="a">Home</TagCode>
-					<TagCode name="a">Products</TagCode>
-					<TagCode name="a">ContactUs</TagCode>
-				</TagCode>
-				<TagCode name="div" props={['slot="end"']}>
+				</SnippetTagCode>
+				<SnippetTagCode name="center">
+					<TagCode name="div" props={['class="flex items-center gap-2"']}>
+						<TagCode name="a">Home</TagCode>
+						<TagCode name="a">Products</TagCode>
+						<TagCode name="a">ContactUs</TagCode>
+					</TagCode>
+				</SnippetTagCode>
+				<SnippetTagCode name="end">
 					<TagCode name="TextField" props={['placeholder="search ..."']}></TagCode>
-				</TagCode>
+				</SnippetTagCode>
 			</TagCode>
 		{/each}
 	</div>
@@ -48,17 +51,19 @@
 		<div class="flex items-center justify-center gap-4 flex-col">
 			{#each colors as color}
 				<Navbar class="bg-base-100 shadow-sm" {color}>
-					<div slot="start">
+					{#snippet start()}
 						<Button>Logo</Button>
-					</div>
-					<div slot="center" class="flex items-center gap-2">
-						<a href="">Home</a>
-						<a href="">Products</a>
-						<a href="">ContactUs</a>
-					</div>
-					<div slot="end">
+					{/snippet}
+					{#snippet center()}
+						<div class="flex items-center gap-2">
+							<a href="">Home</a>
+							<a href="">Products</a>
+							<a href="">ContactUs</a>
+						</div>
+					{/snippet}
+					{#snippet end()}
 						<TextField placeholder="search ..." />
-					</div>
+					{/snippet}
 				</Navbar>
 			{/each}
 		</div>

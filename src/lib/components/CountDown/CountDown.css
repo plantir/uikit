@@ -49,28 +49,28 @@
 }
 
 .countdown-number-wrapper {
-	@apply relative flex items-center min-w-[2ch] overflow-hidden;
+	@apply relative flex items-center min-w-[2ch];
 }
 
-.ui-countdown.ui-countdown--size-xs .countdown-label {
+.ui-countdown.ui-countdown-size-xs .countdown-number {
 	@apply text-xs;
 }
 
-.ui-countdown.ui-countdown--size-sm .countdown-label {
+.ui-countdown.ui-countdown-size-sm .countdown-number {
 	@apply text-sm;
 }
 
-.ui-countdown.ui-countdown--size-md .countdown-label {
+.ui-countdown.ui-countdown-size-md .countdown-number {
 	@apply text-base;
 }
 
-.ui-countdown.ui-countdown--size-lg .countdown-label {
+.ui-countdown.ui-countdown-size-lg .countdown-number {
 	@apply text-lg;
 }
 
 .ui-countdown-box .item,
 .ui-countdown-box_label .item {
-	@apply bg-base-200 p-2 rounded-md;
+	@apply bg-base-200 p-2 rounded-md overflow-hidden;
 }
 
 .ui-countdown-labels_under .item,

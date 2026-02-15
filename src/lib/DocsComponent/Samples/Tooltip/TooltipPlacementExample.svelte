@@ -10,6 +10,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import Tooltip from '$lib/components/Tooltip/Tooltip.svelte';
 	import type { TooltipPlacement } from '$lib/components/Tooltip/Tooltip.type.js';
+	import SnippetTagCode from '$lib/DocsComponent/ComponentCode/SnippetTagCode.svelte';
 	let placements: TooltipPlacement[] = ['top', 'bottom', 'left', 'right'];
 </script>
 
@@ -24,13 +25,13 @@
 	<div slot="html">
 		{#each placements as placement}
 			<TagCode name="Toast" props={[`placement="${placement}"`]}>
-				<TagCode name="div" props={['slot="title"']}>
+				<SnippetTagCode name="titleSnippet">
 					<TagCode
 						name="div"
 						props={['class="animate-bounce text-orange-400 -rotate-10 text-2xl font-black"']}
 						>Wow!</TagCode
 					>
-				</TagCode>
+				</SnippetTagCode>
 				<TagCode name="Button">Hover me</TagCode>
 			</TagCode>
 		{/each}
@@ -39,9 +40,9 @@
 		<div class="flex items-center gap-4 h-[200px]">
 			{#each placements as placement}
 				<Tooltip {placement}>
-					<div slot="title">
+					{#snippet titleSnippet()}
 						<div class="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">Wow!</div>
-					</div>
+					{/snippet}
 					<Button>Hover me</Button>
 				</Tooltip>
 			{/each}

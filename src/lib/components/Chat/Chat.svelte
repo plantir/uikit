@@ -15,9 +15,9 @@
 		footer,
 		...othres
 	}: {
-		start: boolean;
-		end: boolean;
-		color: ChatColor;
+		start?: boolean;
+		end?: boolean;
+		color?: ChatColor;
 		children?: Snippet;
 		header?: Snippet;
 		image?: Snippet;
