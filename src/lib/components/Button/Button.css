@@ -1,19 +1,75 @@
-@reference '../../css/app.css';
+/* @reference '../../css/app.css'; */
+/* @reference '../../../routes/test/test.css'; */
 
 .ui-button {
-	@apply daisy-btn;
+	display: inline-flex;
+	flex-shrink: 0;
+	cursor: pointer;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: calc(0.25rem * 1.5);
+	text-align: center;
+	vertical-align: middle;
+	outline-offset: 2px;
+	webkit-user-select: none;
+	user-select: none;
+	padding-inline: var(--btn-p);
+	color: var(--btn-fg);
+	--tw-prose-links: var(--btn-fg);
+	height: var(--size);
+	font-size: var(--fontsize, 0.875rem);
+	font-weight: 600;
+	outline-color: var(--btn-color, var(--color-base-content));
+	transition-property: color, background-color, border-color, box-shadow;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-duration: 0.2s;
+	border-start-start-radius: var(--join-ss, var(--radius-field));
+	border-start-end-radius: var(--join-se, var(--radius-field));
+	border-end-start-radius: var(--join-es, var(--radius-field));
+	border-end-end-radius: var(--join-ee, var(--radius-field));
+	background-color: var(--btn-bg);
+	background-size: auto, calc(var(--noise) * 100%);
+	background-image: none, var(--btn-noise);
+	border-width: var(--border);
+	border-style: solid;
+	border-color: var(--btn-border);
+	text-shadow: 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 0.15));
+	touch-action: manipulation;
+	box-shadow: 0 0.5px 0 0.5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
+	--size: calc(var(--size-field, 0.25rem) * 10);
+	--btn-bg: var(--btn-color, var(--color-base-200));
+	--btn-fg: var(--color-base-content);
+	--btn-p: 1rem;
+	--btn-border:
+		color-mix(in oklab, var(--btn-bg), #000 calc(var(--depth) * 5%));
+	--btn-shadow: 0 3px 2px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000), 0 4px 3px -2px color-mix(in oklab, var(--btn-bg) calc(var(--depth) * 30%), #0000);
+	--btn-noise: var(--fx-noise);
+}
+
+@media(hover: hover) {
+	.ui-button:hover {
+		--btn-bg: var(--btn-color, var(--color-base-200))
+	}
+
+	@supports (color: color-mix(in lab, red, red)) {
+		.ui-button:hover {
+			--btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%)
+		}
+	}
 }
 
 .ui-button-block {
-	@apply daisy-btn-block;
+	width: 100%;
 }
 
 .ui-button-wide {
-	@apply daisy-btn-wide;
+	width: 100%;
+	max-width: 16rem;
 }
 
 .ui-button-disabled:hover {
-	@apply cursor-not-allowed;
+	cursor: not-allowed;
 	--tw-border-opacity: 0;
 	background-color: var(--fallback-n, oklch(var(--n) / var(--tw-bg-opacity)));
 	--tw-bg-opacity: 0.2;
@@ -29,201 +85,276 @@
 	--daisy-btn-fg: color-mix(in srgb, var(--color-base-content) 20%, #0000);
 }
 
-.ui-button-color-natural {
-	@apply daisy-btn-neutral;
-}
-
-.ui-button-color-primary {
-	@apply daisy-btn-primary;
-}
-
-.ui-button-color-secondary {
-	@apply daisy-btn-secondary;
-}
-
-.ui-button-color-accent {
-	@apply daisy-btn-accent;
-}
-
-.ui-button-color-success {
-	@apply daisy-btn-success;
-}
-
-.ui-button-color-info {
-	@apply daisy-btn-info;
-}
-
-.ui-button-color-error {
-	@apply daisy-btn-error;
-}
-
-.ui-button-color-warning {
-	@apply daisy-btn-warning;
-}
-
-.ui-button-color-neutral {
-	@apply daisy-btn-neutral;
-}
-
 .ui-button-active {
-	/* DAISYTODO: @apply daisy-btn-active; */
-	@apply daisy-btn-active;
+	--btn-bg: var(--btn-color, var(--color-base-200));
+	--btn-shadow: 0 0 0 0 oklch(0% 0 0/0), 0 0 0 0 oklch(0% 0 0/0);
+	isolation: isolate
 }
 
-.ui-button-variant-outline {
-	@apply daisy-btn-outline;
-
-	&.ui-button-color-primary {
-		@apply text-primary;
-
-		&:hover {
-			@apply text-primary-content;
-			background-color: color-mix(in oklab, var(--fallback-p, oklch(var(--p) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-p, oklch(var(--p) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-secondary {
-		@apply text-secondary;
-
-		&:hover {
-			@apply text-secondary-content;
-			background-color: color-mix(in oklab, var(--fallback-s, oklch(var(--s) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-s, oklch(var(--s) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-success {
-		@apply text-success;
-
-		&:hover {
-			@apply text-success-content;
-			background-color: color-mix(in oklab, var(--fallback-su, oklch(var(--su) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-su, oklch(var(--su) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-error {
-		@apply text-error;
-
-		&:hover {
-			@apply text-error-content;
-			background-color: color-mix(in oklab, var(--fallback-er, oklch(var(--er) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-er, oklch(var(--er) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-warning {
-		@apply text-warning;
-
-		&:hover {
-			@apply text-warning-content;
-			background-color: color-mix(in oklab, var(--fallback-wa, oklch(var(--wa) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-wa, oklch(var(--wa) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-info {
-		@apply text-info;
-
-		&:hover {
-			@apply text-info-content;
-			background-color: color-mix(in oklab, var(--fallback-in, oklch(var(--in) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-in, oklch(var(--in) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-accent {
-		@apply text-accent;
-
-		&:hover {
-			@apply text-accent-content;
-			background-color: color-mix(in oklab, var(--fallback-a, oklch(var(--a) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-a, oklch(var(--a) / 1)) 90%, black);
-		}
-	}
-
-	&.ui-button-color-natural {
-		@apply text-base-content;
-
-		&:hover {
-			@apply text-base-100;
-			background-color: color-mix(in oklab, var(--fallback-bc, oklch(var(--bc) / 1)) 90%, black);
-			border-color: color-mix(in oklab, var(--fallback-bc, oklch(var(--bc) / 1)) 90%, black);
-		}
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button-active {
+		--btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-200)), #000 7%)
 	}
 }
 
-.ui-button-variant-glass {
-	@apply daisy-glass;
+.ui-button-variant-glass:not(.ui-button-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .ui-button-disabled) {
+	--btn-shadow: "";
+	--btn-fg: var(--btn-color, var(--color-base-content));
+	--btn-bg: var(--btn-color, var(--color-base-content));
+	--btn-border: var(--btn-color, var(--color-base-content));
+	--btn-noise: none;
+	--btn-bg:
+		color-mix(in oklab, var(--btn-color, var(--color-base-content)) 8%, var(--color-base-100));
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button-variant-glass:not(.ui-button-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .ui-button-disabled) {
+		--btn-bg: color-mix(in oklab, var(--btn-color, var(--color-base-content))8%, var(--color-base-100));
+		--btn-border: color-mix(in oklab, var(--btn-color, var(--color-base-content))10%, var(--color-base-100));
+	}
+}
+
+.ui-button-variant-outline:not(.btn-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .ui-button-disabled) {
+	--btn-shadow: "";
+	--btn-bg: #0000;
+	--btn-fg: var(--btn-color);
+	--btn-border: var(--btn-color);
+	--btn-noise: none
+}
+
+@media(hover: none) {
+	.ui-button-variant-outline:not(.btn-active, :active, :focus-visible):hover {
+		--btn-shadow: "";
+		--btn-bg: #0000;
+		--btn-fg: var(--btn-color);
+		--btn-border: var(--btn-color);
+		--btn-noise: none
+	}
+}
+
+.ui-button-variant-dashed {
+	border-style: dashed;
+}
+
+.ui-button-variant-dashed:not(.ui-button-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .ui-button-disabled) {
+	--btn-shadow: "";
+	--btn-bg: #0000;
+	--btn-fg: var(--btn-color);
+	--btn-border: var(--btn-color);
+	--btn-noise: none
+}
+
+@media(hover: none) {
+	.ui-button-variant-dashed:not(.ui-button-active, :active, :focus-visible, input:checked:not(.filter .btn)):hover {
+		--btn-shadow: "";
+		--btn-bg: #0000;
+		--btn-fg: var(--btn-color);
+		--btn-border: var(--btn-color);
+		--btn-noise: none
+	}
+}
+
+.ui-button-variant-ghost:not(.ui-button-active, :hover, :active:focus, :focus-visible, input:checked:not(.filter .btn)) {
+	--btn-shadow: "";
+	--btn-bg: #0000;
+	--btn-border: #0000;
+	--btn-noise: none
+}
+
+.ui-button-variant-ghost:not(.ui-button-active, :hover, :active:focus, :focus-visible, input:checked:not(.filter .btn)):not(:disabled, [disabled], .ui-button-disabled) {
+	--btn-fg: var(--btn-color, currentColor);
+	outline-color: currentColor
+}
+
+@media(hover: none) {
+	.ui-button-variant-ghost:not(.ui-button-active, :active, :focus-visible, input:checked:not(.filter .btn)):hover {
+		--btn-shadow: "";
+		--btn-bg: #0000;
+		--btn-fg: var(--btn-color, currentColor);
+		--btn-border: #0000;
+		--btn-noise: none;
+		outline-color: currentColor
+	}
 }
 
 .ui-button-variant-link {
-	@apply daisy-btn-link;
+	--btn-border: #0000;
+	--btn-bg: #0000;
+	--btn-noise: none;
+	--btn-shadow: "";
+	outline-color: currentColor;
+	text-decoration-line: underline
 }
 
-.ui-button-variant-ghost {
-	@apply daisy-btn-ghost;
+.ui-button-variant-link:not(.ui-button-disabled, .ui-button:disabled, .ui-button[disabled]) {
+	--btn-fg: var(--btn-color, var(--color-primary))
 }
 
-.ui-button-shape-square {
-	@apply daisy-btn-square;
+.ui-button-variant-link:is(.ui-button-active, :hover, :active:focus, :focus-visible) {
+	--btn-border: #0000;
+	--btn-bg: #0000
+}
+
+.ui-button:disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	background-color: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button:disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+		background-color: color-mix(in oklab, var(--color-base-content)10%, transparent)
+	}
+}
+
+.ui-button:disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	box-shadow: none
+}
+
+.ui-button:disabled {
+	pointer-events: none;
+	--btn-border: #0000;
+	--btn-noise: none;
+	--btn-fg: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button:disabled {
+		--btn-fg: color-mix(in oklch, var(--color-base-content)20%, #0000)
+	}
+}
+
+.ui-button[disabled]:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	background-color: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button[disabled]:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+		background-color: color-mix(in oklab, var(--color-base-content)10%, transparent)
+	}
+}
+
+.ui-button[disabled]:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	box-shadow: none
+}
+
+.ui-button[disabled] {
+	pointer-events: none;
+	--btn-border: #0000;
+	--btn-noise: none;
+	--btn-fg: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button[disabled] {
+		--btn-fg: color-mix(in oklch, var(--color-base-content)20%, #0000)
+	}
+}
+
+.ui-button-disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	background-color: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button-disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+		background-color: color-mix(in oklab, var(--color-base-content)10%, transparent)
+	}
+}
+
+.ui-button-disabled:not(.ui-button-variant-link, .ui-button-variant-ghost) {
+	box-shadow: none
+}
+
+.ui-button-disabled {
+	pointer-events: none;
+	--btn-border: #0000;
+	--btn-noise: none;
+	--btn-fg: var(--color-base-content)
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+	.ui-button-disabled {
+		--btn-fg: color-mix(in oklch, var(--color-base-content)20%, #0000)
+	}
 }
 
 .ui-button-shape-circle {
-	@apply daisy-btn-circle;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 100%;
+	padding-inline: 0
 }
 
-.ui-button-size-xs {
-	@apply daisy-btn-xs;
+.ui-button-shape-square {
+	width: var(--size);
+	height: var(--size);
+	padding-inline: 0
 }
 
-.ui-button-size-sm {
-	@apply daisy-btn-sm;
+.ui-button-color-accent {
+	--btn-color: var(--color-accent);
+	--btn-fg: var(--color-accent-content)
 }
 
-.ui-button-size-md {
-	@apply daisy-btn-md;
+.ui-button-color-error {
+	--btn-color: var(--color-error);
+	--btn-fg: var(--color-error-content)
+}
+
+.ui-button-color-info {
+	--btn-color: var(--color-info);
+	--btn-fg: var(--color-info-content)
+}
+
+.ui-button-color-neutral {
+	--btn-color: var(--color-neutral);
+	--btn-fg: var(--color-neutral-content)
+}
+
+.ui-button-color-primary {
+	--btn-color: var(--color-primary);
+	--btn-fg: var(--color-primary-content)
+}
+
+.ui-button-color-secondary {
+	--btn-color: var(--color-secondary);
+	--btn-fg: var(--color-secondary-content)
+}
+
+.ui-button-color-success {
+	--btn-color: var(--color-success);
+	--btn-fg: var(--color-success-content)
+}
+
+.ui-button-color-warning {
+	--btn-color: var(--color-warning);
+	--btn-fg: var(--color-warning-content)
 }
 
 .ui-button-size-lg {
-	@apply daisy-btn-lg;
+	--fontsize: 1.125rem;
+	--btn-p: 1.25rem;
+	--size: calc(var(--size-field, .25rem)*12)
+}
+
+.ui-button-size-md {
+	--fontsize: .875rem;
+	--btn-p: 1rem;
+	--size: calc(var(--size-field, .25rem)*10)
+}
+
+.ui-button-size-xs {
+	--fontsize: .6875rem;
+	--btn-p: .5rem;
+	--size: calc(var(--size-field, .25rem)*6)
+}
+
+.ui-button-size-sm {
+	--fontsize: .75rem;
+	--btn-p: .75rem;
+	--size: calc(var(--size-field, .25rem)*8)
 }
 
 .ui-button-size-xl {
-	@apply daisy-btn-xl;
+	--fontsize: 1.375rem;
+	--btn-p: 1.5rem;
+	--size: calc(var(--size-field, .25rem)*14)
 }
-
-/* SASSTODO:
-	@include var.unify-parent('-circle', '-xs') {
-		height: 1.75rem;
-		width: 1.75rem;
-	}
-	@include var.unify-parent('-circle', '-sm') {
-		height: 2rem;
-		width: 2rem;
-	}
-	@include var.unify-parent('-circle', '-md') {
-		height: 3rem;
-		width: 3rem;
-	}
-	@include var.unify-parent('-circle', '-lg') {
-		height: 4rem;
-		width: 4rem;
-	}
-	@include var.unify-parent('-square', '-xs') {
-		height: 1.75rem;
-		width: 1.75rem;
-	}
-	@include var.unify-parent('-square', '-sm') {
-		height: 2rem;
-		width: 2rem;
-	}
-	@include var.unify-parent('-square', '-md') {
-		height: 3rem;
-		width: 3rem;
-	}
-	@include var.unify-parent('-square', '-lg') {
-		height: 4rem;
-		width: 4rem;
-	} */

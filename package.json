@@ -83,8 +83,8 @@
 	},
 	"homepage": "https://github.com/plantir/uikit#readme",
 	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"@sveltejs/kit": "^2.18.0"
+		"@sveltejs/kit": "^2.18.0",
+		"svelte": "^5.0.0"
 	},
 	"dependencies": {
 		"@floating-ui/dom": "^1.6.13",

@@ -9,7 +9,18 @@
 	import TabItem from '$lib/components/Tabs/TabItem.svelte';
 	import Tabs from '$lib/components/Tabs/Tabs.svelte';
 	import SampleWrapper from '../SampleWrapper.svelte';
+	import type { GlobalColor } from '$lib/utils/El.types.js';
 	let activeTab = 'Preview';
+	let colors: GlobalColor[] = [
+		'primary',
+		'secondary',
+		'accent',
+		'error',
+		'info',
+		'success',
+		'warning',
+		'neutral'
+	];
 </script>
 
 <SampleWrapper>
@@ -20,17 +31,13 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" props={['variant="glass"']}>glass</TagCode>
-		<TagCode name="Button" props={['variant="ghost"']}>ghost</TagCode>
-		<TagCode name="Button" props={['variant="link"']}>link</TagCode>
-		<TagCode name="Button" props={['variant="outline"']}>outline</TagCode>
-		<TagCode name="Button" props={['variant="dashed"']}>dashed</TagCode>
+		{#each colors as color}
+			<TagCode name="Button" props={[`color="${color}"`,'variant="dashed"']}>{color}</TagCode>
+		{/each}
 	</div>
-	<div slot="preview">
-		<Button variant="glass">glass</Button>
-		<Button variant="ghost">ghost</Button>
-		<Button variant="link">link</Button>
-		<Button variant="outline">outline</Button>
-		<Button variant="dashed">dashed</Button>
+	<div slot="preview" class="w-full flex items-center justify-center gap-2 flex-wrap">
+		{#each colors as color}
+			<Button {color} variant="dashed">{color}</Button>
+		{/each}
 	</div>
 </SampleWrapper>

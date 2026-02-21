@@ -12,6 +12,9 @@
 	import ActiveButtonExample from '$lib/DocsComponent/Samples/Button/ActiveButtonExample.svelte';
 	import BlockButtonExample from '$lib/DocsComponent/Samples/Button/BlockButtonExample.svelte';
 	import ListOfProps from '$lib/DocsComponent/Samples/Button/ListOfProps.svelte';
+	import GlassButtonColorExample from '$lib/DocsComponent/Samples/Button/GlassButtonColorExample.svelte';
+	import OutlineButtonColorExample from '$lib/DocsComponent/Samples/Button/OutlineButtonColorExample.svelte';
+	import DashedButtonColorExample from '$lib/DocsComponent/Samples/Button/DashedButtonColorExample.svelte';
 </script>
 
 <div class="component-wrapper">
@@ -25,6 +28,12 @@
 	<DefaultButtonExample />
 	<Title id="button-variant" title="Button Variant" />
 	<VariantButtonExample />
+	<Title id="glass-button-color" title="Glass button color" />
+	<GlassButtonColorExample />
+	<Title id="outline-button-color" title="Outline button color" />
+	<OutlineButtonColorExample />
+	<Title id="dashed-button-color" title="Dashed button color" />
+	<DashedButtonColorExample />
 	<Title id="button-size" title="Button Size" />
 	<SizeButtonExample />
 	<Title id="button-shape" title="Button Shape" />

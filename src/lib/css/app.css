@@ -1,8 +1,8 @@
-@import 'tailwindcss/preflight.css' layer(base);
+/* @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import 'tailwindcss/utilities.css' layer(utilities); */
 /* @import "./component.css"; */
-
+@import "tailwindcss";
 @plugin "daisyui" {
 	themes: all;
 	prefix: daisy-;
