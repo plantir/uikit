@@ -5,52 +5,89 @@
 	import type { GlobalColor, GlobalSize } from '../../utils/El.types.js';
 	import TextField from '../TextField/TextField.svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
-	type $$Props = FileInput;
+	import type { Snippet } from 'svelte';
+
+	let {
+		value = $bindable(),
+		color,
+		size = 'md',
+		label = '',
+		custom = false,
+		multiple = false,
+		placeholder = '',
+		accept = '',
+		class: className,
+		children,
+		...others
+	}: FileInput & {
+		children?: Snippet;
+	} = $props();
+
+	// Initialize value if undefined (for bindable without fallback)
+	$effect(() => {
+		if (value === undefined) {
+			value = '';
+		}
+	});
+
 	let componentName = 'file-input';
-	export let value: any = '';
-	export let color: GlobalColor = undefined;
-	export let size: GlobalSize = 'md';
-	export let label: string = '';
-	export let custom: boolean = false;
-	export let multiple: boolean = false;
-	export let placeholder = '';
-	export let accept = '';
-	let input: any = {};
-	$: componentClass = {
+	let input: HTMLInputElement | undefined = $state();
+	let componentClass = $derived({
 		size
-	};
-	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
-	$: labelClass = ClassMerge({ name: 'label', componentClass });
+	});
+	let elClass = $derived(
+		ClassMerge({ name: componentName, componentClass, staticClassess: className })
+	);
+	let labelClass = $derived(ClassMerge({ name: 'label', componentClass }));
+
 	const selectFile = (e: Event) => {
-		input.click();
+		input?.click();
 	};
 	const checkFiles = () => {
-		if (multiple) {
-			value = input.files;
-		} else {
-			value = input.files[0];
+		if (input) {
+			if (multiple) {
+				value = input.files;
+			} else {
+				value = input.files?.[0] || '';
+			}
 		}
 	};
-	let inputValue: any = '';
-	$: {
-		value;
+
+	let inputValue = $derived.by(() => {
 		if (value) {
-			if (multiple) {
-				inputValue = value.length + ' files';
-			} else {
-				inputValue = value.name;
+			if (multiple && Array.isArray(value)) {
+				return value.length + ' files';
+			} else if (value && typeof value === 'object' && 'name' in value) {
+				return value.name;
 			}
-		} else {
-			inputValue = placeholder;
 		}
-	}
+		return placeholder;
+	});
+
+	let textFieldProps = $derived({
+		value: inputValue,
+		readonly: true,
+		size,
+		color,
+		onclick: selectFile,
+		...others
+	} as any);
 </script>
 
 <!-- <span transition:fade> -->
 {#if custom}
-	<div class={elClass} onclick={selectFile}>
-		<input type="file" bind:this={input} {accept} oninput={checkFiles} {multiple} style="display: none;" />
-		<slot></slot>
+	<div class={elClass} onclick={selectFile} {...others}>
+		<input
+			type="file"
+			bind:this={input}
+			{accept}
+			oninput={checkFiles}
+			{multiple}
+			style="display: none;"
+		/>
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 {:else}
 	<label class={elClass}>
@@ -58,7 +95,7 @@
 			<div class={labelClass}>{label}</div>
 		{/if}
 		<input type="file" bind:this={input} {accept} oninput={checkFiles} class="hidden" {multiple} />
-		<TextField value={inputValue} readonly {size} {color} onclick={selectFile}></TextField>
+		<TextField {...textFieldProps}></TextField>
 	</label>
 {/if}
 <!-- </span> -->

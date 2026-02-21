@@ -3,22 +3,32 @@
 	import El from '../../utils/El.svelte';
 	import type { Menu } from './Menu.type.js';
 	import type { GlobalColor, GlobalSize } from '../../utils/El.types.js';
-	type $$Props = Menu;
+	import type { Snippet } from 'svelte';
+
+	let {
+		size,
+		horzintal = false,
+		title = '',
+		children,
+		...others
+	}: Menu & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'menu';
-	export let size: GlobalSize = undefined;
-	export let horzintal: boolean = false;
-	export let title: string = '';
-	$: componentClass = {
+	let componentClass = $derived({
 		size: size,
 		horzintal
-	};
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} tag="ul">
+<El {componentName} {componentClass} {...others} tag="ul">
 	{#if title}
 		<li class="menu-title">{title}</li>
 	{/if}
-	<slot></slot>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>
 <!-- </span> -->

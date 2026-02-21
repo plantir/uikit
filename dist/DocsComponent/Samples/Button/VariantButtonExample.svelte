@@ -24,11 +24,13 @@
 		<TagCode name="Button" props={['variant="ghost"']}>ghost</TagCode>
 		<TagCode name="Button" props={['variant="link"']}>link</TagCode>
 		<TagCode name="Button" props={['variant="outline"']}>outline</TagCode>
+		<TagCode name="Button" props={['variant="dashed"']}>dashed</TagCode>
 	</div>
 	<div slot="preview">
 		<Button variant="glass">glass</Button>
 		<Button variant="ghost">ghost</Button>
 		<Button variant="link">link</Button>
 		<Button variant="outline">outline</Button>
+		<Button variant="dashed">dashed</Button>
 	</div>
 </SampleWrapper>

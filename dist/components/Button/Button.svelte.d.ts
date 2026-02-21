@@ -1,5 +1,22 @@
-import type { Button } from './Button.type.ts';
+import type { Button, ButtonColor, ButtonShape, ButtonSize, ButtonVariant } from './Button.type.ts';
 import './Button.css';
-declare const Button: any;
-type Button = InstanceType<typeof Button>;
+import type { Snippet } from 'svelte';
+type $$ComponentProps = {
+    disabled?: boolean;
+    href?: string;
+    loading?: boolean;
+    wide?: boolean;
+    active?: boolean;
+    block?: boolean;
+    size?: ButtonSize;
+    variant?: ButtonVariant;
+    shape?: ButtonShape;
+    color?: ButtonColor;
+    loader?: Snippet;
+    class?: string;
+    children?: Snippet;
+    onclick?: () => void;
+};
+declare const Button: import("svelte").Component<$$ComponentProps, {}, "loading">;
+type Button = ReturnType<typeof Button>;
 export default Button;

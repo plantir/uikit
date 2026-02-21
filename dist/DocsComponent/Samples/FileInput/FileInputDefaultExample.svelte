@@ -12,7 +12,7 @@
 	import TextField from '../../../components/TextField/TextField.svelte';
 	import FileInput from '../../../components/FileInput/FileInput.svelte';
 	import LetCode from '../../ComponentCode/LetCode.svelte';
-	let value = $state();
+	let value = $state('');
 	$effect(() => {
 		console.log(value, 'val');
 	});

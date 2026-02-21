@@ -1,5 +1,5 @@
 import './TimeLine.css';
 import type { TimeLine } from './TimeLine.type.js';
 declare const TimeLine: any;
-type TimeLine = InstanceType<typeof TimeLine>;
+type TimeLine = ReturnType<typeof TimeLine>;
 export default TimeLine;

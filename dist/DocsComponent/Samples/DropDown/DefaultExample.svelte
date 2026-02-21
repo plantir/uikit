@@ -13,6 +13,7 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import Swap from '../../../components/Swap/Swap.svelte';
 	import Dropdown from '../../../components/Dropdown/Dropdown.svelte';
+	import SnippetTagCode from '../../ComponentCode/SnippetTagCode.svelte';
 </script>
 
 <SampleWrapper>
@@ -26,7 +27,9 @@
 	<div slot="html">
 		<TagCode name="div">
 			<TagCode name="Dropdown">
-				<TagCode name="Button" props={['slot="toggler"']}>Open Dropdown</TagCode>
+				<SnippetTagCode name="togglerSnippet">
+					<TagCode name="Button">Open DropDown</TagCode>
+				</SnippetTagCode>
 				<TagCode name="div">List of items...</TagCode>
 			</TagCode>
 		</TagCode>
@@ -34,7 +37,9 @@
 	<div slot="preview">
 		<div>
 			<Dropdown>
-				<Button slot="toggler">Open Dropdown</Button>
+				{#snippet togglerSnippet()}
+					<Button>Open Dropdown</Button>
+				{/snippet}
 				List of items...
 			</Dropdown>
 		</div>

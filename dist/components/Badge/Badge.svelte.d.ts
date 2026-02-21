@@ -1,5 +1,16 @@
-import type { Badge } from './Badge.type.js';
+import type { Badge, BadgeColor, BadgeSize, BadgeVariant } from './Badge.type.js';
 import './Badge.css';
-declare const Badge: any;
-type Badge = InstanceType<typeof Badge>;
+import type { Snippet } from 'svelte';
+type $$ComponentProps = {
+    disabled?: boolean;
+    size?: BadgeSize;
+    color?: BadgeColor;
+    variant?: BadgeVariant;
+    dismissable?: boolean;
+    children?: any;
+    close_snippet?: Snippet;
+    onClose?: any;
+};
+declare const Badge: import("svelte").Component<$$ComponentProps, {}, "">;
+type Badge = ReturnType<typeof Badge>;
 export default Badge;

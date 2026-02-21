@@ -45,55 +45,55 @@ input:invalid~.ui-text-field-hint {
 	/* DAISYTODO: @apply daisy-disabled; */
 }
 
-.ui-text-field-xs {
+.ui-text-field-size-xs {
 	@apply daisy-input-xs;
 }
 
-.ui-text-field-sm {
+.ui-text-field-size-sm {
 	@apply daisy-input-sm;
 }
 
-.ui-text-field-md {
+.ui-text-field-size-md {
 	@apply daisy-input-md;
 }
 
-.ui-text-field-lg {
+.ui-text-field-size-lg {
 	@apply daisy-input-lg;
 }
 
-.ui-text-field-xl {
+.ui-text-field-size-xl {
 	@apply daisy-input-xl;
 }
 
-.ui-text-field-primary {
+.ui-text-field-color-primary {
 	@apply daisy-input-primary;
 }
 
-.ui-text-field-secondary {
+.ui-text-field-color-secondary {
 	@apply daisy-input-secondary;
 }
 
-.ui-text-field-accent {
+.ui-text-field-color-accent {
 	@apply daisy-input-accent;
 }
 
-.ui-text-field-success {
+.ui-text-field-color-success {
 	@apply daisy-input-success;
 }
 
-.ui-text-field-info {
+.ui-text-field-color-info {
 	@apply daisy-input-info;
 }
 
-.ui-text-field-error {
+.ui-text-field-color-error {
 	@apply daisy-input-error;
 }
 
-.ui-text-field-neutral {
+.ui-text-field-color-neutral {
 	@apply daisy-input-neutral;
 }
 
-.ui-text-field-warning {
+.ui-text-field-color-warning {
 	@apply daisy-input-warning;
 }
 

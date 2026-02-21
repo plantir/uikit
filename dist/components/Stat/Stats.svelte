@@ -2,16 +2,26 @@
 	import './Stats.css';
 	import El from '../../utils/El.svelte';
 	import type { Stats } from './Stats.type.js';
-	type $$Props = Stats;
+	import type { Snippet } from 'svelte';
+
+	let {
+		vertical = false,
+		children,
+		...others
+	}: Stats & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'stats';
-	export let vertical = false;
-	$: componentClass = {
-		vertical: vertical == true
-	};
+	let componentClass = $derived({
+		vertical: vertical === true
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}>
-	<slot></slot>
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>
 <!-- </span> -->

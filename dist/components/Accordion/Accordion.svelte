@@ -3,27 +3,38 @@
 	import './Accordion.css';
 	import El from '../../utils/El.svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
-	type $$Props = Accordion;
+	let {
+		icon = '',
+		open = false,
+		join = false,
+		title = '',
+		name = 'accordion',
+		children,
+		...others
+	}: {
+		icon?: AccordionIcon;
+		open?: boolean;
+		join?: boolean;
+		title?: string;
+		name?: string;
+		children?: any;
+	} = $props();
 	let componentName = 'accordion';
-
-	export let icon: AccordionIcon = '';
-	export let open = false;
-	export let join = false;
-	export let title = '';
-	export let name = `accordion`;
-	$: componentClass = {
+	let componentClass = $derived({
 		icon: icon,
 		join: join
-	};
-	$: elClass = ClassMerge({ name: componentName, componentClass });
-	$: titleClass = ClassMerge({ name: `${componentName}-title` });
-	$: contentClass = ClassMerge({ name: `${componentName}-content` });
+	});
+	let elClass = $derived(ClassMerge({ name: componentName, componentClass }));
+	let titleClass = $derived(ClassMerge({ name: `${componentName}-title` }));
+	let contentClass = $derived(ClassMerge({ name: `${componentName}-content` }));
 </script>
 
-<El {componentName} {componentClass} class={elClass} {...$$restProps}>
+<El {componentName} {componentClass} class={elClass} {...others}>
 	<input type="radio" {name} checked={open} />
 	<div class={titleClass}>{title}</div>
 	<div class={contentClass}>
-		<slot></slot>
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 </El>

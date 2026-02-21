@@ -9,74 +9,106 @@
 	import './ColorPicker.css';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import { Button } from '../../index.js';
+	import type { Snippet } from 'svelte';
+
+	let {
+		disabled = false,
+		href = '',
+		loading = false,
+		wide = false,
+		active = false,
+		value = $bindable(''),
+		block = false,
+		size,
+		variant,
+		shape,
+		color,
+		label = '',
+		class: className,
+		children,
+		labelSnippet,
+		...others
+	}: ColorPicker & {
+		children?: Snippet;
+		labelSnippet?: Snippet;
+	} = $props();
+
+	// Extract class from others if it exists
+	let buttonClass = $derived(`relative p-0 w-max ${(others as any).class || ''}`.trim());
+
 	let componentName = 'color-picker';
-	type $$Props = ColorPicker;
-	export let disabled: boolean = false;
-	export let href: string = '';
-	export let loading = false;
-	export let wide = false;
-	export let active = false;
-	export let value = '';
-	export let block = false;
-	export let size: ButtonSize = undefined;
-	export let variant: ButtonVariant = undefined;
-	export let shape: ButtonShape = undefined;
-	export let color: ButtonColor = undefined;
-	export let label: string = '';
-	let inputColor: any;
-	$: componentClass = {
+	let inputColor: HTMLInputElement | undefined = $state();
+
+	let componentClass = $derived({
 		wide,
 		block,
 		loading,
 		active,
-		outline: variant == 'outline',
-		glass: variant == 'glass',
-		link: variant == 'link',
-		ghost: variant == 'ghost',
-		square: shape == 'square',
-		circle: shape == 'circle',
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
+		outline: variant === 'outline',
+		glass: variant === 'glass',
+		ghost: variant === 'ghost',
+		square: shape === 'square',
+		circle: shape === 'circle',
+		xs: size === 'xs',
+		sm: size === 'sm',
+		md: size === 'md',
+		lg: size === 'lg',
 		disabled: disabled || loading,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural'
-	};
+		primary: color === 'primary',
+		secondary: color === 'secondary',
+		accent: color === 'accent',
+		success: color === 'success',
+		info: color === 'info',
+		error: color === 'error',
+		warning: color === 'warning',
+		natural: color === 'natural'
+	});
+
 	function showColorOption() {
 		if (disabled) {
 			return;
 		}
-		inputColor.click();
+		inputColor?.click();
 	}
-	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
-	$: labelClass = ClassMerge({ name: `${componentName}-label` });
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			showColorOption();
+		}
+	}
+
+	let wrapperClass = $derived(
+		ClassMerge({ name: `${componentName}-wrapper`, staticClassess: className })
+	);
+	let labelClass = $derived(ClassMerge({ name: `${componentName}-label` }));
 </script>
 
 <label class={wrapperClass}>
-	<slot name="label">
-		{#if label}
-			<span class={labelClass}>
-				{label}
-			</span>
-		{/if}
-	</slot>
-	<a class="relative" on:click={showColorOption}>
-		<slot>
+	{#if labelSnippet}
+		{@render labelSnippet()}
+	{:else if label}
+		<span class={labelClass}>
+			{label}
+		</span>
+	{/if}
+	<button
+		type="button"
+		class="relative"
+		onclick={showColorOption}
+		onkeydown={handleKeydown}
+		aria-label="Color picker"
+	>
+		{#if children}
+			{@render children()}
+		{:else}
 			<Button
-				{...$$restProps}
-				class="relative p-0 w-max"
-				on:click={showColorOption}
+				{...others}
+				class={buttonClass}
 				style="background-color: {value};"
 				{disabled}
 				{size}
-				{color}
+				color={color === 'natural' ? undefined : color}
 				{shape}
 				{variant}
 				{wide}
@@ -89,7 +121,6 @@
 					xmlns="http://www.w3.org/2000/svg"
 					version="1.1"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
-					xmlns:svgjs="http://svgjs.com/svgjs"
 					><defs id="SvgjsDefs1037"></defs><g id="SvgjsG1038"
 						><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
 							><path
@@ -161,12 +192,12 @@
 					></svg
 				>
 			</Button>
-		</slot>
+		{/if}
 		<input
 			type="color"
 			bind:this={inputColor}
 			bind:value
 			class="invisible w-0 h-0 absolute top-1/2 right-1/2"
 		/>
-	</a>
+	</button>
 </label>

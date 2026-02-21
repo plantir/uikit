@@ -3,17 +3,27 @@
 	import El from '../../utils/El.svelte';
 	import type { Fieldset } from './Fieldset.type.js';
 	import type { GlobalColor, GlobalSize } from '../../utils/El.types.js';
-	type $$Props = Fieldset;
+	import type { Snippet } from 'svelte';
+
+	let {
+		title = '',
+		children,
+		...others
+	}: Fieldset & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'fieldset';
-	export let title: string = '';
-	$: componentClass = {};
+	let componentClass = $derived({});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} tag="fieldset">
+<El {componentName} {componentClass} {...others} tag="fieldset">
 	{#if title}
 		<legend class="ui-fieldset-title">{title}</legend>
 	{/if}
-	<slot></slot>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>
 <!-- </span> -->

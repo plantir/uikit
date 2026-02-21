@@ -7,6 +7,7 @@ export interface DrawerTransitionParamTypes {
     opacity?: number;
     x?: number;
     y?: number;
+    axis?: string;
 }
 export type DrawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
 export type DrawerColor = 'natural' | GlobalColor;

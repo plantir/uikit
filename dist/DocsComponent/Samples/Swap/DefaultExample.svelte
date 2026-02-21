@@ -12,6 +12,7 @@
 	let form: any = {};
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import Swap from '../../../components/Swap/Swap.svelte';
+	import SnippetTagCode from '../../ComponentCode/SnippetTagCode.svelte';
 </script>
 
 <SampleWrapper>
@@ -23,16 +24,12 @@
 	</div>
 	<div slot="html">
 		<TagCode name="div">
-			<TagCode
-				name="Swap"
-				one_line
-				props={['on="ON"', 'off="OFF"', 'value={false}']}
-			></TagCode>
+			<TagCode name="Swap" one_line props={['value={false}']}></TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div>
-			<Swap value={false} on="ON" off="OFF" />
+			<Swap value={false} />
 		</div>
 	</div>
 </SampleWrapper>

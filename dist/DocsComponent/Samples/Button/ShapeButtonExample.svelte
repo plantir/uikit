@@ -27,7 +27,7 @@
 	</div>
 	<div slot="preview" class="w-full flex items-center justify-center gap-2 flex-wrap">
 		{#each shapes as shape}
-			<Button {shape}>{shape}</Button>
+			<Button {shape}>{shape?.charAt(0)}</Button>
 		{/each}
 	</div>
 </SampleWrapper>

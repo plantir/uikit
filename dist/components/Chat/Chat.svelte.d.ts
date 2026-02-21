@@ -1,5 +1,15 @@
-import type { Chat } from './Chat.type.js';
+import type { Chat, ChatColor } from './Chat.type.js';
 import './Chat.css';
-declare const Chat: any;
-type Chat = InstanceType<typeof Chat>;
+import type { Snippet } from 'svelte';
+type $$ComponentProps = {
+    start?: boolean;
+    end?: boolean;
+    color?: ChatColor;
+    children?: Snippet;
+    header?: Snippet;
+    image?: Snippet;
+    footer?: Snippet;
+};
+declare const Chat: import("svelte").Component<$$ComponentProps, {}, "">;
+type Chat = ReturnType<typeof Chat>;
 export default Chat;

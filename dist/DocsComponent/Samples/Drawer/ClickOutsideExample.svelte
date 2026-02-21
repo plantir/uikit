@@ -11,7 +11,7 @@
 	let activeTab = 'Preview';
 	let form: any = {};
 	let value = '';
-	let open = false;
+	let open = $state(false);
 	let type = 'fly';
 	let items: DrawerTransitionTypes[] = [
 		'fly',
@@ -51,17 +51,17 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" one_line props={['on:click={openDrawer}']}>Open Drawer</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openDrawer}']}>Open Drawer</TagCode>
 		<TagCode name="Drawer" props={['bind:open','clickOutside={false}']}>
 			<TagCode name="div">content of inside Drawer</TagCode>
-			<TagCode one_line name="Button" props={['on:click={openDrawer}']}>Close</TagCode>
+			<TagCode one_line name="Button" props={['onclick={openDrawer}']}>Close</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<Button on:click={openDrawer}>Open Drawer</Button>
+		<Button onclick={openDrawer}>Open Drawer</Button>
 		<Drawer bind:open clickOutside={false}>
 			<div>content of inside Drawer</div>
-			<Button on:click={openDrawer}>Close</Button>
+			<Button onclick={openDrawer}>Close</Button>
 		</Drawer>
 	</div>
 </SampleWrapper>

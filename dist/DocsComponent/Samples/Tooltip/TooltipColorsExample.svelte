@@ -38,7 +38,7 @@
 		{/each}
 	</div>
 	<div slot="preview">
-		<div class="flex items-center justify-center felx-wrap h-[200px] gap-4">
+		<div class=" items-center justify-center grid grid-cols-4 gap-4">
 			{#each colors as color}
 				<Tooltip title="hello" {color}>
 					<Button {color}>Hover me</Button>

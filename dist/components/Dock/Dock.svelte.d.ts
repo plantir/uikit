@@ -1,5 +1,5 @@
 import './Dock.css';
 import type { Dock } from './Dock.type.js';
 declare const Dock: any;
-type Dock = InstanceType<typeof Dock>;
+type Dock = ReturnType<typeof Dock>;
 export default Dock;

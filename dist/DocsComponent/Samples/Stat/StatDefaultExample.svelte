@@ -9,6 +9,7 @@
 	import Stats from '../../../components/Stat/Stats.svelte';
 	import Stat from '../../../components/Stat/Stat.svelte';
 	import Button from '../../../components/Button/Button.svelte';
+	import SnippetTagCode from '../../ComponentCode/SnippetTagCode.svelte';
 </script>
 
 <SampleWrapper>
@@ -23,13 +24,13 @@
 	<div slot="html">
 		<TagCode name="Stats" props={['class="shadow bg-base-100"']}>
 			<TagCode name="Stat">
-				<TagCode name="div" props={['slot="title"']}>title</TagCode>
-				<TagCode name="div" props={['slot="value"']}>value</TagCode>
-				<TagCode name="div" props={['slot="desc"']}>desc</TagCode>
-				<TagCode name="div" props={['slot="actions"']}>
+				<SnippetTagCode name="title">title</SnippetTagCode>
+				<SnippetTagCode name="value">value</SnippetTagCode>
+				<SnippetTagCode name="desc">desc</SnippetTagCode>
+				<SnippetTagCode name="actions">
 					<TagCode name="Button" props={['size="xs"']}>action 1</TagCode>
 					<TagCode name="Button" props={['size="xs"']}>action 2</TagCode>
-				</TagCode>
+				</SnippetTagCode>
 			</TagCode>
 		</TagCode>
 	</div>
@@ -37,13 +38,19 @@
 		<div class="flex items-center justify-center">
 			<Stats class="shadow bg-base-100">
 				<Stat>
-					<div slot="title">title</div>
-					<div slot="value">value</div>
-					<div slot="desc">desc</div>
-					<div slot="actions">
+					{#snippet title()}
+						<div>title</div>
+					{/snippet}
+					{#snippet value()}
+						<div>value</div>
+					{/snippet}
+					{#snippet desc()}
+						<div>desc</div>
+					{/snippet}
+					{#snippet actions()}
 						<Button size="xs">action 1</Button>
 						<Button size="xs">action 2</Button>
-					</div>
+					{/snippet}
 				</Stat>
 			</Stats>
 		</div>

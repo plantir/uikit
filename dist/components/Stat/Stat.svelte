@@ -2,30 +2,56 @@
 	import './Stat.css';
 	import El from '../../utils/El.svelte';
 	import type { Stat } from './Stat.type.js';
-	type $$Props = Stat;
+	import type { Snippet } from 'svelte';
+
+	let {
+		center = false,
+		figure,
+		title,
+		value,
+		desc,
+		actions,
+		...others
+	}: Stat & {
+		figure?: Snippet;
+		title?: Snippet;
+		value?: Snippet;
+		desc?: Snippet;
+		actions?: Snippet;
+	} = $props();
+
 	let componentName = 'stat';
-	export let center = false;
-	$: componentClass = {
-		center: center == true
-	};
+	let componentClass = $derived({
+		center: center === true
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}>
+<El {componentName} {componentClass} {...others}>
 	<div class="ui-stat-figure">
-		<slot name="figure"></slot>
+		{#if figure}
+			{@render figure()}
+		{/if}
 	</div>
 	<div class="ui-stat-title">
-		<slot name="title"></slot>
+		{#if title}
+			{@render title()}
+		{/if}
 	</div>
 	<div class="ui-stat-value">
-		<slot name="value"></slot>
+		{#if value}
+			{@render value()}
+		{/if}
 	</div>
 	<div class="ui-stat-desc">
-		<slot name="desc"></slot>
+		{#if desc}
+			{@render desc()}
+		{/if}
 	</div>
 	<div class="ui-stat-actions">
-		<slot name="actions"></slot>
+		{#if actions}
+			{@render actions()}
+		{/if}
 	</div>
 </El>
 <!-- </span> -->

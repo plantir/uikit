@@ -36,11 +36,11 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" props={['loading={loading_button}', 'on:click={click}']}
+		<TagCode name="Button" props={['loading={loading_button}', 'onclick={click}']}
 			>click me</TagCode
 		>
 	</div>
 	<div slot="preview">
-		<Button loading={loading_button} on:click={click}>click me</Button>
+		<Button loading={loading_button} onclick={click}>click me</Button>
 	</div>
 </SampleWrapper>

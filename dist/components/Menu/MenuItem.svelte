@@ -2,18 +2,28 @@
 	import './MenuItem.css';
 	import El from '../../utils/El.svelte';
 	import type { MenuItem } from './MenuItem.type.js';
-	type $$Props = MenuItem;
+	import type { Snippet } from 'svelte';
+
+	let {
+		active = false,
+		disabled = false,
+		children,
+		...others
+	}: MenuItem & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'menu-item';
-	export let active: boolean = false;
-	export let disabled: boolean = false;
-	$: componentClass = {
+	let componentClass = $derived({
 		active,
-        disabled
-	};
+		disabled
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} tag="li">
-	<slot></slot>
+<El {componentName} {componentClass} {...others} tag="li">
+	{#if children}
+		{@render children()}
+	{/if}
 </El>
 <!-- </span> -->

@@ -9,63 +9,75 @@
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import El from '../../utils/El.svelte';
 	import type { HTMLInputTypeAttribute } from 'svelte/elements';
-	type $$Props = TextField;
+	import type { Snippet } from 'svelte';
+	let {
+		label,
+		placeholder,
+		value = $bindable(),
+		type = 'text',
+		disabled,
+		readonly,
+		size,
+		color,
+		hint,
+		state: stateString,
+		ghost,
+		inputClass,
+		node = $bindable(),
+		suggestions,
+		pattern,
+		labelSnippet = defaultLabelSnippet,
+		startSnippet,
+		endSnippet,
+		class: className,
+		...others
+	}: TextField & {
+		labelSnippet?: Snippet;
+		startSnippet?: Snippet;
+		endSnippet?: Snippet;
+		class?: string;
+	} = $props();
 	let componentName = 'text-field';
-	export let label: string | undefined = undefined;
-	export let placeholder: string | undefined = undefined;
-	export let value: string = '';
-	export let type: HTMLInputTypeAttribute = 'text';
-	export let disabled: boolean = false;
-	export let readonly: boolean = false;
-	export let size: TextFieldSize = undefined;
-	export let color: TextFieldColor = undefined;
-	export let hint: string | undefined = undefined;
-	export let state: 'invalid' | 'valid' | undefined = undefined;
-	export let ghost: boolean = false;
-	export let inputClass: string = '';
-	export let node: TextField['node'];
-	export let suggestions: string[] | undefined = undefined;
-	export let pattern: any = '';
-	let show_hint_pattern = false;
-	$: componentClass = {
-		xs: size == 'xs',
-		sm: size == 'sm',
-		md: size == 'md',
-		lg: size == 'lg',
-		xl: size == 'xl',
+
+	let show_hint_pattern = $state(false);
+
+	let componentClass = $derived({
+		size,
 		disabled,
 		ghost,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		neutral: color == 'neutral',
+		color,
 		pattern: pattern !== '',
-		'has-start': !!$$slots.start,
-		'has-end': !!$$slots.end,
-		'state-valid': state == 'valid',
-		'state-invalid': state == 'invalid'
-	};
-
-	$: startWrapper = ClassMerge({ name: `${componentName}-start-wrapper` });
-	$: endWrapper = ClassMerge({ name: `${componentName}-end-wrapper` });
-	$: inputWrapper = ClassMerge({ name: `${componentName}-input-wrapper` });
-	$: wrapperClass = ClassMerge({ name: `${componentName}-wrapper`, staticClassess: $$props.class });
-	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: inputClass });
-	$: labelClass = ClassMerge({ name: `${componentName}-label` });
-	$: hintClass = ClassMerge({
-		name: `${componentName}-hint`,
-		componentClass: {
-			'state-valid': state == 'valid',
-			'state-invalid': state == 'invalid',
-			'pattern-invalid': pattern && !show_hint_pattern
-		}
+		'has-start': !!startSnippet,
+		'has-end': !!endSnippet,
+		'state-valid': stateString == 'valid',
+		'state-invalid': stateString == 'invalid'
 	});
-	$: list = suggestions && suggestions.length ? `list-${Math.floor(Math.random() * 100000)}` : '';
-	$: {
+
+	let startWrapper = $derived(ClassMerge({ name: `${componentName}-start-wrapper` }));
+	let endWrapper = $derived(ClassMerge({ name: `${componentName}-end-wrapper` }));
+	let inputWrapper = $derived(ClassMerge({ name: `${componentName}-input-wrapper` }));
+	let wrapperClass = $derived(
+		ClassMerge({ name: `${componentName}-wrapper`, staticClassess: className })
+	);
+	let elClass = $derived(
+		ClassMerge({ name: componentName, componentClass, staticClassess: inputClass })
+	);
+	let labelClass = $derived(ClassMerge({ name: `${componentName}-label` }));
+	let hintClass = $derived(
+		ClassMerge({
+			name: `${componentName}-hint`,
+			componentClass: {
+				'state-valid': stateString == 'valid',
+				'state-invalid': stateString == 'invalid',
+				'pattern-invalid': pattern && !show_hint_pattern
+			}
+		})
+	);
+
+	let list = $derived(
+		suggestions && suggestions.length ? `list-${Math.floor(Math.random() * 100000)}` : ''
+	);
+	$effect(() => {
 		value;
 		if (pattern && node) {
 			if (node.validity.valid || node.validity.valueMissing) {
@@ -74,23 +86,26 @@
 				show_hint_pattern = false;
 			}
 		}
-	}
+	});
 </script>
 
+{#snippet defaultLabelSnippet()}
+	{#if label}
+		<span class={labelClass}>
+			{label}
+		</span>
+	{/if}
+{/snippet}
 <label class={wrapperClass}>
-	<slot name="label">
-		{#if label}
-			<span class={labelClass}>
-				{label}
-			</span>
-		{/if}
-	</slot>
+	{@render labelSnippet()}
 	<El class={inputWrapper}>
 		<El class={startWrapper}>
-			<slot name="start" />
+			{#if startSnippet}
+				{@render startSnippet()}
+			{/if}
 		</El>
 		<input
-			{...$$restProps}
+			{...others}
 			bind:this={node}
 			{readonly}
 			{type}
@@ -109,7 +124,9 @@
 			</datalist>
 		{/if}
 		<El class={endWrapper}>
-			<slot name="end" />
+			{#if endSnippet}
+				{@render endSnippet()}
+			{/if}
 		</El>
 	</El>
 	{#if hint}

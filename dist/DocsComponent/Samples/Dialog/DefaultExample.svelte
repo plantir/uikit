@@ -28,13 +28,13 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" one_line props={['on:click={openDialog}']}>Open Dialog</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openDialog}']}>Open Dialog</TagCode>
 		<TagCode name="Dialog" props={['bind:open']}>
 			<TagCode name="div">content of inside Dialog</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<Button on:click={openDialog}>Open Dialog</Button>
+		<Button onclick={openDialog}>Open Dialog</Button>
 		<Dialog bind:open>
 			<div>content of inside Dialog</div>
 		</Dialog>

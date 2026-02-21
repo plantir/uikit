@@ -13,6 +13,7 @@
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import Swap from '../../../components/Swap/Swap.svelte';
 	import Dropdown from '../../../components/Dropdown/Dropdown.svelte';
+	import SnippetTagCode from '../../ComponentCode/SnippetTagCode.svelte';
 </script>
 
 <SampleWrapper>
@@ -26,15 +27,21 @@
 	<div slot="html">
 		<TagCode name="div">
 			<TagCode name="Dropdown" props={['placement="bottom-start"']}>
-				<TagCode name="Button" props={['slot="toggler"']}>Open bottom Start Dropdown</TagCode>
+				<SnippetTagCode name="togglerSnippet">
+					<TagCode name="Button">Open bottom Start Dropdown</TagCode>
+				</SnippetTagCode>
 				<TagCode name="div">List of items...</TagCode>
 			</TagCode>
 			<TagCode name="Dropdown" props={['placement="bottom"']}>
-				<TagCode name="Button" props={['slot="toggler"']}>Open bottom Dropdown</TagCode>
+				<SnippetTagCode name="togglerSnippet">
+					<TagCode name="Button">Open bottom Dropdown</TagCode>
+				</SnippetTagCode>
 				<TagCode name="div">List of items...</TagCode>
 			</TagCode>
 			<TagCode name="Dropdown" props={['placement="bottom-end"']}>
-				<TagCode name="Button" props={['slot="toggler"']}>Open bottom End Dropdown</TagCode>
+				<SnippetTagCode name="togglerSnippet">
+					<TagCode name="Button">Open bottom End Dropdown</TagCode>
+				</SnippetTagCode>
 				<TagCode name="div">List of items...</TagCode>
 			</TagCode>
 		</TagCode>
@@ -42,15 +49,21 @@
 	<div slot="preview">
 		<div class="flex items-center justify-center gap-1 h-[200px]">
 			<Dropdown placement="bottom-start">
-				<Button slot="toggler">Open bottom Start Dropdown</Button>
+				{#snippet togglerSnippet()}
+					<Button>Open bottom Start Dropdown</Button>
+				{/snippet}
 				List of items...
 			</Dropdown>
 			<Dropdown placement="bottom">
-				<Button slot="toggler">Open bottom Dropdown</Button>
+				{#snippet togglerSnippet()}
+					<Button>Open bottom Dropdown</Button>
+				{/snippet}
 				List of items...
 			</Dropdown>
 			<Dropdown placement="bottom-end">
-				<Button slot="toggler">Open bottom End Dropdown</Button>
+				{#snippet togglerSnippet()}
+					<Button>Open bottom End Dropdown</Button>
+				{/snippet}
 				List of items...
 			</Dropdown>
 		</div>

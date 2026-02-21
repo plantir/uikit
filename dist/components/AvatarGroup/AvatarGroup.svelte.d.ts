@@ -1,5 +1,8 @@
 import type { AvatarGroup } from './AvatarGroup.type.js';
 import './AvatarGroup.css';
-declare const AvatarGroup: any;
-type AvatarGroup = InstanceType<typeof AvatarGroup>;
+type $$ComponentProps = {
+    children: any;
+};
+declare const AvatarGroup: import("svelte").Component<$$ComponentProps, {}, "">;
+type AvatarGroup = ReturnType<typeof AvatarGroup>;
 export default AvatarGroup;

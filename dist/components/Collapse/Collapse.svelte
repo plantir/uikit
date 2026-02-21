@@ -3,43 +3,51 @@
 	import './Collapse.css';
 	import El from '../../utils/El.svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
-	type $$Props = Collapse;
+	import type { Snippet } from 'svelte';
+	let {
+		disabled = false,
+		size,
+		color,
+		variant,
+		dismissable = false,
+		open = false,
+		plus = false,
+		arrow = false,
+		children,
+		title,
+		...others
+	}: {
+		disabled?: boolean;
+		size?: CollapseSize;
+		color?: CollapseColor;
+		variant?: CollapseVariant;
+		dismissable?: boolean;
+		open?: boolean;
+		plus?: boolean;
+		arrow?: boolean;
+		children: Snippet;
+		title: Snippet;
+	} = $props();
 	let componentName = 'collapse';
-	export let disabled: boolean = false;
-	export let size: CollapseSize = undefined;
-	export let color: CollapseColor = undefined;
-	export let variant: CollapseVariant = undefined;
-	export let dismissable = false;
-	export let open = false;
-	export let plus = false;
-	export let arrow = false;
-
-	$: componentClass = {
+	let componentClass = $derived({
 		open,
 		plus,
 		arrow,
-		disabled: disabled,
-		primary: color == 'primary',
-		secondary: color == 'secondary',
-		accent: color == 'accent',
-		success: color == 'success',
-		info: color == 'info',
-		error: color == 'error',
-		warning: color == 'warning',
-		natural: color == 'natural'
-	};
-	$: titleClass = ClassMerge({ name: `${componentName}-title` });
-	$: contentClass = ClassMerge({ name: `${componentName}-content` });
+		disabled,
+		color
+	});
+	let titleClass = $derived(ClassMerge({ name: `${componentName}-title` }));
+	let contentClass = $derived(ClassMerge({ name: `${componentName}-content` }));
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps}>
-	<div class={titleClass} on:click={() => (open = !open)}>
-		<slot name="title" />
+<El {componentName} {componentClass} {...others}>
+	<div class={titleClass} onclick={() => (open = !open)}>
+		{@render title()}
 	</div>
 
 	<div class={contentClass}>
-		<slot />
+		{@render children()}
 	</div>
 	<!-- </div> -->
 </El>

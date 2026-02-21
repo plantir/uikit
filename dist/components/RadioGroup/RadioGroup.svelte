@@ -19,55 +19,71 @@
 </script>
 
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import type { RadioGroup } from './RadioGroup.type.js';
 	import './RadioGroup.css';
+	import type { Snippet } from 'svelte';
 
-	type $$Props = RadioGroup;
+	let {
+		value = $bindable(undefined),
+		inline = false,
+		column = false,
+		disabled = false,
+		join = false,
+		class: className,
+		children,
+		...others
+	}: RadioGroup & {
+		children?: Snippet;
+	} = $props();
 
 	let componentName = 'radio-group';
-	let dispatch = createEventDispatcher();
 
-	export let value: any = undefined;
-	export let inline: boolean = false;
-	export let column: boolean = false;
-	export let disabled: boolean = false;
-	export let join: boolean = false;
 	if (!inline && !column) inline = true;
 
 	const selected = writable(null);
 
-	const disabledStore = writable(disabled)
+	const disabledStore = writable(disabled);
 	setRadioGroupContext({
 		join,
 		selected,
 		disabled: disabledStore
 	});
+
 	selected.subscribe((val) => {
-		if (val && val != value) {
+		if (val && val !== value) {
 			value = val;
-			dispatch('change', value);
 		}
 	});
+
 	function onValueChange() {
 		selected.set(value);
 	}
-	$: value, onValueChange();
-	$: disabled, disabledStore.set(disabled);
 
-	$: elClass = ClassMerge({
-		name: componentName,
-		componentClass: {
-			join,
-			inline,
-			column,
-			disabled
-		},
-		staticClassess: $$props.class
+	$effect(() => {
+		onValueChange();
 	});
+
+	$effect(() => {
+		disabledStore.set(disabled);
+	});
+
+	let elClass = $derived(
+		ClassMerge({
+			name: componentName,
+			componentClass: {
+				join,
+				inline,
+				column,
+				disabled
+			},
+			staticClassess: className
+		})
+	);
 </script>
 
-<div class={elClass}>
-	<slot />
+<div class={elClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </div>

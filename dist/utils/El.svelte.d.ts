@@ -1,45 +1,30 @@
 import type { Action } from 'svelte/action';
-import type { HTMLAnchorAttributes } from 'svelte/elements';
-interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
-    new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
-        $$bindings?: Bindings;
-    } & Exports;
-    (internal: unknown, props: Props & {
-        $$events?: Events;
-        $$slots?: Slots;
-    }): Exports & {
-        $set?: any;
-        $on?: any;
-    };
-    z_$$bindings?: Bindings;
-}
-type $$__sveltets_2_PropsWithChildren<Props, Slots> = Props & (Slots extends {
-    default: any;
-} ? Props extends Record<string, never> ? any : {
-    children?: any;
-} : {});
-declare const El: $$__sveltets_2_IsomorphicComponent<$$__sveltets_2_PropsWithChildren<HTMLAnchorAttributes & {
+import type { Snippet } from 'svelte';
+type $$ComponentProps = {
     componentClass?: object;
     componentName?: string;
+    href?: string;
     tag?: string;
     node?: HTMLElement | undefined;
     use?: Action<HTMLElement, any>;
     options?: object;
     class?: string;
     role?: string;
-}, {
-    default: {};
-}>, {
-    click: MouseEvent;
-    change: Event;
-    mouseenter: MouseEvent;
-    mouseleave: MouseEvent;
-    focusin: FocusEvent;
-    focusout: FocusEvent;
-} & {
-    [evt: string]: CustomEvent<any>;
-}, {
-    default: {};
-}, {}, string>;
-type El = InstanceType<typeof El>;
+    children?: Snippet;
+    onclick?: (event: MouseEvent) => void;
+    onkeydown?: (event: KeyboardEvent) => void;
+    onkeyup?: (event: KeyboardEvent) => void;
+    onkeypress?: (event: KeyboardEvent) => void;
+    onfocus?: (event: FocusEvent) => void;
+    onblur?: (event: FocusEvent) => void;
+    onmouseenter?: (event: MouseEvent) => void;
+    onmouseleave?: (event: MouseEvent) => void;
+    onmouseover?: (event: MouseEvent) => void;
+    onmouseout?: (event: MouseEvent) => void;
+    onmousedown?: (event: MouseEvent) => void;
+    onmouseup?: (event: MouseEvent) => void;
+    oncontextmenu?: (event: MouseEvent) => void;
+};
+declare const El: import("svelte").Component<$$ComponentProps, {}, "">;
+type El = ReturnType<typeof El>;
 export default El;

@@ -1,5 +1,5 @@
 import type { ColorPicker } from './ColorPicker.type.ts';
 import './ColorPicker.css';
 declare const ColorPicker: any;
-type ColorPicker = InstanceType<typeof ColorPicker>;
+type ColorPicker = ReturnType<typeof ColorPicker>;
 export default ColorPicker;

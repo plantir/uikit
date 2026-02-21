@@ -4,51 +4,75 @@
 	import El from '../../utils/El.svelte';
 	import { fade } from 'svelte/transition';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
-	type $$Props = Chat;
+	import type { Snippet } from 'svelte';
+	let {
+		start = false,
+		end = false,
+		color,
+		children,
+		header,
+		image,
+		footer,
+		...othres
+	}: {
+		start?: boolean;
+		end?: boolean;
+		color?: ChatColor;
+		children?: Snippet;
+		header?: Snippet;
+		image?: Snippet;
+		footer?: Snippet;
+	} = $props();
 	let componentName = 'chat';
-	export let start: boolean = false;
-	export let end: boolean = false;
-	export let color: ChatColor = undefined;
-	$: componentClass = {
+	let componentClass = $derived({
 		start,
 		end
-	};
-	$: bubbleClass = ClassMerge({
-		name: `${componentName}-bubble`,
-		componentClass: {
-			primary: color == 'primary',
-			secondary: color == 'secondary',
-			accent: color == 'accent',
-			success: color == 'success',
-			info: color == 'info',
-			error: color == 'error',
-			warning: color == 'warning',
-			neutral: color == 'neutral'
-		}
 	});
-	$: footerClass = ClassMerge({
-		name: `${componentName}-footer`
-	});
-	$: imageClass = ClassMerge({
-		name: `${componentName}-image`
-	});
-	$: headerClass = ClassMerge({
-		name: `${componentName}-header`
-	});
+	let bubbleClass = $derived(
+		ClassMerge({
+			name: `${componentName}-bubble`,
+			componentClass: {
+				color
+			}
+		})
+	);
+	let footerClass = $derived(
+		ClassMerge({
+			name: `${componentName}-footer`
+		})
+	);
+	let imageClass = $derived(
+		ClassMerge({
+			name: `${componentName}-image`
+		})
+	);
+	let headerClass = $derived(
+		ClassMerge({
+			name: `${componentName}-header`
+		})
+	);
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
+<El {componentName} {componentClass} {...othres}>
 	<div class={headerClass}>
-		<slot name="header" />
+		{#if header}
+			{@render header()}
+		{/if}
 	</div>
 	<div class={imageClass}>
-		<slot name="image" />
+		{#if image}
+			{@render image()}
+		{/if}
 	</div>
 	<div class={bubbleClass}>
-		<slot />
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 
 	<div class={footerClass}>
-		<slot name="footer" />
+		{#if footer}
+			{@render footer()}
+		{/if}
 	</div>
 </El>

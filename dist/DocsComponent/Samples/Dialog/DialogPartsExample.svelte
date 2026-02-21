@@ -8,7 +8,7 @@
 	import LetCode from '../../ComponentCode/LetCode.svelte';
 	import FunctionCode from '../../ComponentCode/FunctionCode.svelte';
 
-	let open = false;
+	let open = $state(false);
 	function openDialog() {
 		open = true;
 	}
@@ -31,7 +31,7 @@
 		<br />
 	</div>
 	<div slot="html">
-		<TagCode name="Button" one_line props={['on:click={openDialog}']}>Open Dialog</TagCode>
+		<TagCode name="Button" one_line props={['onclick={openDialog}']}>Open Dialog</TagCode>
 		<TagCode name="Dialog" props={['bind:open']}>
 			<TagCode name="DialogHeader" props={['title="Are you sure?"']} />
 			<TagCode name="DialogBody">Do you want to delete these items?</TagCode>
@@ -42,7 +42,7 @@
 		</TagCode>
 	</div>
 	<div slot="preview">
-		<Button on:click={openDialog}>Open Dialog</Button>
+		<Button onclick={openDialog}>Open Dialog</Button>
 		<Dialog bind:open>
 			<DialogHeader title="Are you sure?" />
 			<DialogBody>Do you want to delete these items?</DialogBody>

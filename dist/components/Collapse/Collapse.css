@@ -119,31 +119,31 @@
 	}
 }
 
-.ui-collapse-primary {
+.ui-collapse-color-primary {
 	@apply bg-primary text-primary-content;
 }
 
-.ui-collapse-secondary {
+.ui-collapse-color-secondary {
 	@apply bg-secondary text-secondary-content;
 }
 
-.ui-collapse-accent {
+.ui-collapse-color-accent {
 	@apply bg-accent text-accent-content;
 }
 
-.ui-collapse-success {
+.ui-collapse-color-success {
 	@apply bg-success text-success-content;
 }
 
-.ui-collapse-info {
+.ui-collapse-color-info {
 	@apply bg-info text-info-content;
 }
 
-.ui-collapse-error {
+.ui-collapse-color-error {
 	@apply bg-error text-error-content;
 }
 
-.ui-collapse-warning {
+.ui-collapse-color-warning {
 	@apply bg-warning text-warning-content;
 }
 

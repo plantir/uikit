@@ -6,33 +6,42 @@
 	import { sineIn } from 'svelte/easing';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
 	import { ClickOutside } from '../../utils/ClickOutside.js';
-	type $$Props = Drawer;
+	import type { Snippet } from 'svelte';
+
+	let {
+		open = $bindable(false),
+		right = false,
+		top = false,
+		bottom = false,
+		left = !right && !top && !bottom ? true : false,
+		backdrop = true,
+		clickOutside = true,
+		id = 'drawer-example',
+		transitionType = 'fly',
+		transitionParams = {
+			x: top || bottom ? 0 : left ? -320 : 320,
+			y: left || right ? 0 : top ? -320 : 320,
+			duration: 200,
+			easing: sineIn,
+			axis: left || right ? 'x' : 'y'
+		},
+		children,
+		...others
+	}: Drawer & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'drawer';
-	export let open: boolean = false;
-	export let right: boolean = false;
-	export let top: boolean = false;
-	export let bottom: boolean = false;
-	export let left: boolean = !right && !top && !bottom;
-	export let backdrop: boolean = true;
-	export let clickOutside: boolean = true;
-	export let id: string = 'drawer-example';
-	export let transitionType = 'fly';
-	export let transitionParams = {
-		x: top || bottom ? 0 : left ? -320 : 320,
-		y: left || right ? 0 : top ? -320 : 320,
-		duration: 200,
-		easing: sineIn,
-		axis: left || right ? 'x' : 'y'
-	};
-	$: componentClass = {
+	let componentClass = $derived({
 		open,
 		left,
 		right,
 		top,
 		bottom
-	};
-	$: backdropClass = ClassMerge({ name: `${componentName}-backdrop` });
-	$: contentClass = ClassMerge({ name: `${componentName}-content` });
+	});
+	let backdropClass = $derived(ClassMerge({ name: `${componentName}-backdrop` }));
+	let contentClass = $derived(ClassMerge({ name: `${componentName}-content` }));
+
 	function multiple(node: HTMLElement, params: any) {
 		switch (transitionType) {
 			case 'slide':
@@ -56,9 +65,9 @@
 </script>
 
 {#if open}
-	<El {componentName} {componentClass} {...$$restProps}>
+	<El {componentName} {componentClass} {...others}>
 		{#if backdrop && clickOutside}
-			<div role="presentation" class={backdropClass} on:click={() => open && handleDrawer()} />
+			<div role="presentation" class={backdropClass} onclick={() => open && handleDrawer()} />
 		{:else if backdrop && !clickOutside}
 			<div role="presentation" class={backdropClass} />
 		{/if}
@@ -72,7 +81,9 @@
 			aria-controls={id}
 			aria-labelledby={id}
 		>
-			<slot {open} />
+			{#if children}
+				{@render children({ open })}
+			{/if}
 		</div>
 	</El>
 {/if}

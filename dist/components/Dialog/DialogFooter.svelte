@@ -2,14 +2,22 @@
 	import El from '../../utils/El.svelte';
 	import type { DialogFooter } from './DialogFooter.type.js';
 	import './DialogFooter.css';
+	import type { Snippet } from 'svelte';
+
+	let {
+		title,
+		children,
+		...others
+	}: DialogFooter & {
+		children?: Snippet;
+	} = $props();
 
 	let componentName = 'dialog-footer';
-	type $$Props = DialogFooter;
-	export let title: $$Props['title'] = undefined;
-
-	$: componentClass = {};
+	let componentClass = $derived({});
 </script>
 
-<El {componentName} {componentClass} {...$$restProps}>
-	<slot />
+<El {componentName} {componentClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </El>

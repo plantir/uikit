@@ -4,12 +4,12 @@
 	let items = [
 		{
 			name: 'on',
-			type: `string | slot`,
+			type: `snippet`,
 			default: '""'
 		},
 		{
 			name: 'off',
-			type: `string | slot`,
+			type: `snippet`,
 			default: '""'
 		},
 		{

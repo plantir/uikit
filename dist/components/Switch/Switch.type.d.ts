@@ -6,6 +6,6 @@ export interface Switch extends Base {
     value?: boolean;
     name?: string;
     size?: SwitchSize;
-    color?: SwitchColor;
+    color?: SwitchColor | 'natural';
     disabled?: boolean;
 }

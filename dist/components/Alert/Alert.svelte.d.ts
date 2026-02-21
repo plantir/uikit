@@ -1,5 +1,11 @@
-import type { Alert } from './Alert.type.js';
+import type { Alert, AlertType } from './Alert.type.js';
 import './Alert.css';
-declare const Alert: any;
-type Alert = InstanceType<typeof Alert>;
+import type { GlobalColor } from '../../utils/El.types.js';
+type $$ComponentProps = {
+    color: GlobalColor;
+    type: AlertType;
+    children: any;
+};
+declare const Alert: import("svelte").Component<$$ComponentProps, {}, "">;
+type Alert = ReturnType<typeof Alert>;
 export default Alert;

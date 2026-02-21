@@ -12,6 +12,7 @@
 	let form: any = {};
 	import SampleWrapper from '../SampleWrapper.svelte';
 	import Swap from '../../../components/Swap/Swap.svelte';
+	import SnippetTagCode from '../../ComponentCode/SnippetTagCode.svelte';
 </script>
 
 <SampleWrapper>
@@ -23,25 +24,25 @@
 	</div>
 	<div slot="html">
 		<TagCode name="div">
-			<TagCode name="Swap" props={['on="ON"', 'off="OFF"', 'value={false}', 'flip']}>
-				<TagCode name="svelte:fragment" props={['slot="on"']}>
+			<TagCode name="Swap" props={['value={false}', 'flip']}>
+				<SnippetTagCode name="on">
 					<TagCode name="div" props={['class="text-4xl"']}>😈</TagCode>
-				</TagCode>
-				<TagCode name="svelte:fragment" props={['slot="off"']}>
+				</SnippetTagCode>
+				<SnippetTagCode name="off">
 					<TagCode name="div" props={['class="text-4xl"']}>😇</TagCode>
-				</TagCode>
+				</SnippetTagCode>
 			</TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div>
-			<Swap value={false} on="ON" off="OFF" flip>
-				<svelte:fragment slot="on">
+			<Swap value={false} flip>
+				{#snippet on()}
 					<div class="text-4xl">😈</div>
-				</svelte:fragment>
-				<svelte:fragment slot="off">
+				{/snippet}
+				{#snippet off()}
 					<div class="text-4xl">😇</div>
-				</svelte:fragment>
+				{/snippet}
 			</Swap>
 		</div>
 	</div>

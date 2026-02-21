@@ -17,6 +17,11 @@
 			type: `boolean`,
 			default: 'false'
 		},
+		{
+			name: 'togglerSnippet',
+			type: 'snippet',
+			default: 'undefined'
+		}
 	];
 </script>
 

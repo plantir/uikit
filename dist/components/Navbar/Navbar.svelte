@@ -3,28 +3,50 @@
 	import El from '../../utils/El.svelte';
 	import type { Navbar } from './Navbar.type.js';
 	import type { GlobalColor, GlobalSize } from '../../utils/El.types.js';
-	type $$Props = Navbar;
+	import type { Snippet } from 'svelte';
+
+	let {
+		custom = false,
+		color,
+		children,
+		start,
+		center,
+		end,
+		...others
+	}: Navbar & {
+		children?: Snippet;
+		start?: Snippet;
+		center?: Snippet;
+		end?: Snippet;
+	} = $props();
+
 	let componentName = 'navbar';
-	export let custom: boolean = false;
-	export let color: GlobalColor = undefined;
-	$: componentClass = {
+	let componentClass = $derived({
 		color: color
-	};
+	});
 </script>
 
 <!-- <span transition:fade> -->
-<El {componentName} {componentClass} {...$$restProps} tag="nav">
+<El {componentName} {componentClass} {...others} tag="nav">
 	{#if custom}
-		<slot></slot>
+		{#if children}
+			{@render children()}
+		{/if}
 	{:else}
 		<div class="ui-navbar-start">
-			<slot name="start"></slot>
+			{#if start}
+				{@render start()}
+			{/if}
 		</div>
 		<div class="ui-navbar-center">
-			<slot name="center"></slot>
+			{#if center}
+				{@render center()}
+			{/if}
 		</div>
 		<div class="ui-navbar-end">
-			<slot name="end"></slot>
+			{#if end}
+				{@render end()}
+			{/if}
 		</div>
 	{/if}
 </El>

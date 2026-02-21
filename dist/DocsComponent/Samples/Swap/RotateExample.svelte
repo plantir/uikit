@@ -15,7 +15,7 @@
 </script>
 
 <SampleWrapper>
-	<div slot="javascript">	
+	<div slot="javascript">
 		<TagCode name="script">
 			import <span class="text-green-600">Swap</span> from '{$importDocumentSrc}/Swap.svelte';
 		</TagCode>
@@ -23,16 +23,12 @@
 	</div>
 	<div slot="html">
 		<TagCode name="div">
-			<TagCode
-				name="Swap"
-				one_line
-				props={['on="ON"', 'off="OFF"', 'value={false}', 'rotate']}
-			></TagCode>
+			<TagCode name="Swap" one_line props={['value={false}', 'rotate']}></TagCode>
 		</TagCode>
 	</div>
 	<div slot="preview">
 		<div>
-			<Swap value={false} on="ON" off="OFF" rotate />
+			<Swap value={false} rotate />
 		</div>
 	</div>
 </SampleWrapper>

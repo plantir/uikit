@@ -2,25 +2,38 @@
 	import './Table.css';
 	import type { Table, TableColor, TableSize } from './Table.type.js';
 	import { ClassMerge } from '../../utils/ClassMerge.js';
-	type $$Props = Table;
+	import type { Snippet } from 'svelte';
+
+	let {
+		disabled = false,
+		zebra = false,
+		hover = false,
+		size,
+		pinHead = false,
+		pinCols = false,
+		class: className,
+		children,
+		...others
+	}: Table & {
+		children?: Snippet;
+	} = $props();
+
 	let componentName = 'table';
-	export let disabled: boolean = false;
-	export let zebra: boolean = false;
-	export let hover: boolean = false;
-	export let size: TableSize = undefined;
-	export let pinHead: boolean = false;
-	export let pinCols: boolean = false;
-	$: componentClass = {
-		size:size,
+	let componentClass = $derived({
+		size: size,
 		disabled,
 		zebra,
 		hover,
 		'pin-head': pinHead,
-		'pin-cols': pinCols,
-	};
-	$: elClass = ClassMerge({ name: componentName, componentClass, staticClassess: $$props.class });
+		'pin-cols': pinCols
+	});
+	let elClass = $derived(
+		ClassMerge({ name: componentName, componentClass, staticClassess: className })
+	);
 </script>
 
-<table class={elClass}>
-	<slot />
+<table class={elClass} {...others}>
+	{#if children}
+		{@render children()}
+	{/if}
 </table>

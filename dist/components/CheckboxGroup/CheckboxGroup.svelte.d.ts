@@ -1,3 +1,4 @@
+import { type Snippet } from 'svelte';
 import { type Writable } from 'svelte/store';
 interface CheckboxCtxType {
     join?: boolean;
@@ -7,7 +8,15 @@ interface CheckboxCtxType {
 export declare function getCheckboxGroupContext(): CheckboxCtxType | undefined;
 export declare function setCheckboxGroupContext(value: CheckboxCtxType): CheckboxCtxType;
 import './CheckboxGroup.css';
-import type { CheckboxGroup } from './CheboxGroup.type.js';
-declare const CheckboxGroup: any;
-type CheckboxGroup = InstanceType<typeof CheckboxGroup>;
+type $$ComponentProps = {
+    value?: any;
+    inline?: boolean;
+    join?: boolean;
+    column?: boolean;
+    disabled?: boolean;
+    children?: Snippet;
+    onChange?: any;
+};
+declare const CheckboxGroup: import("svelte").Component<$$ComponentProps, {}, "value">;
+type CheckboxGroup = ReturnType<typeof CheckboxGroup>;
 export default CheckboxGroup;
