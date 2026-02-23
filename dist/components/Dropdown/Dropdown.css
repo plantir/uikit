@@ -1,18 +1,42 @@
 @reference "../../css/app.css";
 
 .ui-dropdown {
-	@apply daisy-dropdown;
+	position-area: var(--anchor-v, bottom) var(--anchor-h, span-right);
+	display: inline-block;
+	position: relative;
 
 	.ui-dropdown-toggler {
-		@apply inline-flex;
+		display: inline-flex;
 	}
 
 	.ui-dropdown-content {
 		/* DAISYTODO: @apply daisy-dropdown-content; */
-		@apply absolute p-2 shadow-sm daisy-menu z-[1] bg-base-100 rounded-box w-52;
-
+		position: absolute;
+		padding: 0.5rem;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+		z-index: 1;
+		background-color: var(--color-base-100);
+		border-radius: var(--radius-box);
+		width: calc(var(--spacing) * 52);
+		transition-behavior: allow-discrete;
+		transition-property: opacity, scale, display;
+		transition-duration: 0.2s;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		animation: 0.2s dropdown;
 		&.ui-dropdown-content-hidden {
 			display: none;
+		}
+	}
+	@keyframes dropdown {
+		from {
+			opacity: 0;
+			scale: 0.9;
+			display: none;
+		}
+		to {
+			opacity: 1;
+			scale: 1;
+			display: block;
 		}
 	}
 }

@@ -1,30 +1,65 @@
 @import '../../css/app.css';
 
 .ui-accordion {
-	@apply daisy-collapse bg-base-100 border border-base-300 my-4;
+	border-radius: var(--radius-box, 1rem);
+	isolation: isolate;
+	grid-template-rows: max-content 0fr;
+	grid-template-columns: minmax(0, 1fr);
+	width: 100%;
+	display: grid;
+	position: relative;
+	overflow: hidden;
+	visibility: revert-layer;
+	background-color: var(--color-base-100);
+	border: 1px solid var(--color-base-300);
+	margin: 1rem 0;
+	> input {
+		appearance: none;
+		opacity: 0;
+		z-index: 1;
+		grid-row-start: 1;
+		grid-column-start: 1;
+		width: 100%;
+		min-height: 1lh;
+		padding: 1rem;
+		padding-inline-end: 3rem;
+		transition: background-color 0.2s ease-out;
+	}
 }
 
-.ui-accordion-icon-arrow {
-	@apply daisy-collapse-arrow;
+.ui-accordion:not(.ui-accordion-close):has(> input:is([type='checkbox'], [type='radio']):checked) {
+	grid-template-rows: max-content 1fr;
+}
+.ui-accordion-icon-arrow > .ui-accordion-title:after {
+	content: '';
+	transform-origin: 75% 75%;
+	pointer-events: none;
+	top: 50%;
+	inset-inline-end: 1.4rem;
+	box-shadow: 2px 2px;
 }
 
 .ui-accordion-join {
-	@apply my-0;
+	margin: 0;
 }
 
-.ui-accordion-join+.ui-accordion-join {
+.ui-accordion-join + .ui-accordion-join {
 	@apply rounded-none border-t-0;
+	border-radius: 0;
+	border-top: 0;
 }
 
 .ui-accordion-join:first-child {
-	@apply rounded-b-none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .ui-accordion-join:last-child {
-	@apply rounded-b-lg;
+	border-bottom-left-radius: var(--radius-box, 1rem);
+	border-bottom-right-radius: var(--radius-box, 1rem);
 }
 
-.ui-accordion-icon-arrow>.ui-accordion-title:after {
+.ui-accordion-icon-arrow > .ui-accordion-title:after {
 	content: '';
 	transform-origin: 75% 75%;
 	pointer-events: none;
@@ -41,22 +76,38 @@
 	box-shadow: 2px 2px;
 }
 
-.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close)>.ui-accordion-title:after,
-.ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)>input:is([type='checkbox'], [type='radio']):checked~.ui-accordion-title:after {
+.ui-accordion.ui-accordion-icon-arrow:focus:not(.ui-accordion-close) > .ui-accordion-title:after,
+.ui-accordion.ui-accordion-icon-arrow:not(.ui-accordion-close)
+	> input:is([type='checkbox'], [type='radio']):checked
+	~ .ui-accordion-title:after {
 	transform: translateY(-50%) rotate(225deg);
 }
 
-.ui-accordion-icon-plus {
-	@apply daisy-collapse-plus;
+.ui-accordion-plus > .ui-accordion-title:after {
+	--tw-content: '+';
+	content: var(--tw-content);
+	pointer-events: none;
+	inset-inline-end: 1.4rem;
+	top: 0.9rem;
+	width: 0.5rem;
+	height: 0.5rem;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	display: block;
+	position: absolute;
 }
 
-.ui-accordion[open].ui-accordion-icon-plus>.ui-accordion-title:after,
-.ui-accordion.ui-accordion-icon-plus:focus:not(.ui-accordion-close)>.ui-accordion-title:after,
-.ui-accordion.ui-accordion-icon-plus:not(.ui-accordion-close)>input:is([type='checkbox'], [type='radio']):checked~.ui-accordion-title:after {
-	content: '−';
+.ui-accordion[open].ui-accordion-icon-plus > .ui-accordion-title:after,
+.ui-accordion.ui-accordion-icon-plus:focus:not(.ui-accordion-close) > .ui-accordion-title:after,
+.ui-accordion.ui-accordion-icon-plus:not(.ui-accordion-close)
+	> input:is([type='checkbox'], [type='radio']):checked
+	~ .ui-accordion-title:after {
+	--tw-content: '−';
+	content: var(--tw-content);
 }
 
-.ui-accordion-icon-plus>.ui-accordion-title:after {
+.ui-accordion-icon-plus > .ui-accordion-title:after {
 	content: '+';
 	pointer-events: none;
 	top: 0.9rem;
@@ -71,21 +122,45 @@
 }
 
 .ui-accordion-title {
-	@apply daisy-collapse-title font-semibold;
+	grid-row-start: 1;
+	grid-column-start: 1;
+	width: 100%;
+	min-height: 1lh;
+	padding: 1rem;
+	padding-inline-end: 3rem;
+	transition: background-color 0.2s ease-out;
+	position: relative;
+	--tw-font-weight: var(--font-weight-semibold);
+	font-weight: var(--font-weight-semibold);
 }
 
 .ui-accordion-content {
-	@apply daisy-collapse-content text-sm;
+	content-visibility: hidden;
+	min-height: 0;
+	cursor: unset;
+	grid-row-start: 2;
+	grid-column-start: 1;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	transition:
+		content-visibility 0.2s allow-discrete,
+		visibility 0.2s allow-discrete,
+		min-height 0.2s ease-out allow-discrete,
+		padding 0.1s ease-out 20ms,
+		background-color 0.2s ease-out;
+	font-size: var(--text-sm);
+	line-height: var(--tw-leading, var(--text-sm--line-height));
 }
-
-.ui-accordion:is([open], :focus:not(.ui-accordion-close))>.ui-accordion-content,
-.ui-accordion:not(.ui-accordion-close)> :where(input:is([type='checkbox'], [type='radio']):checked ~ .ui-accordion-content) {
-	visibility: visible;
+.ui-accordion:is([open], :focus:not(.ui-accordion-close)) > .ui-accordion-content,
+.ui-accordion:not(.ui-accordion-close)
+	> :where(input:is([type='checkbox'], [type='radio']):checked ~ .ui-accordion-content) {
+	content-visibility: visible;
 	min-height: fit-content;
 }
 
-.ui-accordion:is([open], :focus:not(.ui-accordion-close))> :where(.ui-accordion-content),
-.ui-accordion:not(.ui-accordion-close)> :where(input:is([type='checkbox'], [type='radio']):checked ~ .ui-accordion-content) {
+.ui-accordion:is([open], :focus:not(.ui-accordion-close)) > :where(.ui-accordion-content),
+.ui-accordion:not(.ui-accordion-close)
+	> :where(input:is([type='checkbox'], [type='radio']):checked ~ .ui-accordion-content) {
 	padding-bottom: 1rem;
 	transition:
 		padding 0.2s ease-out,
